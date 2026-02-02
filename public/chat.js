@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Toggle chat panel
   function toggleChat() {
     isOpen = !isOpen;
-    chatPanel.classList.toggle('open', isOpen);
+    chatPanel.classList.toggle('active', isOpen);
     chatButton.style.display = isOpen ? 'none' : 'flex';
     if (isOpen) {
       chatInput.focus();
