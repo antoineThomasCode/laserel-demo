@@ -6,770 +6,1070 @@
   <title>Laserel × Cohorte - Proposition 2026</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◇</text></svg>">
 </head>
 <body>
 
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progress-bar"></div>
+
 <!-- HEADER -->
-<header class="header">
+<header class="header" id="header">
   <div class="header-content">
     <div class="header-brand">
       <span class="brand-laserel">LASEREL</span>
       <span class="brand-x">×</span>
       <span class="brand-cohorte">COHORTE</span>
     </div>
-    <div class="header-badge">PROPOSITION 2026</div>
+    <div class="header-right">
+      <div class="header-progress" id="header-progress">
+        <span class="progress-text">0%</span>
+        <div class="progress-ring">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-fill" id="progress-ring-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          </svg>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
-<div class="container">
+<!-- SIDE NAV (Desktop) -->
+<nav class="side-nav" id="side-nav">
+  <div class="side-nav-inner">
+    <a href="#hero" class="side-nav-item active" data-section="hero">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Intro</span>
+    </a>
+    <a href="#problem" class="side-nav-item" data-section="problem">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Le problème</span>
+    </a>
+    <a href="#examples" class="side-nav-item" data-section="examples">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Use cases</span>
+    </a>
+    <a href="#stack" class="side-nav-item" data-section="stack">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Stack</span>
+    </a>
+    <a href="#why-now" class="side-nav-item" data-section="why-now">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">2026</span>
+    </a>
+    <a href="#method" class="side-nav-item" data-section="method">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Méthode</span>
+    </a>
+    <a href="#process" class="side-nav-item" data-section="process">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Process</span>
+    </a>
+    <a href="#cta" class="side-nav-item" data-section="cta">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Next step</span>
+    </a>
+  </div>
+</nav>
+
+<main class="main-content">
 
   <!-- HERO -->
-  <section class="hero">
-    <h1 class="hero-title">L'IA comme levier opérationnel</h1>
-    <p class="hero-subtitle">Réduire les coûts · Garder le contrôle · Accélérer</p>
+  <section class="section section-hero" id="hero">
+    <div class="container">
+      <div class="hero-badge animate-fade-in">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        Document confidentiel
+      </div>
+
+      <h1 class="hero-title animate-fade-in-up">
+        L'IA comme<br>
+        <span class="gradient-text">levier opérationnel</span>
+      </h1>
+
+      <p class="hero-subtitle animate-fade-in-up delay-1">
+        Réduire les coûts · Garder le contrôle · Accélérer
+      </p>
+
+      <div class="hero-card animate-fade-in-up delay-2">
+        <div class="hero-card-avatar">
+          <img src="https://api.dicebear.com/7.x/initials/svg?seed=M&backgroundColor=7c3aed&textColor=ffffff" alt="M" />
+        </div>
+        <div class="hero-card-content">
+          <span class="hero-card-greeting">Salut Mickaël,</span>
+          <p>Pas un énième prestataire. Un écosystème où <strong>l'IA travaille pour toi</strong> — et toi, tu décides. Ce document présente comment on peut construire ensemble les outils qui vont te faire gagner du temps, réduire tes coûts, et accélérer ton développement.</p>
+        </div>
+      </div>
+
+      <div class="hero-benefits animate-fade-in-up delay-3">
+        <div class="hero-benefit">
+          <div class="hero-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <span>Réduire les coûts</span>
+        </div>
+        <div class="hero-benefit">
+          <div class="hero-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <span>Garder le contrôle</span>
+        </div>
+        <div class="hero-benefit">
+          <div class="hero-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <span>Accélérer</span>
+        </div>
+      </div>
+
+      <div class="scroll-indicator animate-fade-in delay-4">
+        <span>Scroll pour découvrir</span>
+        <div class="scroll-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M19 12l-7 7-7-7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- INTRO CARD -->
-  <div class="intro-card">
-    <div class="intro-card-header">
-      <span class="intro-name">Mickaël</span>
-      <span class="intro-badge">DOCUMENT CONFIDENTIEL</span>
-    </div>
-    <div class="intro-card-body">
-      <div class="intro-icon">◇</div>
-      <h2 class="intro-title">De nouveaux outils et méthodes pour <span class="highlight-laserel">Laserel</span></h2>
-      <p class="intro-text">Pas un énième prestataire. Un écosystème où l'IA travaille pour toi — et toi, tu décides. Ce document présente comment on peut construire ensemble les outils qui vont te faire gagner du temps, réduire tes coûts, et accélérer ton développement.</p>
-      <div class="intro-benefits">
-        <div class="benefit">
-          <span class="benefit-icon">$</span>
-          <span class="benefit-text">Réduire les coûts opérationnels</span>
-        </div>
-        <div class="benefit">
-          <span class="benefit-icon">◉</span>
-          <span class="benefit-text">Garder le contrôle total</span>
-        </div>
-        <div class="benefit">
-          <span class="benefit-icon">↗</span>
-          <span class="benefit-text">Accélérer ta croissance</span>
-        </div>
+  <!-- PROBLEM -->
+  <section class="section section-problem" id="problem">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">Le monde a changé</h2>
       </div>
-    </div>
-    <div class="intro-card-footer">
-      <span>Lis ce document, <strong>on en discute ensemble lors de notre call</strong></span>
-      <span class="reading-time">⏱ 15 min de lecture</span>
-    </div>
-  </div>
 
-  <!-- LE MONDE A CHANGÉ -->
-  <h2 class="section-title">Le monde a changé</h2>
+      <p class="section-intro">
+        Tu connais le fonctionnement des agences comme Junto. Tu leur confies ton budget Ads, ils te facturent leur expertise. <strong>Mais ce modèle repose sur une organisation qui devient obsolète :</strong>
+      </p>
 
-  <p class="section-intro">Tu connais le fonctionnement des agences comme Junto. Tu leur confies ton budget Ads, ils te facturent leur expertise. <strong>Mais ce modèle repose sur une organisation qui devient obsolète :</strong></p>
-
-  <ul class="problem-list">
-    <li>Un stratège, un créatif, un traffic manager, un data analyst — chacun dans son périmètre</li>
-    <li>Tu paies 4-5 corps de métier pour une seule campagne, chacun facture séparément</li>
-    <li>Tu n'as aucune maîtrise sur ce qui se passe vraiment dans la machine</li>
-  </ul>
-
-  <p class="section-highlight"><strong>Aujourd'hui, l'IA permet de faire autrement.</strong> Pas en remplaçant l'humain, mais en lui donnant les moyens de faire le travail de 5 personnes — avec un contrôle total.</p>
-
-  <!-- COMPARAISON -->
-  <div class="comparison">
-    <div class="comparison-col comparison-before">
-      <div class="comparison-header">
-        <span class="comparison-icon">✗</span>
-        <span class="comparison-title">MODÈLE AGENCE</span>
-      </div>
-      <ul class="comparison-list">
-        <li>Tu briefes, ils reviennent 2 semaines plus tard</li>
-        <li>Tu paies stratège + créatif + traffic + data</li>
-        <li>Tu dépends de leur planning et priorités</li>
-        <li>Un abonnement SaaS par feature</li>
-        <li>Leur méthode, tu t'adaptes</li>
-      </ul>
-    </div>
-    <div class="comparison-col comparison-after">
-      <div class="comparison-header">
-        <span class="comparison-icon">✓</span>
-        <span class="comparison-title">AVEC L'IA + COHORTE</span>
-      </div>
-      <ul class="comparison-list">
-        <li>✓ Tu exprimes, l'IA génère, tu valides</li>
-        <li>✓ Un dev + l'IA font le travail des 4</li>
-        <li>✓ Plusieurs chantiers en parallèle</li>
-        <li>✓ Développé en interne, ça t'appartient</li>
-        <li>✓ <strong>Construit autour de TA vision</strong></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- EXEMPLES CONCRETS -->
-  <h2 class="section-title">Exemples concrets pour Laserel</h2>
-
-  <div class="examples-grid">
-    <div class="example-card">
-      <div class="example-header example-header-1">
-        <span class="example-num">1</span>
-        <span class="example-title">Campagnes Ads automatisées</span>
-      </div>
-      <div class="example-body">
-        <div class="example-before">
-          <div class="example-label before">✗ AVANT</div>
-          <p>Brief Junto → 2 semaines → reporting. 2-4k€/mois de frais d'agence.</p>
-        </div>
-        <div class="example-after">
-          <div class="example-label after">✓ AVEC NOUS</div>
-          <p>L'IA génère créas + copies. Tu reviews sur ton tel, tu valides. Économie : 80%.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="example-card">
-      <div class="example-header example-header-2">
-        <span class="example-num">2</span>
-        <span class="example-title">Gestion des no-shows</span>
-      </div>
-      <div class="example-body">
-        <div class="example-before">
-          <div class="example-label before">✗ AVANT</div>
-          <p>Perte de CA. Relances manuelles par Sandrine ou les praticiennes.</p>
-        </div>
-        <div class="example-after">
-          <div class="example-label after">✓ AVEC NOUS</div>
-          <p>Rappels auto + détection profils à risque + créneaux alternatifs proposés.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="example-card">
-      <div class="example-header example-header-3">
-        <span class="example-num">3</span>
-        <span class="example-title">Chatbot closing 24/7</span>
-      </div>
-      <div class="example-body">
-        <div class="example-before">
-          <div class="example-label before">✗ AVANT</div>
-          <p>Questions perdues le soir/week-end. Praticiennes interrompues pour répondre.</p>
-        </div>
-        <div class="example-after">
-          <div class="example-label after">✓ AVEC NOUS</div>
-          <p>IA expert closing sur le site. Répond, lève objections, prend RDV. 24/7.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="example-card">
-      <div class="example-header example-header-4">
-        <span class="example-num">4</span>
-        <span class="example-title">Onboarding franchisés</span>
-      </div>
-      <div class="example-body">
-        <div class="example-before">
-          <div class="example-label before">✗ AVANT</div>
-          <p>Semaines de calls pour collecter infos, photos, docs. Temps fou.</p>
-        </div>
-        <div class="example-after">
-          <div class="example-label after">✓ AVEC NOUS</div>
-          <p>Agent IA guide étape par étape, collecte, vérifie. Dossier complet auto.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="example-card">
-      <div class="example-header example-header-5">
-        <span class="example-num">5</span>
-        <span class="example-title">Assistant interne Laserel</span>
-      </div>
-      <div class="example-body">
-        <div class="example-before">
-          <div class="example-label before">✗ AVANT</div>
-          <p>Questions récurrentes. Tu répètes les mêmes réponses à Sandrine, équipes.</p>
-        </div>
-        <div class="example-after">
-          <div class="example-label after">✓ AVEC NOUS</div>
-          <p>IA entraînée sur TA vision. Répond avec contexte Laserel, pas du générique.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="example-card">
-      <div class="example-header example-header-6">
-        <span class="example-num">6</span>
-        <span class="example-title">CRM intelligent</span>
-      </div>
-      <div class="example-body">
-        <div class="example-before">
-          <div class="example-label before">✗ AVANT</div>
-          <p>Clients qui passent entre les mailles. Relances oubliées. Pas de scoring.</p>
-        </div>
-        <div class="example-after">
-          <div class="example-label after">✓ AVEC NOUS</div>
-          <p>Suivi auto, relances personnalisées, scoring, historique. Zéro oubli.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="example-card">
-      <div class="example-header example-header-7">
-        <span class="example-num">7</span>
-        <span class="example-title">Contenu marketing auto</span>
-      </div>
-      <div class="example-body">
-        <div class="example-before">
-          <div class="example-label before">✗ AVANT</div>
-          <p>Community manager à payer ou contenu irrégulier. Pas le temps.</p>
-        </div>
-        <div class="example-after">
-          <div class="example-label after">✓ AVEC NOUS</div>
-          <p>Posts, emails, articles générés avec ton positionnement. Tu valides, c'est publié.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="example-card">
-      <div class="example-header example-header-8">
-        <span class="example-num">8</span>
-        <span class="example-title">Dashboard temps réel</span>
-      </div>
-      <div class="example-body">
-        <div class="example-before">
-          <div class="example-label before">✗ AVANT</div>
-          <p>Données éparpillées. Pas de vision globale. Reporting manuel.</p>
-        </div>
-        <div class="example-after">
-          <div class="example-label after">✓ AVEC NOUS</div>
-          <p>Vue stratégique sur ton tel : CA, remplissage, no-shows, perf centres.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- STACK TECHNIQUE -->
-  <h2 class="section-title">La stack technique — Ce qu'on utilise et pourquoi</h2>
-
-  <div class="stack-card stack-anthropic">
-    <div class="stack-header">
-      <div class="stack-logo stack-logo-a">A</div>
-      <div class="stack-info">
-        <h3 class="stack-name">Claude — Anthropic</h3>
-        <p class="stack-desc">Moteur principal pour l'automatisation métier</p>
-      </div>
-      <div class="stack-badge">LEADER CONTEXTE MÉTIER</div>
-    </div>
-    <p class="stack-text"><strong>Pourquoi Anthropic ?</strong> C'est aujourd'hui le leader pour comprendre le contexte métier et la logique business. Là où ChatGPT excelle en conversation générale, Claude est conçu pour des processus complexes et du travail structuré.</p>
-    <div class="stack-features">
-      <div class="stack-feature">
-        <div class="stack-feature-icon">◇</div>
-        <div class="stack-feature-name">Claude.ai</div>
-        <div class="stack-feature-desc">Échanges stratégiques</div>
-      </div>
-      <div class="stack-feature">
-        <div class="stack-feature-icon">◇</div>
-        <div class="stack-feature-name">Claude Code</div>
-        <div class="stack-feature-desc">Dev & automatisations</div>
-      </div>
-      <div class="stack-feature">
-        <div class="stack-feature-icon">E</div>
-        <div class="stack-feature-name">Cowork</div>
-        <div class="stack-feature-desc">Collaboration équipe + IA</div>
-      </div>
-    </div>
-    <div class="stack-tags">
-      <span class="stack-tag">Contenu marketing</span>
-      <span class="stack-tag">Automatisations CRM</span>
-      <span class="stack-tag">Dashboards</span>
-      <span class="stack-tag">Analyse données</span>
-    </div>
-  </div>
-
-  <div class="stack-card stack-openai">
-    <div class="stack-header">
-      <div class="stack-logo stack-logo-o">O</div>
-      <div class="stack-info">
-        <h3 class="stack-name">ChatGPT Ads — OpenAI</h3>
-        <p class="stack-desc">Le nouveau SEO : être visible dans les réponses IA</p>
-      </div>
-      <div class="stack-badge stack-badge-green">GEO - NOUVEAU SEO</div>
-    </div>
-    <p class="stack-text"><strong>Ce qui arrive :</strong> Système pub intégré à ChatGPT. Quand quelqu'un demande "épilation laser Paris ?", résultats sponsorisés dans la conversation. C'est le <strong>GEO</strong> (Generative Engine Optimization) = le nouveau SEO pour les IA.</p>
-    <div class="stack-features">
-      <div class="stack-feature">
-        <div class="stack-feature-icon">◇</div>
-        <div class="stack-feature-name">Contenu IA-ready</div>
-        <div class="stack-feature-desc">Structuré pour les IA</div>
-      </div>
-      <div class="stack-feature">
-        <div class="stack-feature-icon">◇</div>
-        <div class="stack-feature-name">Données optimisées</div>
-        <div class="stack-feature-desc">Schema & metadata</div>
-      </div>
-    </div>
-    <div class="stack-tags">
-      <span class="stack-tag tag-green">SEO nouvelle génération</span>
-      <span class="stack-tag tag-green">Visibilité ChatGPT</span>
-      <span class="stack-tag tag-green">Acquisition organique IA</span>
-    </div>
-  </div>
-
-  <div class="stack-card stack-laserel">
-    <div class="stack-header">
-      <div class="stack-logo stack-logo-l">L</div>
-      <div class="stack-info">
-        <h3 class="stack-name">Modèles privés Laserel</h3>
-        <p class="stack-desc">IA sur-mesure, données 100% sécurisées</p>
-      </div>
-      <div class="stack-badge stack-badge-dark">100% PROPRIÉTAIRE</div>
-    </div>
-    <p class="stack-text"><strong>Le principe :</strong> Au lieu d'IA génériques, on crée des IA spécialisées qui connaissent ton business, tes process, ta vision. Données jamais externalisées.</p>
-    <div class="stack-features">
-      <div class="stack-feature">
-        <div class="stack-feature-name">RAG</div>
-        <div class="stack-feature-desc">L'IA consulte une base Laserel avant de répondre</div>
-      </div>
-      <div class="stack-feature">
-        <div class="stack-feature-name">Fine-tuning</div>
-        <div class="stack-feature-desc">L'IA adopte ton "style" et ta vision</div>
-      </div>
-      <div class="stack-feature">
-        <div class="stack-feature-name">Agents</div>
-        <div class="stack-feature-desc">IA dédiées par fonction</div>
-      </div>
-    </div>
-    <div class="stack-tags">
-      <span class="stack-tag tag-gold">Chatbot closing 24/7</span>
-      <span class="stack-tag tag-gold">Assistant franchisés</span>
-      <span class="stack-tag tag-gold">Assistant business</span>
-      <span class="stack-tag tag-gold">Conversations groupe</span>
-    </div>
-  </div>
-
-  <!-- 2026 -->
-  <h2 class="section-title">2026 — L'année où l'IA devient concrète</h2>
-
-  <p class="section-intro">Tout le monde a entendu parler de l'IA. Depuis 2023, les entreprises ont investi massivement — souvent sans stratégie claire, juste parce que c'était "IA". Résultat : beaucoup de POC abandonnés, d'outils mal intégrés, de promesses non tenues.</p>
-
-  <p class="section-highlight"><strong>2026 marque un tournant.</strong> On a maintenant le recul nécessaire. Les outils sont matures. Les use cases sont identifiés. Et surtout : on sait ce qui marche et ce qui ne marche pas.</p>
-
-  <h3 class="subsection-title">Pourquoi maintenant ?</h3>
-
-  <div class="reasons-grid">
-    <div class="reason-card">
-      <h4 class="reason-title">◆ Les outils sont matures</h4>
-      <p>Claude, GPT-4, les modèles de code — ils ne sont plus en beta. Ils sont stables, documentés, intégrables. On peut construire dessus sans que tout casse à la prochaine mise à jour.</p>
-    </div>
-    <div class="reason-card">
-      <h4 class="reason-title">◆ Les use cases sont clairs</h4>
-      <p>On sait maintenant où l'IA excelle (génération, analyse, automatisation) et où elle échoue (décisions critiques, créativité pure). Plus de promesses floues — des applications concrètes.</p>
-    </div>
-    <div class="reason-card">
-      <h4 class="reason-title">◆ Les méthodes existent</h4>
-      <p>BMAD, RAG, agents spécialisés — ce ne sont plus des buzzwords. Ce sont des approches testées, documentées, reproductibles. On sait comment structurer un projet IA pour qu'il tienne dans le temps.</p>
-    </div>
-    <div class="reason-card">
-      <h4 class="reason-title">◆ Le coût a baissé</h4>
-      <p>Ce qui coûtait 50k€ en 2023 en coûte 5k€ aujourd'hui. Les API sont accessibles, les outils no-code existent, et un développeur augmenté par l'IA peut faire le travail d'une équipe.</p>
-    </div>
-  </div>
-
-  <h3 class="subsection-title">Comment bien le faire</h3>
-
-  <div class="how-to-list">
-    <div class="how-to-item">
-      <div class="how-to-num">1</div>
-      <div class="how-to-content">
-        <strong>Commencer par le problème, pas par l'outil</strong>
-        <p>Pas "on veut de l'IA" mais "on perd 20% de CA sur les no-shows, comment l'IA peut aider ?"</p>
-      </div>
-    </div>
-    <div class="how-to-item">
-      <div class="how-to-num">2</div>
-      <div class="how-to-content">
-        <strong>Structurer dès le départ</strong>
-        <p>Documentation, contexte, méthode. Sans ça, le projet devient inmaintenable en 3 mois.</p>
-      </div>
-    </div>
-    <div class="how-to-item">
-      <div class="how-to-num">3</div>
-      <div class="how-to-content">
-        <strong>Penser évolution</strong>
-        <p>Les outils IA s'améliorent chaque mois. Un système bien construit en bénéficie automatiquement.</p>
-      </div>
-    </div>
-    <div class="how-to-item">
-      <div class="how-to-num">4</div>
-      <div class="how-to-content">
-        <strong>Mesurer le ROI</strong>
-        <p>Pas de vanity metrics. Coûts évités, temps gagné, CA généré. Si ça ne rapporte pas, on arrête.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="positioning-box">
-    <h4 class="positioning-title">Notre positionnement</h4>
-    <p>On s'est formés sur ces outils pendant des mois. On a testé, échoué, appris. On connaît leurs forces et leurs limites. On sait lesquels utiliser, comment les combiner, et pourquoi.</p>
-    <p><strong>Pas de l'IA pour faire de l'IA — de l'IA pour résoudre TES problèmes, de la bonne façon.</strong></p>
-    <div class="stats-row">
-      <div class="stat">
-        <div class="stat-value">85%</div>
-        <div class="stat-label">TÂCHES AUTOMATISABLES</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">3-5x</div>
-        <div class="stat-label">PRODUCTIVITÉ DEV</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">2027</div>
-        <div class="stat-label">AGENTS AUTONOMES</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">J+1</div>
-        <div class="stat-label">CHAQUE JOUR COMPTE</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MÉTHODE BMAD -->
-  <h2 class="section-title">La méthode BMAD — Pourquoi c'est crucial</h2>
-
-  <div class="problem-box">
-    <div class="problem-box-header">
-      <span class="problem-box-icon">⚡</span>
-      <div>
-        <strong>Le problème avec l'IA "brute"</strong>
-        <p class="problem-box-sub">Pourquoi la méthode fait toute la différence</p>
-      </div>
-    </div>
-    <p>L'IA est puissante, mais elle a une limite : <strong>le contexte</strong>. Une IA ne peut traiter qu'une quantité limitée d'informations à la fois (les "tokens"). Sans méthode structurée, l'IA oublie, produit des résultats incohérents, ne comprend pas la vision d'ensemble. <strong>C'est là que la plupart des projets IA échouent.</strong></p>
-  </div>
-
-  <div class="comparison">
-    <div class="comparison-col comparison-before">
-      <div class="comparison-header">
-        <span class="comparison-icon">✗</span>
-        <span class="comparison-title">Sans méthode structurée</span>
-      </div>
-      <ul class="comparison-list">
-        <li>✗ L'IA produit du contenu générique, déconnecté de ta vision</li>
-        <li>✗ Chaque demande repart de zéro, pas de continuité</li>
-        <li>✗ Développements incohérents entre eux</li>
-        <li>✗ Temps perdu à répéter le contexte</li>
-        <li>✗ Projet impossible à maintenir, dette technique</li>
-      </ul>
-    </div>
-    <div class="comparison-col comparison-after">
-      <div class="comparison-header">
-        <span class="comparison-icon">✓</span>
-        <span class="comparison-title">Avec BMAD</span>
-      </div>
-      <ul class="comparison-list">
-        <li>✓ Documentation structurée capture ta vision une fois</li>
-        <li>✓ L'IA a toujours accès au contexte nécessaire</li>
-        <li>✓ Chaque dev s'inscrit dans une cohérence globale</li>
-        <li>✓ On peut paralléliser sans perdre en qualité</li>
-        <li>✓ Projet maintenable et évolutif long terme</li>
-      </ul>
-    </div>
-  </div>
-
-  <h3 class="subsection-title">Les 5 étapes BMAD</h3>
-
-  <div class="bmad-steps">
-    <div class="bmad-step">
-      <div class="bmad-step-letter">B</div>
-      <div class="bmad-step-name">Brief</div>
-      <div class="bmad-step-desc">Capture de ta vision, objectifs, contraintes</div>
-    </div>
-    <div class="bmad-arrow">→</div>
-    <div class="bmad-step">
-      <div class="bmad-step-letter">M</div>
-      <div class="bmad-step-name">Map</div>
-      <div class="bmad-step-desc">Cartographie process et flux existants</div>
-    </div>
-    <div class="bmad-arrow">→</div>
-    <div class="bmad-step">
-      <div class="bmad-step-letter">A</div>
-      <div class="bmad-step-name">Architect</div>
-      <div class="bmad-step-desc">Design de la solution technique</div>
-    </div>
-    <div class="bmad-arrow">→</div>
-    <div class="bmad-step">
-      <div class="bmad-step-letter">D</div>
-      <div class="bmad-step-name">Develop</div>
-      <div class="bmad-step-desc">Construction itérative avec feedback</div>
-    </div>
-    <div class="bmad-arrow">→</div>
-    <div class="bmad-step">
-      <div class="bmad-step-letter">+</div>
-      <div class="bmad-step-name">Deploy</div>
-      <div class="bmad-step-desc">Mise en prod et monitoring</div>
-    </div>
-  </div>
-
-  <div class="info-box">
-    <div class="info-box-icon">ℹ</div>
-    <div>
-      <strong>Pourquoi ça change tout</strong>
-      <p>Avec BMAD, on utilise l'IA à 100% de son potentiel. Le contexte est toujours disponible, structuré, à jour. L'IA devient un vrai collaborateur qui comprend Laserel. Et surtout : quand les outils IA s'améliorent (et ils s'améliorent vite), tout le système en bénéficie automatiquement. C'est <strong>antifragile</strong> : plus ça évolue, plus le système devient performant.</p>
-    </div>
-  </div>
-
-  <!-- QUI FAIT QUOI -->
-  <h2 class="section-title">Qui fait quoi</h2>
-
-  <div class="roles-grid">
-    <div class="role-card role-m">
-      <div class="role-letter">M</div>
-      <div class="role-name">Toi (Mickaël)</div>
-      <div class="role-desc">Vision, validation stratégique, contrôle qualité business. Chef d'orchestre.</div>
-    </div>
-    <div class="role-card role-c">
-      <div class="role-letter">C</div>
-      <div class="role-name">Nous (Cohorte)</div>
-      <div class="role-desc">Construction système, qualité technique, pilotage IA. Tes mains tech.</div>
-    </div>
-    <div class="role-card role-ia">
-      <div class="role-letter">IA</div>
-      <div class="role-name">L'IA</div>
-      <div class="role-desc">Exécution : génère, analyse, automatise. Toujours sous contrôle humain.</div>
-    </div>
-    <div class="role-card role-e">
-      <div class="role-letter">E</div>
-      <div class="role-name">Équipes</div>
-      <div class="role-desc">Utilisent les outils, remontent besoins, ajustent dans leur scope.</div>
-    </div>
-  </div>
-
-  <!-- PROCESS -->
-  <h2 class="section-title">Comment on avance ensemble</h2>
-
-  <div class="process-section">
-    <div class="process-step">
-      <div class="process-step-header">
-        <div class="process-num">0</div>
-        <div class="process-info">
-          <div class="process-title">Call découverte</div>
-          <div class="process-subtitle">30-60 min pour aligner nos visions</div>
-        </div>
-        <div class="process-badge">Gratuit</div>
-      </div>
-      <div class="process-step-body">
-        <p class="process-desc">Tu lis ce document, on se parle. Je réponds à tes questions, on précise ce qui fait sens pour Laserel, on discute de l'adaptation à ton contexte. Objectif : que tu aies une vision claire de ce qu'on peut faire ensemble.</p>
-        <div class="process-details">
-          <div class="process-detail">
-            <div class="process-detail-label">CE QU'ON FAIT</div>
-            <div class="process-detail-value">Échange stratégique, questions/réponses</div>
+      <div class="problem-list">
+        <div class="problem-item">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
           </div>
-          <div class="process-detail">
-            <div class="process-detail-label">TU REPARS AVEC</div>
-            <div class="process-detail-value">Vision claire, prochaines étapes définies</div>
+          <p>Un stratège, un créatif, un traffic manager, un data analyst — <strong>chacun dans son périmètre</strong></p>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <p>Tu paies <strong>4-5 corps de métier</strong> pour une seule campagne, chacun facture séparément</p>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <p>Tu n'as <strong>aucune maîtrise</strong> sur ce qui se passe vraiment dans la machine</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <p><strong>Aujourd'hui, l'IA permet de faire autrement.</strong> Pas en remplaçant l'humain, mais en lui donnant les moyens de faire le travail de 5 personnes — avec un contrôle total.</p>
+      </div>
+
+      <!-- Comparison -->
+      <div class="comparison">
+        <div class="comparison-card comparison-before">
+          <div class="comparison-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M15 9l-6 6M9 9l6 6"/>
+            </svg>
+            <span>Modèle agence</span>
+          </div>
+          <ul class="comparison-list">
+            <li>Tu briefes, ils reviennent 2 semaines plus tard</li>
+            <li>Tu paies stratège + créatif + traffic + data</li>
+            <li>Tu dépends de leur planning et priorités</li>
+            <li>Un abonnement SaaS par feature</li>
+            <li>Leur méthode, tu t'adaptes</li>
+          </ul>
+        </div>
+        <div class="comparison-card comparison-after">
+          <div class="comparison-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Avec l'IA + Cohorte</span>
+          </div>
+          <ul class="comparison-list">
+            <li>Tu exprimes, l'IA génère, tu valides</li>
+            <li>Un dev + l'IA font le travail des 4</li>
+            <li>Plusieurs chantiers en parallèle</li>
+            <li>Développé en interne, ça t'appartient</li>
+            <li><strong>Construit autour de TA vision</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section class="section section-examples" id="examples">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Exemples concrets pour Laserel</h2>
+      </div>
+
+      <div class="examples-grid">
+        <!-- Example 1 -->
+        <div class="example-card" data-color="green">
+          <div class="example-number">01</div>
+          <div class="example-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="example-title">Campagnes Ads automatisées</h3>
+          <div class="example-comparison">
+            <div class="example-before">
+              <span class="example-label">Avant</span>
+              <p>Brief Junto → 2 semaines → reporting. 2-4k€/mois de frais d'agence.</p>
+            </div>
+            <div class="example-after">
+              <span class="example-label">Avec nous</span>
+              <p>L'IA génère créas + copies. Tu reviews sur ton tel, tu valides. <strong>Économie : 80%.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="example-card" data-color="green">
+          <div class="example-number">02</div>
+          <div class="example-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              <path d="M14.05 2a9 9 0 0 1 8 7.94"/>
+              <path d="M14.05 6A5 5 0 0 1 18 10"/>
+            </svg>
+          </div>
+          <h3 class="example-title">Gestion des no-shows</h3>
+          <div class="example-comparison">
+            <div class="example-before">
+              <span class="example-label">Avant</span>
+              <p>Perte de CA. Relances manuelles par Sandrine ou les praticiennes.</p>
+            </div>
+            <div class="example-after">
+              <span class="example-label">Avec nous</span>
+              <p>Rappels auto + détection profils à risque + créneaux alternatifs proposés.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="example-card" data-color="orange">
+          <div class="example-number">03</div>
+          <div class="example-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3 class="example-title">Chatbot closing 24/7</h3>
+          <div class="example-comparison">
+            <div class="example-before">
+              <span class="example-label">Avant</span>
+              <p>Questions perdues le soir/week-end. Praticiennes interrompues pour répondre.</p>
+            </div>
+            <div class="example-after">
+              <span class="example-label">Avec nous</span>
+              <p>IA expert closing sur le site. Répond, lève objections, prend RDV. <strong>24/7.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="example-card" data-color="orange">
+          <div class="example-number">04</div>
+          <div class="example-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="8.5" cy="7" r="4"/>
+              <line x1="20" y1="8" x2="20" y2="14"/>
+              <line x1="23" y1="11" x2="17" y2="11"/>
+            </svg>
+          </div>
+          <h3 class="example-title">Onboarding franchisés</h3>
+          <div class="example-comparison">
+            <div class="example-before">
+              <span class="example-label">Avant</span>
+              <p>Semaines de calls pour collecter infos, photos, docs. Temps fou.</p>
+            </div>
+            <div class="example-after">
+              <span class="example-label">Avec nous</span>
+              <p>Agent IA guide étape par étape, collecte, vérifie. <strong>Dossier complet auto.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 5 -->
+        <div class="example-card" data-color="red">
+          <div class="example-number">05</div>
+          <div class="example-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="example-title">Assistant interne Laserel</h3>
+          <div class="example-comparison">
+            <div class="example-before">
+              <span class="example-label">Avant</span>
+              <p>Questions récurrentes. Tu répètes les mêmes réponses à Sandrine, équipes.</p>
+            </div>
+            <div class="example-after">
+              <span class="example-label">Avec nous</span>
+              <p>IA entraînée sur TA vision. Répond avec contexte Laserel, pas du générique.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 6 -->
+        <div class="example-card" data-color="red">
+          <div class="example-number">06</div>
+          <div class="example-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="example-title">CRM intelligent</h3>
+          <div class="example-comparison">
+            <div class="example-before">
+              <span class="example-label">Avant</span>
+              <p>Clients qui passent entre les mailles. Relances oubliées. Pas de scoring.</p>
+            </div>
+            <div class="example-after">
+              <span class="example-label">Avec nous</span>
+              <p>Suivi auto, relances personnalisées, scoring, historique. <strong>Zéro oubli.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 7 -->
+        <div class="example-card" data-color="purple">
+          <div class="example-number">07</div>
+          <div class="example-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+          </div>
+          <h3 class="example-title">Contenu marketing auto</h3>
+          <div class="example-comparison">
+            <div class="example-before">
+              <span class="example-label">Avant</span>
+              <p>Community manager à payer ou contenu irrégulier. Pas le temps.</p>
+            </div>
+            <div class="example-after">
+              <span class="example-label">Avec nous</span>
+              <p>Posts, emails, articles générés avec ton positionnement. Tu valides, c'est publié.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 8 -->
+        <div class="example-card" data-color="purple">
+          <div class="example-number">08</div>
+          <div class="example-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="example-title">Dashboard temps réel</h3>
+          <div class="example-comparison">
+            <div class="example-before">
+              <span class="example-label">Avant</span>
+              <p>Données éparpillées. Pas de vision globale. Reporting manuel.</p>
+            </div>
+            <div class="example-after">
+              <span class="example-label">Avec nous</span>
+              <p>Vue stratégique sur ton tel : CA, remplissage, no-shows, perf centres.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="process-step">
-      <div class="process-step-header">
-        <div class="process-num">1</div>
-        <div class="process-info">
-          <div class="process-title">Audit BMAD</div>
-          <div class="process-subtitle">2-3h ensemble pour cartographier tout</div>
-        </div>
-        <div class="process-badge process-badge-purple">500€</div>
+  <!-- STACK -->
+  <section class="section section-stack" id="stack">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">La stack technique</h2>
+        <p class="section-subtitle">Ce qu'on utilise et pourquoi</p>
       </div>
-      <div class="process-step-body">
-        <p class="process-desc">Je cartographie : outils actuels, coûts (agences, abonnements, temps), process, vision. Ensuite, je décline avec l'IA en document de cadrage complet + roadmap chiffrée. <strong>Tu repars avec le package même si tu décides de ne pas continuer</strong> — tu pourras l'utiliser avec une autre équipe.</p>
-        <div class="process-details">
-          <div class="process-detail">
-            <div class="process-detail-label">LIVRABLE</div>
-            <div class="process-detail-value">Document de cadrage + Roadmap complète</div>
-          </div>
-          <div class="process-detail">
-            <div class="process-detail-label">TU GARDES TOUT</div>
-            <div class="process-detail-value">Documentation, analyses, recommandations</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="process-step">
-      <div class="process-step-header">
-        <div class="process-num">2</div>
-        <div class="process-info">
-          <div class="process-title">Construction mensuelle</div>
-          <div class="process-subtitle">On construit l'écosystème brique par brique</div>
-        </div>
-        <div class="process-badge process-badge-green">1 500€/mois</div>
-      </div>
-      <div class="process-step-body">
-        <p class="process-desc">MRR mensuel, sans engagement. On priorise ce qui génère le plus de valeur. 1 call stratégique par semaine inclus. <strong>Tu peux arrêter quand tu veux</strong> — on te fournit tout ce qu'on a construit + documentation complète.</p>
-        <div class="process-details">
-          <div class="process-detail">
-            <div class="process-detail-label">INCLUS</div>
-            <div class="process-detail-value">Dev + maintenance + 1 call/semaine</div>
+      <div class="stack-cards">
+        <!-- Claude -->
+        <div class="stack-card stack-claude">
+          <div class="stack-card-header">
+            <div class="stack-logo">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="stack-info">
+              <h3>Claude — Anthropic</h3>
+              <p>Moteur principal pour l'automatisation métier</p>
+            </div>
+            <span class="stack-badge">Leader contexte métier</span>
           </div>
-          <div class="process-detail">
-            <div class="process-detail-label">SANS ENGAGEMENT</div>
-            <div class="process-detail-value">Arrêt possible à tout moment</div>
+          <div class="stack-card-body">
+            <p><strong>Pourquoi Anthropic ?</strong> C'est aujourd'hui le leader pour comprendre le contexte métier et la logique business. Là où ChatGPT excelle en conversation générale, Claude est conçu pour des processus complexes et du travail structuré.</p>
+            <div class="stack-features">
+              <div class="stack-feature">
+                <div class="stack-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </div>
+                <span>Claude.ai</span>
+                <small>Échanges stratégiques</small>
+              </div>
+              <div class="stack-feature">
+                <div class="stack-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                </div>
+                <span>Claude Code</span>
+                <small>Dev & automatisations</small>
+              </div>
+              <div class="stack-feature">
+                <div class="stack-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <span>Cowork</span>
+                <small>Collaboration équipe + IA</small>
+              </div>
+            </div>
+            <div class="stack-tags">
+              <span class="stack-tag">Contenu marketing</span>
+              <span class="stack-tag">Automatisations CRM</span>
+              <span class="stack-tag">Dashboards</span>
+              <span class="stack-tag">Analyse données</span>
+            </div>
           </div>
         </div>
-        <div class="process-examples">
-          <span class="process-example">Tunnel conversion RDV</span>
-          <span class="process-example">Stratégie CRM</span>
-          <span class="process-example">Chatbot closing</span>
-          <span class="process-example">Dashboard pilotage</span>
-          <span class="process-example">Automatisations no-shows</span>
-        </div>
-      </div>
-    </div>
 
-    <div class="process-step">
-      <div class="process-step-header">
-        <div class="process-num">3</div>
-        <div class="process-info">
-          <div class="process-title">Dashboard & ROI</div>
-          <div class="process-subtitle">Tu vois l'impact en temps réel</div>
-        </div>
-        <div class="process-badge">Inclus</div>
-      </div>
-      <div class="process-step-body">
-        <p class="process-desc">Tu vois tout sur ton dashboard : tâches automatisées, coûts évités, temps gagné, no-shows réduits, CA généré. On mesure ensemble le ROI. Si ça ne génère pas de valeur, on ajuste ou on arrête.</p>
-        <div class="process-details">
-          <div class="process-detail">
-            <div class="process-detail-label">MÉTRIQUES</div>
-            <div class="process-detail-value">Coûts évités, temps gagné, CA</div>
+        <!-- ChatGPT Ads -->
+        <div class="stack-card stack-openai">
+          <div class="stack-card-header">
+            <div class="stack-logo">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </div>
+            <div class="stack-info">
+              <h3>ChatGPT Ads — OpenAI</h3>
+              <p>Le nouveau SEO : être visible dans les réponses IA</p>
+            </div>
+            <span class="stack-badge stack-badge-green">GEO - Nouveau SEO</span>
           </div>
-          <div class="process-detail">
-            <div class="process-detail-label">PRINCIPE</div>
-            <div class="process-detail-value">ROI mesurable et transparent</div>
+          <div class="stack-card-body">
+            <p><strong>Ce qui arrive :</strong> Système pub intégré à ChatGPT. Quand quelqu'un demande "épilation laser Paris ?", résultats sponsorisés dans la conversation. C'est le <strong>GEO</strong> (Generative Engine Optimization) = le nouveau SEO pour les IA.</p>
+            <div class="stack-features">
+              <div class="stack-feature">
+                <div class="stack-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                </div>
+                <span>Contenu IA-ready</span>
+                <small>Structuré pour les IA</small>
+              </div>
+              <div class="stack-feature">
+                <div class="stack-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                  </svg>
+                </div>
+                <span>Données optimisées</span>
+                <small>Schema & metadata</small>
+              </div>
+            </div>
+            <div class="stack-tags">
+              <span class="stack-tag tag-green">SEO nouvelle génération</span>
+              <span class="stack-tag tag-green">Visibilité ChatGPT</span>
+              <span class="stack-tag tag-green">Acquisition organique IA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modèles privés -->
+        <div class="stack-card stack-laserel">
+          <div class="stack-card-header">
+            <div class="stack-logo">
+              <span>L</span>
+            </div>
+            <div class="stack-info">
+              <h3>Modèles privés Laserel</h3>
+              <p>IA sur-mesure, données 100% sécurisées</p>
+            </div>
+            <span class="stack-badge stack-badge-dark">100% Propriétaire</span>
+          </div>
+          <div class="stack-card-body">
+            <p><strong>Le principe :</strong> Au lieu d'IA génériques, on crée des IA spécialisées qui connaissent ton business, tes process, ta vision. Données jamais externalisées.</p>
+            <div class="stack-features">
+              <div class="stack-feature">
+                <div class="stack-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  </svg>
+                </div>
+                <span>RAG</span>
+                <small>Consulte une base Laserel</small>
+              </div>
+              <div class="stack-feature">
+                <div class="stack-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 20h9"/>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                  </svg>
+                </div>
+                <span>Fine-tuning</span>
+                <small>Adopte ton "style"</small>
+              </div>
+              <div class="stack-feature">
+                <div class="stack-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/>
+                    <line x1="9" y1="21" x2="9" y2="9"/>
+                  </svg>
+                </div>
+                <span>Agents</span>
+                <small>IA dédiées par fonction</small>
+              </div>
+            </div>
+            <div class="stack-tags">
+              <span class="stack-tag tag-gold">Chatbot closing 24/7</span>
+              <span class="stack-tag tag-gold">Assistant franchisés</span>
+              <span class="stack-tag tag-gold">Assistant business</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- GUARANTEES -->
-  <h2 class="section-title">Nos garanties</h2>
-
-  <div class="guarantees">
-    <div class="guarantee">
-      <div class="guarantee-icon">○</div>
-      <h4>Sans engagement</h4>
-      <p>Tu peux arrêter quand tu veux. On te fournit tout ce qu'on a construit + la documentation complète. Tu restes propriétaire.</p>
-    </div>
-    <div class="guarantee">
-      <div class="guarantee-icon">○</div>
-      <h4>Transparence totale</h4>
-      <p>Tu vois tout : le code, les process, les données. Rien n'est opaque. On t'explique ce qu'on fait et pourquoi.</p>
-    </div>
-    <div class="guarantee">
-      <div class="guarantee-icon">○</div>
-      <h4>ROI mesurable</h4>
-      <p>Dashboard temps réel : coûts évités, temps gagné, CA généré. Tu vois l'impact concret de ce qu'on construit.</p>
-    </div>
-  </div>
+  </section>
 
   <!-- WHY NOW -->
-  <div class="why-now-box">
-    <div class="why-now-header">
-      <span class="why-now-icon">⚡</span>
-      <span class="why-now-title">Pourquoi maintenant — et pourquoi bien le faire</span>
-    </div>
-    <div class="why-now-body">
-      <div class="why-now-problem">
-        <div class="why-now-label problem">✗ AVANT 2026</div>
-        <p>Tout le monde mettait du budget dans l'IA sans stratégie. Résultat : des POC abandonnés, des outils mal intégrés, de l'argent perdu.</p>
+  <section class="section section-why-now" id="why-now">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">2026 — L'année où l'IA devient concrète</h2>
       </div>
-      <div class="why-now-solution">
-        <div class="why-now-label solution">✓ MAINTENANT</div>
-        <p><strong>On a le recul.</strong> On sait ce qui marche. Les outils sont matures, les méthodes existent, les use cases sont clairs.</p>
-      </div>
-      <div class="why-now-key">
-        <p><strong>Y aller maintenant, c'est prendre un coup d'avance.</strong></p>
-        <p>Mais y aller <em>n'importe comment</em>, c'est perdre du temps et de l'argent.</p>
-      </div>
-      <div class="why-now-approach">
-        <div class="approach-pill">Infrastructures robustes dès le départ</div>
-        <div class="approach-pill">Méthodes qui évitent la dette technique</div>
-        <div class="approach-pill">Outils pensés pour évoluer</div>
-      </div>
-      <div class="why-now-bottom">
-        <p>Plus le projet grossit, plus on devient pointu. Et quand les outils s'améliorent — <strong>tout le système en bénéficie automatiquement.</strong></p>
-      </div>
-    </div>
-  </div>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="cta-header">
-      <div class="cta-header-left">
-        <span class="cta-logo-l">Laserel</span>
-        <span class="cta-x">×</span>
-        <span class="cta-logo-c">Cohorte</span>
-      </div>
-      <div class="cta-badge">Prochaine étape</div>
-    </div>
-    <div class="cta-body">
-      <h2 class="cta-headline">Notre call : mardi 3 février 2026</h2>
-      <p class="cta-text">On a déjà bloqué le créneau. Prépare tes questions, on en discute ensemble.</p>
-      <div class="cta-actions">
-        <div class="cta-action">
-          <div class="cta-action-icon">◇</div>
-          <div class="cta-action-content">
-            <div class="cta-action-title">Mardi 3 février</div>
-            <div class="cta-action-desc">Call de 30-60 minutes pour répondre à toutes tes questions</div>
-          </div>
+      <p class="section-intro">
+        Tout le monde a entendu parler de l'IA. Depuis 2023, les entreprises ont investi massivement — souvent sans stratégie claire. Résultat : beaucoup de POC abandonnés, d'outils mal intégrés, de promesses non tenues.
+      </p>
+
+      <div class="highlight-box highlight-box-purple">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
         </div>
-        <div class="cta-action">
-          <div class="cta-action-icon">◇</div>
-          <div class="cta-action-content">
-            <div class="cta-action-title">M'envoyer tes questions</div>
-            <div class="cta-action-desc">Je prépare les réponses en amont pour un call efficace</div>
+        <p><strong>2026 marque un tournant.</strong> On a maintenant le recul nécessaire. Les outils sont matures. Les use cases sont identifiés. Et surtout : on sait ce qui marche et ce qui ne marche pas.</p>
+      </div>
+
+      <h3 class="subsection-title">Pourquoi maintenant ?</h3>
+
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
           </div>
+          <h4>Les outils sont matures</h4>
+          <p>Claude, GPT-4, les modèles de code — ils ne sont plus en beta. Ils sont stables, documentés, intégrables.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h4>Les use cases sont clairs</h4>
+          <p>On sait maintenant où l'IA excelle et où elle échoue. Plus de promesses floues — des applications concrètes.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h4>Les méthodes existent</h4>
+          <p>BMAD, RAG, agents spécialisés — des approches testées, documentées, reproductibles.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h4>Le coût a baissé</h4>
+          <p>Ce qui coûtait 50k€ en 2023 en coûte 5k€ aujourd'hui. Un dev augmenté par l'IA peut faire le travail d'une équipe.</p>
         </div>
       </div>
-    </div>
-    <div class="cta-footer">
-      <p class="cta-footer-text">À très vite — <strong>n'hésite pas à noter tes retours et questions</strong> pour qu'on en discute</p>
+
+      <!-- Stats -->
+      <div class="stats-banner">
+        <div class="stat-item">
+          <span class="stat-value">85%</span>
+          <span class="stat-label">Tâches automatisables</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">3-5x</span>
+          <span class="stat-label">Productivité dev</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">2027</span>
+          <span class="stat-label">Agents autonomes</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">J+1</span>
+          <span class="stat-label">Chaque jour compte</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-brand">Antoine · Cohorte Agency</div>
-    <div class="footer-sub">Automatisation & IA pour PME</div>
-  </footer>
+  <!-- METHOD (BMAD) -->
+  <section class="section section-method" id="method">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">La méthode BMAD</h2>
+        <p class="section-subtitle">Pourquoi c'est crucial</p>
+      </div>
 
-</div>
+      <div class="problem-box">
+        <div class="problem-box-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <div class="problem-box-content">
+          <h4>Le problème avec l'IA "brute"</h4>
+          <p>L'IA est puissante, mais elle a une limite : <strong>le contexte</strong>. Une IA ne peut traiter qu'une quantité limitée d'informations à la fois. Sans méthode structurée, l'IA oublie, produit des résultats incohérents. <strong>C'est là que la plupart des projets IA échouent.</strong></p>
+        </div>
+      </div>
+
+      <!-- BMAD Steps -->
+      <div class="bmad-steps">
+        <div class="bmad-step">
+          <div class="bmad-letter">B</div>
+          <div class="bmad-content">
+            <h4>Brief</h4>
+            <p>Capture de ta vision, objectifs, contraintes</p>
+          </div>
+        </div>
+        <div class="bmad-connector"></div>
+        <div class="bmad-step">
+          <div class="bmad-letter">M</div>
+          <div class="bmad-content">
+            <h4>Map</h4>
+            <p>Cartographie process et flux existants</p>
+          </div>
+        </div>
+        <div class="bmad-connector"></div>
+        <div class="bmad-step">
+          <div class="bmad-letter">A</div>
+          <div class="bmad-content">
+            <h4>Architect</h4>
+            <p>Design de la solution technique</p>
+          </div>
+        </div>
+        <div class="bmad-connector"></div>
+        <div class="bmad-step">
+          <div class="bmad-letter">D</div>
+          <div class="bmad-content">
+            <h4>Develop</h4>
+            <p>Construction itérative avec feedback</p>
+          </div>
+        </div>
+        <div class="bmad-connector"></div>
+        <div class="bmad-step">
+          <div class="bmad-letter">+</div>
+          <div class="bmad-content">
+            <h4>Deploy</h4>
+            <p>Mise en prod et monitoring</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+        </div>
+        <div class="info-box-content">
+          <h4>Pourquoi ça change tout</h4>
+          <p>Avec BMAD, on utilise l'IA à 100% de son potentiel. Le contexte est toujours disponible, structuré, à jour. L'IA devient un vrai collaborateur qui comprend Laserel. Et surtout : quand les outils IA s'améliorent, <strong>tout le système en bénéficie automatiquement</strong>. C'est antifragile.</p>
+        </div>
+      </div>
+
+      <!-- Roles -->
+      <h3 class="subsection-title">Qui fait quoi</h3>
+
+      <div class="roles-grid">
+        <div class="role-card">
+          <div class="role-avatar">
+            <img src="https://api.dicebear.com/7.x/initials/svg?seed=M&backgroundColor=7c3aed&textColor=ffffff" alt="M" />
+          </div>
+          <h4>Toi (Mickaël)</h4>
+          <p>Vision, validation stratégique, contrôle qualité business. Chef d'orchestre.</p>
+        </div>
+        <div class="role-card">
+          <div class="role-avatar">
+            <img src="https://api.dicebear.com/7.x/initials/svg?seed=C&backgroundColor=3b82f6&textColor=ffffff" alt="C" />
+          </div>
+          <h4>Nous (Cohorte)</h4>
+          <p>Construction système, qualité technique, pilotage IA. Tes mains tech.</p>
+        </div>
+        <div class="role-card">
+          <div class="role-avatar role-avatar-ai">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h4>L'IA</h4>
+          <p>Exécution : génère, analyse, automatise. Toujours sous contrôle humain.</p>
+        </div>
+        <div class="role-card">
+          <div class="role-avatar">
+            <img src="https://api.dicebear.com/7.x/initials/svg?seed=E&backgroundColor=f59e0b&textColor=ffffff" alt="E" />
+          </div>
+          <h4>Équipes</h4>
+          <p>Utilisent les outils, remontent besoins, ajustent dans leur scope.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section section-process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2 class="section-title">Comment on avance ensemble</h2>
+      </div>
+
+      <div class="process-timeline">
+        <!-- Step 0 -->
+        <div class="process-step">
+          <div class="process-step-marker">
+            <span class="process-step-number">0</span>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-header">
+              <h4>Call découverte</h4>
+              <span class="process-badge">Gratuit</span>
+            </div>
+            <p class="process-step-subtitle">30-60 min pour aligner nos visions</p>
+            <p>Tu lis ce document, on se parle. Je réponds à tes questions, on précise ce qui fait sens pour Laserel. Objectif : que tu aies une vision claire de ce qu'on peut faire ensemble.</p>
+            <div class="process-step-details">
+              <div class="process-detail">
+                <span class="process-detail-label">Ce qu'on fait</span>
+                <span class="process-detail-value">Échange stratégique, Q&A</span>
+              </div>
+              <div class="process-detail">
+                <span class="process-detail-label">Tu repars avec</span>
+                <span class="process-detail-value">Vision claire, next steps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="process-step">
+          <div class="process-step-marker">
+            <span class="process-step-number">1</span>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-header">
+              <h4>Audit BMAD</h4>
+              <span class="process-badge process-badge-purple">500€</span>
+            </div>
+            <p class="process-step-subtitle">2-3h ensemble pour cartographier tout</p>
+            <p>Je cartographie : outils actuels, coûts, process, vision. Ensuite, je décline avec l'IA en document de cadrage complet + roadmap chiffrée. <strong>Tu repars avec le package même si tu décides de ne pas continuer.</strong></p>
+            <div class="process-step-details">
+              <div class="process-detail">
+                <span class="process-detail-label">Livrable</span>
+                <span class="process-detail-value">Document cadrage + Roadmap</span>
+              </div>
+              <div class="process-detail">
+                <span class="process-detail-label">Tu gardes tout</span>
+                <span class="process-detail-value">Doc, analyses, recommandations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-step">
+          <div class="process-step-marker">
+            <span class="process-step-number">2</span>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-header">
+              <h4>Construction mensuelle</h4>
+              <span class="process-badge process-badge-green">1 500€/mois</span>
+            </div>
+            <p class="process-step-subtitle">On construit l'écosystème brique par brique</p>
+            <p>MRR mensuel, sans engagement. On priorise ce qui génère le plus de valeur. 1 call stratégique par semaine inclus. <strong>Tu peux arrêter quand tu veux</strong> — on te fournit tout + documentation complète.</p>
+            <div class="process-step-details">
+              <div class="process-detail">
+                <span class="process-detail-label">Inclus</span>
+                <span class="process-detail-value">Dev + maintenance + 1 call/semaine</span>
+              </div>
+              <div class="process-detail">
+                <span class="process-detail-label">Sans engagement</span>
+                <span class="process-detail-value">Arrêt possible à tout moment</span>
+              </div>
+            </div>
+            <div class="process-tags">
+              <span class="process-tag">Tunnel conversion</span>
+              <span class="process-tag">Stratégie CRM</span>
+              <span class="process-tag">Chatbot closing</span>
+              <span class="process-tag">Dashboard</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-step">
+          <div class="process-step-marker">
+            <span class="process-step-number">3</span>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-header">
+              <h4>Dashboard & ROI</h4>
+              <span class="process-badge">Inclus</span>
+            </div>
+            <p class="process-step-subtitle">Tu vois l'impact en temps réel</p>
+            <p>Tu vois tout sur ton dashboard : tâches automatisées, coûts évités, temps gagné, no-shows réduits, CA généré. On mesure ensemble le ROI. Si ça ne génère pas de valeur, on ajuste ou on arrête.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guarantees -->
+      <div class="guarantees">
+        <div class="guarantee">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+            </svg>
+          </div>
+          <h4>Sans engagement</h4>
+          <p>Tu peux arrêter quand tu veux. On te fournit tout ce qu'on a construit + documentation complète.</p>
+        </div>
+        <div class="guarantee">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+          </div>
+          <h4>Transparence totale</h4>
+          <p>Tu vois tout : le code, les process, les données. On t'explique ce qu'on fait et pourquoi.</p>
+        </div>
+        <div class="guarantee">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h4>ROI mesurable</h4>
+          <p>Dashboard temps réel : coûts évités, temps gagné, CA généré. Tu vois l'impact concret.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-cta" id="cta">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-header">
+          <div class="cta-brands">
+            <span class="cta-brand-l">Laserel</span>
+            <span class="cta-x">×</span>
+            <span class="cta-brand-c">Cohorte</span>
+          </div>
+          <span class="cta-badge">Prochaine étape</span>
+        </div>
+
+        <div class="cta-body">
+          <h2 class="cta-title">Notre call :<br><span class="gradient-text">Mardi 3 février 2026</span></h2>
+          <p class="cta-text">On a déjà bloqué le créneau. Prépare tes questions, on en discute ensemble.</p>
+
+          <div class="cta-actions">
+            <div class="cta-action">
+              <div class="cta-action-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </div>
+              <div class="cta-action-content">
+                <strong>Mardi 3 février</strong>
+                <span>Call de 30-60 min pour répondre à toutes tes questions</span>
+              </div>
+            </div>
+            <div class="cta-action">
+              <div class="cta-action-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <div class="cta-action-content">
+                <strong>M'envoyer tes questions</strong>
+                <span>Je prépare les réponses en amont pour un call efficace</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-footer">
+          <p>À très vite — <strong>n'hésite pas à noter tes retours et questions</strong> pour qu'on en discute</p>
+        </div>
+      </div>
+
+      <!-- Author -->
+      <div class="author-card">
+        <div class="author-avatar">
+          <img src="https://api.dicebear.com/7.x/initials/svg?seed=AT&backgroundColor=7c3aed&textColor=ffffff" alt="AT" />
+        </div>
+        <div class="author-info">
+          <span class="author-name">Antoine Thomas</span>
+          <span class="author-role">Cohorte Agency</span>
+          <span class="author-tagline">Automatisation & IA pour PME</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <!-- CHATBOT WIDGET -->
 <div class="chat-widget" id="chat-widget">
   <button class="chat-button" id="chat-button">
-    <span class="chat-button-icon">💬</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
   </button>
 </div>
 
 <div class="chat-panel" id="chat-panel">
   <div class="chat-header">
-    <div>
-      <div class="chat-header-title">Assistant Laserel × Cohorte</div>
-      <div class="chat-header-sub">Une question sur la proposition ?</div>
+    <div class="chat-header-info">
+      <div class="chat-header-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="chat-header-title">Assistant Laserel</div>
+        <div class="chat-header-sub">Une question sur la proposition ?</div>
+      </div>
     </div>
-    <button class="chat-close" id="chat-close">✕</button>
+    <button class="chat-close" id="chat-close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
   </div>
   <div class="chat-messages" id="chat-messages">
     <div class="chat-message bot">
-      <p>Salut Mickaël ! 👋</p>
+      <p>Salut Mickaël !</p>
       <p>Je suis là pour répondre à tes questions sur cette proposition. N'hésite pas à me demander des précisions sur n'importe quelle section.</p>
       <p>Si ta question sort du cadre de ce document, je la note pour qu'Antoine puisse y répondre lors de votre call mardi.</p>
     </div>
   </div>
   <div class="chat-input-container">
     <input type="text" class="chat-input" id="chat-input" placeholder="Pose ta question ici...">
-    <button class="chat-send" id="chat-send">→</button>
+    <button class="chat-send" id="chat-send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="22" y1="2" x2="11" y2="13"/>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+    </button>
   </div>
 </div>
 
 <script src="chat.js"></script>
+<script src="animations.js"></script>
 </body>
 </html>
