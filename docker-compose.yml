@@ -1,0 +1,21 @@
+services:
+  laserel-demo:
+    build: .
+    container_name: laserel-demo
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    networks:
+      - traefik-public
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.laserel.rule=Host(`laserel.cohorte.fr`)"
+      - "traefik.http.routers.laserel.entrypoints=websecure"
+      - "traefik.http.routers.laserel.tls.certresolver=letsencrypt"
+      - "traefik.http.services.laserel.loadbalancer.server.port=3000"
+
+networks:
+  traefik-public:
+    external: true
