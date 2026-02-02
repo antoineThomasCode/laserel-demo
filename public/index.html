@@ -23,12 +23,16 @@
       <span class="brand-cohorte">COHORTE</span>
     </div>
     <div class="header-right">
-      <div class="header-progress" id="header-progress">
+      <div class="header-progress">
         <span class="progress-text">0%</span>
         <div class="progress-ring">
           <svg viewBox="0 0 36 36">
-            <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-            <path class="progress-ring-fill" id="progress-ring-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="progress-ring-bg"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none" stroke-width="3"/>
+            <path class="progress-ring-fill"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none" stroke-width="3" stroke-dasharray="0, 100"/>
           </svg>
         </div>
       </div>
@@ -36,43 +40,22 @@
   </div>
 </header>
 
-<!-- SIDE NAV (Desktop) -->
-<nav class="side-nav" id="side-nav">
-  <div class="side-nav-inner">
-    <a href="#hero" class="side-nav-item active" data-section="hero">
-      <span class="side-nav-dot"></span>
-      <span class="side-nav-label">Intro</span>
-    </a>
-    <a href="#problem" class="side-nav-item" data-section="problem">
-      <span class="side-nav-dot"></span>
-      <span class="side-nav-label">Le problème</span>
-    </a>
-    <a href="#examples" class="side-nav-item" data-section="examples">
-      <span class="side-nav-dot"></span>
-      <span class="side-nav-label">Use cases</span>
-    </a>
-    <a href="#stack" class="side-nav-item" data-section="stack">
-      <span class="side-nav-dot"></span>
-      <span class="side-nav-label">Stack</span>
-    </a>
-    <a href="#why-now" class="side-nav-item" data-section="why-now">
-      <span class="side-nav-dot"></span>
-      <span class="side-nav-label">2026</span>
-    </a>
-    <a href="#method" class="side-nav-item" data-section="method">
-      <span class="side-nav-dot"></span>
-      <span class="side-nav-label">Méthode</span>
-    </a>
-    <a href="#process" class="side-nav-item" data-section="process">
-      <span class="side-nav-dot"></span>
-      <span class="side-nav-label">Process</span>
-    </a>
-    <a href="#cta" class="side-nav-item" data-section="cta">
-      <span class="side-nav-dot"></span>
-      <span class="side-nav-label">Next step</span>
-    </a>
+<!-- SECTION NAV (Horizontal scroll) -->
+<nav class="section-nav" id="section-nav">
+  <div class="section-nav-scroll" id="section-nav-scroll">
+    <a href="#hero" class="section-nav-item active" data-section="hero">Intro</a>
+    <a href="#problem" class="section-nav-item" data-section="problem">Le monde change</a>
+    <a href="#examples" class="section-nav-item" data-section="examples">Exemples</a>
+    <a href="#stack" class="section-nav-item" data-section="stack">Stack</a>
+    <a href="#why-now" class="section-nav-item" data-section="why-now">2026</a>
+    <a href="#method" class="section-nav-item" data-section="method">Méthode BMAD</a>
+    <a href="#process" class="section-nav-item" data-section="process">Process</a>
+    <a href="#cta" class="section-nav-item" data-section="cta">Next step</a>
   </div>
 </nav>
+
+<!-- SIDE NAV (Hidden on mobile) -->
+<nav class="side-nav" id="side-nav"></nav>
 
 <main class="main-content">
 

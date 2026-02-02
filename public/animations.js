@@ -1,23 +1,19 @@
-// Laserel Demo - Premium Animations & Scroll Interactions
+// Laserel Demo - Animations & Navigation
 
 document.addEventListener('DOMContentLoaded', function() {
   // Elements
   const progressBar = document.getElementById('progress-bar');
-  const progressRing = document.getElementById('progress-ring');
-  const progressText = document.getElementById('progress-text');
-  const sideNav = document.getElementById('side-nav');
+  const progressText = document.querySelector('.progress-text');
+  const progressRing = document.querySelector('.progress-ring-fill');
   const header = document.querySelector('.header');
+  const sectionNav = document.getElementById('section-nav');
+  const sectionNavScroll = document.getElementById('section-nav-scroll');
   const sections = document.querySelectorAll('section[id]');
-  const revealElements = document.querySelectorAll('.reveal');
 
-  // Progress ring setup
-  const ringCircumference = 2 * Math.PI * 16; // radius = 16
-  if (progressRing) {
-    progressRing.style.strokeDasharray = ringCircumference;
-    progressRing.style.strokeDashoffset = ringCircumference;
-  }
+  // Progress ring circumference (for the SVG circle)
+  const ringCircumference = 100; // stroke-dasharray uses 0-100
 
-  // Throttle function for performance
+  // Throttle helper
   function throttle(func, limit) {
     let inThrottle;
     return function(...args) {
@@ -29,11 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
 
-  // Calculate scroll progress
+  // Calculate scroll progress (0-100)
   function getScrollProgress() {
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollTop = window.scrollY;
-    return Math.min(Math.round((scrollTop / scrollHeight) * 100), 100);
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return 0;
+    return Math.min(Math.round((scrollTop / docHeight) * 100), 100);
   }
 
   // Update progress indicators
@@ -45,22 +42,21 @@ document.addEventListener('DOMContentLoaded', function() {
       progressBar.style.width = `${progress}%`;
     }
 
-    // Update progress ring
-    if (progressRing) {
-      const offset = ringCircumference - (progress / 100) * ringCircumference;
-      progressRing.style.strokeDashoffset = offset;
-    }
-
     // Update progress text
     if (progressText) {
       progressText.textContent = `${progress}%`;
     }
+
+    // Update progress ring
+    if (progressRing) {
+      progressRing.setAttribute('stroke-dasharray', `${progress}, 100`);
+    }
   }
 
-  // Update header scroll state
-  function updateHeaderState() {
+  // Update header state on scroll
+  function updateHeader() {
     if (header) {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 20) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
@@ -70,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Get current section in viewport
   function getCurrentSection() {
-    let current = '';
-    const scrollPosition = window.scrollY + window.innerHeight / 3;
+    let current = 'hero';
+    const scrollPosition = window.scrollY + 150;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -85,41 +81,104 @@ document.addEventListener('DOMContentLoaded', function() {
     return current;
   }
 
-  // Update side navigation active state
-  function updateSideNav() {
-    if (!sideNav) return;
+  // Update section navigation
+  function updateSectionNav() {
+    if (!sectionNavScroll) return;
 
     const currentSection = getCurrentSection();
-    const navItems = sideNav.querySelectorAll('.side-nav-item');
+    const navItems = sectionNavScroll.querySelectorAll('.section-nav-item');
 
     navItems.forEach(item => {
       const href = item.getAttribute('href');
-      if (href === `#${currentSection}`) {
+      const isActive = href === `#${currentSection}`;
+
+      if (isActive && !item.classList.contains('active')) {
+        // Remove active from all
+        navItems.forEach(i => i.classList.remove('active'));
+        // Add active to current
         item.classList.add('active');
-      } else {
-        item.classList.remove('active');
+
+        // Scroll the nav item into view (centered)
+        const navScrollWidth = sectionNavScroll.scrollWidth;
+        const navVisibleWidth = sectionNavScroll.clientWidth;
+        const itemLeft = item.offsetLeft;
+        const itemWidth = item.offsetWidth;
+
+        const scrollTo = itemLeft - (navVisibleWidth / 2) + (itemWidth / 2);
+
+        sectionNavScroll.scrollTo({
+          left: Math.max(0, scrollTo),
+          behavior: 'smooth'
+        });
       }
     });
   }
 
-  // Reveal elements on scroll
-  function revealOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
+  // Scroll reveal animation
+  function handleScrollReveal() {
+    const reveals = document.querySelectorAll('.reveal, .stagger-children');
+    const triggerBottom = window.innerHeight * 0.88;
 
-    revealElements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
-
-      if (elementTop < triggerBottom) {
-        element.classList.add('revealed');
+    reveals.forEach(el => {
+      const elTop = el.getBoundingClientRect().top;
+      if (elTop < triggerBottom) {
+        el.classList.add('visible');
       }
+    });
+  }
+
+  // Add reveal classes to sections
+  function initRevealElements() {
+    // Add reveal class to key elements
+    const revealSelectors = [
+      '.section-header',
+      '.hero-card',
+      '.hero-benefits',
+      '.problem-item',
+      '.highlight-box',
+      '.comparison-card',
+      '.example-card',
+      '.stack-card',
+      '.reason-card',
+      '.problem-box',
+      '.bmad-steps',
+      '.info-box',
+      '.role-card',
+      '.process-step',
+      '.guarantee',
+      '.cta-card'
+    ];
+
+    revealSelectors.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        if (!el.classList.contains('reveal') && !el.closest('.stagger-children')) {
+          el.classList.add('reveal');
+        }
+      });
+    });
+
+    // Add stagger to grids
+    const staggerContainers = [
+      '.examples-grid',
+      '.reasons-grid',
+      '.roles-grid',
+      '.guarantees'
+    ];
+
+    staggerContainers.forEach(selector => {
+      document.querySelectorAll(selector).forEach(container => {
+        container.classList.add('stagger-children');
+        // Remove reveal from children to avoid double animation
+        container.querySelectorAll('.reveal').forEach(child => {
+          child.classList.remove('reveal');
+        });
+      });
     });
   }
 
   // Smooth scroll for navigation links
-  function setupSmoothScroll() {
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-
-    navLinks.forEach(link => {
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         if (href === '#') return;
@@ -127,8 +186,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
-          const headerHeight = header ? header.offsetHeight : 0;
-          const targetPosition = target.offsetTop - headerHeight - 20;
+
+          const headerHeight = 100; // Header + nav height
+          const targetPosition = target.offsetTop - headerHeight;
 
           window.scrollTo({
             top: targetPosition,
@@ -139,206 +199,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Parallax effect for hero section
-  function setupParallax() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    window.addEventListener('scroll', throttle(() => {
-      const scrolled = window.scrollY;
-      if (scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-        hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
-      }
-    }, 16));
-  }
-
-  // Stagger animation for cards
-  function setupStaggerAnimations() {
-    const cardGroups = [
-      '.examples-grid .example-card',
-      '.stack-cards .stack-card',
-      '.reasons-grid .reason-card',
-      '.guarantees .guarantee-card'
-    ];
-
-    cardGroups.forEach(selector => {
-      const cards = document.querySelectorAll(selector);
-      cards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-      });
-    });
-  }
-
-  // Number counter animation
-  function animateNumbers() {
-    const statNumbers = document.querySelectorAll('.stat-number');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-          const target = entry.target;
-          const finalValue = target.textContent;
-          const numericValue = parseInt(finalValue.replace(/[^0-9]/g, ''));
-
-          if (!isNaN(numericValue)) {
-            target.classList.add('animated');
-            animateValue(target, 0, numericValue, 1500, finalValue);
-          }
-        }
-      });
-    }, { threshold: 0.5 });
-
-    statNumbers.forEach(num => observer.observe(num));
-  }
-
-  function animateValue(element, start, end, duration, originalText) {
-    const startTime = performance.now();
-    const suffix = originalText.replace(/[0-9]/g, '');
-
-    function update(currentTime) {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      // Easing function (ease-out)
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(start + (end - start) * easeOut);
-
-      element.textContent = current + suffix;
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      }
-    }
-
-    requestAnimationFrame(update);
-  }
-
-  // Cursor glow effect (desktop only)
-  function setupCursorGlow() {
-    if (window.innerWidth < 1024) return;
-
-    const glow = document.createElement('div');
-    glow.className = 'cursor-glow';
-    glow.style.cssText = `
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.3s ease;
-    `;
-    document.body.appendChild(glow);
-
-    document.addEventListener('mousemove', throttle((e) => {
-      glow.style.left = `${e.clientX}px`;
-      glow.style.top = `${e.clientY}px`;
-    }, 16));
-  }
-
-  // Button ripple effect
-  function setupRippleEffect() {
-    const buttons = document.querySelectorAll('.cta-btn, .btn-primary');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-
-        ripple.style.cssText = `
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          background: rgba(255, 255, 255, 0.4);
-          border-radius: 50%;
-          transform: scale(0);
-          animation: ripple 0.6s linear;
-          left: ${e.clientX - rect.left - 10}px;
-          top: ${e.clientY - rect.top - 10}px;
-        `;
-
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-        this.appendChild(ripple);
-
-        setTimeout(() => ripple.remove(), 600);
-      });
-    });
-
-    // Add ripple animation to stylesheet
-    if (!document.getElementById('ripple-style')) {
-      const style = document.createElement('style');
-      style.id = 'ripple-style';
-      style.textContent = `
-        @keyframes ripple {
-          to {
-            transform: scale(20);
-            opacity: 0;
-          }
-        }
-      `;
-      document.head.appendChild(style);
-    }
-  }
-
-  // Card tilt effect on hover (desktop)
-  function setupCardTilt() {
-    if (window.innerWidth < 1024) return;
-
-    const cards = document.querySelectorAll('.example-card, .stack-card, .reason-card');
-
-    cards.forEach(card => {
-      card.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = (y - centerY) / 20;
-        const rotateY = (centerX - x) / 20;
-
-        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-      });
-
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-      });
-    });
-  }
-
-  // Initialize all animations
-  function init() {
-    // Initial updates
+  // Handle scroll events
+  const handleScroll = throttle(() => {
     updateProgress();
-    updateHeaderState();
-    updateSideNav();
-    revealOnScroll();
+    updateHeader();
+    updateSectionNav();
+    handleScrollReveal();
+  }, 16);
 
-    // Scroll event listeners
-    window.addEventListener('scroll', throttle(() => {
-      updateProgress();
-      updateHeaderState();
-      updateSideNav();
-      revealOnScroll();
-    }, 16));
+  // Initialize
+  function init() {
+    // Initial state
+    updateProgress();
+    updateHeader();
+    updateSectionNav();
 
-    // Setup interactions
-    setupSmoothScroll();
-    setupParallax();
-    setupStaggerAnimations();
-    animateNumbers();
-    setupCursorGlow();
-    setupRippleEffect();
-    setupCardTilt();
+    // Setup reveal animations
+    initRevealElements();
 
-    // Initial reveal for elements already in view
-    setTimeout(revealOnScroll, 100);
+    // Initial reveal check
+    setTimeout(handleScrollReveal, 100);
+
+    // Setup smooth scroll
+    initSmoothScroll();
+
+    // Listen to scroll
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Handle resize
+    window.addEventListener('resize', throttle(() => {
+      updateSectionNav();
+    }, 100));
   }
 
-  // Start
   init();
 });
