@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Laserel Tracking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+
+    /* Login */
+    .login-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .login-box {
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .login-box h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #f8fafc;
+    }
+    .login-box p {
+      color: #94a3b8;
+      margin-bottom: 32px;
+    }
+    .login-input {
+      width: 100%;
+      padding: 14px 20px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      color: #f8fafc;
+      font-size: 16px;
+      text-align: center;
+      letter-spacing: 4px;
+      margin-bottom: 16px;
+    }
+    .login-input:focus {
+      outline: none;
+      border-color: #7c3aed;
+    }
+    .login-btn {
+      width: 100%;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .login-btn:hover {
+      transform: translateY(-2px);
+    }
+    .login-error {
+      color: #ef4444;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    /* Dashboard */
+    .dashboard { display: none; }
+    .dashboard.active { display: block; }
+
+    .header {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      padding: 20px 24px;
+    }
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .header-badge {
+      background: rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 36px;
+      font-weight: 700;
+      color: #a78bfa;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+    .stat-card.active .stat-value {
+      color: #34d399;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 16px;
+    }
+    .tab {
+      padding: 10px 20px;
+      background: transparent;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      color: #94a3b8;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab:hover {
+      border-color: #7c3aed;
+      color: #e2e8f0;
+    }
+    .tab.active {
+      background: #7c3aed;
+      border-color: #7c3aed;
+      color: white;
+    }
+
+    /* Tab content */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Visitors list */
+    .visitor-card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      border-left: 4px solid #334155;
+    }
+    .visitor-card.active-session {
+      border-left-color: #34d399;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    .visitor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .visitor-location {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .visitor-location-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .visitor-city {
+      font-weight: 600;
+      font-size: 16px;
+      color: #f8fafc;
+    }
+    .visitor-country {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .visitor-time {
+      text-align: right;
+    }
+    .visitor-date {
+      font-size: 14px;
+      color: #f8fafc;
+    }
+    .visitor-duration {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .visitor-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .visitor-stat {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+    .visitor-stat-value {
+      font-size: 18px;
+      font-weight: 600;
+      color: #a78bfa;
+    }
+    .visitor-stat-label {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .visitor-analysis {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 16px;
+      border-left: 3px solid #a78bfa;
+    }
+    .visitor-analysis-title {
+      font-size: 12px;
+      color: #a78bfa;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .visitor-analysis-text {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+    .visitor-chat {
+      margin-top: 16px;
+    }
+    .visitor-chat-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+    .chat-message {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 8px;
+    }
+    .chat-question {
+      color: #3b82f6;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .chat-response {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge-live {
+      background: #34d399;
+      color: #064e3b;
+    }
+    .badge-ended {
+      background: #64748b;
+      color: #f8fafc;
+    }
+    .badge-out {
+      background: #ef4444;
+      color: white;
+    }
+    .badge-in {
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* Questions list */
+    .question-card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .question-time {
+      font-size: 13px;
+      color: #64748b;
+    }
+    .question-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: #f8fafc;
+      margin-bottom: 8px;
+    }
+    .question-response {
+      font-size: 14px;
+      color: #94a3b8;
+      padding-left: 16px;
+      border-left: 2px solid #334155;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #64748b;
+    }
+    .empty-state-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    /* Refresh */
+    .refresh-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+      transition: transform 0.2s;
+    }
+    .refresh-btn:hover {
+      transform: scale(1.1);
+    }
+    .refresh-btn.loading {
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 16px; }
+      .visitor-header { flex-direction: column; }
+      .visitor-time { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Login Screen -->
+<div class="login-container" id="login-screen">
+  <div class="login-box">
+    <h1>Dashboard Admin</h1>
+    <p>Laserel Tracking</p>
+    <input type="password" class="login-input" id="code-input" placeholder="Code d'accès" maxlength="20">
+    <button class="login-btn" id="login-btn">Accéder</button>
+    <div class="login-error" id="login-error"></div>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div class="dashboard" id="dashboard">
+  <header class="header">
+    <div class="header-content">
+      <h1>Laserel Tracking</h1>
+      <div class="header-badge" id="last-update">Mise à jour...</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Stats -->
+    <div class="stats-grid" id="stats-grid">
+      <div class="stat-card active">
+        <div class="stat-value" id="stat-active">0</div>
+        <div class="stat-label">En ligne</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-today">0</div>
+        <div class="stat-label">Aujourd'hui</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-total">0</div>
+        <div class="stat-label">Total visiteurs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-questions">0</div>
+        <div class="stat-label">Questions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-duration">0s</div>
+        <div class="stat-label">Durée moy.</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="visitors">Visiteurs</button>
+      <button class="tab" data-tab="active">En direct</button>
+      <button class="tab" data-tab="questions">Questions</button>
+    </div>
+
+    <!-- Visitors Tab -->
+    <div class="tab-content active" id="tab-visitors">
+      <div id="visitors-list"></div>
+    </div>
+
+    <!-- Active Tab -->
+    <div class="tab-content" id="tab-active">
+      <div id="active-list"></div>
+    </div>
+
+    <!-- Questions Tab -->
+    <div class="tab-content" id="tab-questions">
+      <div id="questions-list"></div>
+    </div>
+  </div>
+
+  <button class="refresh-btn" id="refresh-btn" title="Rafraîchir">↻</button>
+</div>
+
+<script>
+let adminToken = localStorage.getItem('adminToken');
+
+// Elements
+const loginScreen = document.getElementById('login-screen');
+const dashboard = document.getElementById('dashboard');
+const codeInput = document.getElementById('code-input');
+const loginBtn = document.getElementById('login-btn');
+const loginError = document.getElementById('login-error');
+const refreshBtn = document.getElementById('refresh-btn');
+
+// Check if already logged in
+if (adminToken) {
+  showDashboard();
+}
+
+// Login
+loginBtn.addEventListener('click', login);
+codeInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') login();
+});
+
+async function login() {
+  const code = codeInput.value;
+  if (!code) return;
+
+  try {
+    const res = await fetch('/api/admin/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code })
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      adminToken = data.token;
+      localStorage.setItem('adminToken', adminToken);
+      showDashboard();
+    } else {
+      loginError.textContent = 'Code incorrect';
+    }
+  } catch (error) {
+    loginError.textContent = 'Erreur de connexion';
+  }
+}
+
+function showDashboard() {
+  loginScreen.style.display = 'none';
+  dashboard.classList.add('active');
+  loadData();
+}
+
+// Tabs
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// Refresh
+refreshBtn.addEventListener('click', loadData);
+
+// Load all data
+async function loadData() {
+  refreshBtn.classList.add('loading');
+
+  try {
+    await Promise.all([
+      loadStats(),
+      loadVisitors(),
+      loadActive(),
+      loadQuestions()
+    ]);
+
+    document.getElementById('last-update').textContent =
+      'Mis à jour ' + new Date().toLocaleTimeString('fr-FR');
+  } catch (error) {
+    console.error('Load error:', error);
+  }
+
+  refreshBtn.classList.remove('loading');
+}
+
+async function loadStats() {
+  const res = await fetch(`/api/admin/stats?token=${adminToken}`);
+  const stats = await res.json();
+
+  document.getElementById('stat-active').textContent = stats.activeNow || 0;
+  document.getElementById('stat-today').textContent = stats.todayVisitors || 0;
+  document.getElementById('stat-total').textContent = stats.totalVisitors || 0;
+  document.getElementById('stat-questions').textContent = stats.totalQuestions || 0;
+  document.getElementById('stat-duration').textContent = (stats.avgDuration || 0) + 's';
+}
+
+async function loadVisitors() {
+  const res = await fetch(`/api/admin/visitors?token=${adminToken}`);
+  const visitors = await res.json();
+
+  const container = document.getElementById('visitors-list');
+
+  if (!visitors.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">👤</div>
+        <p>Aucun visiteur pour le moment</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = visitors.map(v => renderVisitor(v)).join('');
+}
+
+async function loadActive() {
+  const res = await fetch(`/api/admin/active?token=${adminToken}`);
+  const active = await res.json();
+
+  const container = document.getElementById('active-list');
+
+  if (!active.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">📡</div>
+        <p>Personne en ligne actuellement</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = active.map(v => renderVisitor(v, true)).join('');
+}
+
+async function loadQuestions() {
+  const res = await fetch(`/api/admin/questions?token=${adminToken}`);
+  const questions = await res.json();
+
+  const container = document.getElementById('questions-list');
+
+  if (!questions.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">💬</div>
+        <p>Aucune question pour le moment</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = questions.map(q => `
+    <div class="question-card">
+      <div class="question-header">
+        <span class="badge ${q.type === 'out-of-scope' ? 'badge-out' : 'badge-in'}">
+          ${q.type === 'out-of-scope' ? 'Hors scope' : 'In scope'}
+        </span>
+        <span class="question-time">${formatDate(q.timestamp)}</span>
+      </div>
+      <div class="question-text">${escapeHtml(q.question)}</div>
+      <div class="question-response">${escapeHtml(q.response)}</div>
+    </div>
+  `).join('');
+}
+
+function renderVisitor(v, isLive = false) {
+  const duration = v.endTime
+    ? Math.round((v.endTime - v.startTime) / 1000)
+    : Math.round((Date.now() - v.startTime) / 1000);
+
+  const chatHtml = v.chatMessages?.length ? `
+    <div class="visitor-chat">
+      <div class="visitor-chat-title">Messages chatbot (${v.chatMessages.length})</div>
+      ${v.chatMessages.map(m => `
+        <div class="chat-message">
+          <div class="chat-question">Q: ${escapeHtml(m.question)}</div>
+          <div class="chat-response">R: ${escapeHtml(m.response)}</div>
+        </div>
+      `).join('')}
+    </div>
+  ` : '';
+
+  const analysisHtml = v.analysis ? `
+    <div class="visitor-analysis">
+      <div class="visitor-analysis-title">Analyse IA</div>
+      <div class="visitor-analysis-text">${escapeHtml(v.analysis)}</div>
+    </div>
+  ` : '';
+
+  return `
+    <div class="visitor-card ${isLive ? 'active-session' : ''}">
+      <div class="visitor-header">
+        <div class="visitor-location">
+          <div class="visitor-location-icon">📍</div>
+          <div>
+            <div class="visitor-city">${escapeHtml(v.location?.city || 'Inconnu')}</div>
+            <div class="visitor-country">${escapeHtml(v.location?.country || '')} · ${escapeHtml(v.location?.isp || '')}</div>
+          </div>
+        </div>
+        <div class="visitor-time">
+          <div class="visitor-date">${formatDate(v.startTime)}</div>
+          <div class="visitor-duration">
+            ${isLive ? '<span class="badge badge-live">EN DIRECT</span>' : `Durée: ${duration}s`}
+          </div>
+        </div>
+      </div>
+      <div class="visitor-stats">
+        <div class="visitor-stat">
+          <div class="visitor-stat-value">${v.maxScroll || 0}%</div>
+          <div class="visitor-stat-label">Scroll</div>
+        </div>
+        <div class="visitor-stat">
+          <div class="visitor-stat-value">${v.pageViews?.length || 1}</div>
+          <div class="visitor-stat-label">Sections</div>
+        </div>
+        <div class="visitor-stat">
+          <div class="visitor-stat-value">${v.chatMessages?.length || 0}</div>
+          <div class="visitor-stat-label">Questions</div>
+        </div>
+        <div class="visitor-stat">
+          <div class="visitor-stat-value">${duration}s</div>
+          <div class="visitor-stat-label">Durée</div>
+        </div>
+      </div>
+      ${analysisHtml}
+      ${chatHtml}
+    </div>
+  `;
+}
+
+function formatDate(timestamp) {
+  if (!timestamp) return '';
+  const date = new Date(typeof timestamp === 'number' ? timestamp : timestamp);
+  return date.toLocaleString('fr-FR', {
+    day: '2-digit',
+    month: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+}
+
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// Auto-refresh every 30 seconds
+setInterval(loadData, 30000);
+</script>
+
+</body>
+</html>
