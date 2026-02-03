@@ -77,13 +77,19 @@
         3 r&eacute;sultats concrets. Une m&eacute;thode simple. Sans engagement.
       </p>
 
-      <div class="hero-card animate-fade-in-up delay-2">
-        <div class="hero-card-avatar">
-          <img src="antoine.png" alt="AT" />
+      <div class="hero-chat animate-fade-in-up delay-2">
+        <div class="hero-chat-time">Aujourd'hui, 14:32</div>
+        <div class="hero-chat-bubble incoming">
+          <p>Ok, on fait le point cette semaine ?</p>
         </div>
-        <div class="hero-card-content">
-          <span class="hero-card-greeting">Suite &agrave; notre &eacute;change</span>
-          <p>Voici ce qu'on peut mettre en place pour Laserel. Pas de jargon &mdash; juste du concret. <strong>3 min de lecture, on en reparle vendredi.</strong></p>
+        <div class="hero-chat-bubble outgoing">
+          <div class="hero-chat-avatar">
+            <img src="antoine.png" alt="AT" />
+          </div>
+          <div class="hero-chat-text">
+            <div class="hero-chat-name">Antoine</div>
+            <p>Voici ce qu'on peut mettre en place pour Laserel. Pas de jargon &mdash; juste du concret. <strong>3 min de lecture, on en reparle vendredi.</strong></p>
+          </div>
         </div>
       </div>
 
@@ -137,17 +143,17 @@
         <h2 class="section-title">Ce qui te co&ucirc;te de l'argent aujourd'hui</h2>
       </div>
 
-      <div class="problem-list">
-        <div class="problem-item">
-          <div class="problem-icon">
+      <div class="alert-toast-list">
+        <div class="alert-toast">
+          <div class="alert-toast-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
             </svg>
           </div>
           <p>Tu paies une agence <strong>2-4k&euro;/mois</strong> pour tes Ads &mdash; et tu ne contr&ocirc;les rien</p>
         </div>
-        <div class="problem-item">
-          <div class="problem-icon">
+        <div class="alert-toast">
+          <div class="alert-toast-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"/>
               <path d="M15 9l-6 6M9 9l6 6"/>
@@ -155,8 +161,8 @@
           </div>
           <p>Tes no-shows te font <strong>perdre du CA chaque semaine</strong> &mdash; sans syst&egrave;me pour les anticiper</p>
         </div>
-        <div class="problem-item">
-          <div class="problem-icon">
+        <div class="alert-toast">
+          <div class="alert-toast-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
               <circle cx="9" cy="7" r="4"/>
@@ -222,8 +228,8 @@
 
       <div class="solutions-grid">
         <!-- Solution 1 : Remplissage -->
-        <div class="solution-card" data-priority="1">
-          <div class="solution-header">
+        <div class="solution-card open" data-priority="1">
+          <div class="solution-header" onclick="toggleSolution(this)">
             <div class="solution-priority">Priorit&eacute; #1</div>
             <div class="solution-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -232,6 +238,7 @@
             </div>
             <h3 class="solution-title">Remplissage des centres</h3>
             <p class="solution-subtitle">Chatbot closing 24/7 sur ton site</p>
+            <svg class="solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
           <div class="solution-body">
             <ul class="solution-features">
@@ -251,7 +258,7 @@
 
         <!-- Solution 2 : Anti no-shows -->
         <div class="solution-card" data-priority="2">
-          <div class="solution-header">
+          <div class="solution-header" onclick="toggleSolution(this)">
             <div class="solution-priority">Priorit&eacute; #2</div>
             <div class="solution-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -260,6 +267,7 @@
             </div>
             <h3 class="solution-title">Syst&egrave;me anti no-shows</h3>
             <p class="solution-subtitle">Scoring de risque + relances automatiques</p>
+            <svg class="solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
           <div class="solution-body">
             <ul class="solution-features">
@@ -279,7 +287,7 @@
 
         <!-- Solution 3 : Ads sans agence -->
         <div class="solution-card" data-priority="3">
-          <div class="solution-header">
+          <div class="solution-header" onclick="toggleSolution(this)">
             <div class="solution-priority">Priorit&eacute; #3</div>
             <div class="solution-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -290,6 +298,7 @@
             </div>
             <h3 class="solution-title">Tes Ads sans l'agence</h3>
             <p class="solution-subtitle">L'IA g&eacute;n&egrave;re, tu valides sur ton tel</p>
+            <svg class="solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
           <div class="solution-body">
             <ul class="solution-features">
@@ -557,61 +566,64 @@
       <!-- Roadmap 3 premiers mois -->
       <h3 class="subsection-title">Tes 3 premiers mois</h3>
 
-      <div class="roadmap">
-        <div class="roadmap-month">
-          <div class="roadmap-month-header">
-            <span class="roadmap-month-badge">Mois 1</span>
+      <div class="roadmap-stepper">
+        <div class="roadmap-step">
+          <div class="roadmap-step-dot">1</div>
+          <div class="roadmap-step-label">Mois 1</div>
+          <div class="roadmap-step-content">
             <h4>Fondations</h4>
-          </div>
-          <ul class="roadmap-items">
-            <li>Audit business (semaine 1)</li>
-            <li>Chatbot closing 24/7 (semaine 2-3)</li>
-            <li>Dashboard leads (semaine 4)</li>
-          </ul>
-          <div class="roadmap-result">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-              <polyline points="17 6 23 6 23 12"/>
-            </svg>
-            <span>+10-15% leads capt&eacute;s</span>
+            <ul>
+              <li>Audit business (semaine 1)</li>
+              <li>Chatbot closing 24/7 (semaine 2-3)</li>
+              <li>Dashboard leads (semaine 4)</li>
+            </ul>
+            <div class="roadmap-result">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+              <span>+10-15% leads capt&eacute;s</span>
+            </div>
           </div>
         </div>
 
-        <div class="roadmap-month">
-          <div class="roadmap-month-header">
-            <span class="roadmap-month-badge">Mois 2</span>
+        <div class="roadmap-step">
+          <div class="roadmap-step-dot">2</div>
+          <div class="roadmap-step-label">Mois 2</div>
+          <div class="roadmap-step-content">
             <h4>No-shows</h4>
-          </div>
-          <ul class="roadmap-items">
-            <li>Scoring risque patients</li>
-            <li>SMS confirmation automatique</li>
-            <li>R&eacute;ouverture cr&eacute;neaux auto</li>
-          </ul>
-          <div class="roadmap-result">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-              <polyline points="17 6 23 6 23 12"/>
-            </svg>
-            <span>-15 &agrave; 30% de no-shows</span>
+            <ul>
+              <li>Scoring risque patients</li>
+              <li>SMS confirmation automatique</li>
+              <li>R&eacute;ouverture cr&eacute;neaux auto</li>
+            </ul>
+            <div class="roadmap-result">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+              <span>-15 &agrave; 30% de no-shows</span>
+            </div>
           </div>
         </div>
 
-        <div class="roadmap-month">
-          <div class="roadmap-month-header">
-            <span class="roadmap-month-badge">Mois 3</span>
+        <div class="roadmap-step">
+          <div class="roadmap-step-dot">3</div>
+          <div class="roadmap-step-label">Mois 3</div>
+          <div class="roadmap-step-content">
             <h4>Optimisation</h4>
-          </div>
-          <ul class="roadmap-items">
-            <li>A/B testing tunnel</li>
-            <li>CRM intelligent</li>
-            <li>Reporting ROI complet</li>
-          </ul>
-          <div class="roadmap-result">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-              <polyline points="17 6 23 6 23 12"/>
-            </svg>
-            <span>Donn&eacute;es pour d&eacute;cider la suite</span>
+            <ul>
+              <li>A/B testing tunnel</li>
+              <li>CRM intelligent</li>
+              <li>Reporting ROI complet</li>
+            </ul>
+            <div class="roadmap-result">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+              <span>Donn&eacute;es pour d&eacute;cider la suite</span>
+            </div>
           </div>
         </div>
       </div>
@@ -923,6 +935,21 @@
 <script src="chat.js"></script>
 <script src="animations.js"></script>
 <script>
+// Solution accordion toggle
+function toggleSolution(header) {
+  var card = header.closest('.solution-card');
+  var wasOpen = card.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.solution-card.open').forEach(function(c) {
+    c.classList.remove('open');
+  });
+  // Open clicked if it was closed
+  if (!wasOpen) {
+    card.classList.add('open');
+  }
+}
+</script>
+<script>
 // Onboarding overlay
 (function() {
   const overlay = document.getElementById('onboarding-overlay');
@@ -1013,8 +1040,62 @@
     document.getElementById('calc-vs-result').textContent = breakEvenText;
   }
 
+  // Calculator tracking: throttled send to server
+  var calcDefaults = { centres: 5, rdv: 200, price: 50, noshow: 20, leads: 150 };
+  var lastCalcSend = 0;
+  var calcSendTimer = null;
+
+  function sendCalcData(inputs, results) {
+    if (typeof sessionId === 'undefined' || !sessionId) return;
+    var now = Date.now();
+    if (now - lastCalcSend < 3000) {
+      clearTimeout(calcSendTimer);
+      calcSendTimer = setTimeout(function() { sendCalcData(inputs, results); }, 3000 - (now - lastCalcSend));
+      return;
+    }
+    lastCalcSend = now;
+    fetch('/api/track/activity', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        sessionId: sessionId,
+        calculatorInputs: inputs,
+        calculatorResults: results
+      })
+    }).catch(function() {});
+  }
+
+  function trackCalc() {
+    var inputs = {
+      centres: parseFloat(centres.value) || 1,
+      rdv: parseFloat(rdv.value) || 0,
+      price: parseFloat(price.value) || 0,
+      noshow: parseFloat(noshow.value) || 0,
+      leads: parseFloat(leads.value) || 0
+    };
+    // Only send if user changed at least one value from defaults
+    var changed = Object.keys(inputs).some(function(k) { return inputs[k] !== calcDefaults[k]; });
+    if (!changed) return;
+
+    var caLostTotal = Math.round(Math.round(inputs.rdv * (inputs.noshow / 100)) * inputs.price * inputs.centres);
+    var noshowGain = Math.round(caLostTotal * 0.20);
+    var leadsGain = Math.round(Math.round(inputs.leads * 0.10) * inputs.price);
+    var totalMonth = noshowGain + leadsGain;
+
+    sendCalcData(inputs, {
+      caLost: caLostTotal,
+      noshowGain: noshowGain,
+      leadsGain: leadsGain,
+      totalMonth: totalMonth,
+      total6m: totalMonth * 6
+    });
+  }
+
   [centres, noshow, rdv, price, leads].forEach(function(el) {
-    el.addEventListener('input', calculate);
+    el.addEventListener('input', function() {
+      calculate();
+      trackCalc();
+    });
   });
   calculate();
 })();

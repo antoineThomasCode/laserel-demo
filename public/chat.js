@@ -28,17 +28,41 @@ async function initTracking() {
   }
 }
 
-// Heartbeat every 10 seconds
+// Section time tracking
+const sectionTimers = {};
+
+// Heartbeat every 10 seconds (also sends section times)
 function startHeartbeat() {
   setInterval(() => {
     if (sessionId) {
+      const sectionTimes = getSectionTimes();
+      const payload = { sessionId };
+      if (Object.keys(sectionTimes).length > 0) {
+        payload.sectionTimes = sectionTimes;
+      }
       fetch('/api/track/heartbeat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sessionId })
+        body: JSON.stringify(payload)
       }).catch(() => {});
     }
   }, 10000);
+}
+
+// Get cumulative section times in ms
+function getSectionTimes() {
+  const times = {};
+  const now = Date.now();
+  for (const id in sectionTimers) {
+    let total = sectionTimers[id].total || 0;
+    if (sectionTimers[id].start) {
+      total += now - sectionTimers[id].start;
+    }
+    if (total > 0) {
+      times[id] = total;
+    }
+  }
+  return times;
 }
 
 // Track scroll depth
@@ -86,11 +110,24 @@ function trackSections() {
 
   const viewedSections = new Set(['home']);
 
+  // Initialize timers for all sections
+  sections.forEach(s => {
+    sectionTimers[s.id] = { total: 0, start: null };
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      const section = sections.find(s => entry.target.matches(s.selector));
+      if (!section) return;
+
       if (entry.isIntersecting) {
-        const section = sections.find(s => entry.target.matches(s.selector));
-        if (section && !viewedSections.has(section.id)) {
+        // Start timing this section
+        if (!sectionTimers[section.id].start) {
+          sectionTimers[section.id].start = Date.now();
+        }
+
+        // Track first view (existing behavior)
+        if (!viewedSections.has(section.id)) {
           viewedSections.add(section.id);
 
           if (sessionId) {
@@ -100,6 +137,12 @@ function trackSections() {
               body: JSON.stringify({ sessionId, section: section.id })
             }).catch(() => {});
           }
+        }
+      } else {
+        // Stop timing this section
+        if (sectionTimers[section.id].start) {
+          sectionTimers[section.id].total += Date.now() - sectionTimers[section.id].start;
+          sectionTimers[section.id].start = null;
         }
       }
     });
@@ -116,18 +159,19 @@ function trackPageLeave() {
   // On page unload
   window.addEventListener('beforeunload', () => {
     if (sessionId) {
-      // Use sendBeacon for reliable delivery
-      navigator.sendBeacon('/api/track/end', JSON.stringify({ sessionId }));
+      const sectionTimes = getSectionTimes();
+      navigator.sendBeacon('/api/track/end', JSON.stringify({ sessionId, sectionTimes }));
     }
   });
 
   // On visibility change (tab switch)
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden' && sessionId) {
+      const sectionTimes = getSectionTimes();
       fetch('/api/track/end', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sessionId }),
+        body: JSON.stringify({ sessionId, sectionTimes }),
         keepalive: true
       }).catch(() => {});
     }

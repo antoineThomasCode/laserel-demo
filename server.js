@@ -136,11 +136,25 @@ function updateVisitor(sessionId, updates) {
 // Helper: Analyze session with AI
 async function analyzeSession(session) {
   try {
+    // Build section times string
+    const sectionTimesStr = session.sectionTimes && Object.keys(session.sectionTimes).length > 0
+      ? Object.entries(session.sectionTimes)
+          .sort((a, b) => b[1] - a[1])
+          .map(([k, v]) => `${k}=${Math.round(v / 1000)}s`)
+          .join(', ')
+      : 'Non disponible';
+
+    const calcUsed = session.calculatorInputs
+      ? `Oui (${session.calculatorInputs.centres} centres, ${session.calculatorInputs.rdv} RDV/mois, ${session.calculatorInputs.price}€, ${session.calculatorInputs.noshow}% no-show, ${session.calculatorInputs.leads} leads)`
+      : 'Non';
+
     const prompt = `Analyse cette session de visite sur une proposition commerciale B2B (IA pour Laserel):
 
 Durée: ${Math.round((session.endTime - session.startTime) / 1000)} secondes
 Pages/sections vues: ${session.pageViews?.join(', ') || 'Page principale'}
+Temps par section: ${sectionTimesStr}
 Scroll max: ${session.maxScroll || 0}%
+Calculateur ROI utilisé: ${calcUsed}
 Questions chatbot: ${session.chatMessages?.length || 0}
 ${session.chatMessages?.length ? 'Messages: ' + session.chatMessages.map(m => m.question).join(' | ') : ''}
 
@@ -195,6 +209,9 @@ app.post('/api/track/visit', async (req, res) => {
       pageViews: ['home'],
       maxScroll: 0,
       chatMessages: [],
+      sectionTimes: {},
+      calculatorInputs: null,
+      calculatorResults: null,
       analysis: null,
       isActive: true
     };
@@ -229,10 +246,10 @@ app.post('/api/track/visit', async (req, res) => {
   }
 });
 
-// Update activity (scroll, page view)
+// Update activity (scroll, page view, section times, calculator)
 app.post('/api/track/activity', (req, res) => {
   try {
-    const { sessionId, scroll, section } = req.body;
+    const { sessionId, scroll, section, sectionTimes, calculatorInputs, calculatorResults } = req.body;
 
     if (!sessionId || !activeSessions[sessionId]) {
       return res.json({ ok: false });
@@ -249,6 +266,15 @@ app.post('/api/track/activity', (req, res) => {
       session.pageViews.push(section);
     }
 
+    if (sectionTimes && typeof sectionTimes === 'object') {
+      session.sectionTimes = sectionTimes;
+    }
+
+    if (calculatorInputs && typeof calculatorInputs === 'object') {
+      session.calculatorInputs = calculatorInputs;
+      session.calculatorResults = calculatorResults || null;
+    }
+
     saveSessions();
     res.json({ ok: true });
   } catch (error) {
@@ -256,12 +282,15 @@ app.post('/api/track/activity', (req, res) => {
   }
 });
 
-// Heartbeat (keep session alive)
+// Heartbeat (keep session alive + update section times)
 app.post('/api/track/heartbeat', (req, res) => {
-  const { sessionId } = req.body;
+  const { sessionId, sectionTimes } = req.body;
 
   if (sessionId && activeSessions[sessionId]) {
     activeSessions[sessionId].lastActivity = Date.now();
+    if (sectionTimes && typeof sectionTimes === 'object') {
+      activeSessions[sessionId].sectionTimes = sectionTimes;
+    }
     saveSessions();
   }
 
@@ -271,7 +300,7 @@ app.post('/api/track/heartbeat', (req, res) => {
 // Session end (user leaves or inactive)
 app.post('/api/track/end', async (req, res) => {
   try {
-    const { sessionId } = req.body;
+    const { sessionId, sectionTimes } = req.body;
 
     if (!sessionId || !activeSessions[sessionId]) {
       return res.json({ ok: false });
@@ -280,6 +309,11 @@ app.post('/api/track/end', async (req, res) => {
     const session = activeSessions[sessionId];
     session.endTime = Date.now();
     session.isActive = false;
+
+    // Merge final section times
+    if (sectionTimes && typeof sectionTimes === 'object') {
+      session.sectionTimes = sectionTimes;
+    }
 
     // Analyze session
     const analysis = await analyzeSession(session);
@@ -291,6 +325,9 @@ app.post('/api/track/end', async (req, res) => {
       maxScroll: session.maxScroll,
       pageViews: session.pageViews,
       chatMessages: session.chatMessages,
+      sectionTimes: session.sectionTimes,
+      calculatorInputs: session.calculatorInputs,
+      calculatorResults: session.calculatorResults,
       analysis: analysis,
       isActive: false
     });
@@ -490,13 +527,40 @@ app.get('/api/admin/stats', (req, res) => {
       .filter(v => v.endTime)
       .reduce((sum, v) => sum + (v.endTime - v.startTime), 0) / (visitors.filter(v => v.endTime).length || 1);
 
+    // Top section by average time
+    const sectionTotals = {};
+    const sectionCounts = {};
+    visitors.forEach(v => {
+      if (v.sectionTimes) {
+        Object.entries(v.sectionTimes).forEach(([id, ms]) => {
+          sectionTotals[id] = (sectionTotals[id] || 0) + ms;
+          sectionCounts[id] = (sectionCounts[id] || 0) + 1;
+        });
+      }
+    });
+    let topSection = null;
+    let topSectionAvg = 0;
+    Object.keys(sectionTotals).forEach(id => {
+      const avg = sectionTotals[id] / sectionCounts[id];
+      if (avg > topSectionAvg) {
+        topSectionAvg = avg;
+        topSection = id;
+      }
+    });
+
+    // Calculator usage count
+    const calculatorUsers = visitors.filter(v => v.calculatorInputs).length;
+
     res.json({
       totalVisitors: visitors.length,
       todayVisitors: todayVisitors.length,
       totalQuestions: questions.length,
       outOfScopeQuestions: questions.filter(q => q.type === 'out-of-scope').length,
       avgDuration: Math.round(avgDuration / 1000),
-      activeNow: Object.keys(activeSessions).length
+      activeNow: Object.keys(activeSessions).length,
+      topSection: topSection,
+      topSectionAvg: Math.round(topSectionAvg / 1000),
+      calculatorUsers: calculatorUsers
     });
   } catch (error) {
     res.json({});
@@ -527,6 +591,9 @@ setInterval(() => {
         maxScroll: session.maxScroll,
         pageViews: session.pageViews,
         chatMessages: session.chatMessages,
+        sectionTimes: session.sectionTimes,
+        calculatorInputs: session.calculatorInputs,
+        calculatorResults: session.calculatorResults,
         analysis: analysis,
         isActive: false
       });

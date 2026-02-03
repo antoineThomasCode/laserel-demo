@@ -2121,7 +2121,7 @@ body {
 }
 
 .solution-body {
-  padding: 0 16px 14px;
+  padding: 0 16px;
 }
 
 .solution-features {
@@ -3023,4 +3023,362 @@ body {
     box-shadow: 0 4px 30px rgba(196, 167, 125, 0.7), 0 0 0 12px rgba(196, 167, 125, 0.15);
     transform: scale(1.08);
   }
+}
+
+/* ============================================
+   HERO CHAT BUBBLES (iMessage style)
+   ============================================ */
+
+.hero-chat {
+  background: var(--gray-100);
+  border-radius: 20px;
+  padding: 16px;
+  max-width: 420px;
+  margin-bottom: 14px;
+}
+
+.hero-chat-time {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.hero-chat-bubble {
+  margin-bottom: 8px;
+}
+
+.hero-chat-bubble:last-child {
+  margin-bottom: 0;
+}
+
+.hero-chat-bubble.incoming p {
+  display: inline-block;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 18px 18px 18px 4px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 75%;
+}
+
+.hero-chat-bubble.outgoing {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.hero-chat-avatar {
+  flex-shrink: 0;
+}
+
+.hero-chat-avatar img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.hero-chat-text {
+  max-width: 85%;
+}
+
+.hero-chat-text p {
+  background: var(--laserel-gold-light);
+  border: 1px solid var(--laserel-gold);
+  border-radius: 18px 18px 4px 18px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.hero-chat-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--laserel-gold-dark);
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+/* ============================================
+   ALERT TOAST NOTIFICATIONS
+   ============================================ */
+
+.alert-toast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.alert-toast {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--white);
+  border-left: 4px solid var(--error);
+  border-radius: 2px 12px 12px 2px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.alert-toast:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(2px);
+}
+
+.alert-toast-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--error-light);
+  border-radius: 50%;
+}
+
+.alert-toast-icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--error);
+}
+
+.alert-toast p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.alert-toast p strong {
+  color: var(--error);
+}
+
+/* ============================================
+   SOLUTION ACCORDION
+   ============================================ */
+
+.solution-header {
+  cursor: pointer;
+  position: relative;
+  padding-right: 40px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.solution-header:hover {
+  opacity: 0.85;
+}
+
+.solution-chevron {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+  transition: transform 0.3s ease;
+}
+
+.solution-card.open .solution-chevron {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.solution-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding-bottom: 0;
+}
+
+.solution-card.open .solution-body {
+  max-height: 500px;
+  padding-bottom: 14px;
+}
+
+/* ============================================
+   ROADMAP STEPPER
+   ============================================ */
+
+.roadmap-stepper {
+  display: flex;
+  margin-top: 16px;
+  position: relative;
+}
+
+.roadmap-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 0 8px;
+}
+
+/* Connector line between dots */
+.roadmap-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: calc(50% + 24px);
+  right: calc(-50% + 24px);
+  height: 2px;
+  background: var(--gray-300);
+  z-index: 0;
+}
+
+.roadmap-step-dot {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--laserel-gold);
+  border-radius: 50%;
+  font-family: var(--font-brand);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0 auto 10px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(196, 167, 125, 0.3);
+}
+
+.roadmap-step-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--laserel-gold-dark);
+  margin-bottom: 8px;
+}
+
+.roadmap-step-content {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.roadmap-step-content:hover {
+  border-color: var(--laserel-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.roadmap-step-content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.roadmap-step-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.roadmap-step-content ul li {
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding: 3px 0 3px 14px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.roadmap-step-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  background: var(--gray-400);
+  border-radius: 50%;
+}
+
+.roadmap-step-content .roadmap-result {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: var(--success-light);
+  border: 1px solid rgba(107, 155, 122, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+.roadmap-step-content .roadmap-result svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  color: var(--success);
+}
+
+.roadmap-step-content .roadmap-result span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+/* Roadmap Stepper - Mobile vertical */
+@media (max-width: 600px) {
+  .roadmap-stepper {
+    flex-direction: column;
+    padding-left: 30px;
+    gap: 16px;
+  }
+
+  .roadmap-step {
+    text-align: left;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .roadmap-step-dot {
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .roadmap-step-label {
+    margin-bottom: 6px;
+  }
+
+  .roadmap-step:not(:last-child)::after {
+    top: 36px;
+    left: -14px;
+    right: auto;
+    width: 2px;
+    height: calc(100% - 16px);
+  }
+
+  .roadmap-step-content {
+    padding: 12px;
+  }
+}
+
+/* ============================================
+   GUARANTEES - Improved
+   ============================================ */
+
+.guarantee {
+  border-top: 3px solid var(--success);
+}
+
+.guarantee-icon {
+  background: var(--success);
 }

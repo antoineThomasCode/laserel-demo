@@ -385,10 +385,114 @@
       to { transform: rotate(360deg); }
     }
 
+    /* Section heatmap */
+    .section-heatmap {
+      margin-top: 16px;
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .section-heatmap-title {
+      font-size: 12px;
+      color: #a78bfa;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .heatmap-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .heatmap-label {
+      width: 100px;
+      font-size: 12px;
+      color: #94a3b8;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .heatmap-bar-wrap {
+      flex: 1;
+      height: 18px;
+      background: #1e293b;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .heatmap-bar {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+    .heatmap-time {
+      width: 40px;
+      font-size: 12px;
+      color: #64748b;
+      flex-shrink: 0;
+    }
+
+    /* Calculator block */
+    .calc-block {
+      margin-top: 16px;
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 16px;
+      border-left: 3px solid #f59e0b;
+    }
+    .calc-block-title {
+      font-size: 12px;
+      color: #f59e0b;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .calc-inputs-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .calc-chip {
+      background: #1e293b;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+    .calc-chip.modified {
+      background: #422006;
+      border: 1px solid #f59e0b;
+      color: #fbbf24;
+    }
+    .calc-results-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .calc-result-item {
+      font-size: 14px;
+    }
+    .calc-result-label {
+      color: #64748b;
+      font-size: 12px;
+    }
+    .calc-result-value {
+      color: #34d399;
+      font-weight: 600;
+    }
+    .badge-calc {
+      background: #f59e0b;
+      color: #422006;
+    }
+
     @media (max-width: 640px) {
       .container { padding: 16px; }
       .visitor-header { flex-direction: column; }
       .visitor-time { text-align: left; }
+      .heatmap-label { width: 70px; }
     }
   </style>
 </head>
@@ -436,6 +540,14 @@
       <div class="stat-card">
         <div class="stat-value" id="stat-duration">0s</div>
         <div class="stat-label">Durée moy.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-top-section">-</div>
+        <div class="stat-label">Section #1</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-calc-users">0</div>
+        <div class="stat-label">Calculateur</div>
       </div>
     </div>
 
@@ -560,6 +672,8 @@ async function loadStats() {
   document.getElementById('stat-total').textContent = stats.totalVisitors || 0;
   document.getElementById('stat-questions').textContent = stats.totalQuestions || 0;
   document.getElementById('stat-duration').textContent = (stats.avgDuration || 0) + 's';
+  document.getElementById('stat-top-section').textContent = stats.topSection ? SECTION_NAMES[stats.topSection] || stats.topSection : '-';
+  document.getElementById('stat-calc-users').textContent = stats.calculatorUsers || 0;
 }
 
 async function loadVisitors() {
@@ -630,6 +744,93 @@ async function loadQuestions() {
   `).join('');
 }
 
+const SECTION_NAMES = {
+  hero: 'Intro',
+  probleme: 'Le problème',
+  solutions: 'Solutions',
+  roi: 'ROI & Roadmap',
+  methode: 'Méthode',
+  outils: 'Outils',
+  garanties: 'Garanties',
+  cta: 'CTA'
+};
+
+const CALC_DEFAULTS = { centres: 5, rdv: 200, price: 50, noshow: 20, leads: 150 };
+
+function renderSectionHeatmap(sectionTimes) {
+  if (!sectionTimes || Object.keys(sectionTimes).length === 0) return '';
+
+  const sorted = Object.entries(sectionTimes)
+    .map(([id, ms]) => ({ id, ms }))
+    .sort((a, b) => b.ms - a.ms);
+
+  const maxMs = sorted[0].ms;
+  const colors = ['#34d399', '#6ee7b7', '#a7f3d0', '#bef264', '#fbbf24', '#fb923c', '#f87171'];
+
+  const bars = sorted.map((s, i) => {
+    const pct = Math.round((s.ms / maxMs) * 100);
+    const seconds = Math.round(s.ms / 1000);
+    const color = colors[Math.min(i, colors.length - 1)];
+    const label = SECTION_NAMES[s.id] || s.id;
+    return `
+      <div class="heatmap-row">
+        <span class="heatmap-label">${escapeHtml(label)}</span>
+        <div class="heatmap-bar-wrap">
+          <div class="heatmap-bar" style="width:${pct}%;background:${color}"></div>
+        </div>
+        <span class="heatmap-time">${seconds}s</span>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="section-heatmap">
+      <div class="section-heatmap-title">Sections (temps passé)</div>
+      ${bars}
+    </div>
+  `;
+}
+
+function renderCalcBlock(inputs, results) {
+  if (!inputs) return '';
+
+  const chips = [
+    { label: inputs.centres + ' centres', key: 'centres' },
+    { label: inputs.rdv + ' RDV/mois', key: 'rdv' },
+    { label: inputs.price + '€', key: 'price' },
+    { label: 'No-show: ' + inputs.noshow + '%', key: 'noshow' },
+    { label: inputs.leads + ' leads/mois', key: 'leads' }
+  ].map(c => {
+    const modified = inputs[c.key] !== CALC_DEFAULTS[c.key];
+    return `<span class="calc-chip ${modified ? 'modified' : ''}">${escapeHtml(c.label)}</span>`;
+  }).join('');
+
+  let resultsHtml = '';
+  if (results) {
+    const fmt = n => Math.round(n).toLocaleString('fr-FR') + ' €';
+    resultsHtml = `
+      <div class="calc-results-row">
+        <div class="calc-result-item">
+          <div class="calc-result-label">Gain / mois</div>
+          <div class="calc-result-value">${fmt(results.totalMonth)}</div>
+        </div>
+        <div class="calc-result-item">
+          <div class="calc-result-label">Gain 6 mois</div>
+          <div class="calc-result-value">${fmt(results.total6m)}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="calc-block">
+      <div class="calc-block-title">Calculateur ROI utilisé</div>
+      <div class="calc-inputs-row">${chips}</div>
+      ${resultsHtml}
+    </div>
+  `;
+}
+
 function renderVisitor(v, isLive = false) {
   const duration = v.endTime
     ? Math.round((v.endTime - v.startTime) / 1000)
@@ -688,7 +889,13 @@ function renderVisitor(v, isLive = false) {
           <div class="visitor-stat-value">${duration}s</div>
           <div class="visitor-stat-label">Durée</div>
         </div>
+        ${v.calculatorInputs ? `<div class="visitor-stat">
+          <div class="visitor-stat-value"><span class="badge badge-calc">OUI</span></div>
+          <div class="visitor-stat-label">Calculateur</div>
+        </div>` : ''}
       </div>
+      ${renderSectionHeatmap(v.sectionTimes)}
+      ${renderCalcBlock(v.calculatorInputs, v.calculatorResults)}
       ${analysisHtml}
       ${chatHtml}
     </div>
