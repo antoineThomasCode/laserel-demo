@@ -2226,6 +2226,221 @@ body {
   border-bottom: 1px solid rgba(196, 167, 125, 0.2);
 }
 
+/* ROI Simulation avant/apres */
+.roi-simulation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 520px) {
+  .roi-simulation {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roi-sim-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+}
+
+.roi-sim-before {
+  border-left: 3px solid var(--error);
+}
+
+.roi-sim-after {
+  border-left: 3px solid var(--success);
+}
+
+.roi-sim-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.roi-sim-header svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.roi-sim-before .roi-sim-header svg {
+  color: var(--error);
+}
+
+.roi-sim-after .roi-sim-header svg {
+  color: var(--success);
+}
+
+.roi-sim-header span {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--text-secondary);
+}
+
+.roi-sim-list {
+  list-style: none;
+  padding: 0;
+}
+
+.roi-sim-list li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--gray-100);
+  line-height: 1.5;
+}
+
+.roi-sim-list li:last-child {
+  border-bottom: none;
+}
+
+.roi-sim-list li strong {
+  color: var(--success);
+}
+
+/* ROI Breakeven */
+.roi-breakeven {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 2px solid var(--cohorte-teal);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+}
+
+.roi-breakeven-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cohorte-teal-light);
+  border-radius: 50%;
+}
+
+.roi-breakeven-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--cohorte-teal);
+}
+
+.roi-breakeven-content strong {
+  display: block;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.roi-breakeven-content p {
+  font-size: 13px;
+  color: var(--cohorte-teal);
+  font-weight: 600;
+}
+
+/* Roadmap */
+.roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.roadmap-month {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  transition: all 0.2s ease;
+}
+
+.roadmap-month:hover {
+  border-color: var(--laserel-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.roadmap-month-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.roadmap-month-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--laserel-gold);
+  color: var(--white);
+}
+
+.roadmap-month-header h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.roadmap-items {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.roadmap-items li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 5px 0 5px 18px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.roadmap-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  background: var(--gray-400);
+  border-radius: 50%;
+}
+
+.roadmap-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--success-light);
+  border: 1px solid rgba(107, 155, 122, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+.roadmap-result svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--success);
+}
+
+.roadmap-result span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--success);
+}
+
 .roi-stats-banner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

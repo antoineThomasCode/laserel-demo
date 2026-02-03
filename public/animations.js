@@ -137,13 +137,15 @@ document.addEventListener('DOMContentLoaded', function() {
       '.problem-item',
       '.highlight-box',
       '.comparison-card',
-      '.example-card',
-      '.stack-card',
-      '.reason-card',
-      '.problem-box',
-      '.bmad-steps',
-      '.info-box',
-      '.role-card',
+      '.solution-card',
+      '.also-section',
+      '.roi-simulation',
+      '.roi-stats-banner',
+      '.roi-breakeven',
+      '.roadmap-month',
+      '.method-step',
+      '.stack-simple',
+      '.stack-block',
       '.process-step',
       '.guarantee',
       '.cta-card'
@@ -159,9 +161,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add stagger to grids
     const staggerContainers = [
-      '.examples-grid',
-      '.reasons-grid',
-      '.roles-grid',
+      '.solutions-grid',
+      '.roi-stats-banner',
+      '.roadmap',
+      '.method-steps',
+      '.stack-blocks',
       '.guarantees'
     ];
 
