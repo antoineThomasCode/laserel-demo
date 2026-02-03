@@ -74,16 +74,14 @@ function trackScroll() {
 // Track which sections are viewed
 function trackSections() {
   const sections = [
-    { id: 'hero', selector: '.hero' },
-    { id: 'intro', selector: '.intro-card' },
-    { id: 'monde-change', selector: '.comparison' },
-    { id: 'exemples', selector: '.examples-grid' },
-    { id: 'stack', selector: '.stack-card' },
-    { id: '2026', selector: '.reasons-grid' },
-    { id: 'bmad', selector: '.bmad-steps' },
-    { id: 'process', selector: '.process-section' },
+    { id: 'hero', selector: '.section-hero' },
+    { id: 'probleme', selector: '.section-problem' },
+    { id: 'solutions', selector: '.section-solutions' },
+    { id: 'roi', selector: '.section-roi' },
+    { id: 'methode', selector: '.section-method' },
+    { id: 'outils', selector: '.section-stack' },
     { id: 'garanties', selector: '.guarantees' },
-    { id: 'cta', selector: '.cta-section' }
+    { id: 'cta', selector: '.section-cta' }
   ];
 
   const viewedSections = new Set(['home']);
@@ -238,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
   chatButton.addEventListener('click', () => {
     if (!hasOpened) {
       setTimeout(() => {
-        addMessage("Salut ! Je suis là pour clarifier la proposition. Une question sur le document ?");
+        addMessage("Salut Mickaël ! Une question sur ce qu'on peut faire pour Laserel ? Je suis là pour clarifier. Si c'est technique, je note pour qu'Antoine t'explique vendredi.");
       }, 500);
       hasOpened = true;
     }
