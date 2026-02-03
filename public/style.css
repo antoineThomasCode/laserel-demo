@@ -58,7 +58,7 @@
 
   /* Spacing - Plus généreux */
   --container-max: 680px;
-  --spacing-section: 80px;
+  --spacing-section: 48px;
   --radius-sm: 10px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -303,28 +303,28 @@ body {
    ============================================ */
 
 .section-header {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .section-number {
   display: inline-block;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 1.5px;
   color: var(--laserel-gold-dark);
   background: var(--laserel-gold-light);
-  padding: 6px 14px;
+  padding: 4px 12px;
   border-radius: 20px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .section-title {
   font-family: var(--font-brand);
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 400;
   color: var(--text-primary);
-  line-height: 1.35;
-  margin-bottom: 8px;
+  line-height: 1.3;
+  margin-bottom: 6px;
   letter-spacing: 0.03em;
 }
 
@@ -334,10 +334,10 @@ body {
 }
 
 .subsection-title {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-primary);
-  margin: 40px 0 20px;
+  margin: 28px 0 14px;
 }
 
 .section-intro {
@@ -352,8 +352,8 @@ body {
    ============================================ */
 
 .section-hero {
-  padding-top: 40px;
-  padding-bottom: 48px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .hero-badge {
@@ -365,9 +365,9 @@ body {
   color: var(--laserel-gold-dark);
   font-size: 11px;
   font-weight: 600;
-  padding: 8px 14px;
+  padding: 6px 12px;
   border-radius: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .hero-badge svg {
@@ -377,11 +377,11 @@ body {
 
 .hero-title {
   font-family: var(--font-brand);
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 400;
   color: var(--text-primary);
-  line-height: 1.3;
-  margin-bottom: 16px;
+  line-height: 1.25;
+  margin-bottom: 8px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
@@ -394,19 +394,19 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-muted);
-  margin-bottom: 28px;
+  margin-bottom: 14px;
 }
 
 .hero-card {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   background: var(--gray-50);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 18px;
-  margin-bottom: 28px;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 14px;
 }
 
 .hero-card-avatar {
@@ -414,8 +414,8 @@ body {
 }
 
 .hero-card-avatar img {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
@@ -426,35 +426,35 @@ body {
   font-family: var(--font-brand);
   font-weight: 500;
   color: var(--laserel-gold-dark);
-  font-size: 15px;
-  margin-bottom: 8px;
+  font-size: 13px;
+  margin-bottom: 4px;
   letter-spacing: 0.02em;
 }
 
 .hero-card-content p {
   color: var(--text-secondary);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .hero-benefits {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 40px;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
 .hero-benefit {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
   transition: all 0.2s ease;
   flex: 1;
-  min-width: 140px;
+  min-width: 130px;
 }
 
 .hero-benefit:hover {
@@ -463,24 +463,25 @@ body {
 }
 
 .hero-benefit-icon {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--laserel-gold-light);
   border-radius: var(--radius-sm);
+  flex-shrink: 0;
 }
 
 .hero-benefit-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: var(--laserel-gold-dark);
 }
 
 .hero-benefit span {
   font-weight: 500;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-primary);
 }
 
@@ -488,10 +489,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   color: var(--text-muted);
-  font-size: 12px;
-  padding-top: 16px;
+  font-size: 11px;
+  padding-top: 4px;
 }
 
 .scroll-arrow {
@@ -520,14 +521,14 @@ body {
 .problem-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
 .problem-item {
   display: flex;
-  gap: 14px;
-  padding: 16px;
+  gap: 12px;
+  padding: 12px;
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-md);
@@ -541,8 +542,8 @@ body {
 
 .problem-icon {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -565,12 +566,12 @@ body {
 /* Highlight Box */
 .highlight-box {
   display: flex;
-  gap: 16px;
-  padding: 20px;
+  gap: 12px;
+  padding: 14px;
   background: var(--cohorte-teal-light);
   border: 1px solid rgba(45, 125, 125, 0.15);
-  border-radius: var(--radius-lg);
-  margin-bottom: 32px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
 }
 
 .highlight-box-purple {
@@ -580,8 +581,8 @@ body {
 
 .highlight-icon {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -609,8 +610,8 @@ body {
 .comparison {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 28px;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 @media (max-width: 520px) {
@@ -668,15 +669,15 @@ body {
 
 .comparison-list {
   list-style: none;
-  padding: 14px 16px;
+  padding: 10px 14px;
 }
 
 .comparison-list li {
-  padding: 10px 0;
+  padding: 7px 0;
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 12px;
   border-bottom: 1px solid var(--gray-100);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .comparison-list li:last-child {
@@ -1310,7 +1311,7 @@ body {
 
 .process-step {
   position: relative;
-  padding-bottom: 28px;
+  padding-bottom: 18px;
 }
 
 .process-step:last-child {
@@ -1341,8 +1342,8 @@ body {
 .process-step-content {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 18px;
+  border-radius: var(--radius-md);
+  padding: 14px;
   margin-left: 12px;
   transition: all 0.2s ease;
 }
@@ -1461,8 +1462,8 @@ body {
 .guarantees {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 40px;
+  gap: 10px;
+  margin-top: 24px;
 }
 
 @media (max-width: 600px) {
@@ -1474,8 +1475,8 @@ body {
 .guarantee {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 20px;
+  border-radius: var(--radius-md);
+  padding: 14px;
   text-align: center;
   transition: all 0.2s ease;
 }
@@ -1486,14 +1487,14 @@ body {
 }
 
 .guarantee-icon {
-  width: 52px;
-  height: 52px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--laserel-gold);
   border-radius: 50%;
-  margin: 0 auto 16px;
+  margin: 0 auto 10px;
 }
 
 .guarantee-icon svg {
@@ -1582,7 +1583,7 @@ body {
 }
 
 .cta-body {
-  padding: 32px 20px;
+  padding: 20px 16px;
   text-align: center;
 }
 
@@ -1599,7 +1600,7 @@ body {
 .cta-text {
   font-size: 14px;
   color: var(--text-muted);
-  margin-bottom: 28px;
+  margin-bottom: 16px;
 }
 
 .cta-actions {
@@ -1682,8 +1683,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-top: 32px;
-  padding: 16px;
+  margin-top: 20px;
+  padding: 12px;
 }
 
 .author-avatar {
@@ -2057,7 +2058,7 @@ body {
 .solutions-grid {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .solution-card {
@@ -2074,7 +2075,7 @@ body {
 }
 
 .solution-header {
-  padding: 20px 18px 14px;
+  padding: 14px 16px 10px;
 }
 
 .solution-priority {
@@ -2091,13 +2092,13 @@ body {
 }
 
 .solution-icon {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   background: var(--cohorte-teal-light);
 }
 
@@ -2120,22 +2121,22 @@ body {
 }
 
 .solution-body {
-  padding: 0 18px 20px;
+  padding: 0 16px 14px;
 }
 
 .solution-features {
   list-style: none;
   padding: 0;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .solution-features li {
-  padding: 8px 0;
-  padding-left: 20px;
+  padding: 6px 0;
+  padding-left: 16px;
   position: relative;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.4;
   border-bottom: 1px solid var(--gray-100);
 }
 
@@ -2182,7 +2183,7 @@ body {
 
 /* Also section */
 .also-section {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 .also-list {
@@ -2247,8 +2248,8 @@ body {
 .roi-sim-card {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 18px;
+  border-radius: var(--radius-md);
+  padding: 14px;
 }
 
 .roi-sim-before {
@@ -2313,18 +2314,18 @@ body {
 .roi-breakeven {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 16px 18px;
+  gap: 12px;
+  padding: 12px 14px;
   background: var(--white);
   border: 2px solid var(--cohorte-teal);
-  border-radius: var(--radius-lg);
-  margin-bottom: 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
 }
 
 .roi-breakeven-icon {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2362,8 +2363,8 @@ body {
 .roadmap-month {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 18px;
+  border-radius: var(--radius-md);
+  padding: 14px;
   transition: all 0.2s ease;
 }
 
@@ -2449,9 +2450,9 @@ body {
 .roi-calculator {
   background: var(--white);
   border: 2px solid var(--laserel-gold);
-  border-radius: var(--radius-xl);
-  padding: 24px 18px;
-  margin-bottom: 32px;
+  border-radius: var(--radius-lg);
+  padding: 18px 14px;
+  margin-bottom: 24px;
 }
 
 .roi-calc-intro {
@@ -2726,8 +2727,8 @@ body {
 .roi-stat {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 20px 14px;
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
   text-align: center;
   transition: all 0.2s ease;
 }
@@ -2740,10 +2741,10 @@ body {
 .roi-stat-value {
   display: block;
   font-family: var(--font-serif);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--cohorte-teal);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .roi-stat-label {
@@ -2794,17 +2795,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   background: var(--gray-50);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
 .method-step {
   display: flex;
-  gap: 16px;
-  padding: 20px 18px;
+  gap: 12px;
+  padding: 14px 14px;
   border-bottom: 1px solid var(--gray-200);
   transition: background 0.2s ease;
 }
@@ -2819,31 +2820,31 @@ body {
 
 .method-step-number {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--laserel-gold);
   border-radius: 50%;
   font-family: var(--font-brand);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--white);
   box-shadow: 0 4px 12px rgba(196, 167, 125, 0.3);
 }
 
 .method-step-content h4 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .method-step-content p {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* ============================================
@@ -2880,8 +2881,8 @@ body {
 .stack-block {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 20px;
+  border-radius: var(--radius-md);
+  padding: 14px;
   text-align: center;
   transition: all 0.2s ease;
 }
@@ -2892,14 +2893,14 @@ body {
 }
 
 .stack-block-icon {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--cohorte-teal-light);
   border-radius: var(--radius-sm);
-  margin: 0 auto 12px;
+  margin: 0 auto 8px;
 }
 
 .stack-block-icon svg {

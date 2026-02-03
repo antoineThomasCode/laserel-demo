@@ -334,11 +334,11 @@ CONTEXTE DU DOCUMENT:
 - Ses 3 priorités : remplir ses centres, réduire les no-shows, baisser les coûts agence
 - Tarifs : Audit business 500€ (tu gardes tout même si tu arrêtes), puis Construction 1 500€/mois sans engagement
 - 3 solutions prioritaires :
-  1. Chatbot closing 24/7 → 10-30% de leads en plus
-  2. Système anti no-shows (scoring + relances auto) → 20-40% de no-shows en moins
-  3. Ads sans agence (IA génère, tu valides) → 60-80% de frais en moins
+  1. Chatbot closing 24/7 → 10-20% de leads en plus
+  2. Système anti no-shows (scoring + relances auto) → 15-30% de no-shows en moins
+  3. Ads sans agence (IA génère, tu valides) → 50-70% de frais en moins
 - Roadmap : Mois 1 = chatbot + dashboard leads, Mois 2 = système anti no-shows, Mois 3 = optimisation + CRM
-- Break-even estimé : mois 2-3
+- Break-even estimé : mois 3-4
 - Aussi prévu : onboarding franchisés, CRM intelligent, contenu marketing, dashboard, assistant interne
 - Outils : IA métier (comprend ton business), visibilité IA (nouveau SEO), outils sur-mesure Laserel
 - Call de suivi prévu : vendredi 7 février 2026
