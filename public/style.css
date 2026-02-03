@@ -2441,6 +2441,152 @@ body {
   color: var(--success);
 }
 
+/* ROI Calculator */
+.roi-calculator {
+  background: var(--white);
+  border: 2px solid var(--laserel-gold);
+  border-radius: var(--radius-xl);
+  padding: 24px 18px;
+  margin-bottom: 32px;
+}
+
+.roi-calc-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 520px) {
+  .roi-calc-inputs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roi-calc-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.roi-calc-input-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.roi-calc-input-wrap:focus-within {
+  border-color: var(--laserel-gold);
+  box-shadow: 0 0 0 3px rgba(196, 167, 125, 0.15);
+}
+
+.roi-calc-input-wrap input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 12px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  outline: none;
+  width: 100%;
+  min-width: 0;
+}
+
+.roi-calc-input-wrap input::-webkit-inner-spin-button,
+.roi-calc-input-wrap input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.roi-calc-input-wrap input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.roi-calc-unit {
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.roi-calc-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 520px) {
+  .roi-calc-results {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roi-calc-result {
+  padding: 16px 14px;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.roi-calc-loss {
+  background: rgba(220, 80, 80, 0.08);
+  border: 1px solid rgba(220, 80, 80, 0.2);
+}
+
+.roi-calc-gain {
+  background: var(--success-light);
+  border: 1px solid rgba(107, 155, 122, 0.2);
+}
+
+.roi-calc-total {
+  background: var(--cohorte-teal-light);
+  border: 1px solid rgba(107, 155, 122, 0.3);
+}
+
+.roi-calc-result-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.roi-calc-result-value {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.roi-calc-loss .roi-calc-result-value {
+  color: var(--error);
+}
+
+.roi-calc-gain .roi-calc-result-value {
+  color: var(--success);
+}
+
+.roi-calc-total .roi-calc-result-value {
+  color: var(--cohorte-teal);
+}
+
+.roi-calc-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  text-align: center;
+}
+
 .roi-stats-banner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

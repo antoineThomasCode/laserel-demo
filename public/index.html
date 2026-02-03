@@ -276,7 +276,7 @@
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
                 <polyline points="17 6 23 6 23 12"/>
               </svg>
-              <span>R&eacute;sultat estim&eacute; : <strong>15-40% de no-shows en moins</strong></span>
+              <span>R&eacute;sultat estim&eacute; : <strong>20-40% de no-shows en moins</strong></span>
             </div>
           </div>
         </div>
@@ -381,7 +381,7 @@
             <span>Situation actuelle (estim&eacute;e)</span>
           </div>
           <ul class="roi-sim-list">
-            <li>No-show : ~15% = cr&eacute;neaux perdus chaque mois</li>
+            <li>No-show : ~20% = cr&eacute;neaux perdus chaque mois</li>
             <li>Co&ucirc;t agence Ads : 2-4k&euro;/mois</li>
             <li>Leads non capt&eacute;s le soir/week-end : ~20%</li>
           </ul>
@@ -395,7 +395,7 @@
             <span>Avec Cohorte (objectifs r&eacute;alistes)</span>
           </div>
           <ul class="roi-sim-list">
-            <li>No-show r&eacute;duit &agrave; 8-10% &rarr; <strong>+CA r&eacute;cup&eacute;r&eacute;/mois</strong></li>
+            <li>No-show r&eacute;duit &agrave; 15% &rarr; <strong>+CA r&eacute;cup&eacute;r&eacute;/mois</strong></li>
             <li>&Eacute;conomie agence : 60-80% &rarr; <strong>+1 500-3 000&euro;/mois</strong></li>
             <li>Chatbot 24/7 : <strong>+10-30% leads capt&eacute;s</strong></li>
           </ul>
@@ -409,7 +409,7 @@
           <span class="roi-stat-source">Chatbot 24/7</span>
         </div>
         <div class="roi-stat">
-          <span class="roi-stat-value">15-40%</span>
+          <span class="roi-stat-value">20-40%</span>
           <span class="roi-stat-label">No-shows en moins</span>
           <span class="roi-stat-source">Scoring + relances</span>
         </div>
@@ -445,6 +445,51 @@
           <line x1="12" y1="8" x2="12.01" y2="8"/>
         </svg>
         <p>Ces chiffres sont des estimations bas&eacute;es sur les moyennes du march&eacute;. On mesure ensemble les vrais r&eacute;sultats d&egrave;s le mois 1 via ton dashboard.</p>
+      </div>
+
+      <!-- Calculateur ROI interactif -->
+      <h3 class="subsection-title">Calcule ton ROI</h3>
+
+      <div class="roi-calculator" id="roi-calculator">
+        <div class="roi-calc-inputs">
+          <div class="roi-calc-field">
+            <label for="calc-noshow">Ton taux de no-show actuel</label>
+            <div class="roi-calc-input-wrap">
+              <input type="number" id="calc-noshow" value="20" min="1" max="80" step="1" />
+              <span class="roi-calc-unit">%</span>
+            </div>
+          </div>
+          <div class="roi-calc-field">
+            <label for="calc-rdv">Nombre de RDV par mois</label>
+            <div class="roi-calc-input-wrap">
+              <input type="number" id="calc-rdv" value="200" min="10" max="10000" step="10" />
+            </div>
+          </div>
+          <div class="roi-calc-field">
+            <label for="calc-price">Prix moyen d'un RDV</label>
+            <div class="roi-calc-input-wrap">
+              <input type="number" id="calc-price" value="80" min="10" max="1000" step="5" />
+              <span class="roi-calc-unit">&euro;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="roi-calc-results" id="roi-calc-results">
+          <div class="roi-calc-result roi-calc-loss">
+            <span class="roi-calc-result-label">CA perdu / mois (no-shows)</span>
+            <span class="roi-calc-result-value" id="calc-ca-lost">3 200 &euro;</span>
+          </div>
+          <div class="roi-calc-result roi-calc-gain">
+            <span class="roi-calc-result-label">CA r&eacute;cup&eacute;r&eacute; avec -25% de no-shows</span>
+            <span class="roi-calc-result-value" id="calc-ca-recovered">800 &euro;/mois</span>
+          </div>
+          <div class="roi-calc-result roi-calc-total">
+            <span class="roi-calc-result-label">ROI estim&eacute; sur 6 mois</span>
+            <span class="roi-calc-result-value" id="calc-roi-6m">4 800 &euro;</span>
+          </div>
+        </div>
+
+        <p class="roi-calc-note">Estimation bas&eacute;e sur une r&eacute;duction de 25% des no-shows (objectif conservateur). Le ROI r&eacute;el inclut aussi les leads suppl&eacute;mentaires du chatbot et l'&eacute;conomie agence.</p>
       </div>
 
       <!-- Roadmap 3 premiers mois -->
@@ -805,5 +850,38 @@
 
 <script src="chat.js"></script>
 <script src="animations.js"></script>
+<script>
+// ROI Calculator
+(function() {
+  const noshow = document.getElementById('calc-noshow');
+  const rdv = document.getElementById('calc-rdv');
+  const price = document.getElementById('calc-price');
+  if (!noshow || !rdv || !price) return;
+
+  function formatEuro(n) {
+    return n.toLocaleString('fr-FR') + ' \u20ac';
+  }
+
+  function calculate() {
+    const ns = parseFloat(noshow.value) || 0;
+    const r = parseFloat(rdv.value) || 0;
+    const p = parseFloat(price.value) || 0;
+
+    const caLost = Math.round(r * (ns / 100) * p);
+    const reduction = 0.25; // 25% reduction conservative
+    const caRecovered = Math.round(caLost * reduction);
+    const roi6m = caRecovered * 6;
+
+    document.getElementById('calc-ca-lost').textContent = formatEuro(caLost);
+    document.getElementById('calc-ca-recovered').textContent = formatEuro(caRecovered) + '/mois';
+    document.getElementById('calc-roi-6m').textContent = formatEuro(roi6m);
+  }
+
+  noshow.addEventListener('input', calculate);
+  rdv.addEventListener('input', calculate);
+  price.addEventListener('input', calculate);
+  calculate();
+})();
+</script>
 </body>
 </html>

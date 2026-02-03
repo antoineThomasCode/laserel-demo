@@ -335,7 +335,7 @@ CONTEXTE DU DOCUMENT:
 - Tarifs : Audit business 500€ (tu gardes tout même si tu arrêtes), puis Construction 1 500€/mois sans engagement
 - 3 solutions prioritaires :
   1. Chatbot closing 24/7 → 10-30% de leads en plus
-  2. Système anti no-shows (scoring + relances auto) → 15-40% de no-shows en moins
+  2. Système anti no-shows (scoring + relances auto) → 20-40% de no-shows en moins
   3. Ads sans agence (IA génère, tu valides) → 60-80% de frais en moins
 - Roadmap : Mois 1 = chatbot + dashboard leads, Mois 2 = système anti no-shows, Mois 3 = optimisation + CRM
 - Break-even estimé : mois 2-3
