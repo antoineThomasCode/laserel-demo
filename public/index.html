@@ -61,39 +61,68 @@
   <!-- HERO -->
   <section class="section section-hero" id="hero">
     <div class="container">
-      <div class="hero-badge animate-fade-in">
+      <div class="hero-badge hero-anim" data-hero-step="badge">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
         Proposition personnalis&eacute;e &mdash; Laserel
       </div>
 
-      <h1 class="hero-title animate-fade-in-up">
+      <h1 class="hero-title hero-anim" data-hero-step="title">
         Micka&euml;l,<br>
         <span class="gradient-text">Remplis tes centres. R&eacute;duis tes co&ucirc;ts. Garde le contr&ocirc;le.</span>
       </h1>
 
-      <p class="hero-subtitle animate-fade-in-up delay-1">
+      <p class="hero-subtitle hero-anim" data-hero-step="subtitle">
         On s'est parl&eacute;, j'ai &eacute;cout&eacute;. Voici ce que je te propose.
       </p>
 
-      <div class="hero-chat animate-fade-in-up delay-2">
+      <div class="hero-chat hero-anim" data-hero-step="chat">
         <div class="hero-chat-time">Aujourd'hui, 14:32</div>
-        <div class="hero-chat-bubble incoming">
-          <p>Ok je veux bien voir ce que tu proposes concr&egrave;tement</p>
+
+        <div class="hero-chat-typing" id="hero-typing">
+          <div class="typing-dots"><span></span><span></span><span></span></div>
         </div>
-        <div class="hero-chat-bubble outgoing">
+
+        <div class="hero-bubble incoming" style="display:none">
+          <p>Mon probl&egrave;me c'est simple : j'ai 5 centres, j'arrive pas &agrave; les remplir et j'ai trop de no-shows sur les audits gratuits</p>
+        </div>
+        <div class="hero-bubble outgoing" style="display:none">
           <div class="hero-chat-avatar">
             <img src="antoine.png" alt="AT" />
           </div>
           <div class="hero-chat-text">
             <div class="hero-chat-name">Antoine</div>
-            <p>Je t'ai pr&eacute;par&eacute; un r&eacute;cap &mdash; pas de jargon, juste du concret. <strong>3 min de lecture, on en reparle vendredi.</strong></p>
+            <p>Et l&agrave; tu paies combien &agrave; ton agence pour g&eacute;rer les Ads ?</p>
+          </div>
+        </div>
+        <div class="hero-bubble incoming" style="display:none">
+          <p>2 &agrave; 4k par mois... et je contr&ocirc;le rien, j'ai z&eacute;ro visibilit&eacute;</p>
+        </div>
+        <div class="hero-bubble outgoing" style="display:none">
+          <div class="hero-chat-avatar">
+            <img src="antoine.png" alt="AT" />
+          </div>
+          <div class="hero-chat-text">
+            <div class="hero-chat-name">Antoine</div>
+            <p>OK. Avec l'IA on peut diviser &ccedil;a par 3 et en plus capter des leads 24/7 avec un chatbot qui conna&icirc;t tes offres</p>
+          </div>
+        </div>
+        <div class="hero-bubble incoming" style="display:none">
+          <p>Et pour les no-shows ? C'est ce qui me co&ucirc;te le plus</p>
+        </div>
+        <div class="hero-bubble outgoing" style="display:none">
+          <div class="hero-chat-avatar">
+            <img src="antoine.png" alt="AT" />
+          </div>
+          <div class="hero-chat-text">
+            <div class="hero-chat-name">Antoine</div>
+            <p>On met un scoring de risque + relances auto. Je t'ai pr&eacute;par&eacute; un r&eacute;cap &mdash; <strong>3 min de lecture, on en reparle vendredi.</strong></p>
           </div>
         </div>
       </div>
 
-      <div class="hero-benefits animate-fade-in-up delay-3">
+      <div class="hero-benefits hero-anim" data-hero-step="benefits">
         <div class="hero-benefit">
           <div class="hero-benefit-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -124,7 +153,7 @@
         </div>
       </div>
 
-      <div class="scroll-indicator animate-fade-in delay-4">
+      <div class="scroll-indicator hero-anim" data-hero-step="scroll">
         <span>Scroll pour d&eacute;couvrir</span>
         <div class="scroll-arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -461,25 +490,25 @@
                 </div>
               </div>
               <div class="roi-calc-field">
-                <label for="calc-rdv">RDV / mois / centre</label>
+                <label for="calc-audits">Audits gratuits / mois / centre</label>
                 <div class="roi-calc-input-wrap">
-                  <button type="button" class="roi-calc-btn-minus" data-target="calc-rdv" aria-label="Moins">&minus;</button>
-                  <input type="number" id="calc-rdv" value="200" min="10" max="5000" step="10" inputmode="numeric" />
-                  <button type="button" class="roi-calc-btn-plus" data-target="calc-rdv" aria-label="Plus">+</button>
+                  <button type="button" class="roi-calc-btn-minus" data-target="calc-audits" aria-label="Moins">&minus;</button>
+                  <input type="number" id="calc-audits" value="40" min="5" max="500" step="5" inputmode="numeric" />
+                  <button type="button" class="roi-calc-btn-plus" data-target="calc-audits" aria-label="Plus">+</button>
                 </div>
               </div>
               <div class="roi-calc-field">
-                <label for="calc-price">Prix moyen d'un RDV</label>
+                <label for="calc-panier">Panier moyen traitement</label>
                 <div class="roi-calc-input-wrap">
-                  <button type="button" class="roi-calc-btn-minus" data-target="calc-price" aria-label="Moins">&minus;</button>
-                  <input type="number" id="calc-price" value="50" min="10" max="500" step="5" inputmode="numeric" />
+                  <button type="button" class="roi-calc-btn-minus" data-target="calc-panier" aria-label="Moins">&minus;</button>
+                  <input type="number" id="calc-panier" value="800" min="50" max="5000" step="50" inputmode="numeric" />
                   <span class="roi-calc-unit">&euro;</span>
-                  <button type="button" class="roi-calc-btn-plus" data-target="calc-price" aria-label="Plus">+</button>
+                  <button type="button" class="roi-calc-btn-plus" data-target="calc-panier" aria-label="Plus">+</button>
                 </div>
               </div>
             </div>
             <div class="roi-calc-step-result" id="calc-step1-result">
-              <span id="calc-step1-text">1 000 RDV/mois &times; 50&euro; = <strong>50 000&euro; de CA mensuel</strong></span>
+              <span id="calc-step1-text">200 audits/mois &times; 60% conversion &times; 800&euro; = <strong>96 000&euro; de CA potentiel/mois</strong></span>
             </div>
           </div>
 
@@ -488,7 +517,7 @@
             <h4 class="roi-calc-step-title">Ce que tu perds</h4>
             <div class="roi-calc-step-fields">
               <div class="roi-calc-field">
-                <label for="calc-noshow">Taux de no-show actuel</label>
+                <label for="calc-noshow">Taux de no-show audits</label>
                 <div class="roi-calc-input-wrap">
                   <button type="button" class="roi-calc-btn-minus" data-target="calc-noshow" aria-label="Moins">&minus;</button>
                   <input type="number" id="calc-noshow" value="20" min="1" max="80" step="1" inputmode="numeric" />
@@ -507,7 +536,7 @@
             </div>
             <div class="roi-calc-step-result roi-calc-step-result-losses">
               <div class="roi-calc-result roi-calc-loss">
-                <span class="roi-calc-result-label">CA perdu / mois en no-shows</span>
+                <span class="roi-calc-result-label">Traitements perdus (audits manqu&eacute;s)</span>
                 <span class="roi-calc-result-value" id="calc-ca-lost">10 000 &euro;</span>
               </div>
               <div class="roi-calc-result roi-calc-loss">
@@ -523,11 +552,11 @@
 
             <div class="roi-calc-step-gains">
               <div class="roi-calc-result roi-calc-gain">
-                <span class="roi-calc-result-label">CA r&eacute;cup&eacute;r&eacute; / mois (no-shows -20%)</span>
+                <span class="roi-calc-result-label">CA r&eacute;cup&eacute;r&eacute; (rappels -25% no-shows)</span>
                 <span class="roi-calc-result-value" id="calc-noshow-gain">2 000 &euro;</span>
               </div>
               <div class="roi-calc-result roi-calc-gain">
-                <span class="roi-calc-result-label">CA suppl. / mois (chatbot +10% leads)</span>
+                <span class="roi-calc-result-label">CA suppl. (chatbot &rarr; +10% leads &rarr; audits)</span>
                 <span class="roi-calc-result-value" id="calc-leads-gain">750 &euro;</span>
               </div>
             </div>
@@ -565,7 +594,7 @@
           <button type="button" class="roi-calc-nav-btn roi-calc-nav-next" id="roi-calc-next">Suivant &rarr;</button>
         </div>
 
-        <p class="roi-calc-note">Estimations conservatrices : -20% no-shows, +10% leads via chatbot. Le gain r&eacute;el inclut aussi l'&eacute;conomie sur l'agence Ads (50-70%).</p>
+        <p class="roi-calc-note"><strong>Comment on estime :</strong> Taux de conversion audit &rarr; devis : 60% (moyenne secteur esth&eacute;tique/laser &mdash; conservateur, certains centres font 70-80%). R&eacute;duction des no-shows : 25% (gr&acirc;ce aux rappels SMS automatiques J-2, J-1, H-2 &mdash; &eacute;tudes montrent 25-40% de r&eacute;duction). Leads capt&eacute;s par chatbot : 10% de leads suppl&eacute;mentaires (r&eacute;ponses 24/7 aux prospects soir/WE).</p>
       </div>
 
       <!-- Roadmap 3 premiers mois -->
@@ -957,29 +986,121 @@ function toggleSolution(header) {
 }
 </script>
 <script>
-// Onboarding overlay
+// Onboarding overlay + Hero cinematic animation
 (function() {
-  const overlay = document.getElementById('onboarding-overlay');
-  const cta = document.getElementById('onboarding-cta');
-  const chatButton = document.getElementById('chat-button');
-  if (!overlay || !cta) return;
+  var overlay = document.getElementById('onboarding-overlay');
+  var cta = document.getElementById('onboarding-cta');
+  var chatButton = document.getElementById('chat-button');
 
-  // Check if already dismissed
-  if (sessionStorage.getItem('onboarding-done')) {
-    overlay.remove();
+  // ---- animateHero orchestrator ----
+  function animateHero() {
+    var badge = document.querySelector('[data-hero-step="badge"]');
+    var title = document.querySelector('[data-hero-step="title"]');
+    var subtitle = document.querySelector('[data-hero-step="subtitle"]');
+    var chat = document.querySelector('[data-hero-step="chat"]');
+    var benefits = document.querySelector('[data-hero-step="benefits"]');
+    var scroll = document.querySelector('[data-hero-step="scroll"]');
+    var typing = document.getElementById('hero-typing');
+    var bubbles = document.querySelectorAll('.hero-bubble');
+    var chatEl = document.querySelector('.hero-chat');
+
+    // Helper: show a hero-anim element with double rAF
+    function show(el, delay) {
+      setTimeout(function() {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            el.classList.add('hero-visible');
+          });
+        });
+      }, delay);
+    }
+
+    // Phase 1: badge, title, subtitle (stagger 150ms)
+    show(badge, 0);
+    show(title, 150);
+    show(subtitle, 300);
+
+    // Phase 2: chat container
+    show(chat, 750);
+
+    // Phase 3: bubbles with typing indicator
+    var bubbleStart = 1150;
+    var typingDuration = 900;
+    var pauseAfterBubble = 300;
+
+    function showBubble(index) {
+      if (index >= bubbles.length) {
+        // Phase 4: benefits + scroll
+        var finalDelay = 400;
+        show(benefits, finalDelay);
+        show(scroll, finalDelay + 200);
+        return;
+      }
+
+      var bubble = bubbles[index];
+      var isIncoming = bubble.classList.contains('incoming');
+
+      // Position typing indicator before this bubble
+      if (typing && bubble.parentNode) {
+        bubble.parentNode.insertBefore(typing, bubble);
+        // Align typing: left for incoming, right for outgoing
+        typing.style.textAlign = isIncoming ? 'left' : 'right';
+      }
+
+      // Show typing
+      if (typing) typing.classList.add('typing-visible');
+
+      setTimeout(function() {
+        // Hide typing
+        if (typing) typing.classList.remove('typing-visible');
+
+        // Show bubble with double rAF
+        setTimeout(function() {
+          bubble.style.display = '';
+          requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+              bubble.classList.add('bubble-visible');
+              // Auto-scroll chat
+              if (chatEl) chatEl.scrollTop = chatEl.scrollHeight;
+            });
+          });
+
+          // Next bubble after pause
+          setTimeout(function() {
+            showBubble(index + 1);
+          }, pauseAfterBubble);
+        }, 50);
+      }, typingDuration);
+    }
+
+    setTimeout(function() {
+      showBubble(0);
+    }, bubbleStart);
+  }
+
+  // ---- Onboarding logic ----
+  if (!overlay || !cta) {
+    // No overlay elements, just animate
+    animateHero();
     return;
   }
 
-  // Show immediately
+  if (sessionStorage.getItem('onboarding-done')) {
+    overlay.remove();
+    animateHero();
+    return;
+  }
+
+  // Show overlay
   overlay.classList.add('visible');
   if (chatButton) chatButton.classList.add('pulse');
 
-  // Dismiss
   function dismiss() {
     overlay.classList.remove('visible');
     if (chatButton) chatButton.classList.remove('pulse');
     sessionStorage.setItem('onboarding-done', '1');
     setTimeout(function() { overlay.remove(); }, 400);
+    setTimeout(animateHero, 300);
   }
 
   cta.addEventListener('click', dismiss);
@@ -991,11 +1112,11 @@ function toggleSolution(header) {
 // ROI Calculator — Wizard
 (function() {
   var centres = document.getElementById('calc-centres');
+  var audits = document.getElementById('calc-audits');
+  var panier = document.getElementById('calc-panier');
   var noshow = document.getElementById('calc-noshow');
-  var rdv = document.getElementById('calc-rdv');
-  var price = document.getElementById('calc-price');
   var leads = document.getElementById('calc-leads');
-  if (!centres || !noshow || !rdv || !price || !leads) return;
+  if (!centres || !audits || !panier || !noshow || !leads) return;
 
   // Wizard navigation
   var currentStep = 1;
@@ -1081,33 +1202,35 @@ function toggleSolution(header) {
     return Math.round(n).toLocaleString('fr-FR');
   }
 
+  // Constantes estimées
+  var CONVERSION_RATE = 0.60;  // 60% des audits → devis signé
+  var NOSHOW_REDUCTION = 0.25; // On réduit les no-shows de 25%
+  var CHATBOT_CAPTURE = 0.10;  // 10% de leads supplémentaires
+
   function calculate() {
     var c = parseFloat(centres.value) || 1;
+    var a = parseFloat(audits.value) || 0;
+    var p = parseFloat(panier.value) || 0;
     var ns = parseFloat(noshow.value) || 0;
-    var r = parseFloat(rdv.value) || 0;
-    var p = parseFloat(price.value) || 0;
     var l = parseFloat(leads.value) || 0;
 
-    // Step 1 live result: total RDV × price = CA mensuel
-    var totalRdv = Math.round(r * c);
-    var caMensuel = Math.round(totalRdv * p);
+    // Step 1 — CA potentiel
+    var totalAudits = Math.round(a * c);
+    var caPotentiel = Math.round(totalAudits * CONVERSION_RATE * p);
     var step1Text = document.getElementById('calc-step1-text');
     if (step1Text) {
-      step1Text.innerHTML = fmtNum(totalRdv) + ' RDV/mois \u00d7 ' + fmtNum(p) + '\u20ac = <strong>' + fmt(caMensuel) + ' de CA mensuel</strong>';
+      step1Text.innerHTML = fmtNum(totalAudits) + ' audits/mois \u00d7 60% conversion \u00d7 ' + fmtNum(p) + '\u20ac = <strong>' + fmt(caPotentiel) + ' de CA potentiel/mois</strong>';
     }
 
-    // No-show : par centre puis multiplié
-    var rdvPerdusParCentre = Math.round(r * (ns / 100));
-    var caLostTotal = Math.round(rdvPerdusParCentre * p * c);
-    var noshowReduction = 0.20;
-    var noshowGain = Math.round(caLostTotal * noshowReduction);
+    // Step 2 — Pertes
+    var auditsManques = Math.round(totalAudits * (ns / 100));
+    var caPerdu = Math.round(auditsManques * CONVERSION_RATE * p);
+    var leadsLost = Math.round(l * 0.15);
 
-    // Chatbot leads : global franchise
-    var leadsLostPct = 0.15;
-    var leadsLost = Math.round(l * leadsLostPct);
-    var chatbotCapture = 0.10;
-    var newLeads = Math.round(l * chatbotCapture);
-    var leadsGain = Math.round(newLeads * p);
+    // Step 3 — Gains récupérés
+    var noshowGain = Math.round(caPerdu * NOSHOW_REDUCTION);
+    var newLeads = Math.round(l * CHATBOT_CAPTURE);
+    var leadsGain = Math.round(newLeads * CONVERSION_RATE * p);
 
     // Totals
     var totalMonth = noshowGain + leadsGain;
@@ -1122,7 +1245,7 @@ function toggleSolution(header) {
         : 'ROI positif apr\u00e8s 6 mois')
       : '\u2014';
 
-    document.getElementById('calc-ca-lost').textContent = fmt(caLostTotal);
+    document.getElementById('calc-ca-lost').textContent = fmt(caPerdu);
     document.getElementById('calc-noshow-gain').textContent = fmt(noshowGain);
     document.getElementById('calc-leads-lost').textContent = leadsLost + ' leads';
     document.getElementById('calc-leads-gain').textContent = fmt(leadsGain);
@@ -1132,7 +1255,7 @@ function toggleSolution(header) {
   }
 
   // Calculator tracking: throttled send to server
-  var calcDefaults = { centres: 5, rdv: 200, price: 50, noshow: 20, leads: 150 };
+  var calcDefaults = { centres: 5, audits: 40, panier: 800, noshow: 20, leads: 150 };
   var lastCalcSend = 0;
   var calcSendTimer = null;
 
@@ -1159,21 +1282,22 @@ function toggleSolution(header) {
   function trackCalc() {
     var inputs = {
       centres: parseFloat(centres.value) || 1,
-      rdv: parseFloat(rdv.value) || 0,
-      price: parseFloat(price.value) || 0,
+      audits: parseFloat(audits.value) || 0,
+      panier: parseFloat(panier.value) || 0,
       noshow: parseFloat(noshow.value) || 0,
       leads: parseFloat(leads.value) || 0
     };
     var changed = Object.keys(inputs).some(function(k) { return inputs[k] !== calcDefaults[k]; });
     if (!changed) return;
 
-    var caLostTotal = Math.round(Math.round(inputs.rdv * (inputs.noshow / 100)) * inputs.price * inputs.centres);
-    var noshowGain = Math.round(caLostTotal * 0.20);
-    var leadsGain = Math.round(Math.round(inputs.leads * 0.10) * inputs.price);
+    var totalAudits = Math.round(inputs.audits * inputs.centres);
+    var caPerdu = Math.round(Math.round(totalAudits * (inputs.noshow / 100)) * CONVERSION_RATE * inputs.panier);
+    var noshowGain = Math.round(caPerdu * NOSHOW_REDUCTION);
+    var leadsGain = Math.round(Math.round(inputs.leads * CHATBOT_CAPTURE) * CONVERSION_RATE * inputs.panier);
     var totalMonth = noshowGain + leadsGain;
 
     sendCalcData(inputs, {
-      caLost: caLostTotal,
+      caLost: caPerdu,
       noshowGain: noshowGain,
       leadsGain: leadsGain,
       totalMonth: totalMonth,
@@ -1181,7 +1305,7 @@ function toggleSolution(header) {
     });
   }
 
-  [centres, noshow, rdv, price, leads].forEach(function(el) {
+  [centres, audits, panier, noshow, leads].forEach(function(el) {
     el.addEventListener('input', function() {
       calculate();
       trackCalc();

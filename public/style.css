@@ -3582,3 +3582,77 @@ body {
 .guarantee-icon {
   background: var(--success);
 }
+
+/* ============================================
+   HERO CINEMATIC ANIMATION
+   ============================================ */
+
+.hero-anim {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hero-anim.hero-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Bubble animation */
+.hero-bubble {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.hero-bubble.bubble-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typing indicator (iMessage-style) */
+.hero-chat-typing {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  margin-bottom: 8px;
+}
+.hero-chat-typing.typing-visible {
+  opacity: 1;
+}
+
+.typing-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 18px;
+  padding: 10px 16px;
+}
+
+.typing-dots span {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gray-400);
+  animation: typingBounce 1.2s infinite ease-in-out;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.15s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-4px); }
+}
+
+/* Chat container overflow for 6 bubbles */
+.hero-chat {
+  max-height: 340px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hero-chat::-webkit-scrollbar {
+  display: none;
+}
