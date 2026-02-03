@@ -2446,7 +2446,7 @@ body {
   color: var(--success);
 }
 
-/* ROI Calculator */
+/* ROI Calculator — Wizard */
 .roi-calculator {
   background: var(--white);
   border: 2px solid var(--laserel-gold);
@@ -2461,23 +2461,73 @@ body {
   margin-bottom: 16px;
 }
 
-.roi-calc-inputs {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  margin-bottom: 24px;
+/* Progress dots (mobile) */
+.roi-calc-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
-@media (max-width: 720px) {
-  .roi-calc-inputs {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.roi-calc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--laserel-gold);
+  background: transparent;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-@media (max-width: 480px) {
-  .roi-calc-inputs {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.roi-calc-dot.active {
+  background: var(--laserel-gold);
+  transform: scale(1.2);
+}
+
+.roi-calc-dot.done {
+  background: var(--laserel-gold);
+}
+
+.roi-calc-progress-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-left: 6px;
+}
+
+/* Steps container */
+.roi-calc-steps {
+  overflow: hidden;
+}
+
+.roi-calc-step {
+  display: none;
+}
+
+.roi-calc-step.active {
+  display: block;
+}
+
+.roi-calc-step-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Step fields */
+.roi-calc-step-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.roi-calc-field {
+  text-align: center;
 }
 
 .roi-calc-field label {
@@ -2485,17 +2535,21 @@ body {
   font-size: 12px;
   font-weight: 600;
   color: var(--text-secondary);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
+/* Input wrap with +/− buttons */
 .roi-calc-input-wrap {
   display: flex;
   align-items: center;
+  justify-content: center;
   background: var(--gray-50);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-sm);
   overflow: hidden;
   transition: border-color 0.2s ease;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
 .roi-calc-input-wrap:focus-within {
@@ -2507,14 +2561,16 @@ body {
   flex: 1;
   border: none;
   background: transparent;
-  padding: 10px 12px;
-  font-size: 18px;
+  padding: 12px 4px;
+  font-size: 20px;
   font-weight: 600;
   font-family: var(--font-serif);
   color: var(--text-primary);
   outline: none;
+  text-align: center;
   width: 100%;
   min-width: 0;
+  min-height: 48px;
 }
 
 .roi-calc-input-wrap input::-webkit-inner-spin-button,
@@ -2528,106 +2584,82 @@ body {
 }
 
 .roi-calc-unit {
-  padding: 0 12px;
+  padding: 0 4px;
   font-size: 14px;
   font-weight: 600;
   color: var(--text-muted);
 }
 
-/* Calculator blocks */
-.roi-calc-block {
+/* +/− buttons */
+.roi-calc-btn-minus,
+.roi-calc-btn-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  min-width: 44px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.roi-calc-btn-minus:hover,
+.roi-calc-btn-plus:hover {
+  background: var(--gray-100);
+  color: var(--text-primary);
+}
+
+.roi-calc-btn-minus:active,
+.roi-calc-btn-plus:active {
+  background: var(--gray-200);
+}
+
+/* Step live result */
+.roi-calc-step-result {
+  padding: 14px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.roi-calc-step-result strong {
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-size: 16px;
+}
+
+.roi-calc-step-result-losses {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Step 3 gains */
+.roi-calc-step-gains {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   margin-bottom: 16px;
 }
 
-.roi-calc-block-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.roi-calc-block-header svg {
-  width: 18px;
-  height: 18px;
-  color: var(--cohorte-teal);
-  flex-shrink: 0;
-}
-
-.roi-calc-block-header h4 {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-.roi-calc-block-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-@media (max-width: 520px) {
-  .roi-calc-block-row {
+@media (max-width: 480px) {
+  .roi-calc-step-gains {
     grid-template-columns: 1fr;
   }
 }
 
-.roi-calc-total-block {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 2px solid var(--laserel-gold);
-}
-
-.roi-calc-total-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-@media (max-width: 520px) {
-  .roi-calc-total-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-.roi-calc-total-highlight {
-  background: var(--cohorte-teal) !important;
-  border-color: var(--cohorte-teal) !important;
-}
-
-.roi-calc-total-highlight .roi-calc-result-label {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.roi-calc-total-highlight .roi-calc-result-value {
-  color: var(--white) !important;
-  font-size: 26px;
-}
-
-.roi-calc-vs {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 12px 14px;
-  background: var(--gray-50);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-sm);
-}
-
-.roi-calc-vs span {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-.roi-calc-vs-result {
-  font-weight: 700 !important;
-  color: var(--cohorte-teal) !important;
-}
-
+/* Calculator result cards */
 .roi-calc-result {
   padding: 16px 14px;
   border-radius: var(--radius-md);
@@ -2678,13 +2710,70 @@ body {
   color: var(--cohorte-teal);
 }
 
+/* Total block */
+.roi-calc-total-block {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid var(--laserel-gold);
+}
+
+.roi-calc-total-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+  .roi-calc-total-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roi-calc-total-highlight {
+  background: var(--cohorte-teal) !important;
+  border-color: var(--cohorte-teal) !important;
+}
+
+.roi-calc-total-highlight .roi-calc-result-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.roi-calc-total-highlight .roi-calc-result-value {
+  color: var(--white) !important;
+  font-size: 26px;
+}
+
+.roi-calc-vs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+}
+
+.roi-calc-vs span {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.roi-calc-vs-result {
+  font-weight: 700 !important;
+  color: var(--cohorte-teal) !important;
+}
+
+/* Massue */
 .roi-calc-massue {
   display: flex;
   gap: 12px;
   align-items: flex-start;
   padding: 16px 18px;
   margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   background: var(--cohorte-teal-light);
   border: 1px solid rgba(107, 155, 122, 0.3);
   border-radius: var(--radius-md);
@@ -2704,11 +2793,122 @@ body {
   line-height: 1.6;
 }
 
+/* Navigation buttons (mobile) */
+.roi-calc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.roi-calc-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  min-height: 48px;
+}
+
+.roi-calc-nav-btn:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-300);
+}
+
+.roi-calc-nav-next {
+  margin-left: auto;
+  background: var(--laserel-gold);
+  border-color: var(--laserel-gold);
+  color: var(--white);
+}
+
+.roi-calc-nav-next:hover {
+  background: var(--laserel-gold-dark);
+  border-color: var(--laserel-gold-dark);
+}
+
 .roi-calc-note {
   font-size: 12px;
   color: var(--text-muted);
   line-height: 1.5;
   text-align: center;
+  margin-top: 12px;
+}
+
+/* Desktop: 3-column layout, no wizard */
+@media (min-width: 769px) {
+  .roi-calc-progress,
+  .roi-calc-nav {
+    display: none;
+  }
+
+  .roi-calc-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    overflow: visible;
+  }
+
+  .roi-calc-step {
+    display: block !important;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    background: var(--gray-50);
+  }
+
+  .roi-calc-step[data-step="1"] {
+    border-top: 3px solid var(--laserel-gold);
+  }
+
+  .roi-calc-step[data-step="2"] {
+    border-top: 3px solid var(--error);
+  }
+
+  .roi-calc-step[data-step="3"] {
+    border-top: 3px solid var(--success);
+  }
+
+  .roi-calc-step-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 14px;
+  }
+
+  .roi-calc-step-fields {
+    gap: 12px;
+  }
+
+  .roi-calc-input-wrap {
+    max-width: none;
+  }
+
+  .roi-calc-step-gains {
+    grid-template-columns: 1fr;
+  }
+
+  .roi-calc-total-row {
+    grid-template-columns: 1fr;
+  }
+
+  .roi-calc-total-highlight .roi-calc-result-value {
+    font-size: 22px;
+  }
+
+  .roi-calc-note {
+    margin-top: 16px;
+  }
 }
 
 .roi-stats-banner {
