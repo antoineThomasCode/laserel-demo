@@ -451,34 +451,40 @@
       <h3 class="subsection-title">Calcule ton ROI</h3>
 
       <div class="roi-calculator" id="roi-calculator">
-        <p class="roi-calc-intro">Rentre tes chiffres, le calcul se fait en temps r&eacute;el.</p>
+        <p class="roi-calc-intro">Rentre tes chiffres pour la franchise &mdash; le calcul se fait en temps r&eacute;el sur l'ensemble de tes centres.</p>
 
         <!-- Inputs -->
         <div class="roi-calc-inputs">
           <div class="roi-calc-field">
-            <label for="calc-rdv">RDV par mois (tous centres)</label>
+            <label for="calc-centres">Nombre de centres</label>
             <div class="roi-calc-input-wrap">
-              <input type="number" id="calc-rdv" value="200" min="10" max="10000" step="10" />
+              <input type="number" id="calc-centres" value="5" min="1" max="50" step="1" />
+            </div>
           </div>
+          <div class="roi-calc-field">
+            <label for="calc-rdv">RDV / mois / centre</label>
+            <div class="roi-calc-input-wrap">
+              <input type="number" id="calc-rdv" value="200" min="10" max="5000" step="10" />
+            </div>
           </div>
           <div class="roi-calc-field">
             <label for="calc-price">Prix moyen d'un RDV</label>
             <div class="roi-calc-input-wrap">
-              <input type="number" id="calc-price" value="80" min="10" max="1000" step="5" />
+              <input type="number" id="calc-price" value="50" min="10" max="500" step="5" />
               <span class="roi-calc-unit">&euro;</span>
             </div>
           </div>
           <div class="roi-calc-field">
             <label for="calc-noshow">Taux de no-show actuel</label>
             <div class="roi-calc-input-wrap">
-              <input type="number" id="calc-noshow" value="20" min="1" max="80" step="1" />
+              <input type="number" id="calc-noshow" value="15" min="1" max="80" step="1" />
               <span class="roi-calc-unit">%</span>
             </div>
           </div>
           <div class="roi-calc-field">
-            <label for="calc-leads">Leads / mois (site web)</label>
+            <label for="calc-leads">Leads / mois (tous centres)</label>
             <div class="roi-calc-input-wrap">
-              <input type="number" id="calc-leads" value="100" min="5" max="10000" step="5" />
+              <input type="number" id="calc-leads" value="150" min="5" max="10000" step="5" />
             </div>
           </div>
         </div>
@@ -490,16 +496,16 @@
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
-            <h4>R&eacute;duction des no-shows</h4>
+            <h4>R&eacute;duction des no-shows &mdash; sur <span id="calc-label-centres">5</span> centres</h4>
           </div>
           <div class="roi-calc-block-row">
             <div class="roi-calc-result roi-calc-loss">
-              <span class="roi-calc-result-label">CA perdu / mois (no-shows)</span>
-              <span class="roi-calc-result-value" id="calc-ca-lost">3 200 &euro;</span>
+              <span class="roi-calc-result-label">CA perdu / mois (franchise)</span>
+              <span class="roi-calc-result-value" id="calc-ca-lost">7 500 &euro;</span>
             </div>
             <div class="roi-calc-result roi-calc-gain">
-              <span class="roi-calc-result-label">CA r&eacute;cup&eacute;r&eacute; / mois (-25% no-shows)</span>
-              <span class="roi-calc-result-value" id="calc-noshow-gain">800 &euro;</span>
+              <span class="roi-calc-result-label">CA r&eacute;cup&eacute;r&eacute; / mois (-30% no-shows)</span>
+              <span class="roi-calc-result-value" id="calc-noshow-gain">2 250 &euro;</span>
             </div>
           </div>
         </div>
@@ -510,16 +516,16 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
-            <h4>Chatbot closer 24/7</h4>
+            <h4>Chatbot closer 24/7 &mdash; pour tous les centres</h4>
           </div>
           <div class="roi-calc-block-row">
             <div class="roi-calc-result roi-calc-loss">
               <span class="roi-calc-result-label">Leads non capt&eacute;s (soir/WE)</span>
-              <span class="roi-calc-result-value" id="calc-leads-lost">20</span>
+              <span class="roi-calc-result-value" id="calc-leads-lost">30 leads</span>
             </div>
             <div class="roi-calc-result roi-calc-gain">
               <span class="roi-calc-result-label">CA suppl. / mois (+15% leads)</span>
-              <span class="roi-calc-result-value" id="calc-leads-gain">1 200 &euro;</span>
+              <span class="roi-calc-result-value" id="calc-leads-gain">1 125 &euro;</span>
             </div>
           </div>
         </div>
@@ -528,21 +534,28 @@
         <div class="roi-calc-total-block">
           <div class="roi-calc-total-row">
             <div class="roi-calc-result roi-calc-total">
-              <span class="roi-calc-result-label">Gain total / mois</span>
-              <span class="roi-calc-result-value" id="calc-total-month">2 000 &euro;</span>
+              <span class="roi-calc-result-label">Gain franchise / mois</span>
+              <span class="roi-calc-result-value" id="calc-total-month">3 375 &euro;</span>
             </div>
             <div class="roi-calc-result roi-calc-total roi-calc-total-highlight">
-              <span class="roi-calc-result-label">Gain estim&eacute; sur 6 mois</span>
-              <span class="roi-calc-result-value" id="calc-total-6m">12 000 &euro;</span>
+              <span class="roi-calc-result-label">Gain franchise sur 6 mois</span>
+              <span class="roi-calc-result-value" id="calc-total-6m">20 250 &euro;</span>
             </div>
           </div>
           <div class="roi-calc-vs">
             <span>Investissement : 500&euro; + 6 &times; 1 500&euro; = <strong>9 500&euro;</strong></span>
-            <span class="roi-calc-vs-result" id="calc-vs-result">ROI positif d&egrave;s le mois 3</span>
+            <span class="roi-calc-vs-result" id="calc-vs-result">ROI positif d&egrave;s le mois 2</span>
           </div>
         </div>
 
-        <p class="roi-calc-note">Estimations conservatrices : -25% no-shows, +15% leads via chatbot. Le gain r&eacute;el inclut aussi l'&eacute;conomie sur l'agence Ads (60-80%).</p>
+        <div class="roi-calc-massue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          <p>L'investissement est fixe (1 500&euro;/mois), mais <strong>le ROI se multiplie avec chaque centre</strong>. Quand tu ouvres un nouveau centre, il b&eacute;n&eacute;ficie de tout l'&eacute;cosyst&egrave;me &mdash; z&eacute;ro co&ucirc;t en plus.</p>
+        </div>
+
+        <p class="roi-calc-note">Estimations conservatrices : -30% no-shows, +15% leads via chatbot. Le gain r&eacute;el inclut aussi l'&eacute;conomie sur l'agence Ads (60-80%).</p>
       </div>
 
       <!-- Roadmap 3 premiers mois -->
@@ -947,40 +960,43 @@
 
 // ROI Calculator
 (function() {
-  const noshow = document.getElementById('calc-noshow');
-  const rdv = document.getElementById('calc-rdv');
-  const price = document.getElementById('calc-price');
-  const leads = document.getElementById('calc-leads');
-  if (!noshow || !rdv || !price || !leads) return;
+  var centres = document.getElementById('calc-centres');
+  var noshow = document.getElementById('calc-noshow');
+  var rdv = document.getElementById('calc-rdv');
+  var price = document.getElementById('calc-price');
+  var leads = document.getElementById('calc-leads');
+  if (!centres || !noshow || !rdv || !price || !leads) return;
 
   function fmt(n) {
     return Math.round(n).toLocaleString('fr-FR') + ' \u20ac';
   }
 
   function calculate() {
+    var c = parseFloat(centres.value) || 1;
     var ns = parseFloat(noshow.value) || 0;
     var r = parseFloat(rdv.value) || 0;
     var p = parseFloat(price.value) || 0;
     var l = parseFloat(leads.value) || 0;
 
-    // No-show block
-    var caLost = Math.round(r * (ns / 100) * p);
-    var noshowReduction = 0.25; // -25% de no-shows
-    var noshowGain = Math.round(caLost * noshowReduction);
+    // No-show : par centre puis multiplié
+    var rdvPerdusParCentre = Math.round(r * (ns / 100));
+    var caLostTotal = Math.round(rdvPerdusParCentre * p * c);
+    var noshowReduction = 0.30; // -30% de no-shows
+    var noshowGain = Math.round(caLostTotal * noshowReduction);
 
-    // Chatbot leads block
-    var leadsLostPct = 0.20; // 20% de leads non captés soir/WE
+    // Chatbot leads : global franchise
+    var leadsLostPct = 0.20;
     var leadsLost = Math.round(l * leadsLostPct);
-    var chatbotCapture = 0.15; // le chatbot capte 15% de leads en plus
+    var chatbotCapture = 0.15;
     var newLeads = Math.round(l * chatbotCapture);
     var leadsGain = Math.round(newLeads * p);
 
     // Totals
     var totalMonth = noshowGain + leadsGain;
     var total6m = totalMonth * 6;
-    var investissement = 500 + 6 * 1500; // 9500
+    var investissement = 500 + 6 * 1500;
 
-    // Break-even month
+    // Break-even
     var breakEven = investissement / (totalMonth || 1);
     var breakEvenText = totalMonth > 0
       ? (breakEven <= 1 ? 'ROI positif d\u00e8s le mois 1'
@@ -988,7 +1004,11 @@
         : 'ROI positif apr\u00e8s 6 mois')
       : '\u2014';
 
-    document.getElementById('calc-ca-lost').textContent = fmt(caLost);
+    // Update label
+    var labelCentres = document.getElementById('calc-label-centres');
+    if (labelCentres) labelCentres.textContent = c;
+
+    document.getElementById('calc-ca-lost').textContent = fmt(caLostTotal);
     document.getElementById('calc-noshow-gain').textContent = fmt(noshowGain);
     document.getElementById('calc-leads-lost').textContent = leadsLost + ' leads';
     document.getElementById('calc-leads-gain').textContent = fmt(leadsGain);
@@ -997,7 +1017,7 @@
     document.getElementById('calc-vs-result').textContent = breakEvenText;
   }
 
-  [noshow, rdv, price, leads].forEach(function(el) {
+  [centres, noshow, rdv, price, leads].forEach(function(el) {
     el.addEventListener('input', calculate);
   });
   calculate();

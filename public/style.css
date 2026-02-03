@@ -418,7 +418,7 @@ body {
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 30%;
 }
 
 .hero-card-greeting {
@@ -1697,7 +1697,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 30%;
 }
 
 .author-info {
@@ -2462,20 +2462,20 @@ body {
 
 .roi-calc-inputs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
   margin-bottom: 24px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .roi-calc-inputs {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
   .roi-calc-inputs {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2675,6 +2675,32 @@ body {
 
 .roi-calc-total .roi-calc-result-value {
   color: var(--cohorte-teal);
+}
+
+.roi-calc-massue {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background: var(--cohorte-teal-light);
+  border: 1px solid rgba(107, 155, 122, 0.3);
+  border-radius: var(--radius-md);
+}
+
+.roi-calc-massue svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: var(--cohorte-teal);
+  margin-top: 1px;
+}
+
+.roi-calc-massue p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .roi-calc-note {
