@@ -395,7 +395,7 @@
             <span>Avec Cohorte (objectifs r&eacute;alistes)</span>
           </div>
           <ul class="roi-sim-list">
-            <li>No-show r&eacute;duit &agrave; 15% &rarr; <strong>+CA r&eacute;cup&eacute;r&eacute;/mois</strong></li>
+            <li>No-show r&eacute;duit &agrave; 15-20% &rarr; <strong>+CA r&eacute;cup&eacute;r&eacute;/mois</strong></li>
             <li>&Eacute;conomie agence : 60-80% &rarr; <strong>+1 500-3 000&euro;/mois</strong></li>
             <li>Chatbot 24/7 : <strong>+10-30% leads capt&eacute;s</strong></li>
           </ul>
@@ -801,6 +801,16 @@
 
 </main>
 
+<!-- ONBOARDING OVERLAY -->
+<div class="onboarding-overlay" id="onboarding-overlay">
+  <div class="onboarding-tooltip" id="onboarding-tooltip">
+    <p><strong>Une question ?</strong></p>
+    <p>Pose-la ici &mdash; je te r&eacute;ponds directement, ou Antoine te rappelle par WhatsApp.</p>
+    <button class="onboarding-cta" id="onboarding-cta">Compris !</button>
+    <div class="onboarding-arrow"></div>
+  </div>
+</div>
+
 <!-- CHATBOT WIDGET -->
 <div class="chat-widget" id="chat-widget">
   <button class="chat-button" id="chat-button">
@@ -851,6 +861,40 @@
 <script src="chat.js"></script>
 <script src="animations.js"></script>
 <script>
+// Onboarding overlay
+(function() {
+  const overlay = document.getElementById('onboarding-overlay');
+  const cta = document.getElementById('onboarding-cta');
+  const chatButton = document.getElementById('chat-button');
+  if (!overlay || !cta) return;
+
+  // Check if already dismissed
+  if (sessionStorage.getItem('onboarding-done')) {
+    overlay.remove();
+    return;
+  }
+
+  // Show after a short delay
+  setTimeout(function() {
+    overlay.classList.add('visible');
+    // Pulse the chat button
+    if (chatButton) chatButton.classList.add('pulse');
+  }, 1200);
+
+  // Dismiss
+  function dismiss() {
+    overlay.classList.remove('visible');
+    if (chatButton) chatButton.classList.remove('pulse');
+    sessionStorage.setItem('onboarding-done', '1');
+    setTimeout(function() { overlay.remove(); }, 400);
+  }
+
+  cta.addEventListener('click', dismiss);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) dismiss();
+  });
+})();
+
 // ROI Calculator
 (function() {
   const noshow = document.getElementById('calc-noshow');

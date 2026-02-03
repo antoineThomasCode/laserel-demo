@@ -2797,3 +2797,107 @@ body {
   color: var(--text-muted);
   line-height: 1.4;
 }
+
+/* ============================================
+   ONBOARDING OVERLAY
+   ============================================ */
+
+.onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.onboarding-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.onboarding-tooltip {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  z-index: 9999;
+  background: var(--white);
+  border: 2px solid var(--laserel-gold);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px 16px;
+  max-width: 280px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s ease 0.2s, opacity 0.4s ease 0.2s;
+}
+
+.onboarding-overlay.visible .onboarding-tooltip {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.onboarding-tooltip p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.onboarding-tooltip p:first-child {
+  font-size: 15px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.onboarding-cta {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px 0;
+  background: var(--laserel-gold);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-brand);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.onboarding-cta:hover {
+  background: var(--laserel-gold-dark);
+}
+
+/* Arrow pointing down to chat button */
+.onboarding-arrow {
+  position: absolute;
+  bottom: -10px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  background: var(--white);
+  border-right: 2px solid var(--laserel-gold);
+  border-bottom: 2px solid var(--laserel-gold);
+  transform: rotate(45deg);
+}
+
+/* Pulse animation on chat button */
+.chat-button.pulse {
+  animation: chatPulse 1.5s ease-in-out infinite;
+  z-index: 9999;
+  position: relative;
+}
+
+@keyframes chatPulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(196, 167, 125, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(196, 167, 125, 0.7), 0 0 0 12px rgba(196, 167, 125, 0.15);
+    transform: scale(1.08);
+  }
+}
