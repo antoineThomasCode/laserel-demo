@@ -2810,7 +2810,7 @@ body {
   backdrop-filter: blur(2px);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .onboarding-overlay.visible {
@@ -2829,13 +2829,12 @@ body {
   padding: 20px 22px 16px;
   max-width: 280px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-  transform: translateY(20px);
+  transform: translateY(0);
   opacity: 0;
-  transition: transform 0.4s ease 0.2s, opacity 0.4s ease 0.2s;
+  transition: opacity 0.2s ease;
 }
 
 .onboarding-overlay.visible .onboarding-tooltip {
-  transform: translateY(0);
   opacity: 1;
 }
 

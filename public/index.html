@@ -874,12 +874,9 @@
     return;
   }
 
-  // Show after a short delay
-  setTimeout(function() {
-    overlay.classList.add('visible');
-    // Pulse the chat button
-    if (chatButton) chatButton.classList.add('pulse');
-  }, 1200);
+  // Show immediately
+  overlay.classList.add('visible');
+  if (chatButton) chatButton.classList.add('pulse');
 
   // Dismiss
   function dismiss() {
