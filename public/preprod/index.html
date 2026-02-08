@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laserel × Cohorte - Proposition 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◇</text></svg>">
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progress-bar"></div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-content">
+    <div class="header-brand">
+      <img src="logo-laserel.png" alt="Laserel" class="brand-logo" />
+      <span class="brand-x">&times;</span>
+      <span class="brand-cohorte">COHORTE</span>
+    </div>
+    <div class="header-right">
+      <div class="header-progress">
+        <span class="progress-text">0%</span>
+        <div class="progress-ring">
+          <svg viewBox="0 0 36 36">
+            <path class="progress-ring-bg"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none" stroke-width="3"/>
+            <path class="progress-ring-fill"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none" stroke-width="3" stroke-dasharray="0, 100"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SECTION NAV (Horizontal scroll) -->
+<nav class="section-nav" id="section-nav">
+  <div class="section-nav-scroll" id="section-nav-scroll">
+    <a href="#hero" class="section-nav-item active" data-section="hero">Intro</a>
+    <a href="#problem" class="section-nav-item" data-section="problem">Le constat</a>
+    <a href="#solutions" class="section-nav-item" data-section="solutions">Les solutions</a>
+    <a href="#roi" class="section-nav-item" data-section="roi">Les chiffres</a>
+    <a href="#method" class="section-nav-item" data-section="method">Comment</a>
+    <a href="#stack" class="section-nav-item" data-section="stack">Les outils</a>
+    <a href="#cta" class="section-nav-item" data-section="cta">Vendredi</a>
+  </div>
+</nav>
+
+<!-- SIDE NAV (Hidden on mobile) -->
+<nav class="side-nav" id="side-nav"></nav>
+
+<main class="main-content">
+
+  <!-- HERO -->
+  <section class="section section-hero" id="hero">
+    <div class="container">
+      <div class="hero-badge hero-anim" data-hero-step="badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        Proposition personnalis&eacute;e &mdash; Laserel
+      </div>
+
+      <h1 class="hero-title hero-anim" data-hero-step="title">
+        Micka&euml;l,<br>
+        <span class="gradient-text">Remplis tes centres. R&eacute;duis tes co&ucirc;ts. Garde le contr&ocirc;le.</span>
+      </h1>
+
+      <p class="hero-subtitle hero-anim" data-hero-step="subtitle">
+        On s'est parl&eacute;, j'ai &eacute;cout&eacute;. Voici ce que je te propose.
+      </p>
+
+      <div class="hero-chat hero-anim" data-hero-step="chat">
+        <div class="hero-chat-time">Aujourd'hui, 14:32</div>
+
+        <div class="hero-chat-typing" id="hero-typing">
+          <div class="typing-dots"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="hero-bubble incoming" style="display:none">
+          <p>Mon probl&egrave;me c'est simple : j'ai 5 centres, j'arrive pas &agrave; les remplir et j'ai trop de no-shows sur les audits gratuits</p>
+        </div>
+        <div class="hero-bubble outgoing" style="display:none">
+          <div class="hero-chat-avatar">
+            <img src="antoine.png" alt="AT" />
+          </div>
+          <div class="hero-chat-text">
+            <div class="hero-chat-name">Antoine</div>
+            <p>Et l&agrave; tu paies combien &agrave; ton agence pour g&eacute;rer les Ads ?</p>
+          </div>
+        </div>
+        <div class="hero-bubble incoming" style="display:none">
+          <p>2 &agrave; 4k par mois... et je contr&ocirc;le rien, j'ai z&eacute;ro visibilit&eacute;</p>
+        </div>
+        <div class="hero-bubble outgoing" style="display:none">
+          <div class="hero-chat-avatar">
+            <img src="antoine.png" alt="AT" />
+          </div>
+          <div class="hero-chat-text">
+            <div class="hero-chat-name">Antoine</div>
+            <p>OK. Avec l'IA on peut diviser &ccedil;a par 3 et en plus capter des leads 24/7 avec un chatbot qui conna&icirc;t tes offres</p>
+          </div>
+        </div>
+        <div class="hero-bubble incoming" style="display:none">
+          <p>Et pour les no-shows ? C'est ce qui me co&ucirc;te le plus</p>
+        </div>
+        <div class="hero-bubble outgoing" style="display:none">
+          <div class="hero-chat-avatar">
+            <img src="antoine.png" alt="AT" />
+          </div>
+          <div class="hero-chat-text">
+            <div class="hero-chat-name">Antoine</div>
+            <p>On met un scoring de risque + relances auto. Je t'ai pr&eacute;par&eacute; un r&eacute;cap &mdash; <strong>3 min de lecture, on en reparle vendredi.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-benefits hero-anim" data-hero-step="benefits">
+        <div class="hero-benefit">
+          <div class="hero-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <line x1="20" y1="8" x2="20" y2="14"/>
+              <line x1="23" y1="11" x2="17" y2="11"/>
+            </svg>
+          </div>
+          <span>Remplir les centres</span>
+        </div>
+        <div class="hero-benefit">
+          <div class="hero-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <span>R&eacute;duire les no-shows</span>
+        </div>
+        <div class="hero-benefit">
+          <div class="hero-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <span>Diviser tes frais marketing par 3</span>
+        </div>
+      </div>
+
+      <div class="scroll-indicator hero-anim" data-hero-step="scroll">
+        <span>Scroll pour d&eacute;couvrir</span>
+        <div class="scroll-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M19 12l-7 7-7-7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 - TON PROBLEME AUJOURD'HUI -->
+  <section class="section section-problem" id="problem">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">D'abord, ce qui te co&ucirc;te de l'argent aujourd'hui</h2>
+        <p class="section-subtitle">3 probl&egrave;mes que tu m'as d&eacute;crits &mdash; et qu'on peut chiffrer</p>
+      </div>
+
+      <div class="alert-toast-list">
+        <div class="alert-toast">
+          <div class="alert-toast-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <p>Tu paies une agence <strong>2-4k&euro;/mois</strong> pour tes Ads &mdash; et tu ne contr&ocirc;les rien</p>
+        </div>
+        <div class="alert-toast">
+          <div class="alert-toast-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M15 9l-6 6M9 9l6 6"/>
+            </svg>
+          </div>
+          <p>Tes no-shows te font <strong>perdre du CA chaque semaine</strong> &mdash; sans syst&egrave;me pour les anticiper</p>
+        </div>
+        <div class="alert-toast">
+          <div class="alert-toast-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <line x1="20" y1="8" x2="20" y2="14"/>
+              <line x1="23" y1="11" x2="17" y2="11"/>
+            </svg>
+          </div>
+          <p>Tes centres pourraient &ecirc;tre <strong>plus remplis</strong> &mdash; mais tu n'as pas les outils pour optimiser</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <p><strong>Ces 3 probl&egrave;mes sont li&eacute;s. La bonne nouvelle : un seul syst&egrave;me peut les r&eacute;soudre ensemble.</strong></p>
+      </div>
+
+      <!-- Comparison -->
+      <div class="comparison">
+        <div class="comparison-card comparison-before">
+          <div class="comparison-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M15 9l-6 6M9 9l6 6"/>
+            </svg>
+            <span>Agence classique</span>
+          </div>
+          <ul class="comparison-list">
+            <li>Tu paies strat&egrave;ge + cr&eacute;atif + traffic manager</li>
+            <li>Tu d&eacute;pends de leur planning</li>
+            <li>Leur m&eacute;thode, tu t'adaptes</li>
+          </ul>
+        </div>
+        <div class="comparison-card comparison-after">
+          <div class="comparison-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Toi + IA</span>
+          </div>
+          <ul class="comparison-list">
+            <li>L'IA g&eacute;n&egrave;re, tu valides sur ton tel</li>
+            <li>Tout t'appartient, pas de d&eacute;pendance</li>
+            <li><strong>Construit autour de TA vision</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 - CE QU'ON MET EN PLACE -->
+  <section class="section section-solutions" id="solutions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Voici comment on r&egrave;gle &ccedil;a</h2>
+        <p class="section-subtitle">Une solution par probl&egrave;me, dans l'ordre de tes priorit&eacute;s</p>
+      </div>
+
+      <div class="solutions-grid">
+        <!-- Solution 1 : Remplissage -->
+        <div class="solution-card open" data-priority="1">
+          <div class="solution-header" onclick="toggleSolution(this)">
+            <div class="solution-priority">Priorit&eacute; #1</div>
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <h3 class="solution-title">Remplissage des centres</h3>
+            <p class="solution-subtitle">Chatbot closing 24/7 sur ton site</p>
+            <svg class="solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="solution-body">
+            <ul class="solution-features">
+              <li>R&eacute;pond aux questions, l&egrave;ve les objections, prend RDV</li>
+              <li>Actif le soir, le week-end, les jours f&eacute;ri&eacute;s</li>
+              <li>Connait tes offres, tes prix, ta diff&eacute;rence</li>
+            </ul>
+            <div class="solution-result">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+              <span>R&eacute;sultat estim&eacute; : <strong>10-20% de leads en plus</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solution 2 : Anti no-shows -->
+        <div class="solution-card" data-priority="2">
+          <div class="solution-header" onclick="toggleSolution(this)">
+            <div class="solution-priority">Priorit&eacute; #2</div>
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <h3 class="solution-title">Syst&egrave;me anti no-shows</h3>
+            <p class="solution-subtitle">Scoring de risque + relances automatiques</p>
+            <svg class="solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="solution-body">
+            <ul class="solution-features">
+              <li>D&eacute;tecte les profils &agrave; risque d'annulation</li>
+              <li>Envoie des rappels personnalis&eacute;s au bon moment</li>
+              <li>Propose des cr&eacute;neaux alternatifs automatiquement</li>
+            </ul>
+            <div class="solution-result">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+              <span>R&eacute;sultat estim&eacute; : <strong>15-30% de no-shows en moins</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solution 3 : Ads sans agence -->
+        <div class="solution-card" data-priority="3">
+          <div class="solution-header" onclick="toggleSolution(this)">
+            <div class="solution-priority">Priorit&eacute; #3</div>
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3 class="solution-title">Tes Ads sans l'agence</h3>
+            <p class="solution-subtitle">L'IA g&eacute;n&egrave;re, tu valides sur ton tel</p>
+            <svg class="solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="solution-body">
+            <ul class="solution-features">
+              <li>Cr&eacute;as + copies g&eacute;n&eacute;r&eacute;es par l'IA</li>
+              <li>Tu reviews et valides en 5 min</li>
+              <li>Budget : 1 500&euro;/mois au lieu de 2-4k&euro; d'agence</li>
+            </ul>
+            <div class="solution-result">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+              <span>R&eacute;sultat estim&eacute; : <strong>50-70% de frais en moins</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Et aussi -->
+      <div class="also-section">
+        <h3 class="subsection-title">Et une fois les bases en place</h3>
+        <div class="also-list">
+          <div class="also-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="8.5" cy="7" r="4"/>
+              <line x1="20" y1="8" x2="20" y2="14"/>
+              <line x1="23" y1="11" x2="17" y2="11"/>
+            </svg>
+            <span>Onboarding franchis&eacute;s automatis&eacute;</span>
+          </div>
+          <div class="also-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>CRM intelligent avec relances auto</span>
+          </div>
+          <div class="also-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+            <span>Contenu marketing (posts, emails)</span>
+          </div>
+          <div class="also-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+            <span>Dashboard temps r&eacute;el sur ton tel</span>
+          </div>
+          <div class="also-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <span>Assistant interne Laserel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 - RESULTATS ATTENDUS (ROI) -->
+  <section class="section section-roi" id="roi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Maintenant, parlons chiffres</h2>
+        <p class="section-subtitle">Tu connais les solutions &mdash; voici ce qu'elles rapportent concr&egrave;tement</p>
+      </div>
+
+      <!-- Simulation avant/apr&egrave;s -->
+      <div class="roi-simulation">
+        <div class="roi-sim-card roi-sim-before">
+          <div class="roi-sim-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M15 9l-6 6M9 9l6 6"/>
+            </svg>
+            <span>Ce que tu perds aujourd'hui</span>
+          </div>
+          <ul class="roi-sim-list">
+            <li>~20% de cr&eacute;neaux vides &agrave; cause des no-shows</li>
+            <li>2-4k&euro;/mois pour une agence Ads que tu ne contr&ocirc;les pas</li>
+            <li>~15% des prospects qui passent le soir ou le week-end sans r&eacute;ponse</li>
+          </ul>
+        </div>
+        <div class="roi-sim-card roi-sim-after">
+          <div class="roi-sim-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Ce qu'on r&eacute;cup&egrave;re ensemble</span>
+          </div>
+          <ul class="roi-sim-list">
+            <li>No-shows &agrave; 15-17% &rarr; <strong>cr&eacute;neaux remplis = CA en plus</strong></li>
+            <li>Ads g&eacute;r&eacute;s par l'IA &rarr; <strong>1 000-2 500&euro;/mois &eacute;conomis&eacute;s</strong></li>
+            <li>Chatbot qui r&eacute;pond 24/7 &rarr; <strong>des leads qui ne partent plus</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="roi-breakeven">
+        <div class="roi-breakeven-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+        </div>
+        <div class="roi-breakeven-content">
+          <strong>Investissement : 500&euro; audit + 1 500&euro;/mois</strong>
+          <p>Break-even estim&eacute; : mois 3-4</p>
+        </div>
+      </div>
+
+      <div class="roi-disclaimer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <p>Ces estimations sont conservatrices. On mesure ensemble les vrais r&eacute;sultats d&egrave;s le mois 1 via ton dashboard.</p>
+      </div>
+
+      <!-- Calculateur ROI interactif -->
+      <h3 class="subsection-title">V&eacute;rifie avec tes propres chiffres</h3>
+
+      <div class="roi-calculator" id="roi-calculator">
+        <p class="roi-calc-intro">Je ne te demande pas de me croire sur parole. Rentre tes vrais chiffres &mdash; le calcul s'adapte en temps r&eacute;el.</p>
+
+        <!-- Progress dots (mobile only) -->
+        <div class="roi-calc-progress" id="roi-calc-progress">
+          <div class="roi-calc-dot active" data-dot="1"></div>
+          <div class="roi-calc-dot" data-dot="2"></div>
+          <div class="roi-calc-dot" data-dot="3"></div>
+          <span class="roi-calc-progress-label" id="roi-calc-progress-label">Ton activit&eacute;</span>
+        </div>
+
+        <!-- Steps container -->
+        <div class="roi-calc-steps" id="roi-calc-steps">
+
+          <!-- Step 1 : Ton activité -->
+          <div class="roi-calc-step active" data-step="1">
+            <h4 class="roi-calc-step-title">Ton activit&eacute;</h4>
+            <div class="roi-calc-step-fields">
+              <div class="roi-calc-field">
+                <label for="calc-centres">Nombre de centres</label>
+                <div class="roi-calc-input-wrap">
+                  <button type="button" class="roi-calc-btn-minus" data-target="calc-centres" aria-label="Moins">&minus;</button>
+                  <input type="number" id="calc-centres" value="5" min="1" max="50" step="1" inputmode="numeric" />
+                  <button type="button" class="roi-calc-btn-plus" data-target="calc-centres" aria-label="Plus">+</button>
+                </div>
+              </div>
+              <div class="roi-calc-field">
+                <label for="calc-audits">Audits gratuits / mois / centre</label>
+                <div class="roi-calc-input-wrap">
+                  <button type="button" class="roi-calc-btn-minus" data-target="calc-audits" aria-label="Moins">&minus;</button>
+                  <input type="number" id="calc-audits" value="40" min="5" max="500" step="5" inputmode="numeric" />
+                  <button type="button" class="roi-calc-btn-plus" data-target="calc-audits" aria-label="Plus">+</button>
+                </div>
+              </div>
+              <div class="roi-calc-field">
+                <label for="calc-panier">Panier moyen traitement</label>
+                <div class="roi-calc-input-wrap">
+                  <button type="button" class="roi-calc-btn-minus" data-target="calc-panier" aria-label="Moins">&minus;</button>
+                  <input type="number" id="calc-panier" value="800" min="50" max="5000" step="50" inputmode="numeric" />
+                  <span class="roi-calc-unit">&euro;</span>
+                  <button type="button" class="roi-calc-btn-plus" data-target="calc-panier" aria-label="Plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="roi-calc-step-result" id="calc-step1-result">
+              <span id="calc-step1-text">200 audits/mois &times; 60% conversion &times; 800&euro; = <strong>96 000&euro; de CA potentiel/mois</strong></span>
+            </div>
+          </div>
+
+          <!-- Step 2 : Ce que tu perds -->
+          <div class="roi-calc-step" data-step="2">
+            <h4 class="roi-calc-step-title">Ce que tu perds</h4>
+            <div class="roi-calc-step-fields">
+              <div class="roi-calc-field">
+                <label for="calc-noshow">Taux de no-show audits</label>
+                <div class="roi-calc-input-wrap">
+                  <button type="button" class="roi-calc-btn-minus" data-target="calc-noshow" aria-label="Moins">&minus;</button>
+                  <input type="number" id="calc-noshow" value="20" min="1" max="80" step="1" inputmode="numeric" />
+                  <span class="roi-calc-unit">%</span>
+                  <button type="button" class="roi-calc-btn-plus" data-target="calc-noshow" aria-label="Plus">+</button>
+                </div>
+              </div>
+              <div class="roi-calc-field">
+                <label for="calc-leads">Leads / mois (tous centres)</label>
+                <div class="roi-calc-input-wrap">
+                  <button type="button" class="roi-calc-btn-minus" data-target="calc-leads" aria-label="Moins">&minus;</button>
+                  <input type="number" id="calc-leads" value="150" min="5" max="10000" step="5" inputmode="numeric" />
+                  <button type="button" class="roi-calc-btn-plus" data-target="calc-leads" aria-label="Plus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="roi-calc-step-result roi-calc-step-result-losses">
+              <div class="roi-calc-result roi-calc-loss">
+                <span class="roi-calc-result-label">Traitements perdus (audits manqu&eacute;s)</span>
+                <span class="roi-calc-result-value" id="calc-ca-lost">10 000 &euro;</span>
+              </div>
+              <div class="roi-calc-result roi-calc-loss">
+                <span class="roi-calc-result-label">Leads perdus le soir/WE</span>
+                <span class="roi-calc-result-value" id="calc-leads-lost">22 leads</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 : Ce qu'on récupère -->
+          <div class="roi-calc-step" data-step="3">
+            <h4 class="roi-calc-step-title">Ce qu'on r&eacute;cup&egrave;re</h4>
+
+            <div class="roi-calc-step-gains">
+              <div class="roi-calc-result roi-calc-gain">
+                <span class="roi-calc-result-label">CA r&eacute;cup&eacute;r&eacute; (rappels -25% no-shows)</span>
+                <span class="roi-calc-result-value" id="calc-noshow-gain">2 000 &euro;</span>
+              </div>
+              <div class="roi-calc-result roi-calc-gain">
+                <span class="roi-calc-result-label">CA suppl. (chatbot &rarr; +10% leads &rarr; audits)</span>
+                <span class="roi-calc-result-value" id="calc-leads-gain">750 &euro;</span>
+              </div>
+            </div>
+
+            <div class="roi-calc-total-block">
+              <div class="roi-calc-total-row">
+                <div class="roi-calc-result roi-calc-total">
+                  <span class="roi-calc-result-label">Gain franchise / mois</span>
+                  <span class="roi-calc-result-value" id="calc-total-month">2 750 &euro;</span>
+                </div>
+                <div class="roi-calc-result roi-calc-total roi-calc-total-highlight">
+                  <span class="roi-calc-result-label">Gain franchise sur 6 mois</span>
+                  <span class="roi-calc-result-value" id="calc-total-6m">16 500 &euro;</span>
+                </div>
+              </div>
+              <div class="roi-calc-vs">
+                <span>Investissement : 500&euro; + 6 &times; 1 500&euro; = <strong>9 500&euro;</strong></span>
+                <span class="roi-calc-vs-result" id="calc-vs-result">ROI positif d&egrave;s le mois 4</span>
+              </div>
+            </div>
+
+            <div class="roi-calc-massue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+              <p>L'investissement est fixe (1 500&euro;/mois), mais <strong>le ROI se multiplie avec chaque centre</strong>. Quand tu ouvres un nouveau centre, il b&eacute;n&eacute;ficie de tout l'&eacute;cosyst&egrave;me &mdash; z&eacute;ro co&ucirc;t en plus.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Navigation buttons (mobile only) -->
+        <div class="roi-calc-nav" id="roi-calc-nav">
+          <button type="button" class="roi-calc-nav-btn roi-calc-nav-prev" id="roi-calc-prev" style="visibility:hidden">&larr; Retour</button>
+          <button type="button" class="roi-calc-nav-btn roi-calc-nav-next" id="roi-calc-next">Suivant &rarr;</button>
+        </div>
+
+        <p class="roi-calc-note"><strong>Comment on estime :</strong> Taux de conversion audit &rarr; devis : 60% (moyenne secteur esth&eacute;tique/laser &mdash; conservateur, certains centres font 70-80%). R&eacute;duction des no-shows : 25% (gr&acirc;ce aux rappels SMS automatiques J-2, J-1, H-2 &mdash; &eacute;tudes montrent 25-40% de r&eacute;duction). Leads capt&eacute;s par chatbot : 10% de leads suppl&eacute;mentaires (r&eacute;ponses 24/7 aux prospects soir/WE).</p>
+      </div>
+
+      <!-- Roadmap 3 premiers mois -->
+      <h3 class="subsection-title">Concr&egrave;tement, voici le planning</h3>
+
+      <div class="roadmap-stepper">
+        <div class="roadmap-step">
+          <div class="roadmap-step-dot">1</div>
+          <div class="roadmap-step-label">Mois 1</div>
+          <div class="roadmap-step-content">
+            <h4>Fondations</h4>
+            <ul>
+              <li>Audit business (semaine 1)</li>
+              <li>Chatbot closing 24/7 (semaine 2-3)</li>
+              <li>Dashboard leads (semaine 4)</li>
+            </ul>
+            <div class="roadmap-result">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+              <span>+10-15% leads capt&eacute;s</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="roadmap-step">
+          <div class="roadmap-step-dot">2</div>
+          <div class="roadmap-step-label">Mois 2</div>
+          <div class="roadmap-step-content">
+            <h4>No-shows</h4>
+            <ul>
+              <li>Scoring risque patients</li>
+              <li>SMS confirmation automatique</li>
+              <li>R&eacute;ouverture cr&eacute;neaux auto</li>
+            </ul>
+            <div class="roadmap-result">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+              <span>-15 &agrave; 30% de no-shows</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="roadmap-step">
+          <div class="roadmap-step-dot">3</div>
+          <div class="roadmap-step-label">Mois 3</div>
+          <div class="roadmap-step-content">
+            <h4>Optimisation</h4>
+            <ul>
+              <li>A/B testing tunnel</li>
+              <li>CRM intelligent</li>
+              <li>Reporting ROI complet</li>
+            </ul>
+            <div class="roadmap-result">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+              <span>Donn&eacute;es pour d&eacute;cider la suite</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 - COMMENT ON TRAVAILLE -->
+  <section class="section section-method" id="method">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Comment on travaille ensemble</h2>
+        <p class="section-subtitle">Pas de process compliqu&eacute; &mdash; 3 principes simples</p>
+      </div>
+
+      <div class="method-steps">
+        <div class="method-step">
+          <div class="method-step-number">1</div>
+          <div class="method-step-content">
+            <h4>On &eacute;coute</h4>
+            <p>On passe 2-3h ensemble. Tu m'expliques ton business, tes gal&egrave;res, ta vision. Moi je note tout.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-number">2</div>
+          <div class="method-step-content">
+            <h4>On construit</h4>
+            <p>Avec l'IA, on cr&eacute;e les outils un par un. Tu valides &agrave; chaque &eacute;tape. Rien ne sort sans ton OK.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-number">3</div>
+          <div class="method-step-content">
+            <h4>On mesure</h4>
+            <p>Dashboard en temps r&eacute;el : tu vois ce qui marche, ce qui rapporte. Si &ccedil;a ne g&eacute;n&egrave;re pas de valeur, on ajuste.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process / Pricing -->
+      <h3 class="subsection-title">Et c&ocirc;t&eacute; investissement ?</h3>
+
+      <div class="process-timeline">
+        <!-- Step 0 -->
+        <div class="process-step">
+          <div class="process-step-marker">
+            <span class="process-step-number">0</span>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-header">
+              <h4>Call d&eacute;couverte</h4>
+              <span class="process-badge">Gratuit &mdash; c'est fait !</span>
+            </div>
+            <p>On s'est parl&eacute;, j'ai identifi&eacute; tes besoins. Vendredi, on valide ensemble les priorit&eacute;s.</p>
+          </div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="process-step">
+          <div class="process-step-marker">
+            <span class="process-step-number">1</span>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-header">
+              <h4>Audit de ton business</h4>
+              <span class="process-badge process-badge-purple">500&euro;</span>
+            </div>
+            <p>2-3h ensemble pour cartographier tes outils, tes co&ucirc;ts, tes process. Tu repars avec le document de cadrage complet <strong>m&ecirc;me si tu arr&ecirc;tes l&agrave;</strong>.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-step">
+          <div class="process-step-marker">
+            <span class="process-step-number">2</span>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-header">
+              <h4>Construction mensuelle</h4>
+              <span class="process-badge process-badge-green">1 500&euro;/mois, sans engagement</span>
+            </div>
+            <p>On construit les outils brique par brique. 1 call par semaine inclus. <strong>Tu peux arr&ecirc;ter quand tu veux</strong> &mdash; tu repars avec tout.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-step">
+          <div class="process-step-marker">
+            <span class="process-step-number">3</span>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-header">
+              <h4>Dashboard ROI</h4>
+              <span class="process-badge">Inclus</span>
+            </div>
+            <p>Tu vois l'impact en temps r&eacute;el : leads, no-shows, co&ucirc;ts &eacute;vit&eacute;s, temps gagn&eacute;.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guarantees -->
+      <div class="guarantees">
+        <div class="guarantee">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+            </svg>
+          </div>
+          <h4>Sans engagement</h4>
+          <p>Tu arr&ecirc;tes quand tu veux. Tu repars avec tout ce qu'on a construit.</p>
+        </div>
+        <div class="guarantee">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+          </div>
+          <h4>Transparence totale</h4>
+          <p>Tu vois tout : le code, les process, les donn&eacute;es. Rien de cach&eacute;.</p>
+        </div>
+        <div class="guarantee">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h4>ROI mesurable</h4>
+          <p>Dashboard temps r&eacute;el. Tu vois l'impact concret chaque semaine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 - LES OUTILS QU'ON UTILISE -->
+  <section class="section section-stack" id="stack">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Avec quoi on construit tout &ccedil;a</h2>
+        <p class="section-subtitle">L'IA fait le gros du travail &mdash; toi, tu gardes le contr&ocirc;le</p>
+      </div>
+
+      <div class="stack-simple">
+        <p class="stack-intro">On utilise les meilleures IA du march&eacute; et on cr&eacute;e des outils priv&eacute;s qui connaissent ton business, tes offres, ta diff&eacute;rence.</p>
+        <p class="stack-intro">Tes donn&eacute;es restent chez toi. Le code t'appartient. <strong>Si tu arr&ecirc;tes demain, tu repars avec tout.</strong></p>
+      </div>
+
+      <div class="stack-blocks">
+        <div class="stack-block">
+          <div class="stack-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h4>IA m&eacute;tier</h4>
+          <p>Comprend ta logique business</p>
+        </div>
+        <div class="stack-block">
+          <div class="stack-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <h4>Visibilit&eacute;</h4>
+          <p>Pr&eacute;sent dans les r&eacute;sultats IA (nouveau SEO)</p>
+        </div>
+        <div class="stack-block">
+          <div class="stack-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <h4>Sur-mesure</h4>
+          <p>Des outils entra&icirc;n&eacute;s sur ta vision Laserel</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 - CTA -->
+  <section class="section section-cta" id="cta">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-header">
+          <div class="cta-brands">
+            <span class="cta-brand-l">Laserel</span>
+            <span class="cta-x">&times;</span>
+            <span class="cta-brand-c">Cohorte</span>
+          </div>
+          <span class="cta-badge">Prochaine &eacute;tape</span>
+        </div>
+
+        <div class="cta-body">
+          <h2 class="cta-title">Vendredi 7 f&eacute;vrier &mdash;<br><span class="gradient-text">On en reparle</span></h2>
+          <p class="cta-text">30 min pour r&eacute;pondre &agrave; tes questions et d&eacute;cider si on y va</p>
+
+          <div class="cta-actions">
+            <div class="cta-action">
+              <div class="cta-action-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </div>
+              <div class="cta-action-content">
+                <strong>Vendredi 7 f&eacute;vrier</strong>
+                <span>Call pour valider les priorit&eacute;s</span>
+              </div>
+            </div>
+            <div class="cta-action">
+              <div class="cta-action-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <div class="cta-action-content">
+                <strong>Me poser tes questions</strong>
+                <span>Via le chat ou par message</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-footer">
+          <p>&Agrave; vendredi Micka&euml;l &mdash; <strong>note tes questions, j'y r&eacute;ponds une par une</strong></p>
+        </div>
+      </div>
+
+      <!-- Author -->
+      <div class="author-card">
+        <div class="author-avatar">
+          <img src="antoine.png" alt="AT" />
+        </div>
+        <div class="author-info">
+          <span class="author-name">Antoine Thomas</span>
+          <span class="author-role">Cohorte Agency</span>
+          <span class="author-tagline">Automatisation & IA pour PME</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ONBOARDING OVERLAY -->
+<div class="onboarding-overlay" id="onboarding-overlay">
+  <div class="onboarding-tooltip" id="onboarding-tooltip">
+    <p><strong>Une question ?</strong></p>
+    <p>Pose-la ici &mdash; je te r&eacute;ponds directement, ou Antoine te rappelle par WhatsApp.</p>
+    <button class="onboarding-cta" id="onboarding-cta">Compris !</button>
+    <div class="onboarding-arrow"></div>
+  </div>
+</div>
+
+<!-- CHATBOT WIDGET -->
+<div class="chat-widget" id="chat-widget">
+  <button class="chat-button" id="chat-button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </button>
+</div>
+
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="chat-header-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="chat-header-title">Assistant Laserel</div>
+        <div class="chat-header-sub">Une question sur la proposition ?</div>
+      </div>
+    </div>
+    <button class="chat-close" id="chat-close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="chat-message bot">
+      <p>Salut Micka&euml;l !</p>
+      <p>Une question sur ce qu'on peut faire pour Laserel ? Je suis l&agrave; pour clarifier.</p>
+      <p>Si c'est technique, je note pour qu'Antoine t'explique vendredi.</p>
+    </div>
+  </div>
+  <div class="chat-input-container">
+    <input type="text" class="chat-input" id="chat-input" placeholder="Pose ta question ici...">
+    <button class="chat-send" id="chat-send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="22" y1="2" x2="11" y2="13"/>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script src="chat.js"></script>
+<script src="animations.js"></script>
+<script>
+// Solution accordion toggle
+function toggleSolution(header) {
+  var card = header.closest('.solution-card');
+  var wasOpen = card.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.solution-card.open').forEach(function(c) {
+    c.classList.remove('open');
+  });
+  // Open clicked if it was closed
+  if (!wasOpen) {
+    card.classList.add('open');
+  }
+}
+</script>
+<script>
+// Onboarding overlay + Hero cinematic animation
+(function() {
+  var overlay = document.getElementById('onboarding-overlay');
+  var cta = document.getElementById('onboarding-cta');
+  var chatButton = document.getElementById('chat-button');
+
+  // ---- animateHero orchestrator ----
+  function animateHero() {
+    var badge = document.querySelector('[data-hero-step="badge"]');
+    var title = document.querySelector('[data-hero-step="title"]');
+    var subtitle = document.querySelector('[data-hero-step="subtitle"]');
+    var chat = document.querySelector('[data-hero-step="chat"]');
+    var benefits = document.querySelector('[data-hero-step="benefits"]');
+    var scroll = document.querySelector('[data-hero-step="scroll"]');
+    var typing = document.getElementById('hero-typing');
+    var bubbles = document.querySelectorAll('.hero-bubble');
+    var chatEl = document.querySelector('.hero-chat');
+
+    // Helper: show a hero-anim element with double rAF
+    function show(el, delay) {
+      setTimeout(function() {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            el.classList.add('hero-visible');
+          });
+        });
+      }, delay);
+    }
+
+    // Phase 1: badge, title, subtitle (stagger 150ms)
+    show(badge, 0);
+    show(title, 150);
+    show(subtitle, 300);
+
+    // Phase 2: chat container
+    show(chat, 750);
+
+    // Phase 3: bubbles with typing indicator
+    var bubbleStart = 1150;
+    var typingDuration = 900;
+    var pauseAfterBubble = 300;
+
+    function showBubble(index) {
+      if (index >= bubbles.length) {
+        // Phase 4: benefits + scroll
+        var finalDelay = 400;
+        show(benefits, finalDelay);
+        show(scroll, finalDelay + 200);
+        return;
+      }
+
+      var bubble = bubbles[index];
+      var isIncoming = bubble.classList.contains('incoming');
+
+      // Position typing indicator before this bubble
+      if (typing && bubble.parentNode) {
+        bubble.parentNode.insertBefore(typing, bubble);
+        // Align typing: left for incoming, right for outgoing
+        typing.style.textAlign = isIncoming ? 'left' : 'right';
+      }
+
+      // Show typing
+      if (typing) typing.classList.add('typing-visible');
+
+      setTimeout(function() {
+        // Hide typing
+        if (typing) typing.classList.remove('typing-visible');
+
+        // Show bubble with double rAF
+        setTimeout(function() {
+          bubble.style.display = '';
+          requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+              bubble.classList.add('bubble-visible');
+              // Auto-scroll chat
+              if (chatEl) chatEl.scrollTop = chatEl.scrollHeight;
+            });
+          });
+
+          // Next bubble after pause
+          setTimeout(function() {
+            showBubble(index + 1);
+          }, pauseAfterBubble);
+        }, 50);
+      }, typingDuration);
+    }
+
+    setTimeout(function() {
+      showBubble(0);
+    }, bubbleStart);
+  }
+
+  // ---- Onboarding logic ----
+  if (!overlay || !cta) {
+    // No overlay elements, just animate
+    animateHero();
+    return;
+  }
+
+  if (sessionStorage.getItem('onboarding-done')) {
+    overlay.remove();
+    animateHero();
+    return;
+  }
+
+  // Show overlay
+  overlay.classList.add('visible');
+  if (chatButton) chatButton.classList.add('pulse');
+
+  function dismiss() {
+    overlay.classList.remove('visible');
+    if (chatButton) chatButton.classList.remove('pulse');
+    sessionStorage.setItem('onboarding-done', '1');
+    setTimeout(function() { overlay.remove(); }, 400);
+    setTimeout(animateHero, 300);
+  }
+
+  cta.addEventListener('click', dismiss);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) dismiss();
+  });
+})();
+
+// ROI Calculator — Wizard
+(function() {
+  var centres = document.getElementById('calc-centres');
+  var audits = document.getElementById('calc-audits');
+  var panier = document.getElementById('calc-panier');
+  var noshow = document.getElementById('calc-noshow');
+  var leads = document.getElementById('calc-leads');
+  if (!centres || !audits || !panier || !noshow || !leads) return;
+
+  // Wizard navigation
+  var currentStep = 1;
+  var totalSteps = 3;
+  var stepLabels = ['Ton activit\u00e9', 'Ce que tu perds', 'Ce qu\u2019on r\u00e9cup\u00e8re'];
+  var steps = document.querySelectorAll('.roi-calc-step');
+  var dots = document.querySelectorAll('.roi-calc-dot');
+  var progressLabel = document.getElementById('roi-calc-progress-label');
+  var btnPrev = document.getElementById('roi-calc-prev');
+  var btnNext = document.getElementById('roi-calc-next');
+
+  function goToStep(n) {
+    if (n < 1 || n > totalSteps) return;
+    currentStep = n;
+
+    // Update step visibility
+    steps.forEach(function(step) {
+      var s = parseInt(step.getAttribute('data-step'));
+      if (s === currentStep) {
+        step.classList.add('active');
+      } else {
+        step.classList.remove('active');
+      }
+    });
+
+    // Update dots
+    dots.forEach(function(dot) {
+      var d = parseInt(dot.getAttribute('data-dot'));
+      dot.classList.remove('active', 'done');
+      if (d === currentStep) dot.classList.add('active');
+      else if (d < currentStep) dot.classList.add('done');
+    });
+
+    // Update label
+    if (progressLabel) progressLabel.textContent = stepLabels[currentStep - 1];
+
+    // Update nav buttons
+    if (btnPrev) btnPrev.style.visibility = currentStep === 1 ? 'hidden' : 'visible';
+    if (btnNext) {
+      if (currentStep === totalSteps) {
+        btnNext.style.visibility = 'hidden';
+      } else {
+        btnNext.style.visibility = 'visible';
+        btnNext.textContent = 'Suivant \u2192';
+      }
+    }
+  }
+
+  if (btnNext) btnNext.addEventListener('click', function() { goToStep(currentStep + 1); });
+  if (btnPrev) btnPrev.addEventListener('click', function() { goToStep(currentStep - 1); });
+
+  // +/− buttons
+  function adjustInput(inputId, delta) {
+    var el = document.getElementById(inputId);
+    if (!el) return;
+    var step = parseFloat(el.step) || 1;
+    var min = parseFloat(el.min);
+    var max = parseFloat(el.max);
+    var val = (parseFloat(el.value) || 0) + delta * step;
+    if (!isNaN(min) && val < min) val = min;
+    if (!isNaN(max) && val > max) val = max;
+    el.value = val;
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+  }
+
+  document.querySelectorAll('.roi-calc-btn-minus').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      adjustInput(btn.getAttribute('data-target'), -1);
+    });
+  });
+
+  document.querySelectorAll('.roi-calc-btn-plus').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      adjustInput(btn.getAttribute('data-target'), 1);
+    });
+  });
+
+  function fmt(n) {
+    return Math.round(n).toLocaleString('fr-FR') + ' \u20ac';
+  }
+
+  function fmtNum(n) {
+    return Math.round(n).toLocaleString('fr-FR');
+  }
+
+  // Constantes estimées
+  var CONVERSION_RATE = 0.60;  // 60% des audits → devis signé
+  var NOSHOW_REDUCTION = 0.25; // On réduit les no-shows de 25%
+  var CHATBOT_CAPTURE = 0.10;  // 10% de leads supplémentaires
+
+  function calculate() {
+    var c = parseFloat(centres.value) || 1;
+    var a = parseFloat(audits.value) || 0;
+    var p = parseFloat(panier.value) || 0;
+    var ns = parseFloat(noshow.value) || 0;
+    var l = parseFloat(leads.value) || 0;
+
+    // Step 1 — CA potentiel
+    var totalAudits = Math.round(a * c);
+    var caPotentiel = Math.round(totalAudits * CONVERSION_RATE * p);
+    var step1Text = document.getElementById('calc-step1-text');
+    if (step1Text) {
+      step1Text.innerHTML = fmtNum(totalAudits) + ' audits/mois \u00d7 60% conversion \u00d7 ' + fmtNum(p) + '\u20ac = <strong>' + fmt(caPotentiel) + ' de CA potentiel/mois</strong>';
+    }
+
+    // Step 2 — Pertes
+    var auditsManques = Math.round(totalAudits * (ns / 100));
+    var caPerdu = Math.round(auditsManques * CONVERSION_RATE * p);
+    var leadsLost = Math.round(l * 0.15);
+
+    // Step 3 — Gains récupérés
+    var noshowGain = Math.round(caPerdu * NOSHOW_REDUCTION);
+    var newLeads = Math.round(l * CHATBOT_CAPTURE);
+    var leadsGain = Math.round(newLeads * CONVERSION_RATE * p);
+
+    // Totals
+    var totalMonth = noshowGain + leadsGain;
+    var total6m = totalMonth * 6;
+    var investissement = 500 + 6 * 1500;
+
+    // Break-even
+    var breakEven = investissement / (totalMonth || 1);
+    var breakEvenText = totalMonth > 0
+      ? (breakEven <= 1 ? 'ROI positif d\u00e8s le mois 1'
+        : breakEven <= 6 ? 'ROI positif d\u00e8s le mois ' + Math.ceil(breakEven)
+        : 'ROI positif apr\u00e8s 6 mois')
+      : '\u2014';
+
+    document.getElementById('calc-ca-lost').textContent = fmt(caPerdu);
+    document.getElementById('calc-noshow-gain').textContent = fmt(noshowGain);
+    document.getElementById('calc-leads-lost').textContent = leadsLost + ' leads';
+    document.getElementById('calc-leads-gain').textContent = fmt(leadsGain);
+    document.getElementById('calc-total-month').textContent = fmt(totalMonth);
+    document.getElementById('calc-total-6m').textContent = fmt(total6m);
+    document.getElementById('calc-vs-result').textContent = breakEvenText;
+  }
+
+  // Calculator tracking: throttled send to server
+  var calcDefaults = { centres: 5, audits: 40, panier: 800, noshow: 20, leads: 150 };
+  var lastCalcSend = 0;
+  var calcSendTimer = null;
+
+  function sendCalcData(inputs, results) {
+    if (typeof sessionId === 'undefined' || !sessionId) return;
+    var now = Date.now();
+    if (now - lastCalcSend < 3000) {
+      clearTimeout(calcSendTimer);
+      calcSendTimer = setTimeout(function() { sendCalcData(inputs, results); }, 3000 - (now - lastCalcSend));
+      return;
+    }
+    lastCalcSend = now;
+    fetch('/api/track/activity', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        sessionId: sessionId,
+        calculatorInputs: inputs,
+        calculatorResults: results
+      })
+    }).catch(function() {});
+  }
+
+  function trackCalc() {
+    var inputs = {
+      centres: parseFloat(centres.value) || 1,
+      audits: parseFloat(audits.value) || 0,
+      panier: parseFloat(panier.value) || 0,
+      noshow: parseFloat(noshow.value) || 0,
+      leads: parseFloat(leads.value) || 0
+    };
+    var changed = Object.keys(inputs).some(function(k) { return inputs[k] !== calcDefaults[k]; });
+    if (!changed) return;
+
+    var totalAudits = Math.round(inputs.audits * inputs.centres);
+    var caPerdu = Math.round(Math.round(totalAudits * (inputs.noshow / 100)) * CONVERSION_RATE * inputs.panier);
+    var noshowGain = Math.round(caPerdu * NOSHOW_REDUCTION);
+    var leadsGain = Math.round(Math.round(inputs.leads * CHATBOT_CAPTURE) * CONVERSION_RATE * inputs.panier);
+    var totalMonth = noshowGain + leadsGain;
+
+    sendCalcData(inputs, {
+      caLost: caPerdu,
+      noshowGain: noshowGain,
+      leadsGain: leadsGain,
+      totalMonth: totalMonth,
+      total6m: totalMonth * 6
+    });
+  }
+
+  [centres, audits, panier, noshow, leads].forEach(function(el) {
+    el.addEventListener('input', function() {
+      calculate();
+      trackCalc();
+    });
+  });
+
+  calculate();
+  goToStep(1);
+})();
+</script>
+</body>
+</html>

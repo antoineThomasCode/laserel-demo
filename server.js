@@ -176,6 +176,11 @@ Donne une analyse courte (2-3 phrases) du niveau d'intérêt et de l'engagement.
 // Serve static files
 app.use(express.static('public'));
 
+// Serve preprod LP (redirect /preprod to /preprod/)
+app.get('/preprod', (req, res) => {
+  res.redirect('/preprod/');
+});
+
 // Serve admin page
 app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin.html'));
