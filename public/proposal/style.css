@@ -1046,6 +1046,424 @@
 }
 
 /* ============================================
+   SOMMAIRE — Table of Contents grid
+   ============================================ */
+
+.section-sommaire {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.toc-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.toc-card:hover {
+  border-color: var(--laserel-gold);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.toc-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--laserel-gold-light);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.toc-card-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--laserel-gold-dark);
+}
+
+.toc-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.toc-card-content strong {
+  display: block;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.toc-card-content span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.toc-card-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--gray-100);
+  padding: 3px 8px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   LEVIER TEASER CARDS
+   ============================================ */
+
+.levier-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.levier-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.levier-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.levier-card-header {
+  padding: 18px 20px 0;
+}
+
+.levier-card-header .solution-priority {
+  margin-bottom: 8px;
+}
+
+.levier-card-header .solution-title {
+  margin-top: 8px;
+}
+
+.levier-card-body {
+  padding: 14px 20px;
+}
+
+.levier-card-body p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 0 10px;
+}
+
+.levier-card-body .solution-features {
+  margin: 0;
+}
+
+.levier-card .solution-result {
+  margin: 0;
+  border-radius: 0;
+}
+
+.levier-card-link {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cohorte-teal);
+  background: var(--cohorte-teal-light);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.levier-card-link:hover {
+  background: var(--cohorte-teal);
+  color: var(--white);
+}
+
+/* ============================================
+   AI AGENTS GRID (Ma méthode)
+   ============================================ */
+
+.ai-agents-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.ai-agent-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.ai-agent-card:hover {
+  border-color: var(--cohorte-teal);
+  box-shadow: var(--shadow-sm);
+}
+
+.ai-agent-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  background: var(--cohorte-teal-light);
+  border-radius: var(--radius-sm);
+}
+
+.ai-agent-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--cohorte-teal);
+}
+
+.ai-agent-card strong {
+  display: block;
+  font-size: 15px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.ai-agent-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.ai-agent-card em {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   TIER SELECTOR (Roadmap toggle)
+   ============================================ */
+
+.tier-selector {
+  display: flex;
+  gap: 0;
+  margin-bottom: 24px;
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+  padding: 4px;
+}
+
+.tier-btn {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tier-btn-active {
+  background: var(--white);
+  color: var(--laserel-gold-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   ROADMAP TIMELINE (Gantt-like)
+   ============================================ */
+
+.roadmap-timeline {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.roadmap-months {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--gray-200);
+  padding-bottom: 8px;
+}
+
+.roadmap-months span {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.roadmap-streams {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.roadmap-stream {
+  display: grid;
+  grid-template-columns: 160px repeat(12, 1fr);
+  gap: 0;
+  align-items: center;
+  min-height: 32px;
+}
+
+.roadmap-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding-right: 12px;
+  white-space: nowrap;
+}
+
+.roadmap-bar {
+  height: 24px;
+  border-radius: 12px;
+  opacity: 0.85;
+}
+
+.roadmap-bar-gray { background: var(--gray-300); }
+.roadmap-bar-gold { background: var(--laserel-gold); }
+.roadmap-bar-teal { background: var(--cohorte-teal); }
+.roadmap-bar-green { background: #22c55e; }
+.roadmap-bar-orange { background: #f59e0b; }
+.roadmap-bar-golddark { background: var(--laserel-gold-dark); }
+.roadmap-bar-lightgray { background: var(--gray-200); }
+
+.roadmap-milestone {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-200);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--laserel-gold-dark);
+}
+
+/* ============================================
+   PRICING TIERS (2 cards side by side)
+   ============================================ */
+
+.pricing-tiers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.pricing-tier {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.pricing-tier-premium {
+  border-color: var(--laserel-gold);
+  box-shadow: 0 0 0 1px var(--laserel-gold);
+}
+
+.pricing-tier-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--white);
+  background: var(--laserel-gold);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.pricing-tier-header {
+  padding: 20px 20px 0;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pricing-tier-price {
+  padding: 8px 20px 16px;
+  font-family: var(--font-brand);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--laserel-gold-dark);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.pricing-tier-price span {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.pricing-tier-body {
+  padding: 16px 20px;
+}
+
+.pricing-tier-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.pricing-tier-row:last-child {
+  border-bottom: none;
+}
+
+.pricing-tier-row strong {
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.pricing-tier-row-total {
+  padding-top: 12px;
+  margin-top: 4px;
+  border-top: 2px solid var(--laserel-gold);
+  border-bottom: none;
+}
+
+.pricing-tier-row-total span,
+.pricing-tier-row-total strong {
+  font-size: 15px;
+  color: var(--laserel-gold-dark);
+  font-weight: 700;
+}
+
+.pricing-tier-premium .pricing-tier-header {
+  background: var(--laserel-gold-light);
+}
+
+/* ============================================
    MOBILE OVERRIDES
    ============================================ */
 
@@ -1160,10 +1578,60 @@
     transform: rotate(90deg);
     padding: 4px 0;
   }
+
+  /* Roadmap: fallback to vertical timeline */
+  .roadmap-months {
+    display: none;
+  }
+
+  .roadmap-stream {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .roadmap-bar {
+    height: 8px;
+    width: 100%;
+    grid-column: 1 !important;
+  }
+
+  .roadmap-label {
+    font-size: 13px;
+    font-weight: 600;
+    padding-right: 0;
+  }
+
+  /* AI agents */
+  .ai-agents-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-agent-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+  }
+
+  .ai-agent-icon {
+    margin: 0;
+  }
 }
 
 @media (max-width: 500px) {
   .comparison {
+    grid-template-columns: 1fr;
+  }
+
+  /* TOC: single column */
+  .toc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Pricing tiers: stack */
+  .pricing-tiers {
     grid-template-columns: 1fr;
   }
 
