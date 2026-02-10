@@ -6,14 +6,35 @@
 @import url('../preprod/style.css');
 
 /* ============================================
-   DESKTOP-FIRST OVERHAUL
-   The base design system is mobile-first (680px container).
-   This proposal needs to breathe on desktop.
+   SWISS GRID ALIGNMENT SYSTEM
+   One single column width governs header, nav, and content.
+   Everything aligns on the same left/right edges.
    ============================================ */
 
-/* Widen the container for desktop */
 :root {
   --container-max: 960px;
+  --container-padding: 20px;
+}
+
+/* Force header to align with content container */
+.header-content {
+  max-width: calc(var(--container-max) + var(--container-padding) * 2);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Force section nav to align with content container */
+.section-nav-scroll {
+  max-width: calc(var(--container-max) + var(--container-padding) * 2);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Content container already uses --container-max via base CSS */
+.container {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 /* ============================================
@@ -1011,6 +1032,7 @@
 @media (max-width: 768px) {
   :root {
     --container-max: 680px;
+    --container-padding: 20px;
   }
 
   .hero-title {
@@ -1193,5 +1215,684 @@
 
   .noshow-evidence li {
     font-size: 12px;
+  }
+}
+
+/* ============================================
+   FRANCHISE SECTION — Teaser CTA
+   ============================================ */
+
+.franchise-teaser-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, var(--laserel-gold-light) 0%, rgba(196, 167, 125, 0.2) 100%);
+  border: 2px solid var(--laserel-gold);
+  border-radius: var(--radius-md);
+  color: var(--laserel-gold-dark);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.franchise-teaser-cta:hover {
+  background: var(--laserel-gold);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.franchise-teaser-cta svg {
+  width: 18px;
+  height: 18px;
+  animation: bounceDown 2s ease infinite;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* ============================================
+   FRANCHISE SECTION — Dedicated section
+   ============================================ */
+
+.section-franchise {
+  background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+}
+
+.franchise-block {
+  margin-bottom: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.franchise-block:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.franchise-block-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.franchise-block-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--laserel-gold);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.franchise-block-intro {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.franchise-insight {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding: 14px 16px;
+  background: var(--laserel-gold-light);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--laserel-gold);
+  margin-top: 16px;
+}
+
+/* ============================================
+   FRANCHISE — Market stats grid
+   ============================================ */
+
+.franchise-market-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.market-stat-card {
+  padding: 18px 14px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.market-stat-card:hover {
+  border-color: var(--laserel-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.market-stat-highlight {
+  background: var(--laserel-gold-light);
+  border-color: var(--laserel-gold);
+}
+
+.market-stat-number {
+  font-family: var(--font-brand);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--laserel-gold-dark);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.market-stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.market-stat-source {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ============================================
+   FRANCHISE — Comparison table
+   ============================================ */
+
+.franchise-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.franchise-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 500px;
+}
+
+.franchise-compare-table th {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  background: var(--gray-50);
+  border-bottom: 2px solid var(--gray-300);
+}
+
+.franchise-compare-table td {
+  padding: 10px 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.franchise-table-highlight {
+  background: var(--laserel-gold-light);
+}
+
+.franchise-table-highlight td {
+  color: var(--laserel-gold-dark);
+  font-weight: 500;
+  border-bottom-color: var(--laserel-gold);
+}
+
+.franchise-table-source {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* ============================================
+   FRANCHISE — Advantages
+   ============================================ */
+
+.franchise-advantages {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.franchise-advantage {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.franchise-advantage:hover {
+  border-color: var(--laserel-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.franchise-advantage-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--laserel-gold-light);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.franchise-advantage-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--laserel-gold-dark);
+}
+
+.franchise-advantage strong {
+  display: block;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.franchise-advantage p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================
+   FRANCHISE — Persona card
+   ============================================ */
+
+.franchise-persona {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.persona-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, var(--laserel-gold-light) 0%, rgba(196, 167, 125, 0.1) 100%);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.persona-avatar {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--laserel-gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.persona-avatar svg {
+  width: 24px;
+  height: 24px;
+  color: var(--white);
+}
+
+.persona-header strong {
+  display: block;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.persona-header span {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.persona-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.persona-stat {
+  padding: 14px 10px;
+  text-align: center;
+  border-right: 1px solid var(--gray-200);
+}
+
+.persona-stat:last-child {
+  border-right: none;
+}
+
+.persona-stat-num {
+  font-family: var(--font-brand);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--laserel-gold-dark);
+  line-height: 1;
+}
+
+.persona-stat-text {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  line-height: 1.3;
+}
+
+.persona-stat-source {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.persona-motivations,
+.persona-painpoints {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.persona-painpoints {
+  border-bottom: none;
+  background: var(--gray-50);
+}
+
+.persona-motivations strong,
+.persona-painpoints strong {
+  display: block;
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.persona-motivations ul,
+.persona-painpoints ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.persona-motivations li,
+.persona-painpoints li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.persona-motivations li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  background: var(--success);
+  border-radius: 50%;
+}
+
+.persona-painpoints li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  background: var(--laserel-gold);
+  border-radius: 50%;
+}
+
+.persona-painpoints li em {
+  color: var(--success);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* ============================================
+   FRANCHISE — Strategy grid
+   ============================================ */
+
+.franchise-strategy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.strategy-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.strategy-card:hover {
+  border-color: var(--cohorte-teal);
+  box-shadow: var(--shadow-sm);
+}
+
+.strategy-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--cohorte-teal-light);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 13px;
+  color: var(--cohorte-teal);
+}
+
+.strategy-card-header svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--cohorte-teal);
+}
+
+.strategy-card ul {
+  list-style: none;
+  padding: 14px 16px;
+  margin: 0;
+}
+
+.strategy-card li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+
+.strategy-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  background: var(--cohorte-teal);
+  border-radius: 50%;
+}
+
+/* ============================================
+   FRANCHISE — Projections
+   ============================================ */
+
+.franchise-projection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.projection-scenario {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.projection-header {
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.projection-conservative {
+  background: var(--gray-100);
+  color: var(--text-secondary);
+}
+
+.projection-optimistic {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.projection-body {
+  padding: 14px 16px;
+}
+
+.projection-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.projection-row:last-child {
+  border-bottom: none;
+}
+
+.projection-row strong {
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.projection-total {
+  padding-top: 10px;
+  margin-top: 4px;
+  border-top: 2px solid var(--laserel-gold);
+  border-bottom: none;
+}
+
+.projection-total span,
+.projection-total strong {
+  font-size: 14px;
+  color: var(--laserel-gold-dark);
+  font-weight: 700;
+}
+
+/* ============================================
+   FRANCHISE — Funnel
+   ============================================ */
+
+.franchise-funnel {
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+}
+
+.funnel-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.funnel-steps {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.funnel-step {
+  flex: 1;
+  padding: 14px 10px;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.funnel-step-1 { background: rgba(196, 167, 125, 0.1); }
+.funnel-step-2 { background: rgba(196, 167, 125, 0.2); }
+.funnel-step-3 { background: rgba(196, 167, 125, 0.3); }
+.funnel-step-4 { background: rgba(196, 167, 125, 0.4); }
+.funnel-step-5 { background: var(--laserel-gold); }
+
+.funnel-step-1 { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+.funnel-step-5 { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+
+.funnel-step-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.funnel-step-5 .funnel-step-label,
+.funnel-step-5 .funnel-step-detail {
+  color: var(--white);
+}
+
+.funnel-step-detail {
+  font-size: 10.5px;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+/* ============================================
+   FRANCHISE — Mobile overrides
+   ============================================ */
+
+@media (max-width: 600px) {
+  .franchise-market-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .market-stat-number {
+    font-size: 22px;
+  }
+
+  .market-stat-label {
+    font-size: 11px;
+  }
+
+  .persona-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .persona-stat {
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .persona-stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .franchise-strategy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .franchise-projection {
+    grid-template-columns: 1fr;
+  }
+
+  .funnel-steps {
+    flex-direction: column;
+  }
+
+  .funnel-step-1 { border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+  .funnel-step-5 { border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+
+  .franchise-compare-table {
+    font-size: 12px;
+  }
+
+  .franchise-compare-table th,
+  .franchise-compare-table td {
+    padding: 8px 8px;
+  }
+
+  .projection-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .franchise-block-title {
+    font-size: 16px;
   }
 }
