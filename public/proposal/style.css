@@ -6,6 +6,17 @@
 @import url('../preprod/style.css');
 
 /* ============================================
+   DESKTOP-FIRST OVERHAUL
+   The base design system is mobile-first (680px container).
+   This proposal needs to breathe on desktop.
+   ============================================ */
+
+/* Widen the container for desktop */
+:root {
+  --container-max: 960px;
+}
+
+/* ============================================
    REVEAL ANIMATIONS (standalone, no animations.js needed)
    ============================================ */
 
@@ -27,90 +38,281 @@
 .alert-toast-list .reveal:nth-child(5) { transition-delay: 0.4s; }
 
 /* ============================================
-   SOLUTION EXPLAINER (new)
+   CRITICAL FIX: SOLUTION ACCORDION
+   Base CSS has max-height: 500px on .solution-card.open .solution-body
+   Levier 4 content is 2000px+ — it was getting cut off!
+   ============================================ */
+
+.solution-card.open .solution-body {
+  max-height: none;
+  overflow: visible;
+  padding-bottom: 24px;
+}
+
+.solution-body {
+  padding: 0 20px;
+}
+
+.solution-header {
+  padding: 18px 20px 14px;
+}
+
+/* ============================================
+   HERO SECTION — desktop enhancements
+   ============================================ */
+
+/* Make hero-anim elements visible by default (no cinematic needed) */
+.hero-anim {
+  opacity: 1;
+  transform: none;
+}
+
+.section-hero {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.hero-title {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 680px;
+}
+
+.hero-benefits {
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.hero-benefit span {
+  font-size: 14px;
+}
+
+/* ============================================
+   SECTION HEADERS — bigger on desktop
+   ============================================ */
+
+.section-header {
+  margin-bottom: 28px;
+}
+
+.section-number {
+  font-size: 11px;
+  padding: 5px 14px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 26px;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 680px;
+}
+
+/* ============================================
+   MAIN CONTENT — spacing with nav
+   ============================================ */
+
+.main-content {
+  padding-top: 100px;
+}
+
+.section {
+  padding: 56px 0;
+}
+
+/* ============================================
+   ALERT TOASTS — better desktop readability
+   ============================================ */
+
+.alert-toast-list {
+  gap: 12px;
+}
+
+.alert-toast p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ============================================
+   COMPARISON CARDS — desktop size
+   ============================================ */
+
+.comparison {
+  gap: 16px;
+}
+
+.comparison-card {
+  padding: 20px;
+}
+
+.comparison-header {
+  padding: 14px 18px;
+}
+
+.comparison-header span {
+  font-size: 13px;
+}
+
+.comparison-list li {
+  font-size: 13.5px;
+  padding: 8px 0;
+}
+
+/* ============================================
+   HIGHLIGHT BOX — desktop
+   ============================================ */
+
+.highlight-box p {
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ============================================
+   ROI BREAKEVEN — desktop
+   ============================================ */
+
+.roi-breakeven-content strong {
+  font-size: 16px;
+}
+
+.roi-breakeven-content p {
+  font-size: 14px;
+}
+
+/* ============================================
+   SOLUTION CARDS — desktop improvements
+   ============================================ */
+
+.solutions-grid {
+  gap: 14px;
+}
+
+.solution-card {
+  border-radius: 16px;
+}
+
+.solution-priority {
+  font-size: 11px;
+  padding: 5px 12px;
+}
+
+.solution-title {
+  font-size: 19px;
+}
+
+.solution-subtitle {
+  font-size: 14px;
+}
+
+.solution-features li {
+  font-size: 14px;
+  padding: 8px 0;
+  padding-left: 18px;
+  line-height: 1.55;
+}
+
+.solution-result {
+  padding: 14px 18px;
+  margin-top: 8px;
+}
+
+.solution-result span {
+  font-size: 14px;
+}
+
+/* ============================================
+   SOLUTION EXPLAINER — desktop readability
    ============================================ */
 
 .solution-explainer {
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 16px;
-  padding: 14px 16px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  padding: 16px 20px;
   background: var(--laserel-gold-light);
   border-radius: var(--radius-sm);
   border-left: 3px solid var(--laserel-gold);
 }
 
 /* ============================================
-   METRIC HIGHLIGHT (new)
+   METRIC HIGHLIGHT — desktop
    ============================================ */
 
 .metric-highlight {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
+  gap: 20px;
+  padding: 22px 24px;
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-md);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .metric-number {
   font-family: var(--font-brand);
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 700;
   color: var(--laserel-gold-dark);
   line-height: 1;
   flex-shrink: 0;
-  min-width: 70px;
+  min-width: 80px;
   text-align: center;
 }
 
 .metric-text {
-  font-size: 13.5px;
-  line-height: 1.6;
+  font-size: 14.5px;
+  line-height: 1.65;
   color: var(--text-primary);
 }
 
 .metric-text strong {
   display: block;
-  font-size: 14px;
-  margin-bottom: 2px;
+  font-size: 15px;
+  margin-bottom: 3px;
 }
 
 .metric-source {
-  font-size: 11.5px;
+  font-size: 12.5px;
   color: var(--text-muted);
   font-style: italic;
 }
 
 /* ============================================
-   PROCESS FLOW DIAGRAMS (new)
+   PROCESS FLOW DIAGRAMS — desktop layout
    ============================================ */
 
 .process-flow {
-  margin-top: 18px;
-  padding: 18px;
+  margin-top: 20px;
+  padding: 22px 24px;
   background: var(--gray-50);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-md);
 }
 
 .process-flow-title {
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--text-muted);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .process-flow-steps {
   display: flex;
   align-items: stretch;
   gap: 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 
@@ -118,14 +320,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 12px 10px;
+  gap: 10px;
+  padding: 14px 12px;
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-sm);
   flex: 1;
-  min-width: 100px;
-  max-width: 160px;
+  min-width: 110px;
+  max-width: 180px;
   text-align: center;
   transition: all 0.2s ease;
 }
@@ -141,15 +343,15 @@
 }
 
 .process-flow-num {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--laserel-gold-light);
   color: var(--laserel-gold-dark);
   border-radius: 50%;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -160,9 +362,9 @@
 }
 
 .process-flow-step span {
-  font-size: 11.5px;
+  font-size: 12.5px;
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .process-flow-arrow {
@@ -170,39 +372,17 @@
   align-items: center;
   justify-content: center;
   color: var(--gray-400);
-  font-size: 16px;
-  padding: 0 4px;
+  font-size: 18px;
+  padding: 0 6px;
   flex-shrink: 0;
 }
 
-/* Mobile: stack flow vertically */
-@media (max-width: 600px) {
-  .process-flow-steps {
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-  }
-
-  .process-flow-step {
-    flex-direction: row;
-    max-width: 100%;
-    width: 100%;
-    text-align: left;
-    gap: 12px;
-  }
-
-  .process-flow-arrow {
-    transform: rotate(90deg);
-    padding: 4px 0;
-  }
-}
-
 /* ============================================
-   TOOL CHOICE BOX (new)
+   TOOL CHOICE BOX
    ============================================ */
 
 .tool-choice {
-  margin-top: 18px;
+  margin-top: 20px;
   border: 1px solid var(--cohorte-teal);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -212,22 +392,22 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 16px;
+  padding: 14px 20px;
   background: var(--cohorte-teal-light);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--cohorte-teal);
 }
 
 .tool-choice-header svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
   color: var(--cohorte-teal);
 }
 
 .tool-choice-body {
-  padding: 14px 16px;
+  padding: 16px 20px;
 }
 
 .tool-choice-body ul {
@@ -238,18 +418,18 @@
 
 .tool-choice-body li {
   position: relative;
-  padding-left: 16px;
-  font-size: 13px;
+  padding-left: 18px;
+  font-size: 14px;
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 6px;
+  line-height: 1.65;
+  margin-bottom: 8px;
 }
 
 .tool-choice-body li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 9px;
+  top: 10px;
   width: 6px;
   height: 6px;
   background: var(--cohorte-teal);
@@ -257,22 +437,22 @@
 }
 
 .tool-choice-note {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
-  margin-top: 12px;
-  padding-top: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
   border-top: 1px solid var(--gray-200);
 }
 
 /* ============================================
-   PRICING TABLE (new)
+   PRICING TABLE
    ============================================ */
 
 .pricing-detail {
-  margin-top: 16px;
+  margin-top: 18px;
   background: var(--gray-50);
   border-radius: var(--radius-sm);
-  padding: 16px;
+  padding: 20px;
 }
 
 .pricing-detail table {
@@ -281,8 +461,8 @@
 }
 
 .pricing-detail td {
-  padding: 8px 0;
-  font-size: 13px;
+  padding: 10px 0;
+  font-size: 14px;
   color: var(--text-secondary);
   border-bottom: 1px solid var(--gray-200);
 }
@@ -299,47 +479,84 @@
 }
 
 .pricing-total td {
-  padding-top: 12px;
-  font-size: 14px;
+  padding-top: 14px;
+  font-size: 15px;
   color: var(--laserel-gold-dark) !important;
   border-top: 2px solid var(--laserel-gold);
   border-bottom: none !important;
 }
 
 .pricing-note {
-  font-size: 11.5px;
+  font-size: 12.5px;
   color: var(--text-muted);
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 /* ============================================
-   OVERRIDES & ADJUSTMENTS
+   METHOD STEPS — desktop
    ============================================ */
 
-/* Make hero-anim elements visible by default (no cinematic needed) */
-.hero-anim {
-  opacity: 1;
-  transform: none;
+.method-step-content h4 {
+  font-size: 16px;
 }
 
-/* Ensure section padding works with the nav */
-.main-content {
-  padding-top: 100px;
+.method-step-content p {
+  font-size: 14px;
+  line-height: 1.65;
 }
 
-/* Larger container for proposal */
-:root {
-  --container-max: 720px;
+/* ============================================
+   GUARANTEES — desktop
+   ============================================ */
+
+.guarantee h4 {
+  font-size: 15px;
 }
 
-/* Better spacing between solution cards */
-.solutions-grid {
-  gap: 12px;
+.guarantee p {
+  font-size: 13.5px;
 }
 
-/* Ensure alert toasts have better spacing */
-.alert-toast-list {
-  gap: 10px;
+/* ============================================
+   PROCESS TIMELINE — desktop
+   ============================================ */
+
+.process-step-content h4 {
+  font-size: 16px;
+}
+
+.process-step-content p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ============================================
+   ROI SIMULATION — desktop
+   ============================================ */
+
+.roi-sim-list li {
+  font-size: 14px;
+}
+
+/* ============================================
+   CTA SECTION — desktop
+   ============================================ */
+
+.cta-title {
+  font-size: 28px;
+}
+
+.cta-text {
+  font-size: 15px;
+}
+
+/* ============================================
+   ROI DISCLAIMER — desktop readability
+   ============================================ */
+
+.roi-disclaimer p {
+  font-size: 13.5px;
+  line-height: 1.7;
 }
 
 /* ============================================
@@ -347,7 +564,7 @@
    ============================================ */
 
 .goldmine-box {
-  margin: 20px 0;
+  margin: 24px 0;
   border: 2px solid var(--laserel-gold);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -356,42 +573,43 @@
 .goldmine-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 18px;
+  gap: 12px;
+  padding: 16px 22px;
   background: linear-gradient(135deg, var(--laserel-gold-light) 0%, rgba(196, 167, 125, 0.15) 100%);
-  font-size: 14px;
+  font-size: 15px;
   color: var(--laserel-gold-dark);
 }
 
 .goldmine-header svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
   color: var(--laserel-gold-dark);
 }
 
 .goldmine-body {
-  padding: 18px;
+  padding: 22px;
 }
 
 .goldmine-body > p {
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: var(--text-secondary);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  line-height: 1.65;
 }
 
 .goldmine-calc {
   background: var(--gray-50);
   border-radius: var(--radius-sm);
-  padding: 14px;
+  padding: 18px;
 }
 
 .goldmine-calc-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
-  font-size: 13px;
+  padding: 10px 0;
+  font-size: 14px;
   color: var(--text-secondary);
   border-bottom: 1px solid var(--gray-200);
 }
@@ -406,7 +624,7 @@
 }
 
 .goldmine-calc-total {
-  padding-top: 12px;
+  padding-top: 14px;
   margin-top: 4px;
   border-top: 2px solid var(--laserel-gold);
   border-bottom: none;
@@ -414,16 +632,16 @@
 
 .goldmine-calc-total span,
 .goldmine-calc-total strong {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--laserel-gold-dark);
   font-weight: 700;
 }
 
 .goldmine-note {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
-  margin-top: 14px;
-  line-height: 1.6;
+  margin-top: 16px;
+  line-height: 1.65;
 }
 
 /* ============================================
@@ -431,32 +649,32 @@
    ============================================ */
 
 .solution-section-title {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   color: var(--text-primary);
-  margin: 22px 0 12px;
+  margin: 28px 0 14px;
 }
 
 .before-after-compare {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .before-after-card {
   border-radius: var(--radius-md);
-  padding: 16px;
+  padding: 20px;
   border: 1px solid var(--gray-200);
 }
 
 .before-after-label {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
   border-bottom: 2px solid;
 }
 
@@ -486,18 +704,18 @@
 
 .before-after-card li {
   position: relative;
-  padding-left: 16px;
-  font-size: 12.5px;
+  padding-left: 18px;
+  font-size: 13.5px;
   color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 6px;
+  line-height: 1.55;
+  margin-bottom: 8px;
 }
 
 .before-card li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 7px;
+  top: 8px;
   width: 6px;
   height: 6px;
   background: var(--error);
@@ -508,7 +726,7 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 7px;
+  top: 8px;
   width: 6px;
   height: 6px;
   background: var(--success);
@@ -519,10 +737,121 @@
    MOBILE OVERRIDES
    ============================================ */
 
-/* Fix comparison cards on mobile */
+@media (max-width: 768px) {
+  :root {
+    --container-max: 680px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .section-title {
+    font-size: 21px;
+  }
+
+  .solution-body {
+    padding: 0 16px;
+  }
+
+  .solution-header {
+    padding: 14px 16px 10px;
+  }
+
+  .solution-title {
+    font-size: 17px;
+  }
+
+  .solution-features li {
+    font-size: 13px;
+  }
+
+  .solution-explainer {
+    font-size: 13.5px;
+    padding: 14px 16px;
+  }
+
+  .metric-number {
+    font-size: 36px;
+    min-width: 70px;
+  }
+
+  .metric-text {
+    font-size: 13.5px;
+  }
+
+  .metric-text strong {
+    font-size: 14px;
+  }
+
+  .goldmine-header {
+    font-size: 14px;
+    padding: 14px 18px;
+  }
+
+  .goldmine-body {
+    padding: 18px;
+  }
+
+  .goldmine-body > p {
+    font-size: 13.5px;
+  }
+
+  .goldmine-calc-row {
+    font-size: 13px;
+  }
+
+  .before-after-card li {
+    font-size: 12.5px;
+  }
+
+  .process-flow-step {
+    min-width: 100px;
+    max-width: 160px;
+    padding: 12px 10px;
+  }
+
+  .process-flow-step span {
+    font-size: 11.5px;
+  }
+
+  .tool-choice-body li {
+    font-size: 13px;
+  }
+
+  .pricing-detail td {
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .process-flow-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .process-flow-step {
+    flex-direction: row;
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+    gap: 12px;
+  }
+
+  .process-flow-arrow {
+    transform: rotate(90deg);
+    padding: 4px 0;
+  }
+}
+
 @media (max-width: 500px) {
   .comparison {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .metric-highlight {
@@ -542,5 +871,13 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+
+  .section-title {
+    font-size: 19px;
   }
 }
