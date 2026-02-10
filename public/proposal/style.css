@@ -90,20 +90,192 @@
 
 .section-hero {
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 48px;
 }
 
 .hero-title {
   font-size: 32px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .hero-subtitle {
   font-size: 15px;
   line-height: 1.7;
   max-width: 680px;
+  margin-bottom: 28px;
 }
 
+/* --- Hero Metrics Grid --- */
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  padding: 16px 8px;
+  transition: border-color 0.2s ease;
+}
+
+.hero-metric:hover {
+  border-color: var(--laserel-gold);
+}
+
+.hero-metric-value {
+  font-family: var(--font-brand);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--laserel-gold-dark);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.hero-metric-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- Hero Value Prop Card --- */
+.hero-vp-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.hero-vp-avatar {
+  flex-shrink: 0;
+}
+
+.hero-vp-avatar img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.hero-vp-name {
+  display: block;
+  font-family: var(--font-brand);
+  font-weight: 500;
+  color: var(--laserel-gold-dark);
+  font-size: 13px;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.hero-vp-content p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* --- Hero Cost Comparison --- */
+.hero-cost {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 20px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+}
+
+.hero-cost-item {
+  flex: 1;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-cost-them {
+  background: var(--gray-50);
+}
+
+.hero-cost-us {
+  background: var(--laserel-gold-light);
+}
+
+.hero-cost-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.hero-cost-us .hero-cost-label {
+  color: var(--laserel-gold-dark);
+}
+
+.hero-cost-value {
+  font-family: var(--font-brand);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.hero-cost-them .hero-cost-value {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.hero-cost-us .hero-cost-value {
+  color: var(--laserel-gold-dark);
+}
+
+.hero-cost-vs {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+
+/* --- Hero ROI Punchline --- */
+.hero-roi {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(196, 167, 125, 0.08), rgba(196, 167, 125, 0.15));
+  border: 1px solid rgba(196, 167, 125, 0.3);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 24px;
+}
+
+.hero-roi svg {
+  flex-shrink: 0;
+  color: var(--laserel-gold-dark);
+  margin-top: 1px;
+}
+
+.hero-roi span {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+/* --- Old hero-benefits (unused in proposal v2, kept for base compat) --- */
 .hero-benefits {
   gap: 16px;
   margin-top: 28px;
@@ -1477,6 +1649,24 @@
     font-size: 26px;
   }
 
+  .hero-metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-cost {
+    flex-direction: column;
+  }
+
+  .hero-cost-vs {
+    padding: 4px 0;
+  }
+
+  .hero-cost-item {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
   .section-title {
     font-size: 21px;
   }
@@ -1656,6 +1846,34 @@
 
   .hero-title {
     font-size: 22px;
+  }
+
+  .hero-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .hero-metric {
+    padding: 12px 8px;
+  }
+
+  .hero-metric-value {
+    font-size: 20px;
+  }
+
+  .hero-metric-label {
+    font-size: 10px;
+  }
+
+  .hero-cost-value {
+    font-size: 15px;
+  }
+
+  .hero-vp-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
   }
 
   .section-title {
