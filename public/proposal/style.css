@@ -342,6 +342,183 @@
   gap: 10px;
 }
 
+/* ============================================
+   GOLDMINE BOX (Levier 4 - mine d'or)
+   ============================================ */
+
+.goldmine-box {
+  margin: 20px 0;
+  border: 2px solid var(--laserel-gold);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.goldmine-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, var(--laserel-gold-light) 0%, rgba(196, 167, 125, 0.15) 100%);
+  font-size: 14px;
+  color: var(--laserel-gold-dark);
+}
+
+.goldmine-header svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--laserel-gold-dark);
+}
+
+.goldmine-body {
+  padding: 18px;
+}
+
+.goldmine-body > p {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.goldmine-calc {
+  background: var(--gray-50);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+}
+
+.goldmine-calc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.goldmine-calc-row:last-child {
+  border-bottom: none;
+}
+
+.goldmine-calc-row strong {
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.goldmine-calc-total {
+  padding-top: 12px;
+  margin-top: 4px;
+  border-top: 2px solid var(--laserel-gold);
+  border-bottom: none;
+}
+
+.goldmine-calc-total span,
+.goldmine-calc-total strong {
+  font-size: 14px;
+  color: var(--laserel-gold-dark);
+  font-weight: 700;
+}
+
+.goldmine-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   BEFORE/AFTER COMPARISON (Levier 4)
+   ============================================ */
+
+.solution-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 22px 0 12px;
+}
+
+.before-after-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.before-after-card {
+  border-radius: var(--radius-md);
+  padding: 16px;
+  border: 1px solid var(--gray-200);
+}
+
+.before-after-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid;
+}
+
+.before-card {
+  background: var(--error-light);
+}
+
+.before-card .before-after-label {
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.after-card {
+  background: var(--success-light);
+}
+
+.after-card .before-after-label {
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.before-after-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.before-after-card li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.before-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  background: var(--error);
+  border-radius: 50%;
+}
+
+.after-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  background: var(--success);
+  border-radius: 50%;
+}
+
+/* ============================================
+   MOBILE OVERRIDES
+   ============================================ */
+
 /* Fix comparison cards on mobile */
 @media (max-width: 500px) {
   .comparison {
@@ -355,5 +532,15 @@
 
   .metric-number {
     font-size: 32px;
+  }
+
+  .before-after-compare {
+    grid-template-columns: 1fr;
+  }
+
+  .goldmine-calc-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
   }
 }
