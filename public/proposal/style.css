@@ -1,0 +1,359 @@
+/* ============================================
+   LASEREL × COHORTE - PROPOSITION V2 2026
+   Extends the base design system from preprod
+   ============================================ */
+
+@import url('../preprod/style.css');
+
+/* ============================================
+   REVEAL ANIMATIONS (standalone, no animations.js needed)
+   ============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children inside revealed containers */
+.alert-toast-list .reveal:nth-child(2) { transition-delay: 0.1s; }
+.alert-toast-list .reveal:nth-child(3) { transition-delay: 0.2s; }
+.alert-toast-list .reveal:nth-child(4) { transition-delay: 0.3s; }
+.alert-toast-list .reveal:nth-child(5) { transition-delay: 0.4s; }
+
+/* ============================================
+   SOLUTION EXPLAINER (new)
+   ============================================ */
+
+.solution-explainer {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  background: var(--laserel-gold-light);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--laserel-gold);
+}
+
+/* ============================================
+   METRIC HIGHLIGHT (new)
+   ============================================ */
+
+.metric-highlight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  margin-bottom: 18px;
+}
+
+.metric-number {
+  font-family: var(--font-brand);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--laserel-gold-dark);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 70px;
+  text-align: center;
+}
+
+.metric-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.metric-text strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.metric-source {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ============================================
+   PROCESS FLOW DIAGRAMS (new)
+   ============================================ */
+
+.process-flow {
+  margin-top: 18px;
+  padding: 18px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+}
+
+.process-flow-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.process-flow-steps {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.process-flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 10px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  flex: 1;
+  min-width: 100px;
+  max-width: 160px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.process-flow-step:hover {
+  border-color: var(--laserel-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.process-flow-step-success {
+  background: var(--success-light);
+  border-color: var(--success);
+}
+
+.process-flow-num {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--laserel-gold-light);
+  color: var(--laserel-gold-dark);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.process-flow-step-success .process-flow-num {
+  background: var(--success);
+  color: var(--white);
+}
+
+.process-flow-step span {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.process-flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-400);
+  font-size: 16px;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+/* Mobile: stack flow vertically */
+@media (max-width: 600px) {
+  .process-flow-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .process-flow-step {
+    flex-direction: row;
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+    gap: 12px;
+  }
+
+  .process-flow-arrow {
+    transform: rotate(90deg);
+    padding: 4px 0;
+  }
+}
+
+/* ============================================
+   TOOL CHOICE BOX (new)
+   ============================================ */
+
+.tool-choice {
+  margin-top: 18px;
+  border: 1px solid var(--cohorte-teal);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.tool-choice-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--cohorte-teal-light);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cohorte-teal);
+}
+
+.tool-choice-header svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--cohorte-teal);
+}
+
+.tool-choice-body {
+  padding: 14px 16px;
+}
+
+.tool-choice-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tool-choice-body li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.tool-choice-body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  background: var(--cohorte-teal);
+  border-radius: 50%;
+}
+
+.tool-choice-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--gray-200);
+}
+
+/* ============================================
+   PRICING TABLE (new)
+   ============================================ */
+
+.pricing-detail {
+  margin-top: 16px;
+  background: var(--gray-50);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+
+.pricing-detail table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing-detail td {
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.pricing-detail td:last-child {
+  text-align: right;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.pricing-detail tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-total td {
+  padding-top: 12px;
+  font-size: 14px;
+  color: var(--laserel-gold-dark) !important;
+  border-top: 2px solid var(--laserel-gold);
+  border-bottom: none !important;
+}
+
+.pricing-note {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* ============================================
+   OVERRIDES & ADJUSTMENTS
+   ============================================ */
+
+/* Make hero-anim elements visible by default (no cinematic needed) */
+.hero-anim {
+  opacity: 1;
+  transform: none;
+}
+
+/* Ensure section padding works with the nav */
+.main-content {
+  padding-top: 100px;
+}
+
+/* Larger container for proposal */
+:root {
+  --container-max: 720px;
+}
+
+/* Better spacing between solution cards */
+.solutions-grid {
+  gap: 12px;
+}
+
+/* Ensure alert toasts have better spacing */
+.alert-toast-list {
+  gap: 10px;
+}
+
+/* Fix comparison cards on mobile */
+@media (max-width: 500px) {
+  .comparison {
+    flex-direction: column;
+  }
+
+  .metric-highlight {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .metric-number {
+    font-size: 32px;
+  }
+}

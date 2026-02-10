@@ -181,6 +181,11 @@ app.get('/preprod', (req, res) => {
   res.redirect('/preprod/');
 });
 
+// Serve proposal LP (redirect /proposal to /proposal/)
+app.get('/proposal', (req, res) => {
+  res.redirect('/proposal/');
+});
+
 // Serve admin page
 app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin.html'));
