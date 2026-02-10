@@ -46,6 +46,7 @@
     <a href="#hero" class="section-nav-item active" data-section="hero">Intro</a>
     <a href="#audit" class="section-nav-item" data-section="audit">Audit site</a>
     <a href="#leviers" class="section-nav-item" data-section="leviers">5 leviers</a>
+    <a href="#noshow" class="section-nav-item" data-section="noshow">Anti no-shows</a>
     <a href="#process" class="section-nav-item" data-section="process">Process</a>
     <a href="#investissement" class="section-nav-item" data-section="investissement">Tarifs</a>
     <a href="#next" class="section-nav-item" data-section="next">Next</a>
@@ -413,7 +414,7 @@
           </div>
         </div>
 
-        <!-- LEVIER 3 : Anti no-shows -->
+        <!-- LEVIER 3 : Anti no-shows (résumé — détail complet en section 03) -->
         <div class="solution-card" data-priority="3">
           <div class="solution-header" onclick="toggleSolution(this)">
             <div class="solution-priority">Levier #3</div>
@@ -423,69 +424,36 @@
               </svg>
             </div>
             <h3 class="solution-title">Syst&egrave;me anti no-shows</h3>
-            <p class="solution-subtitle">R&eacute;cup&eacute;rer ~60 000&euro;/an de cr&eacute;neaux perdus</p>
+            <p class="solution-subtitle">Strat&eacute;gie compl&egrave;te bas&eacute;e sur les donn&eacute;es Doctolib &amp; m&eacute;ta-analyses</p>
             <svg class="solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
           <div class="solution-body">
-            <p class="solution-explainer"><strong>No-show</strong> = un patient qui a pris RDV mais ne vient pas, sans pr&eacute;venir. Dans le secteur beaut&eacute;/esth&eacute;tique, c'est entre 15 et 30% des RDV. Sur 5 centres, &ccedil;a repr&eacute;sente environ 75 000&euro;/an de cr&eacute;neaux perdus (temps praticien + CA manqu&eacute;).</p>
+            <p class="solution-explainer"><strong>No-show</strong> = un patient qui a pris RDV mais ne vient pas, sans pr&eacute;venir. En dermatologie/esth&eacute;tique en France, le taux est de <strong>6 &agrave; 9%</strong> des RDV (source : Nosho.ai / Assurance Maladie). Sur 5 centres avec ~150 RDV/semaine chacun, m&ecirc;me 8% de no-shows = <strong>3 120 cr&eacute;neaux perdus par an</strong>.</p>
+
+            <div class="metric-highlight">
+              <div class="metric-number">8%</div>
+              <div class="metric-text">
+                <strong>Taux de no-show estim&eacute; pour Laserel (5 centres, dermatologie/esth&eacute;tique)</strong><br>
+                <span class="metric-source">Doctolib France (juillet 2024) : 3,1% pour sp&eacute;cialistes (avec rappels). Dermatologie sans syst&egrave;me avanc&eacute; : 6-9%. Nouveaux patients : 5,4%.</span>
+              </div>
+            </div>
 
             <div class="metric-highlight">
               <div class="metric-number">-50%</div>
               <div class="metric-text">
                 <strong>R&eacute;duction des no-shows avec rappels SMS automatiques</strong><br>
-                <span class="metric-source">Taux d'ouverture SMS : 98%. R&eacute;ponse moyenne en 90 secondes. Source : ProspyrMed / Cochrane Review</span>
+                <span class="metric-source">M&eacute;ta-analyse de 8 essais cliniques randomis&eacute;s (OR 1.48, IC 95% : 1.33-1.72). Source : PubMed Central PMC3419880</span>
               </div>
             </div>
 
-            <ul class="solution-features">
-              <li>Confirmation automatique par email &agrave; la r&eacute;servation</li>
-              <li>Rappel SMS J-2 (48h avant) &mdash; le patient confirme en 1 clic</li>
-              <li>Rappel SMS J-1 &agrave; 18h (heure optimale : +41% de confirmation)</li>
-              <li>Si pas de confirmation : alerte au centre pour appeler</li>
-              <li>Cr&eacute;neau lib&eacute;r&eacute; automatiquement en cas d'annulation</li>
-            </ul>
+            <p class="solution-explainer" style="border-left-color: var(--cohorte-teal); background: var(--cohorte-teal-light);">La strat&eacute;gie compl&egrave;te est d&eacute;taill&eacute;e dans la <a href="#noshow" style="color: var(--cohorte-teal); font-weight: 600;">section d&eacute;di&eacute;e ci-dessous</a> &mdash; avec l'estimation financi&egrave;re pour tes 5 centres, la strat&eacute;gie en 4 couches, et le ROI pr&eacute;cis.</p>
 
             <div class="solution-result">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
                 <polyline points="17 6 23 6 23 12"/>
               </svg>
-              <span>R&eacute;sultat : <strong>no-shows de ~20% &agrave; ~5-10%</strong> &mdash; ~60 000&euro;/an &eacute;conomis&eacute;s</span>
-            </div>
-
-            <!-- Process diagram -->
-            <div class="process-flow">
-              <div class="process-flow-title">La s&eacute;quence anti no-show</div>
-              <div class="process-flow-steps">
-                <div class="process-flow-step">
-                  <div class="process-flow-num">RDV</div>
-                  <span>Patient prend RDV</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step">
-                  <div class="process-flow-num">J-2</div>
-                  <span>SMS rappel + confirmation</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step">
-                  <div class="process-flow-num">J-1</div>
-                  <span>Deuxi&egrave;me rappel &agrave; 18h</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step process-flow-step-success">
-                  <div class="process-flow-num">J</div>
-                  <span>Patient confirm&eacute; ou cr&eacute;neau lib&eacute;r&eacute;</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="roi-disclaimer reveal">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="12" y1="16" x2="12" y2="12"/>
-                <line x1="12" y1="8" x2="12.01" y2="8"/>
-              </svg>
-              <p><strong>Note sur Doctolib :</strong> Doctolib envoie d&eacute;j&agrave; des rappels basiques. Notre syst&egrave;me ajoute une couche intelligente : scoring de risque (profils qui annulent souvent), relance personnalis&eacute;e, et r&eacute;ouverture automatique des cr&eacute;neaux lib&eacute;r&eacute;s pour les prospects en attente.</p>
+              <span>R&eacute;sultat : <strong>no-shows de ~8% &agrave; ~3-4%</strong> &mdash; ~187 000&euro;/an de cr&eacute;neaux r&eacute;cup&eacute;r&eacute;s</span>
             </div>
           </div>
         </div>
@@ -712,7 +680,7 @@
           </div>
         </div>
 
-        <!-- LEVIER 5 : Recrutement franchisés -->
+        <!-- LEVIER 5 : Recrutement franchisés (teaser → section dédiée #franchise) -->
         <div class="solution-card" data-priority="5">
           <div class="solution-header" onclick="toggleSolution(this)">
             <div class="solution-priority">Levier #5</div>
@@ -729,58 +697,28 @@
             <svg class="solution-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
           <div class="solution-body">
-            <p class="solution-explainer">Tu as d&eacute;j&agrave; une page franchise sur l'Observatoire (not&eacute;e 5/5). Mais le <strong>taux de conversion moyen</strong> d'une page franchise est de 1.9%. Les meilleurs font 2-6%. L'enjeu : chaque franchis&eacute; recrut&eacute; repr&eacute;sente un deal important &mdash; donc m&ecirc;me un petit gain de conversion a un impact &eacute;norme.</p>
+            <p class="solution-explainer">Ton march&eacute; explose : <strong>+7%/an de croissance</strong>, un d&eacute;cret qui ouvre le laser aux non-m&eacute;decins, et toi tu as d&eacute;j&agrave; 5 centres avec un mod&egrave;le unique de coworking esth&eacute;tique. Le probl&egrave;me ? Recruter un franchis&eacute; co&ucirc;te <strong>20 &agrave; 30k&euro;</strong> en moyenne. On peut diviser ce co&ucirc;t par 3.</p>
 
             <div class="metric-highlight">
-              <div class="metric-number">85%</div>
+              <div class="metric-number">1-3M&euro;</div>
               <div class="metric-text">
-                <strong>du trafic vers la page franchise vient du site client</strong><br>
-                <span class="metric-source">Les gens d&eacute;couvrent Laserel en tant que clients, puis deviennent int&eacute;ress&eacute;s par la franchise. Ton site client EST ta page de recrutement.</span>
+                <strong>Valeur d'un franchis&eacute; sur 12 ans pour le franchiseur</strong><br>
+                <span class="metric-source">Droit d'entr&eacute;e + redevances + volume. Chaque franchis&eacute; recrut&eacute; est un investissement massivement rentable. Source : Observatoire de la Franchise</span>
               </div>
             </div>
-
-            <ul class="solution-features">
-              <li><strong>Landing page d&eacute;di&eacute;e</strong> &mdash; Page franchise s&eacute;par&eacute;e, optimis&eacute;e conversion</li>
-              <li><strong>T&eacute;moignages franchis&eacute;s</strong> &mdash; Vid&eacute;o/texte de tes franchis&eacute;s actuels</li>
-              <li><strong>Chiffres cl&eacute;s</strong> &mdash; CA moyen, investissement initial, ROI</li>
-              <li><strong>Formulaire optimis&eacute;</strong> &mdash; 3-4 champs max, pas de friction</li>
-              <li><strong>Speed-to-lead</strong> &mdash; Rappel automatique le jour m&ecirc;me de la candidature</li>
-              <li><strong>S&eacute;quence nurturing franchis&eacute;</strong> &mdash; Emails automatiques avec infos progressives</li>
-            </ul>
 
             <div class="solution-result">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
                 <polyline points="17 6 23 6 23 12"/>
               </svg>
-              <span>R&eacute;sultat : <strong>1 franchis&eacute; en plus = deal &agrave; 6 chiffres</strong> qui rentabilise des mois d'accompagnement</span>
+              <span>On a con&ccedil;u une <strong>strat&eacute;gie compl&egrave;te data-backed</strong> pour d&eacute;velopper ta franchise</span>
             </div>
 
-            <!-- Process diagram -->
-            <div class="process-flow">
-              <div class="process-flow-title">Tunnel de recrutement franchis&eacute;</div>
-              <div class="process-flow-steps">
-                <div class="process-flow-step">
-                  <div class="process-flow-num">1</div>
-                  <span>Client satisfait d&eacute;couvre la page franchise</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step">
-                  <div class="process-flow-num">2</div>
-                  <span>Formulaire rapide (3 champs)</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step">
-                  <div class="process-flow-num">3</div>
-                  <span>Rappel dans la journ&eacute;e</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step">
-                  <div class="process-flow-num">4</div>
-                  <span>S&eacute;quence email auto (dossier, FAQ, RDV)</span>
-                </div>
-              </div>
-            </div>
+            <a href="#franchise" class="franchise-teaser-cta">
+              <span>D&eacute;couvrir la strat&eacute;gie franchise compl&egrave;te</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </a>
           </div>
         </div>
 
@@ -788,11 +726,482 @@
     </div>
   </section>
 
-  <!-- ====== 03 - PROCESS GLOBAL ====== -->
-  <section class="section" id="process">
+  <!-- ====== 03 - STRATÉGIE ANTI NO-SHOWS (SECTION DÉDIÉE) ====== -->
+  <section class="section" id="noshow">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-number">03</span>
+        <h2 class="section-title">Strat&eacute;gie anti no-shows : l'analyse compl&egrave;te</h2>
+        <p class="section-subtitle">Des donn&eacute;es v&eacute;rifiables, une strat&eacute;gie en 4 couches, un ROI mesurable</p>
+      </div>
+
+      <!-- ===== PARTIE 1 : Le diagnostic ===== -->
+      <div class="noshow-block reveal">
+        <h3 class="noshow-block-title">
+          <span class="noshow-block-num">1</span>
+          Le diagnostic : combien te co&ucirc;tent les no-shows ?
+        </h3>
+
+        <p class="solution-explainer">Un <strong>no-show</strong>, c'est un patient qui a pris RDV mais ne vient pas sans pr&eacute;venir. Le cr&eacute;neau est perdu : le praticien est l&agrave;, le mat&eacute;riel est pr&ecirc;t, mais la chaise est vide. Voici ce que disent les donn&eacute;es pour ton secteur.</p>
+
+        <!-- Tableau des taux par source -->
+        <div class="noshow-data-table reveal">
+          <div class="noshow-data-title">Taux de no-show par source &mdash; France</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>Cat&eacute;gorie</th>
+                <th>Taux</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Doctolib</strong> (juillet 2024)</td>
+                <td>Sp&eacute;cialistes m&eacute;dicaux</td>
+                <td class="noshow-rate">3,1%</td>
+              </tr>
+              <tr>
+                <td><strong>Doctolib</strong> (juillet 2024)</td>
+                <td>Nouveaux patients</td>
+                <td class="noshow-rate noshow-rate-warn">5,4%</td>
+              </tr>
+              <tr>
+                <td><strong>Doctolib</strong> (juillet 2024)</td>
+                <td>Dentistes</td>
+                <td class="noshow-rate noshow-rate-warn">4,7%</td>
+              </tr>
+              <tr>
+                <td><strong>Nosho.ai</strong> (Assurance Maladie / CNOM)</td>
+                <td>Dermatologie / esth&eacute;tique</td>
+                <td class="noshow-rate noshow-rate-danger">6 &agrave; 9%</td>
+              </tr>
+              <tr>
+                <td><strong>Treatwell</strong> France</td>
+                <td>Salons beaut&eacute; / instituts</td>
+                <td class="noshow-rate noshow-rate-warn">~5%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="noshow-data-note">Doctolib mesure uniquement les RDV pris via sa plateforme (avec rappels automatiques d&eacute;j&agrave; actifs). Le taux r&eacute;el sans syst&egrave;me de rappel avanc&eacute; est plus &eacute;lev&eacute;. La dermatologie/esth&eacute;tique concerne des soins non urgents, souvent avec de longs d&eacute;lais &rarr; taux plus haut que la moyenne.</p>
+        </div>
+
+        <div class="highlight-box reveal">
+          <div class="highlight-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+          </div>
+          <p><strong>Pourquoi la dermatologie/esth&eacute;tique est plus touch&eacute;e ?</strong> Nosho.ai l'explique : <em>&laquo; La dermatologie est souvent recherch&eacute;e pour des motifs esth&eacute;tiques non urgents. Quand le RDV est obtenu plus de 6 semaines &agrave; l'avance, son utilit&eacute; per&ccedil;ue diminue, favorisant l'oubli ou le d&eacute;sint&eacute;r&ecirc;t. &raquo;</em></p>
+        </div>
+
+        <!-- Estimation pour Laserel -->
+        <div class="noshow-estimation reveal">
+          <div class="noshow-estimation-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            <strong>Estimation pour Laserel &mdash; 5 centres</strong>
+          </div>
+          <div class="noshow-estimation-body">
+            <p>On prend un taux conservateur de <strong>8%</strong> (milieu de la fourchette dermatologie/esth&eacute;tique), et on se base sur une estimation de 150 RDV/semaine par centre :</p>
+            <div class="goldmine-calc">
+              <div class="goldmine-calc-row">
+                <span>RDV par semaine (5 centres &times; 150)</span>
+                <strong>750 RDV/sem.</strong>
+              </div>
+              <div class="goldmine-calc-row">
+                <span>RDV par an (~52 semaines)</span>
+                <strong>39 000 RDV/an</strong>
+              </div>
+              <div class="goldmine-calc-row">
+                <span>No-shows &agrave; 8%</span>
+                <strong>3 120 RDV perdus/an</strong>
+              </div>
+              <div class="goldmine-calc-row">
+                <span>Panier moyen (s&eacute;ance laser)</span>
+                <strong>~120&euro;</strong>
+              </div>
+              <div class="goldmine-calc-row goldmine-calc-total">
+                <span>Perte annuelle estim&eacute;e</span>
+                <strong>~374 000&euro;/an</strong>
+              </div>
+            </div>
+            <p class="goldmine-note">M&ecirc;me au taux Doctolib sp&eacute;cialiste (3,1%), la perte serait de ~145 000&euro;/an. Chaque point de no-show en moins = ~47 000&euro; r&eacute;cup&eacute;r&eacute;s.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PARTIE 2 : La stratégie en 4 couches ===== -->
+      <div class="noshow-block reveal">
+        <h3 class="noshow-block-title">
+          <span class="noshow-block-num">2</span>
+          La strat&eacute;gie : 4 couches de protection
+        </h3>
+
+        <p class="solution-explainer">Chaque couche r&eacute;duit le no-show. Cumul&eacute;es, elles sont exponentiellement efficaces. Voici exactement ce qu'on met en place, avec les donn&eacute;es qui soutiennent chaque action.</p>
+
+        <!-- Couche 1 : SMS multi-touch -->
+        <div class="noshow-layer reveal">
+          <div class="noshow-layer-header">
+            <div class="noshow-layer-badge">Couche 1</div>
+            <h4>S&eacute;quence SMS multi-touch</h4>
+            <div class="noshow-layer-impact">-30 &agrave; 50% de no-shows</div>
+          </div>
+          <div class="noshow-layer-body">
+            <div class="metric-highlight">
+              <div class="metric-number">98%</div>
+              <div class="metric-text">
+                <strong>Taux d'ouverture des SMS</strong> (vs. ~20% pour les emails)<br>
+                <span class="metric-source">R&eacute;ponse moyenne en 90 secondes. Source : Gartner / ProspyrMed</span>
+              </div>
+            </div>
+
+            <p>La recherche est claire : <strong>envoyer 2+ rappels est significativement plus efficace</strong> qu'un seul rappel. Voici la s&eacute;quence optimale :</p>
+
+            <div class="process-flow">
+              <div class="process-flow-title">S&eacute;quence SMS optimale</div>
+              <div class="process-flow-steps">
+                <div class="process-flow-step">
+                  <div class="process-flow-num">RDV</div>
+                  <span>Confirmation imm&eacute;diate par SMS + email</span>
+                </div>
+                <div class="process-flow-arrow">&rarr;</div>
+                <div class="process-flow-step">
+                  <div class="process-flow-num">J-2</div>
+                  <span>SMS rappel avec <strong>co&ucirc;t de la s&eacute;ance</strong> mentionn&eacute;</span>
+                </div>
+                <div class="process-flow-arrow">&rarr;</div>
+                <div class="process-flow-step">
+                  <div class="process-flow-num">J-1</div>
+                  <span>SMS de confirmation &agrave; 18h &mdash; r&eacute;pondre OUI/NON</span>
+                </div>
+                <div class="process-flow-arrow">&rarr;</div>
+                <div class="process-flow-step process-flow-step-success">
+                  <div class="process-flow-num">J</div>
+                  <span>Patient confirm&eacute; ou cr&eacute;neau r&eacute;ouvert</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="noshow-evidence">
+              <div class="noshow-evidence-title">Ce que dit la science</div>
+              <ul>
+                <li><strong>M&eacute;ta-analyse de 8 essais cliniques randomis&eacute;s</strong> : les rappels SMS augmentent la probabilit&eacute; de pr&eacute;sence de <strong>50%</strong> (OR 1.48, IC 95% : 1.33-1.72). <em>Source : PubMed Central, PMC3419880</em></li>
+                <li><strong>&Eacute;tude PLOS ONE</strong> (N = 19 959 patients, 2 essais randomis&eacute;s) : mentionner le <strong>co&ucirc;t exact de la s&eacute;ance</strong> dans le SMS r&eacute;duit les no-shows de 11,1% &agrave; <strong>8,4%</strong> &mdash; soit <strong>-25% en plus</strong>, juste en ajoutant une phrase. <em>Source : PLOS ONE, doi:10.1371/journal.pone.0137306</em></li>
+                <li><strong>Revue syst&eacute;matique</strong> (28 &eacute;tudes sur 29 positives) : les rappels automatiques r&eacute;duisent les absences de <strong>34%</strong> en moyenne. 2+ rappels = 14-25% d'efficacit&eacute; suppl&eacute;mentaire vs 1 seul. <em>Source : Pan-African Medical Journal</em></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Couche 2 : Confirmation active -->
+        <div class="noshow-layer reveal">
+          <div class="noshow-layer-header">
+            <div class="noshow-layer-badge">Couche 2</div>
+            <h4>Confirmation active + alerte centre</h4>
+            <div class="noshow-layer-impact">+51% de confirmations</div>
+          </div>
+          <div class="noshow-layer-body">
+            <p>Le SMS ne fait pas que rappeler &mdash; il <strong>demande une r&eacute;ponse</strong>. C'est la diff&eacute;rence entre un rappel passif (Doctolib) et un syst&egrave;me actif :</p>
+
+            <div class="before-after-compare">
+              <div class="before-after-card before-card">
+                <div class="before-after-label">Doctolib (rappel passif)</div>
+                <ul>
+                  <li>Notification push + email</li>
+                  <li>Pas de demande de confirmation</li>
+                  <li>Le patient peut ignorer</li>
+                  <li>Pas d'alerte au centre</li>
+                  <li>Cr&eacute;neau perdu si no-show</li>
+                </ul>
+              </div>
+              <div class="before-after-card after-card">
+                <div class="before-after-label">Notre syst&egrave;me (confirmation active)</div>
+                <ul>
+                  <li>SMS direct avec r&eacute;ponse OUI/NON</li>
+                  <li>Confirmation explicite demand&eacute;e</li>
+                  <li>Si pas de r&eacute;ponse &rarr; alerte au centre</li>
+                  <li>Le centre appelle les non-confirm&eacute;s</li>
+                  <li>Cr&eacute;neau lib&eacute;r&eacute; &agrave; l'avance si annulation</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="noshow-evidence">
+              <div class="noshow-evidence-title">Ce que dit la science</div>
+              <ul>
+                <li><strong>Les syst&egrave;mes automatiques de confirmation augmentent les confirmations de 51%</strong>. <em>Source : ProspyrMed, donn&eacute;es multi-cliniques esth&eacute;tiques</em></li>
+                <li><strong>Doctolib confirme</strong> : 72% des annulations tardives en m&eacute;decine g&eacute;n&eacute;rale sont replanifi&eacute;es sur la plateforme. Pour les sp&eacute;cialistes : 52%. <em>Source : Doctolib, rapport juillet 2024</em></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Couche 3 : Remplissage automatique -->
+        <div class="noshow-layer reveal">
+          <div class="noshow-layer-header">
+            <div class="noshow-layer-badge">Couche 3</div>
+            <h4>Remplissage automatique des cr&eacute;neaux lib&eacute;r&eacute;s</h4>
+            <div class="noshow-layer-impact">52 &agrave; 72% de cr&eacute;neaux remplis</div>
+          </div>
+          <div class="noshow-layer-body">
+            <p>Quand un patient annule ou ne confirme pas, le cr&eacute;neau ne reste pas vide. Le syst&egrave;me alerte automatiquement les patients en liste d'attente :</p>
+
+            <div class="process-flow">
+              <div class="process-flow-title">Le remplissage automatique</div>
+              <div class="process-flow-steps">
+                <div class="process-flow-step">
+                  <div class="process-flow-num">1</div>
+                  <span>Patient annule ou ne confirme pas</span>
+                </div>
+                <div class="process-flow-arrow">&rarr;</div>
+                <div class="process-flow-step">
+                  <div class="process-flow-num">2</div>
+                  <span>SMS aux patients en liste d'attente</span>
+                </div>
+                <div class="process-flow-arrow">&rarr;</div>
+                <div class="process-flow-step">
+                  <div class="process-flow-num">3</div>
+                  <span>Premier qui r&eacute;pond = cr&eacute;neau attribu&eacute;</span>
+                </div>
+                <div class="process-flow-arrow">&rarr;</div>
+                <div class="process-flow-step process-flow-step-success">
+                  <div class="process-flow-num">4</div>
+                  <span>Cr&eacute;neau sauv&eacute;</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="noshow-evidence">
+              <div class="noshow-evidence-title">Ce que dit la science</div>
+              <ul>
+                <li><strong>Doctolib (donn&eacute;es r&eacute;elles)</strong> : 72% des annulations tardives en g&eacute;n&eacute;raliste et 52% chez les sp&eacute;cialistes sont replanifi&eacute;es. <em>Source : Doctolib, rapport juillet 2024</em></li>
+                <li><strong>Treatwell France</strong> : les salons qui activent le remplissage automatique r&eacute;duisent leurs cr&eacute;neaux vides de <strong>57%</strong>. <em>Source : Treatwell.fr</em></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Couche 4 : Acompte -->
+        <div class="noshow-layer reveal">
+          <div class="noshow-layer-header">
+            <div class="noshow-layer-badge">Couche 4</div>
+            <h4>Syst&egrave;me d'acompte en ligne</h4>
+            <div class="noshow-layer-impact">-34 &agrave; 65% de no-shows</div>
+          </div>
+          <div class="noshow-layer-body">
+            <p>La derni&egrave;re couche est la plus dissuasive : un <strong>acompte &agrave; la r&eacute;servation</strong>. C'est de plus en plus accept&eacute; dans l'esth&eacute;tique &mdash; et c'est la m&eacute;thode la plus efficace pour les no-shows r&eacute;p&eacute;titifs.</p>
+
+            <div class="metric-highlight">
+              <div class="metric-number">-65%</div>
+              <div class="metric-text">
+                <strong>R&eacute;duction des no-shows avec syst&egrave;me d'acompte</strong><br>
+                <span class="metric-source">Sources : Curogram (34%), Vagaro / Elite Beauty Society (65%), LSSInstitut (85% &mdash; chiffre promotionnel). Estimation r&eacute;aliste : 34-65%.</span>
+              </div>
+            </div>
+
+            <ul class="solution-features">
+              <li><strong>Acompte de 20-30%</strong> &agrave; la r&eacute;servation (paiement en ligne s&eacute;curis&eacute;)</li>
+              <li><strong>Remboursable si annulation 24h avant</strong> &mdash; pas de friction pour les bons patients</li>
+              <li><strong>Non remboursable en cas de no-show</strong> &mdash; effet dissuasif majeur</li>
+              <li><strong>Optionnel au d&eacute;marrage</strong> &mdash; on peut commencer par les couches 1-3, puis ajouter l'acompte pour les profils r&eacute;cidivistes</li>
+            </ul>
+
+            <div class="noshow-evidence">
+              <div class="noshow-evidence-title">Ce que dit la science</div>
+              <ul>
+                <li><strong>Curogram (2024)</strong> : les syst&egrave;mes d'acompte r&eacute;duisent les no-shows de <strong>34%</strong> en milieu m&eacute;dical.</li>
+                <li><strong>Vagaro / Elite Beauty Society</strong> : les salons beaut&eacute; avec acompte rapportent une baisse de <strong>65%</strong> des no-shows et une am&eacute;lioration du cash-flow de 15-20% d&egrave;s le premier trimestre.</li>
+                <li><strong>Planity</strong> : recommande l'acompte comme &laquo; solution la plus efficace &raquo; pour les p&eacute;riodes de forte demande. Leurs partenaires rapportent une baisse pouvant aller jusqu'&agrave; <strong>75%</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PARTIE 3 : Tableau récap + ROI ===== -->
+      <div class="noshow-block reveal">
+        <h3 class="noshow-block-title">
+          <span class="noshow-block-num">3</span>
+          R&eacute;capitulatif : l'impact cumul&eacute;
+        </h3>
+
+        <!-- Tableau récap des couches -->
+        <div class="noshow-data-table reveal">
+          <div class="noshow-data-title">Impact par couche &mdash; effet cumul&eacute;</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Couche</th>
+                <th>Action</th>
+                <th>R&eacute;duction</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1</strong></td>
+                <td>SMS multi-touch (J-2 + J-1)</td>
+                <td class="noshow-rate">-30 &agrave; 50%</td>
+                <td>PubMed PMC3419880</td>
+              </tr>
+              <tr>
+                <td><strong>1+</strong></td>
+                <td>Mention du co&ucirc;t dans le SMS</td>
+                <td class="noshow-rate">-25% suppl.</td>
+                <td>PLOS ONE (N=19 959)</td>
+              </tr>
+              <tr>
+                <td><strong>2</strong></td>
+                <td>Confirmation active + alerte</td>
+                <td class="noshow-rate">+51% confirm.</td>
+                <td>ProspyrMed</td>
+              </tr>
+              <tr>
+                <td><strong>3</strong></td>
+                <td>Remplissage auto des cr&eacute;neaux</td>
+                <td class="noshow-rate">52-72% remplis</td>
+                <td>Doctolib 2024</td>
+              </tr>
+              <tr>
+                <td><strong>4</strong></td>
+                <td>Acompte (optionnel, phase 2)</td>
+                <td class="noshow-rate noshow-rate-danger">-34 &agrave; 65%</td>
+                <td>Curogram / Vagaro</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ROI calculation -->
+        <div class="noshow-estimation reveal">
+          <div class="noshow-estimation-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+              <polyline points="17 6 23 6 23 12"/>
+            </svg>
+            <strong>ROI de la strat&eacute;gie anti no-shows &mdash; Laserel</strong>
+          </div>
+          <div class="noshow-estimation-body">
+            <div class="roi-simulation">
+              <div class="roi-sim-card roi-sim-before">
+                <div class="roi-sim-header">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M15 9l-6 6M9 9l6 6"/>
+                  </svg>
+                  <span>Situation actuelle (estim&eacute;e)</span>
+                </div>
+                <ul class="roi-sim-list">
+                  <li>Taux de no-show : ~8%</li>
+                  <li>Cr&eacute;neaux perdus : 3 120/an</li>
+                  <li>Perte &agrave; 120&euro;/RDV : ~374 000&euro;</li>
+                  <li><strong>Sans compter le temps praticien</strong></li>
+                </ul>
+              </div>
+              <div class="roi-sim-card roi-sim-after">
+                <div class="roi-sim-header">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  <span>Apr&egrave;s strat&eacute;gie (couches 1-3)</span>
+                </div>
+                <ul class="roi-sim-list">
+                  <li>Taux de no-show : ~3-4%</li>
+                  <li>Cr&eacute;neaux r&eacute;cup&eacute;r&eacute;s : ~1 560/an</li>
+                  <li>CA r&eacute;cup&eacute;r&eacute; : <strong>~187 000&euro;/an</strong></li>
+                  <li><strong>Co&ucirc;t syst&egrave;me : ~200&euro;/mois + SMS</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="roi-breakeven" style="margin-top: 16px;">
+              <div class="roi-breakeven-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+              </div>
+              <div class="roi-breakeven-content">
+                <strong>ROI estim&eacute; : 50 &agrave; 70&times; le co&ucirc;t du syst&egrave;me</strong>
+                <p>Le co&ucirc;t des SMS est de 0,045&euro; par envoi (Brevo). 3 SMS par RDV = 0,135&euro;. Pour 39 000 RDV/an = ~5 265&euro;/an de SMS. Le syst&egrave;me se rentabilise d&egrave;s le <strong>1er mois</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PARTIE 4 : Mise en œuvre concrète ===== -->
+      <div class="noshow-block reveal">
+        <h3 class="noshow-block-title">
+          <span class="noshow-block-num">4</span>
+          Mise en &oelig;uvre concr&egrave;te
+        </h3>
+
+        <div class="method-steps">
+          <div class="method-step">
+            <div class="method-step-number">1</div>
+            <div class="method-step-content">
+              <h4>Semaine 1 : Audit de tes no-shows</h4>
+              <p>On mesure ton taux r&eacute;el de no-show sur chaque centre. On identifie les profils &agrave; risque (nouveaux patients, certains cr&eacute;neaux horaires, types de soins). On cale les vrais chiffres.</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="method-step-number">2</div>
+            <div class="method-step-content">
+              <h4>Semaine 2-3 : Mise en place couches 1 &amp; 2</h4>
+              <p>Configuration de la s&eacute;quence SMS via Brevo (API). Personnalisation des messages avec le nom du patient, le soin, le centre, et le co&ucirc;t. Syst&egrave;me de r&eacute;ponse OUI/NON + alertes centres.</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="method-step-number">3</div>
+            <div class="method-step-content">
+              <h4>Semaine 4 : Activation couche 3</h4>
+              <p>Mise en place de la liste d'attente et du remplissage automatique. Quand un cr&eacute;neau se lib&egrave;re, les patients en attente sont alert&eacute;s automatiquement.</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="method-step-number">4</div>
+            <div class="method-step-content">
+              <h4>Mois 2+ : Mesure &amp; ajustement (+ couche 4 optionnelle)</h4>
+              <p>Dashboard en temps r&eacute;el : taux de no-show par centre, par jour, par type de soin. Si n&eacute;cessaire, activation de l'acompte pour les profils r&eacute;cidivistes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note Doctolib -->
+      <div class="roi-disclaimer reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <p><strong>Note sur Doctolib :</strong> Doctolib envoie d&eacute;j&agrave; des notifications push et emails. Notre syst&egrave;me ne remplace pas Doctolib &mdash; il <strong>compl&egrave;te</strong> ce que Doctolib ne fait pas : SMS avec co&ucirc;t, confirmation active, alerte au centre, remplissage automatique, et acompte. Doctolib lui-m&ecirc;me reconna&icirc;t que son syst&egrave;me actuel ne suffit pas &mdash; ils ont propos&eacute; une &laquo; taxe lapin &raquo; de 5&euro; en 2024, preuve que le probl&egrave;me persiste.</p>
+      </div>
+
+      <!-- Sources -->
+      <div class="roi-disclaimer reveal" style="margin-top: 12px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <p><strong>Sources :</strong> Doctolib France (rapport juillet 2024), Nosho.ai / Assurance Maladie / CNOM, PubMed Central PMC3419880 (m&eacute;ta-analyse 8 essais cliniques), PLOS ONE doi:10.1371/journal.pone.0137306 (N=19 959 patients), ProspyrMed, Treatwell France, Curogram, Vagaro, Planity, LSSInstitut. Toutes les estimations financi&egrave;res utilisent des fourchettes conservatrices.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 04 - PROCESS GLOBAL ====== -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-number">04</span>
         <h2 class="section-title">Le process, du d&eacute;but &agrave; la fin</h2>
         <p class="section-subtitle">Tout est transparent, tu gardes le contr&ocirc;le &agrave; chaque &eacute;tape</p>
       </div>
@@ -876,11 +1285,11 @@
     </div>
   </section>
 
-  <!-- ====== 04 - INVESTISSEMENT ====== -->
+  <!-- ====== 05 - INVESTISSEMENT ====== -->
   <section class="section" id="investissement">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-number">04</span>
+        <span class="section-number">05</span>
         <h2 class="section-title">L'investissement</h2>
         <p class="section-subtitle">Chaque euro investi est tra&ccedil;able dans ton dashboard</p>
       </div>
