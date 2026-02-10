@@ -755,6 +755,26 @@
 }
 
 /* ============================================
+   SOURCE TAGS — petits badges de référence
+   ============================================ */
+
+.source-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: 4px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* ============================================
    NO-SHOW SECTION — DEDICATED STYLES
    ============================================ */
 
