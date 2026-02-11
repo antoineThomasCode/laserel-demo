@@ -44,15 +44,11 @@
 <nav class="section-nav" id="section-nav">
   <div class="section-nav-scroll" id="section-nav-scroll">
     <a href="#hero" class="section-nav-item active" data-section="hero">Intro</a>
+    <a href="#simulator" class="section-nav-item" data-section="simulator">Simulateur</a>
     <a href="#audit" class="section-nav-item" data-section="audit">Constat</a>
     <a href="#leviers" class="section-nav-item" data-section="leviers">Leviers</a>
-    <a href="#noshow" class="section-nav-item" data-section="noshow">No-shows</a>
-    <a href="#seo" class="section-nav-item" data-section="seo">SEO</a>
-    <a href="#franchise" class="section-nav-item" data-section="franchise">Franchise</a>
-    <a href="#methode" class="section-nav-item" data-section="methode">M&eacute;thode</a>
-    <a href="#roadmap" class="section-nav-item" data-section="roadmap">Roadmap</a>
-    <a href="#investissement" class="section-nav-item" data-section="investissement">Tarifs</a>
-    <a href="#next" class="section-nav-item" data-section="next">Next</a>
+    <a href="#offre" class="section-nav-item" data-section="offre">Offre</a>
+    <a href="#cta" class="section-nav-item" data-section="cta">Contact</a>
   </div>
 </nav>
 
@@ -72,14 +68,14 @@
 
       <h1 class="hero-title reveal">
         Micka&euml;l,<br>
-        <span class="gradient-text">voici ton plan de croissance pour Laserel.</span>
+        <span class="gradient-text">voici ce que Laserel peut gagner.</span>
       </h1>
 
       <p class="hero-subtitle reveal">
-        Ce document est un plan d'action complet sur 12 mois : site, acquisition, fid&eacute;lisation, no-shows, SEO et franchise. Pas un devis agence &mdash; une strat&eacute;gie concr&egrave;te, chiffr&eacute;e et actionnable.
+        5 leviers concrets pour doubler tes conversions, diviser tes no-shows par 2 et g&eacute;n&eacute;rer 15 000 visites organiques par mois. Sans engagement.
       </p>
 
-      <!-- Metrics grid -->
+      <!-- Metrics grid — 3 max -->
       <div class="hero-metrics reveal">
         <div class="hero-metric">
           <span class="hero-metric-value">&times;2-3</span>
@@ -90,54 +86,13 @@
           <span class="hero-metric-label">No-shows</span>
         </div>
         <div class="hero-metric">
-          <span class="hero-metric-value">+43%</span>
-          <span class="hero-metric-label">Fid&eacute;lisation</span>
-        </div>
-        <div class="hero-metric">
           <span class="hero-metric-value">15k</span>
           <span class="hero-metric-label">Visites SEO/mois</span>
         </div>
-        <div class="hero-metric">
-          <span class="hero-metric-value">2-8</span>
-          <span class="hero-metric-label">Franchis&eacute;s/an</span>
-        </div>
-      </div>
-
-      <!-- Value prop card -->
-      <div class="hero-vp-card reveal">
-        <div class="hero-vp-avatar">
-          <img src="../antoine.png" alt="Antoine Thomas" />
-        </div>
-        <div class="hero-vp-content">
-          <strong class="hero-vp-name">Antoine Thomas &mdash; Cohorte</strong>
-          <p>1 interlocuteur, la puissance d'une agence 5 personnes. Ma m&eacute;thode <strong>Human + IA</strong> te donne des r&eacute;sultats d'agence &agrave; une fraction du co&ucirc;t.</p>
-        </div>
-      </div>
-
-      <!-- Cost comparison -->
-      <div class="hero-cost reveal">
-        <div class="hero-cost-item hero-cost-them">
-          <span class="hero-cost-label">Agence classique</span>
-          <span class="hero-cost-value">5 600 &ndash; 10 200&euro;/mois</span>
-        </div>
-        <div class="hero-cost-vs">VS</div>
-        <div class="hero-cost-item hero-cost-us">
-          <span class="hero-cost-label">Cohorte &mdash; Human + IA</span>
-          <span class="hero-cost-value">1 000 &ndash; 1 500&euro;/mois</span>
-        </div>
-      </div>
-
-      <!-- ROI punchline -->
-      <div class="hero-roi reveal">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-          <polyline points="17 6 23 6 23 12"/>
-        </svg>
-        <span><strong>1 &agrave; 2 patients suppl&eacute;mentaires par mois par centre</strong> suffisent &agrave; rentabiliser l'investissement. Avec les leviers qu'on active, c'est une question de semaines &mdash; pas de mois.</span>
       </div>
 
       <div class="scroll-indicator reveal">
-        <span>Scroll pour d&eacute;couvrir le plan complet</span>
+        <span>Scroll pour d&eacute;couvrir le plan</span>
         <div class="scroll-arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 5v14M19 12l-7 7-7-7"/>
@@ -147,1849 +102,275 @@
     </div>
   </section>
 
-  <!-- ====== 01 - AUDIT DU SITE ACTUEL ====== -->
+  <!-- ====== SIMULATEUR ROI ====== -->
+  <section class="section roi-simulator" id="simulator">
+    <div class="container">
+      <h2 class="roi-simulator-title reveal">Simule ton retour sur investissement</h2>
+      <p class="roi-simulator-subtitle reveal">Ajuste les curseurs selon ta r&eacute;alit&eacute; &mdash; les gains se calculent en temps r&eacute;el</p>
+
+      <div class="roi-simulator-content reveal">
+        <div class="roi-inputs">
+          <div class="roi-input-group">
+            <label for="roi-panier">Panier moyen par s&eacute;ance</label>
+            <div class="roi-input-row">
+              <input type="range" id="roi-panier" min="80" max="200" value="120" step="10">
+              <span class="roi-input-value" id="roi-panier-val">120&euro;</span>
+            </div>
+          </div>
+          <div class="roi-input-group">
+            <label for="roi-patients">Patients / mois / centre</label>
+            <div class="roi-input-row">
+              <input type="range" id="roi-patients" min="100" max="500" value="250" step="25">
+              <span class="roi-input-value" id="roi-patients-val">250</span>
+            </div>
+          </div>
+          <div class="roi-input-group">
+            <label for="roi-noshow">Taux de no-show actuel</label>
+            <div class="roi-input-row">
+              <input type="range" id="roi-noshow" min="5" max="30" value="15" step="1">
+              <span class="roi-input-value" id="roi-noshow-val">15%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="roi-results">
+          <div class="roi-result-col roi-result-before">
+            <div class="roi-result-label">Aujourd'hui</div>
+            <div class="roi-result-row">
+              <span>CA mensuel (5 centres)</span>
+              <strong id="roi-ca-actuel">150 000&euro;</strong>
+            </div>
+            <div class="roi-result-row">
+              <span>Pertes no-shows</span>
+              <strong id="roi-pertes" class="roi-loss">-22 500&euro;</strong>
+            </div>
+            <div class="roi-result-row roi-result-total">
+              <span>CA net</span>
+              <strong id="roi-net-actuel">127 500&euro;</strong>
+            </div>
+          </div>
+          <div class="roi-result-col roi-result-after">
+            <div class="roi-result-label">Avec Cohorte</div>
+            <div class="roi-result-row">
+              <span>CA optimis&eacute;</span>
+              <strong id="roi-ca-opti">187 500&euro;</strong>
+            </div>
+            <div class="roi-result-row">
+              <span>No-shows r&eacute;duits</span>
+              <strong id="roi-pertes-opti" class="roi-saved">-14 063&euro;</strong>
+            </div>
+            <div class="roi-result-row roi-result-total">
+              <span>CA net</span>
+              <strong id="roi-net-opti">173 438&euro;</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="roi-gain-highlight">
+          <span>Gain mensuel estim&eacute;</span>
+          <strong id="roi-gain">+45 938&euro;/mois</strong>
+        </div>
+      </div>
+
+      <p class="roi-assumptions">Hypoth&egrave;ses conservatrices : +25% conversion site (First Page Sage), -50% no-shows (PubMed PMC3419880). Co&ucirc;t Cohorte non d&eacute;duit.</p>
+    </div>
+  </section>
+
+  <!-- ====== 01 - AUDIT CONDENSÉ ====== -->
   <section class="section" id="audit">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-number">01</span>
         <h2 class="section-title">Ce qu'on a trouv&eacute; sur Laserel</h2>
-        <p class="section-subtitle">Un audit bas&eacute; sur les donn&eacute;es publiques de ton site, tes avis, tes concurrents &mdash; et les benchmarks du secteur</p>
+        <p class="section-subtitle">Audit bas&eacute; sur les donn&eacute;es publiques de ton site, tes avis et tes concurrents</p>
       </div>
 
-      <!-- Ce qu'on sait déjà (données publiques) -->
-      <div class="highlight-box reveal" style="border-left-color: var(--laserel-gold); background: var(--laserel-gold-light);">
-        <div class="highlight-icon" style="background: var(--laserel-gold);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
+      <div class="audit-checklist reveal">
+        <div class="audit-item fail">
+          <span class="audit-icon">&times;</span>
+          <span>Aucun article SEO (vs Lazeo 300+, CRPCE 200+)</span>
         </div>
-        <div>
-          <p><strong>Ce qu'on sait de Laserel (donn&eacute;es publiques) :</strong></p>
-          <p>5 centres (Vincennes, Paris R&eacute;publique, Charenton, Auxerre, Nantes). <strong>1 848 avis Meditrust v&eacute;rifi&eacute;s</strong>, note moyenne 4.91/5. Environ 225-270 avis Google &agrave; 4.9/5 pour Vincennes seul. 1&egrave;re consultation gratuite. Tarifs affich&eacute;s sur laserel.fr. Mod&egrave;le franchise lanc&eacute; en 2023 (droit d'entr&eacute;e 25 000&euro;, CA vis&eacute; 300-400k&euro;/an/centre). Instagram : 2 690 abonn&eacute;s, 123 posts. <strong>0 article de blog.</strong></p>
-          <p><span class="source-tag">laserel.fr</span> <span class="source-tag">Meditrust</span> <span class="source-tag">Google Maps</span> <span class="source-tag">Observatoire de la Franchise</span> <span class="source-tag">Instagram</span></p>
+        <div class="audit-item fail">
+          <span class="audit-icon">&times;</span>
+          <span>Pas de CRM / suivi des leads</span>
         </div>
-      </div>
-
-      <!-- Score card -->
-      <div class="highlight-box reveal">
-        <div class="highlight-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="16" x2="12" y2="12"/>
-            <line x1="12" y1="8" x2="12.01" y2="8"/>
-          </svg>
+        <div class="audit-item fail">
+          <span class="audit-icon">&times;</span>
+          <span>Pas de rappels automatiques (no-shows ~15% en esth&eacute;tique)</span>
         </div>
-        <p><strong>Taux de conversion estim&eacute; de laserel.fr : 1.2-2.0%</strong><br>
-        La dermatologie/esth&eacute;tique a le taux visiteur → prospect <strong>le plus bas de toutes les sp&eacute;cialit&eacute;s m&eacute;dicales : 1.8%</strong> (vs. 3.0% en dentaire, 2.4% en m&eacute;decine g&eacute;n&eacute;rale). Sites optimis&eacute;s : 3.5-5.0%.<br>
-        <span class="source-tag">First Page Sage 2025</span> <span class="source-tag">Unbounce 2024</span></p>
-      </div>
-
-      <!-- Problems found -->
-      <div class="alert-toast-list">
-        <div class="alert-toast reveal">
-          <div class="alert-toast-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M15 9l-6 6M9 9l6 6"/>
-            </svg>
-          </div>
-          <p><strong>Fragmentation des domaines</strong> &mdash; laserel.fr, centres.laserel.fr, laserel.com (vide). Le SEO est dilu&eacute;, l'exp&eacute;rience incoh&eacute;rente. Impact : -10 &agrave; 15% de leads potentiels.</p>
+        <div class="audit-item fail">
+          <span class="audit-icon">&times;</span>
+          <span>Site non optimis&eacute; mobile (68% du trafic)</span>
         </div>
-        <div class="alert-toast reveal">
-          <div class="alert-toast-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M15 9l-6 6M9 9l6 6"/>
-            </svg>
-          </div>
-          <p><strong>Z&eacute;ro preuve sociale sur la homepage</strong> &mdash; Ta note Google 4.9/5 n'appara&icirc;t que sur centres.laserel.fr. Les visiteurs de laserel.fr ne la voient jamais. C'est ton meilleur atout, et il est invisible.</p>
+        <div class="audit-item pass">
+          <span class="audit-icon">&checkmark;</span>
+          <span>Forte notoriété locale &mdash; 4.91/5 sur 1 848 avis Meditrust</span>
         </div>
-        <div class="alert-toast reveal">
-          <div class="alert-toast-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M15 9l-6 6M9 9l6 6"/>
-            </svg>
-          </div>
-          <p><strong>Pas de photos avant/apr&egrave;s</strong> &mdash; C'est le facteur de conversion #1 en esth&eacute;tique. Tes concurrents (Skin Marceau, Lazeo) en ont sur chaque page traitement.</p>
-        </div>
-        <div class="alert-toast reveal">
-          <div class="alert-toast-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M15 9l-6 6M9 9l6 6"/>
-            </svg>
-          </div>
-          <p><strong>Friction &agrave; la r&eacute;servation</strong> &mdash; Le dropdown de s&eacute;lection du centre AVANT le CTA ajoute une &eacute;tape inutile. Epilium propose la 1&egrave;re consultation gratuite, Lazeo a un bouton "R&eacute;server" fix&eacute; en bas de page. Un booking en 2 clics augmente les compl&eacute;tions de +35%.</p>
-        </div>
-        <div class="alert-toast reveal">
-          <div class="alert-toast-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M15 9l-6 6M9 9l6 6"/>
-            </svg>
-          </div>
-          <p><strong>Pas de CTA mobile sticky</strong> &mdash; 68% du trafic est mobile. Aucun bouton fixe "Appeler" ou "Prendre RDV" en bas d'&eacute;cran. Les visiteurs scrollent et oublient.</p>
+        <div class="audit-item pass">
+          <span class="audit-icon">&checkmark;</span>
+          <span>5 centres = levier d'&eacute;chelle</span>
         </div>
       </div>
 
-      <!-- Comparison with competitors -->
-      <div class="comparison reveal">
-        <div class="comparison-card comparison-before">
-          <div class="comparison-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M15 9l-6 6M9 9l6 6"/>
-            </svg>
-            <span>laserel.fr aujourd'hui</span>
-          </div>
-          <ul class="comparison-list">
-            <li>Note Google invisible sur le site principal</li>
-            <li>0 t&eacute;moignage sur la homepage</li>
-            <li>0 photo avant/apr&egrave;s</li>
-            <li>0 &eacute;quipe visible (photos/bios)</li>
-            <li>Pas de chatbot, pas de live chat</li>
-            <li>Pas de tarifs affich&eacute;s</li>
-          </ul>
-        </div>
-        <div class="comparison-card comparison-after">
-          <div class="comparison-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            <span>Tes concurrents directs</span>
-          </div>
-          <ul class="comparison-list">
-            <li><strong>Lazeo</strong> (170+ centres) : 4.8/5 sur 20 978 avis, tarifs affich&eacute;s, CTA fix&eacute; en bas de page</li>
-            <li><strong>Skin Marceau</strong> (3 centres) : 4.93/5, tarifs d&eacute;taill&eacute;s par zone, Doctolib int&eacute;gr&eacute;</li>
-            <li><strong>Epilium &amp; Skin</strong> (2 centres) : 1&egrave;re consultation gratuite, ouvert jusqu'&agrave; 20h + samedi</li>
-            <li><strong>Maelis</strong> (15-22 centres IDF) : back&eacute; par un fonds de PE, tarifs comp&eacute;titifs</li>
-            <li>Tous publient leurs tarifs, tous sont sur Doctolib</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Competitive edge callout -->
-      <div class="highlight-box reveal" style="border-left-color: var(--cohorte-teal); background: var(--cohorte-teal-light);">
+      <div class="highlight-box reveal" style="border-left-color: var(--cohorte-teal); background: var(--cohorte-teal-light); margin-top: 20px;">
         <div class="highlight-icon" style="color: var(--cohorte-teal);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
           </svg>
         </div>
-        <p><strong>Point cl&eacute; : aucun de tes concurrents n'utilise de chatbot IA.</strong> On a v&eacute;rifi&eacute; Lazeo, Skin Marceau, Epilium, Maelis, D&eacute;pil Tech. Aucun. Dans un secteur o&ugrave; le taux de conversion visiteur → prospect est le <strong>plus bas de toutes les sp&eacute;cialit&eacute;s m&eacute;dicales</strong> (1.8% en dermatologie vs. 3.0% en dentaire), un chatbot 24/7 qui r&eacute;pond en &lt;5 secondes est un avantage comp&eacute;titif r&eacute;el.
-        <br><span class="source-tag">First Page Sage 2025</span> <span class="source-tag">Audit concurrents F&eacute;v. 2026</span></p>
-      </div>
-
-      <div class="roi-breakeven reveal">
-        <div class="roi-breakeven-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-            <polyline points="17 6 23 6 23 12"/>
-          </svg>
-        </div>
-        <div class="roi-breakeven-content">
-          <strong>Potentiel : passer de ~1.5% &agrave; 3.5-5% de conversion</strong>
-          <p>Benchmark secteur esth&eacute;tique : 2.3% (First Page Sage 2025). Sites optimis&eacute;s : 3.5-5%. Soit &times;2 &agrave; &times;3 ton taux actuel.</p>
-        </div>
+        <p><strong>Tu as la base. Il manque le syst&egrave;me.</strong> La r&eacute;putation est l&agrave;, les patients aussi. Ce qui manque, c'est l'infrastructure digitale pour convertir, fid&eacute;liser et &eacute;viter les pertes.</p>
       </div>
     </div>
   </section>
 
-  <!-- ====== 02 - LES 5 LEVIERS (TEASERS) ====== -->
+  <!-- ====== 02 - 5 LEVIERS CONDENSÉS ====== -->
   <section class="section" id="leviers">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-number">02</span>
-        <h2 class="section-title">5 leviers, 12 mois, 1 objectif : plus de patients, moins de pertes</h2>
-        <p class="section-subtitle">Chaque levier est ind&eacute;pendant &mdash; on peut les activer un par un, dans l'ordre de tes priorit&eacute;s</p>
+        <h2 class="section-title">5 leviers pour transformer Laserel</h2>
+        <p class="section-subtitle">Chaque levier est ind&eacute;pendant &mdash; on les active dans l'ordre de tes priorit&eacute;s</p>
       </div>
 
-      <div class="levier-cards-grid">
+      <div class="levier-cards-compact">
 
-        <!-- LEVIER 1 : Refonte site + CRO -->
-        <div class="levier-card reveal">
-          <div class="levier-card-header">
-            <div class="solution-priority">Levier #1</div>
-            <div class="solution-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                <line x1="8" y1="21" x2="16" y2="21"/>
-                <line x1="12" y1="17" x2="12" y2="21"/>
-              </svg>
-            </div>
-            <h3 class="solution-title">Refonte site + optimisation conversion</h3>
+        <div class="levier-compact reveal">
+          <div class="levier-compact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
           </div>
-          <div class="levier-card-body">
-            <p>Note Google 4.9/5 visible, t&eacute;moignages, avant/apr&egrave;s, CTA sticky mobile, chatbot IA 24/7, r&eacute;servation en 2 clics, consolidation des domaines.</p>
-            <ul class="solution-features">
-              <li>Galerie avant/apr&egrave;s par type de traitement</li>
-              <li>Chatbot IA 24/7 qui r&eacute;pond et prend RDV</li>
-              <li>Photos &eacute;quipe et bios praticiens</li>
-            </ul>
+          <div class="levier-compact-content">
+            <h3>Refonte site &amp; conversion</h3>
+            <p>Note Google visible, t&eacute;moignages, avant/apr&egrave;s, CTA sticky mobile, r&eacute;servation en 2 clics.</p>
           </div>
-          <div class="solution-result">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            <span><strong>Conversion &times;2 &agrave; &times;3</strong> <span class="source-tag">First Page Sage 2025</span></span>
-          </div>
+          <div class="levier-compact-metric">&times;2-3 conversion</div>
         </div>
 
-        <!-- LEVIER 2 : CRM + Lead nurturing -->
-        <div class="levier-card reveal">
-          <div class="levier-card-header">
-            <div class="solution-priority">Levier #2</div>
-            <div class="solution-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-            <h3 class="solution-title">CRM + suivi des leads automatique</h3>
+        <div class="levier-compact reveal">
+          <div class="levier-compact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
           </div>
-          <div class="levier-card-body">
-            <div class="metric-highlight" style="margin-bottom: 12px;">
-              <div class="metric-number">21&times;</div>
-              <div class="metric-text">
-                <strong>R&eacute;pondre en &lt;5 min</strong> = 21&times; plus de conversions<br>
-                <span class="metric-source">Temps moyen secteur : 47h. Source : InfluxMD 2025</span>
-              </div>
-            </div>
-            <ul class="solution-features">
-              <li>CRM centralis&eacute; avec fiche contact compl&egrave;te</li>
-              <li>Notification instantan&eacute;e quand un lead arrive</li>
-              <li>S&eacute;quences de relance auto : J+1, J+3, J+7</li>
-            </ul>
+          <div class="levier-compact-content">
+            <h3>CRM &amp; suivi des leads</h3>
+            <p>R&eacute;ponse en &lt;5 min, s&eacute;quences de relance auto, scoring des leads.</p>
           </div>
-          <div class="solution-result">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            <span><strong>+30 &agrave; 67% de leads convertis</strong></span>
-          </div>
+          <div class="levier-compact-metric">&times;10 conversions leads</div>
         </div>
 
-        <!-- LEVIER 3 : Anti no-shows -->
-        <div class="levier-card reveal">
-          <div class="levier-card-header">
-            <div class="solution-priority">Levier #3</div>
-            <div class="solution-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
-              </svg>
-            </div>
-            <h3 class="solution-title">Syst&egrave;me anti no-shows</h3>
+        <div class="levier-compact reveal">
+          <div class="levier-compact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+            </svg>
           </div>
-          <div class="levier-card-body">
-            <p>SMS multi-touch, confirmation active, remplissage automatique des cr&eacute;neaux, acompte en ligne. 4 couches de protection bas&eacute;es sur les m&eacute;ta-analyses.</p>
+          <div class="levier-compact-content">
+            <h3>Anti no-shows</h3>
+            <p>SMS multi-touch, confirmation active, remplissage auto des cr&eacute;neaux, acompte en ligne.</p>
           </div>
-          <div class="solution-result">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            <span><strong>No-shows &divide;2</strong> <span class="source-tag">PubMed PMC3419880</span></span>
-          </div>
-          <a href="#noshow" class="levier-card-link">Voir la strat&eacute;gie compl&egrave;te &darr;</a>
+          <div class="levier-compact-metric">&divide;2 no-shows</div>
+          <a href="#annexe-noshow" class="levier-compact-link" data-annexe="annexe-noshow">Voir l'analyse d&eacute;taill&eacute;e &rarr;</a>
         </div>
 
-        <!-- LEVIER 4 : Email marketing -->
-        <div class="levier-card reveal">
-          <div class="levier-card-header">
-            <div class="solution-priority">Levier #4</div>
-            <div class="solution-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-              </svg>
-            </div>
-            <h3 class="solution-title">Email marketing + fid&eacute;lisation</h3>
+        <div class="levier-compact reveal">
+          <div class="levier-compact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
           </div>
-          <div class="levier-card-body">
-            <div class="goldmine-box" style="margin: 0 0 12px;">
-              <div class="goldmine-header">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                <strong>Ta base client dort &mdash; 50% de dormants en esth&eacute;tique</strong>
-              </div>
-              <div class="goldmine-body">
-                <div class="goldmine-calc">
-                  <div class="goldmine-calc-row">
-                    <span>R&eacute;activation par campagne email</span>
-                    <strong>7 &agrave; 15%</strong>
-                  </div>
-                  <div class="goldmine-calc-row">
-                    <span>ROI r&eacute;activation</span>
-                    <strong>7:1</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <ul class="solution-features">
-              <li>Welcome flow, post-s&eacute;ance, r&eacute;activation, parrainage</li>
-              <li>100% automatis&eacute;, 0h de ton temps</li>
-            </ul>
+          <div class="levier-compact-content">
+            <h3>SEO &amp; contenu</h3>
+            <p>0 article aujourd'hui vs 300+ chez Lazeo. 3 articles/semaine, clusters th&eacute;matiques, SEO local.</p>
           </div>
-          <div class="solution-result">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            <span><strong>+43% de revenu r&eacute;current</strong> <span class="source-tag">Omnisend 2024</span></span>
-          </div>
+          <div class="levier-compact-metric">0&rarr;15k visites/mois</div>
+          <a href="#annexe-seo" class="levier-compact-link" data-annexe="annexe-seo">Voir l'analyse d&eacute;taill&eacute;e &rarr;</a>
         </div>
 
-        <!-- LEVIER 5 : Franchise -->
-        <div class="levier-card reveal">
-          <div class="levier-card-header">
-            <div class="solution-priority">Levier #5</div>
-            <div class="solution-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/>
-                <line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/>
-              </svg>
-            </div>
-            <h3 class="solution-title">Recrutement de franchis&eacute;s</h3>
+        <div class="levier-compact reveal">
+          <div class="levier-compact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/>
+              <line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/>
+            </svg>
           </div>
-          <div class="levier-card-body">
-            <p>March&eacute; &agrave; <strong>+7%/an</strong>, d&eacute;cret qui ouvre le laser aux non-m&eacute;decins. Landing page d&eacute;di&eacute;e, chatbot franchise, nurturing automatis&eacute;. Co&ucirc;t d'acquisition divis&eacute; par 3.</p>
+          <div class="levier-compact-content">
+            <h3>Recrutement franchis&eacute;s</h3>
+            <p>March&eacute; &agrave; +7%/an, d&eacute;cret qui ouvre le laser. Landing page, nurturing automatis&eacute;.</p>
           </div>
-          <div class="solution-result">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            <span><strong>2 &agrave; 8 franchis&eacute;s/an</strong> <span class="source-tag">Observatoire Franchise</span></span>
-          </div>
-          <a href="#franchise" class="levier-card-link">Voir la strat&eacute;gie compl&egrave;te &darr;</a>
+          <div class="levier-compact-metric">&times;3 march&eacute; en 5 ans</div>
+          <a href="#annexe-franchise" class="levier-compact-link" data-annexe="annexe-franchise">Voir l'analyse d&eacute;taill&eacute;e &rarr;</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ====== 03 - STRATÉGIE ANTI NO-SHOWS ====== -->
-  <section class="section" id="noshow">
+  <!-- ====== 03 - OFFRE ====== -->
+  <section class="section" id="offre">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-number">03</span>
-        <h2 class="section-title">Tes no-shows te co&ucirc;tent des milliers d'euros par an</h2>
-        <p class="section-subtitle">Des donn&eacute;es v&eacute;rifiables, une strat&eacute;gie en 4 couches, un ROI mesurable</p>
+        <h2 class="section-title">L'offre</h2>
       </div>
 
-      <!-- ===== PARTIE 1 : Le diagnostic ===== -->
-      <div class="noshow-block reveal">
-        <h3 class="noshow-block-title">
-          <span class="noshow-block-num">1</span>
-          Le diagnostic : les no-shows dans ton secteur
-        </h3>
-
-        <!-- Tableau des taux par source -->
-        <div class="noshow-data-table reveal">
-          <div class="noshow-data-title">Taux de no-show par source &mdash; France</div>
-          <table>
-            <thead>
-              <tr>
-                <th>Source</th>
-                <th>Cat&eacute;gorie</th>
-                <th>Taux</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Doctolib</strong> (juillet 2024)</td>
-                <td>Sp&eacute;cialistes m&eacute;dicaux</td>
-                <td class="noshow-rate">3,1%</td>
-              </tr>
-              <tr>
-                <td><strong>Doctolib</strong> (juillet 2024)</td>
-                <td>Nouveaux patients</td>
-                <td class="noshow-rate noshow-rate-warn">5,4%</td>
-              </tr>
-              <tr>
-                <td><strong>Doctolib</strong> (juillet 2024)</td>
-                <td>Dentistes</td>
-                <td class="noshow-rate noshow-rate-warn">4,7%</td>
-              </tr>
-              <tr>
-                <td><strong>Nosho.ai</strong> (Assurance Maladie / CNOM)</td>
-                <td>Dermatologie / esth&eacute;tique</td>
-                <td class="noshow-rate noshow-rate-danger">6 &agrave; 9%</td>
-              </tr>
-              <tr>
-                <td><strong>Treatwell</strong> France</td>
-                <td>Salons beaut&eacute; / instituts</td>
-                <td class="noshow-rate noshow-rate-warn">~5%</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="noshow-data-note">Doctolib mesure uniquement les RDV pris via sa plateforme (avec rappels automatiques d&eacute;j&agrave; actifs). Le taux r&eacute;el sans syst&egrave;me de rappel avanc&eacute; est plus &eacute;lev&eacute;. La dermatologie/esth&eacute;tique concerne des soins non urgents, souvent avec de longs d&eacute;lais &rarr; taux plus haut que la moyenne.</p>
-        </div>
-
-        <div class="highlight-box reveal">
-          <div class="highlight-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="16" x2="12" y2="12"/>
-              <line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-          </div>
-          <p><strong>Pourquoi la dermatologie/esth&eacute;tique est plus touch&eacute;e ?</strong> Nosho.ai l'explique : <em>&laquo; La dermatologie est souvent recherch&eacute;e pour des motifs esth&eacute;tiques non urgents. Quand le RDV est obtenu plus de 6 semaines &agrave; l'avance, son utilit&eacute; per&ccedil;ue diminue, favorisant l'oubli ou le d&eacute;sint&eacute;r&ecirc;t. &raquo;</em></p>
-        </div>
-
-      </div>
-
-      <!-- ===== PARTIE 2 : La stratégie en 4 couches ===== -->
-      <div class="noshow-block reveal">
-        <h3 class="noshow-block-title">
-          <span class="noshow-block-num">2</span>
-          La strat&eacute;gie : 4 couches de protection
-        </h3>
-
-        <p class="solution-explainer">Chaque couche r&eacute;duit le no-show. Cumul&eacute;es, elles sont exponentiellement efficaces. Voici exactement ce qu'on met en place, avec les donn&eacute;es qui soutiennent chaque action.</p>
-
-        <!-- Couche 1 : SMS multi-touch -->
-        <div class="noshow-layer reveal">
-          <div class="noshow-layer-header">
-            <div class="noshow-layer-badge">Couche 1</div>
-            <h4>S&eacute;quence SMS multi-touch</h4>
-            <div class="noshow-layer-impact">-30 &agrave; 50% de no-shows</div>
-          </div>
-          <div class="noshow-layer-body">
-            <div class="metric-highlight">
-              <div class="metric-number">98%</div>
-              <div class="metric-text">
-                <strong>Taux d'ouverture des SMS</strong> (vs. ~20% pour les emails)<br>
-                <span class="metric-source">R&eacute;ponse moyenne en 90 secondes. Source : Gartner / ProspyrMed</span>
-              </div>
-            </div>
-
-            <p>La recherche est claire : <strong>envoyer 2+ rappels est significativement plus efficace</strong> qu'un seul rappel. Voici la s&eacute;quence optimale :</p>
-
-            <div class="process-flow">
-              <div class="process-flow-title">S&eacute;quence SMS optimale</div>
-              <div class="process-flow-steps">
-                <div class="process-flow-step">
-                  <div class="process-flow-num">RDV</div>
-                  <span>Confirmation imm&eacute;diate par SMS + email</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step">
-                  <div class="process-flow-num">J-2</div>
-                  <span>SMS rappel avec <strong>co&ucirc;t de la s&eacute;ance</strong> mentionn&eacute;</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step">
-                  <div class="process-flow-num">J-1</div>
-                  <span>SMS de confirmation &agrave; 18h &mdash; r&eacute;pondre OUI/NON</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step process-flow-step-success">
-                  <div class="process-flow-num">J</div>
-                  <span>Patient confirm&eacute; ou cr&eacute;neau r&eacute;ouvert</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="noshow-evidence">
-              <div class="noshow-evidence-title">Ce que dit la science</div>
-              <ul>
-                <li><strong>M&eacute;ta-analyse de 8 essais cliniques randomis&eacute;s</strong> : les rappels SMS augmentent la probabilit&eacute; de pr&eacute;sence de <strong>50%</strong> (OR 1.48, IC 95% : 1.33-1.72). <em>Source : PubMed Central, PMC3419880</em></li>
-                <li><strong>&Eacute;tude PLOS ONE</strong> (N = 19 959 patients, 2 essais randomis&eacute;s) : mentionner le <strong>co&ucirc;t exact de la s&eacute;ance</strong> dans le SMS r&eacute;duit les no-shows de 11,1% &agrave; <strong>8,4%</strong> &mdash; soit <strong>-25% en plus</strong>, juste en ajoutant une phrase. <em>Source : PLOS ONE, doi:10.1371/journal.pone.0137306</em></li>
-                <li><strong>Revue syst&eacute;matique</strong> (28 &eacute;tudes sur 29 positives) : les rappels automatiques r&eacute;duisent les absences de <strong>34%</strong> en moyenne. 2+ rappels = 14-25% d'efficacit&eacute; suppl&eacute;mentaire vs 1 seul. <em>Source : Pan-African Medical Journal</em></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Couche 2 : Confirmation active -->
-        <div class="noshow-layer reveal">
-          <div class="noshow-layer-header">
-            <div class="noshow-layer-badge">Couche 2</div>
-            <h4>Confirmation active + alerte centre</h4>
-            <div class="noshow-layer-impact">+51% de confirmations</div>
-          </div>
-          <div class="noshow-layer-body">
-            <p>Le SMS ne fait pas que rappeler &mdash; il <strong>demande une r&eacute;ponse</strong>. C'est la diff&eacute;rence entre un rappel passif (Doctolib) et un syst&egrave;me actif :</p>
-
-            <div class="before-after-compare">
-              <div class="before-after-card before-card">
-                <div class="before-after-label">Doctolib (rappel passif)</div>
-                <ul>
-                  <li>Notification push + email</li>
-                  <li>Pas de demande de confirmation</li>
-                  <li>Le patient peut ignorer</li>
-                  <li>Pas d'alerte au centre</li>
-                  <li>Cr&eacute;neau perdu si no-show</li>
-                </ul>
-              </div>
-              <div class="before-after-card after-card">
-                <div class="before-after-label">Notre syst&egrave;me (confirmation active)</div>
-                <ul>
-                  <li>SMS direct avec r&eacute;ponse OUI/NON</li>
-                  <li>Confirmation explicite demand&eacute;e</li>
-                  <li>Si pas de r&eacute;ponse &rarr; alerte au centre</li>
-                  <li>Le centre appelle les non-confirm&eacute;s</li>
-                  <li>Cr&eacute;neau lib&eacute;r&eacute; &agrave; l'avance si annulation</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="noshow-evidence">
-              <div class="noshow-evidence-title">Ce que dit la science</div>
-              <ul>
-                <li><strong>Les syst&egrave;mes automatiques de confirmation augmentent les confirmations de 51%</strong>. <em>Source : ProspyrMed, donn&eacute;es multi-cliniques esth&eacute;tiques</em></li>
-                <li><strong>Doctolib confirme</strong> : les annulations tardives replanifi&eacute;es via la plateforme restent partielles chez les sp&eacute;cialistes (52%). Notre syst&egrave;me comble l'&eacute;cart. <em>Source : Doctolib, rapport juillet 2024</em></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Couche 3 : Remplissage automatique -->
-        <div class="noshow-layer reveal">
-          <div class="noshow-layer-header">
-            <div class="noshow-layer-badge">Couche 3</div>
-            <h4>Remplissage automatique des cr&eacute;neaux lib&eacute;r&eacute;s</h4>
-            <div class="noshow-layer-impact">52 &agrave; 72% de cr&eacute;neaux remplis</div>
-          </div>
-          <div class="noshow-layer-body">
-            <p>Quand un patient annule ou ne confirme pas, le cr&eacute;neau ne reste pas vide. Le syst&egrave;me alerte automatiquement les patients en liste d'attente :</p>
-
-            <div class="process-flow">
-              <div class="process-flow-title">Le remplissage automatique</div>
-              <div class="process-flow-steps">
-                <div class="process-flow-step">
-                  <div class="process-flow-num">1</div>
-                  <span>Patient annule ou ne confirme pas</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step">
-                  <div class="process-flow-num">2</div>
-                  <span>SMS aux patients en liste d'attente</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step">
-                  <div class="process-flow-num">3</div>
-                  <span>Premier qui r&eacute;pond = cr&eacute;neau attribu&eacute;</span>
-                </div>
-                <div class="process-flow-arrow">&rarr;</div>
-                <div class="process-flow-step process-flow-step-success">
-                  <div class="process-flow-num">4</div>
-                  <span>Cr&eacute;neau sauv&eacute;</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="noshow-evidence">
-              <div class="noshow-evidence-title">Ce que dit la science</div>
-              <ul>
-                <li><strong>Doctolib (donn&eacute;es r&eacute;elles)</strong> : 72% des annulations tardives en g&eacute;n&eacute;raliste et 52% chez les sp&eacute;cialistes sont replanifi&eacute;es. <em>Source : Doctolib, rapport juillet 2024</em></li>
-                <li><strong>Treatwell France</strong> : les salons qui activent le remplissage automatique r&eacute;duisent leurs cr&eacute;neaux vides de <strong>57%</strong>. <em>Source : Treatwell.fr</em></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Couche 4 : Acompte -->
-        <div class="noshow-layer reveal">
-          <div class="noshow-layer-header">
-            <div class="noshow-layer-badge">Couche 4</div>
-            <h4>Syst&egrave;me d'acompte en ligne</h4>
-            <div class="noshow-layer-impact">-34 &agrave; 65% de no-shows</div>
-          </div>
-          <div class="noshow-layer-body">
-            <p>La derni&egrave;re couche est la plus dissuasive : un <strong>acompte &agrave; la r&eacute;servation</strong>. C'est de plus en plus accept&eacute; dans l'esth&eacute;tique &mdash; et c'est la m&eacute;thode la plus efficace pour les no-shows r&eacute;p&eacute;titifs.</p>
-
-            <div class="metric-highlight">
-              <div class="metric-number">-65%</div>
-              <div class="metric-text">
-                <strong>R&eacute;duction des no-shows avec syst&egrave;me d'acompte</strong><br>
-                <span class="metric-source">Sources : Curogram (34%), Vagaro / Elite Beauty Society (65%), LSSInstitut (85% &mdash; chiffre promotionnel). Estimation r&eacute;aliste : 34-65%.</span>
-              </div>
-            </div>
-
-            <ul class="solution-features">
-              <li><strong>Acompte de 20-30%</strong> &agrave; la r&eacute;servation (paiement en ligne s&eacute;curis&eacute;)</li>
-              <li><strong>Remboursable si annulation 24h avant</strong> &mdash; pas de friction pour les bons patients</li>
-              <li><strong>Non remboursable en cas de no-show</strong> &mdash; effet dissuasif majeur</li>
-              <li><strong>Optionnel au d&eacute;marrage</strong> &mdash; on peut commencer par les couches 1-3, puis ajouter l'acompte pour les profils r&eacute;cidivistes</li>
-            </ul>
-
-            <div class="noshow-evidence">
-              <div class="noshow-evidence-title">Ce que dit la science</div>
-              <ul>
-                <li><strong>Curogram (2024)</strong> : les syst&egrave;mes d'acompte r&eacute;duisent les no-shows de <strong>34%</strong> en milieu m&eacute;dical.</li>
-                <li><strong>Vagaro / Elite Beauty Society</strong> : les salons beaut&eacute; avec acompte rapportent une baisse de <strong>65%</strong> des no-shows et une am&eacute;lioration du cash-flow de 15-20% d&egrave;s le premier trimestre.</li>
-                <li><strong>Planity</strong> : recommande l'acompte comme &laquo; solution la plus efficace &raquo; pour les p&eacute;riodes de forte demande. Leurs partenaires rapportent une baisse pouvant aller jusqu'&agrave; <strong>75%</strong>.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== PARTIE 3 : Tableau récap + ROI ===== -->
-      <div class="noshow-block reveal">
-        <h3 class="noshow-block-title">
-          <span class="noshow-block-num">3</span>
-          R&eacute;capitulatif : l'impact cumul&eacute;
-        </h3>
-
-        <!-- Tableau récap des couches -->
-        <div class="noshow-data-table reveal">
-          <div class="noshow-data-title">Impact par couche &mdash; effet cumul&eacute;</div>
-          <table>
-            <thead>
-              <tr>
-                <th>Couche</th>
-                <th>Action</th>
-                <th>R&eacute;duction</th>
-                <th>Source</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>1</strong></td>
-                <td>SMS multi-touch (J-2 + J-1)</td>
-                <td class="noshow-rate">-30 &agrave; 50%</td>
-                <td>PubMed PMC3419880</td>
-              </tr>
-              <tr>
-                <td><strong>1+</strong></td>
-                <td>Mention du co&ucirc;t dans le SMS</td>
-                <td class="noshow-rate">-25% suppl.</td>
-                <td>PLOS ONE (N=19 959)</td>
-              </tr>
-              <tr>
-                <td><strong>2</strong></td>
-                <td>Confirmation active + alerte</td>
-                <td class="noshow-rate">+51% confirm.</td>
-                <td>ProspyrMed</td>
-              </tr>
-              <tr>
-                <td><strong>3</strong></td>
-                <td>Remplissage auto des cr&eacute;neaux</td>
-                <td class="noshow-rate">52-72% remplis</td>
-                <td>Doctolib 2024</td>
-              </tr>
-              <tr>
-                <td><strong>4</strong></td>
-                <td>Acompte (optionnel, phase 2)</td>
-                <td class="noshow-rate noshow-rate-danger">-34 &agrave; 65%</td>
-                <td>Curogram / Vagaro</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- ROI calculation -->
-        <div class="noshow-estimation reveal">
-          <div class="noshow-estimation-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-              <polyline points="17 6 23 6 23 12"/>
-            </svg>
-            <strong>ROI de la strat&eacute;gie anti no-shows &mdash; Laserel</strong>
-          </div>
-          <div class="noshow-estimation-body">
-            <div class="roi-simulation">
-              <div class="roi-sim-card roi-sim-before">
-                <div class="roi-sim-header">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M15 9l-6 6M9 9l6 6"/>
-                  </svg>
-                  <span>Sans syst&egrave;me anti no-shows</span>
-                </div>
-                <ul class="roi-sim-list">
-                  <li>Taux de no-show secteur : 6 &agrave; 9%</li>
-                  <li>Rappels Doctolib seulement (passifs)</li>
-                  <li>Cr&eacute;neaux perdus non remplis</li>
-                  <li><strong>Pas de visibilit&eacute; sur le probl&egrave;me</strong></li>
-                </ul>
-              </div>
-              <div class="roi-sim-card roi-sim-after">
-                <div class="roi-sim-header">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                    <polyline points="22 4 12 14.01 9 11.01"/>
-                  </svg>
-                  <span>Avec strat&eacute;gie 4 couches</span>
-                </div>
-                <ul class="roi-sim-list">
-                  <li>Taux de no-show : <strong>&divide;2</strong> (PubMed)</li>
-                  <li>Confirmations : <strong>+51%</strong> (ProspyrMed)</li>
-                  <li>Cr&eacute;neaux lib&eacute;r&eacute;s remplis : <strong>52-72%</strong> (Doctolib)</li>
-                  <li><strong>Co&ucirc;t : ~200&euro;/mois + 0,045&euro;/SMS</strong></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="roi-breakeven" style="margin-top: 16px;">
-              <div class="roi-breakeven-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                  <polyline points="17 6 23 6 23 12"/>
-                </svg>
-              </div>
-              <div class="roi-breakeven-content">
-                <strong>Le syst&egrave;me se rentabilise d&egrave;s le 1er mois</strong>
-                <p>Co&ucirc;t SMS : 0,045&euro;/envoi (Brevo), 3 SMS par RDV = 0,135&euro;. Il suffit de <strong>2 cr&eacute;neaux sauv&eacute;s par mois</strong> pour couvrir le co&ucirc;t total du syst&egrave;me. Tout le reste est du gain net.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== PARTIE 4 : Mise en œuvre concrète ===== -->
-      <div class="noshow-block reveal">
-        <h3 class="noshow-block-title">
-          <span class="noshow-block-num">4</span>
-          Mise en &oelig;uvre concr&egrave;te
-        </h3>
-
-        <div class="method-steps">
-          <div class="method-step">
-            <div class="method-step-number">1</div>
-            <div class="method-step-content">
-              <h4>Semaine 1 : Audit de tes no-shows</h4>
-              <p>On mesure ton taux r&eacute;el de no-show sur chaque centre. On identifie les profils &agrave; risque (nouveaux patients, certains cr&eacute;neaux horaires, types de soins). On cale les vrais chiffres.</p>
-            </div>
-          </div>
-          <div class="method-step">
-            <div class="method-step-number">2</div>
-            <div class="method-step-content">
-              <h4>Semaine 2-3 : Mise en place couches 1 &amp; 2</h4>
-              <p>Configuration de la s&eacute;quence SMS via Brevo (API). Personnalisation des messages avec le nom du patient, le soin, le centre, et le co&ucirc;t. Syst&egrave;me de r&eacute;ponse OUI/NON + alertes centres.</p>
-            </div>
-          </div>
-          <div class="method-step">
-            <div class="method-step-number">3</div>
-            <div class="method-step-content">
-              <h4>Semaine 4 : Activation couche 3</h4>
-              <p>Mise en place de la liste d'attente et du remplissage automatique. Quand un cr&eacute;neau se lib&egrave;re, les patients en attente sont alert&eacute;s automatiquement.</p>
-            </div>
-          </div>
-          <div class="method-step">
-            <div class="method-step-number">4</div>
-            <div class="method-step-content">
-              <h4>Mois 2+ : Mesure &amp; ajustement (+ couche 4 optionnelle)</h4>
-              <p>Dashboard en temps r&eacute;el : taux de no-show par centre, par jour, par type de soin. Si n&eacute;cessaire, activation de l'acompte pour les profils r&eacute;cidivistes.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Note Doctolib -->
-      <div class="roi-disclaimer reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="16" x2="12" y2="12"/>
-          <line x1="12" y1="8" x2="12.01" y2="8"/>
-        </svg>
-        <p><strong>Note sur Doctolib :</strong> Doctolib envoie d&eacute;j&agrave; des notifications push et emails. Notre syst&egrave;me ne remplace pas Doctolib &mdash; il <strong>compl&egrave;te</strong> ce que Doctolib ne fait pas : SMS avec co&ucirc;t, confirmation active, alerte au centre, remplissage automatique, et acompte. Doctolib lui-m&ecirc;me reconna&icirc;t que son syst&egrave;me actuel ne suffit pas &mdash; ils ont propos&eacute; une &laquo; taxe lapin &raquo; de 5&euro; en 2024, preuve que le probl&egrave;me persiste.</p>
-      </div>
-
-      <!-- Sources -->
-      <div class="roi-disclaimer reveal" style="margin-top: 12px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="16" x2="12" y2="12"/>
-          <line x1="12" y1="8" x2="12.01" y2="8"/>
-        </svg>
-        <p><strong>Sources :</strong> Doctolib France (rapport juillet 2024), Nosho.ai / Assurance Maladie / CNOM, PubMed Central PMC3419880 (m&eacute;ta-analyse 8 essais cliniques), PLOS ONE doi:10.1371/journal.pone.0137306 (N=19 959 patients), ProspyrMed, Treatwell France, Curogram, Vagaro, Planity, LSSInstitut. Toutes les estimations financi&egrave;res utilisent des fourchettes conservatrices.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ====== 04 - STRATÉGIE SEO & CONTENU ====== -->
-  <section class="section" id="seo">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-number">04</span>
-        <h2 class="section-title">0 article de blog &mdash; la plus grosse opportunit&eacute; inexploit&eacute;e</h2>
-        <p class="section-subtitle">Tes concurrents publient des centaines d'articles. Toi, z&eacute;ro. C'est ton plus gros trou dans la raquette &mdash; et ta plus grosse opportunit&eacute;.</p>
-      </div>
-
-      <!-- Le constat -->
-      <p class="solution-explainer reveal"><strong>Le probl&egrave;me :</strong> laserel.fr a environ 15-20 pages index&eacute;es sur Google. Lazeo en a 300+. La Clinique des Champs-&Eacute;lys&eacute;es fait 200 000 visites/mois. Tu n'as aucun blog, aucun article, aucune strat&eacute;gie de contenu. Les Google Ads co&ucirc;tent cher dans le secteur beaut&eacute; (<strong>CPC 2-5&euro;, +60%/an</strong>) et ne g&eacute;n&egrave;rent du trafic que tant que tu paies. Le SEO, lui, est un <strong>actif qui se cumule</strong> : un article publi&eacute; aujourd'hui g&eacute;n&egrave;re du trafic pendant des ann&eacute;es.</p>
-
-      <!-- Comparatif concurrents -->
-      <div class="noshow-data-table reveal">
-        <div class="noshow-data-title">Laserel vs. concurrents &mdash; pr&eacute;sence SEO</div>
-        <table>
-          <thead>
-            <tr>
-              <th>Concurrent</th>
-              <th>Articles blog</th>
-              <th>Pages villes</th>
-              <th>Trafic estim&eacute;</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Lazeo</strong></td><td>~300-380</td><td>Oui (multi-villes)</td><td>Tr&egrave;s &eacute;lev&eacute;</td></tr>
-            <tr><td><strong>Clinique des Champs-&Eacute;lys&eacute;es</strong></td><td>50-100+</td><td>21 villes</td><td>200k/mois</td></tr>
-            <tr><td><strong>Skin Marceau</strong></td><td>20-30+</td><td>Non (1 lieu)</td><td>Moyen-haut</td></tr>
-            <tr><td><strong>Epilium &amp; Skin</strong></td><td>30-50+</td><td>Non (1 lieu)</td><td>Moyen</td></tr>
-            <tr><td><strong>Maison du Laser</strong></td><td>10-20+</td><td>5 arrondissements</td><td>Moyen</td></tr>
-            <tr><td style="color: var(--error); font-weight: 700;">Laserel</td><td style="color: var(--error); font-weight: 700;">0</td><td>4-5 (incoh&eacute;rent)</td><td style="color: var(--error);">Faible</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="solution-explainer reveal"><strong>Pourquoi c'est critique maintenant :</strong> le d&eacute;cret du 24 mai 2024 autorise des non-m&eacute;decins &agrave; pratiquer l'&eacute;pilation laser. La concurrence va exploser. Les cliniques qui investissent en SEO maintenant prendront les positions que les autres ne pourront plus rattraper. Le march&eacute; fran&ccedil;ais de l'esth&eacute;tique laser cro&icirc;t de <strong>+22,6%/an</strong>.</p>
-
-      <!-- Stats clés SEO -->
-      <div class="metric-highlight reveal">
-        <div class="metric-number">748%</div>
-        <div class="metric-text">
-          <strong>ROI moyen du SEO en 2025</strong><br>
-          <span class="metric-source">Les leads organiques convertissent &agrave; 14,6% (vs 1,7% pour l'outbound). Un patient acquis en SEO d&eacute;pense 34% de plus en traitements additionnels qu'un patient venu d'une pub. Source : SeoProfy 2025, iDigit Group</span>
-        </div>
-      </div>
-
-      <div class="metric-highlight reveal">
-        <div class="metric-number">0&euro;</div>
-        <div class="metric-text">
-          <strong>Co&ucirc;t marginal par clic apr&egrave;s investissement initial</strong><br>
-          <span class="metric-source">En Google Ads, chaque clic co&ucirc;te 2-5&euro; (beaut&eacute; : +60%/an). En SEO, un article publi&eacute; aujourd'hui g&eacute;n&egrave;re du trafic pendant des ann&eacute;es. Le SEO est l'int&eacute;r&ecirc;t compos&eacute;, le PPC l'int&eacute;r&ecirc;t simple. Source : WordStream 2025, HubSpot</span>
-        </div>
-      </div>
-
-      <!-- Stratégie contenu IA -->
-      <h4 class="solution-section-title reveal">La strat&eacute;gie : contenu IA + expertise m&eacute;dicale</h4>
-
-      <p class="solution-explainer reveal"><strong>Ce qu'on propose :</strong> une machine &agrave; contenu pilot&eacute;e par IA (Claude) et supervis&eacute;e par un humain. L'IA g&eacute;n&egrave;re 80% du travail (recherche, brouillon, SEO), un expert valide les 20% restants (v&eacute;racit&eacute; m&eacute;dicale, voix de marque, exp&eacute;rience praticien). R&eacute;sultat : un article de 2 000 mots en 2h au lieu de 8h, sans sacrifier la qualit&eacute;.</p>
-
-      <p class="solution-explainer reveal"><strong>Est-ce que Google p&eacute;nalise le contenu IA ?</strong> Non. &Eacute;tude Ahrefs sur 600 000 pages : <strong>86,5% des pages en top positions</strong> contiennent du contenu assist&eacute; par IA. &Eacute;tude Semrush sur 20 000 articles : 65% des marketeurs utilisant l'IA voient une am&eacute;lioration de leur SEO. Ce que Google p&eacute;nalise, c'est le contenu de mauvaise qualit&eacute; publi&eacute; en masse sans supervision. Notre approche : qualit&eacute; d'abord, volume ensuite.</p>
-
-      <!-- Avant vs Maintenant -->
-      <div class="before-after-compare reveal">
-        <div class="before-after-card before-card">
-          <div class="before-after-label">Aujourd'hui : z&eacute;ro contenu</div>
-          <ul>
-            <li>0 article de blog, 0 strat&eacute;gie de mots-cl&eacute;s</li>
-            <li>15-20 pages index&eacute;es (les concurrents : 100-400+)</li>
-            <li>3 sous-domaines qui diluent l'autorit&eacute; SEO</li>
-            <li>Titres de pages trop longs, pas optimis&eacute;s</li>
-            <li>Pas de Google Business Profile optimis&eacute; par centre</li>
-            <li>Les patients cherchent &laquo; &eacute;pilation laser Vincennes &raquo; et ne trouvent pas Laserel</li>
-          </ul>
-        </div>
-        <div class="before-after-card after-card">
-          <div class="before-after-label">Avec Cohorte : machine &agrave; contenu</div>
-          <ul>
-            <li>3 articles/semaine (12/mois), qualit&eacute; m&eacute;dicale valid&eacute;e</li>
-            <li>150-225 pages index&eacute;es en 12 mois</li>
-            <li>1 seul domaine consolid&eacute; (laserel.fr)</li>
-            <li>Titres SEO optimis&eacute;s, schema markup m&eacute;dical</li>
-            <li>5 fiches Google Business optimis&eacute;es (50+ avis/centre)</li>
-            <li>Laserel en top 3 sur les mots-cl&eacute;s locaux</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Process de production -->
-      <div class="process-flow reveal">
-        <div class="process-flow-title">Comment on produit un article (ton exp&eacute;rience)</div>
-        <div class="process-flow-steps">
-          <div class="process-flow-step">
-            <div class="process-flow-num">1</div>
-            <span>IA : recherche + brouillon SEO</span>
-          </div>
-          <div class="process-flow-arrow">&rarr;</div>
-          <div class="process-flow-step">
-            <div class="process-flow-num">2</div>
-            <span>Expert : v&eacute;rification m&eacute;dicale</span>
-          </div>
-          <div class="process-flow-arrow">&rarr;</div>
-          <div class="process-flow-step">
-            <div class="process-flow-num">3</div>
-            <span>Tu valides le contenu</span>
-          </div>
-          <div class="process-flow-arrow">&rarr;</div>
-          <div class="process-flow-step">
-            <div class="process-flow-num">4</div>
-            <span>Publication + maillage interne</span>
-          </div>
-          <div class="process-flow-arrow">&rarr;</div>
-          <div class="process-flow-step process-flow-step-success">
-            <div class="process-flow-num">5</div>
-            <span>Tracking positions + trafic</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Stratégie topic clusters -->
-      <h4 class="solution-section-title reveal">L'architecture : clusters th&eacute;matiques</h4>
-
-      <p class="solution-explainer reveal"><strong>Autorit&eacute; th&eacute;matique</strong> = quand Google te consid&egrave;re comme expert sur un sujet. Pour y arriver, il faut couvrir le sujet en profondeur avec des articles interconnect&eacute;s. &Eacute;tude : apr&egrave;s ~50 articles dans un cluster, chaque nouvel article se positionne en page 1-2 quasi imm&eacute;diatement apr&egrave;s indexation.</p>
-
-      <!-- Goldmine box pour les piliers -->
-      <div class="goldmine-box reveal">
-        <div class="goldmine-header">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-          <strong>Plan de contenu : 3 piliers + clusters</strong>
-        </div>
-        <div class="goldmine-body">
-          <p>Chaque pilier est une page longue (3 000+ mots) entour&eacute;e de 15-30 articles de cluster qui renforcent son autorit&eacute; :</p>
-          <div class="goldmine-calc">
-            <div class="goldmine-calc-row">
-              <span><strong>Pilier 1 : &Eacute;pilation laser</strong> &mdash; guide complet + 20 articles</span>
-              <strong>~40-60k recherches/mois</strong>
-            </div>
-            <div class="goldmine-calc-row">
-              <span><strong>Pilier 2 : Soins visage / anti-&acirc;ge</strong> &mdash; guide + 15 articles</span>
-              <strong>~15-25k recherches/mois</strong>
-            </div>
-            <div class="goldmine-calc-row">
-              <span><strong>Pilier 3 : D&eacute;tatouage + corps</strong> &mdash; guide + 10 articles</span>
-              <strong>~5-10k recherches/mois</strong>
-            </div>
-            <div class="goldmine-calc-row">
-              <span><strong>Pages locales</strong> &mdash; 5 centres &times; 15-20 traitements</span>
-              <strong>75-100 pages location</strong>
-            </div>
-            <div class="goldmine-calc-row goldmine-calc-total">
-              <span>Total pages index&eacute;es (12 mois)</span>
-              <strong>150 &agrave; 225 pages</strong>
-            </div>
-          </div>
-          <p class="goldmine-note">Exemples d'articles cluster : &laquo; &Eacute;pilation laser peau noire &raquo;, &laquo; Combien de s&eacute;ances pour le maillot ? &raquo;, &laquo; Laser vs lumi&egrave;re puls&eacute;e &raquo;, &laquo; Peut-on faire du laser en &eacute;t&eacute; ? &raquo;, &laquo; &Eacute;pilation laser homme &raquo;. Ce sont des questions que tes patients posent d&eacute;j&agrave; &mdash; il suffit d'y r&eacute;pondre sur ton site.</p>
-        </div>
-      </div>
-
-      <!-- Timeline et projections -->
-      <h4 class="solution-section-title reveal">Projections r&eacute;alistes : mois par mois</h4>
-
-      <div class="noshow-data-table reveal">
-        <div class="noshow-data-title">Croissance trafic organique estim&eacute;e (3 articles/semaine)</div>
-        <table>
-          <thead>
-            <tr>
-              <th>P&eacute;riode</th>
-              <th>Sessions/mois</th>
-              <th>Ce qui se passe</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Mois 1-3</td><td>100 &rarr; 800</td><td>Indexation, premiers mots-cl&eacute;s longue tra&icirc;ne</td></tr>
-            <tr><td>Mois 4-6</td><td>800 &rarr; 4 000</td><td>Mots-cl&eacute;s en top 20, premiers leads organiques</td></tr>
-            <tr><td>Mois 7-9</td><td>4 000 &rarr; 8 000</td><td>Autorit&eacute; th&eacute;matique, top 10 sur mots-cl&eacute;s locaux</td></tr>
-            <tr><td>Mois 10-12</td><td>8 000 &rarr; 15 000</td><td>Effet compos&eacute;, positions stables, leads r&eacute;guliers</td></tr>
-            <tr><td style="color: var(--laserel-gold-dark); font-weight: 700;">Ann&eacute;e 2-3</td><td style="color: var(--laserel-gold-dark); font-weight: 700;">15 000 &rarr; 30 000+</td><td>ROI peak : 300-500% sur l'investissement SEO</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="solution-explainer reveal"><strong>L'effet compos&eacute; du SEO :</strong> un article publi&eacute; aujourd'hui g&eacute;n&egrave;re du trafic pendant des ann&eacute;es. HubSpot rapporte que certains articles g&eacute;n&egrave;rent <strong>2 000+ leads par mois</strong>, des ann&eacute;es apr&egrave;s leur publication. Avec 150 articles en ligne, m&ecirc;me si chacun ne ram&egrave;ne que 50-100 visites/mois, c'est 7 500-15 000 visiteurs mensuels en pilote automatique.</p>
-
-      <!-- SEO local multi-centres -->
-      <h4 class="solution-section-title reveal">SEO local : 5 centres = 5 machines &agrave; leads</h4>
-
-      <p class="solution-explainer reveal"><strong>Le SEO local</strong> = appara&icirc;tre dans le &laquo; Local Pack &raquo; de Google (les 3 r&eacute;sultats avec carte) quand quelqu'un cherche &laquo; &eacute;pilation laser Vincennes &raquo;. C'est l&agrave; que se d&eacute;cident 80% des clics locaux. Avec 5 centres, tu as 5 opportunit&eacute;s de dominer les r&eacute;sultats locaux dans tes zones.</p>
-
-      <ul class="solution-features reveal">
-        <li><strong>1 fiche Google Business par centre</strong> &mdash; optimis&eacute;e avec cat&eacute;gories, photos, horaires, services list&eacute;s</li>
-        <li><strong>50+ avis par centre</strong> &mdash; le seuil pour un impact significatif sur le classement local</li>
-        <li><strong>Pages traitement &times; ville</strong> &mdash; &laquo; &Eacute;pilation laser Vincennes &raquo;, &laquo; D&eacute;tatouage Nantes &raquo; = 75-100 pages optimis&eacute;es</li>
-        <li><strong>Schema markup LocalBusiness</strong> &mdash; donn&eacute;es structur&eacute;es pour chaque centre (+82% de clics)</li>
-        <li><strong>Coh&eacute;rence NAP</strong> &mdash; Nom, Adresse, T&eacute;l&eacute;phone identiques partout (Pages Jaunes, Doctolib, Google, site)</li>
-        <li><strong>Consolidation des sous-domaines</strong> &mdash; centres.laserel.fr et centre.laserel.fr redirig&eacute;s vers laserel.fr</li>
-      </ul>
-
-      <!-- Résultat global -->
-      <div class="solution-result reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-          <polyline points="17 6 23 6 23 12"/>
-        </svg>
-        <span>R&eacute;sultat estim&eacute; : <strong>8 000-15 000 visites organiques/mois &agrave; 12 mois</strong> &mdash; ROI de 300-500% sur l'investissement SEO</span>
-      </div>
-
-      <!-- Tool choice -->
-      <div class="tool-choice reveal">
-        <div class="tool-choice-header">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-          <span>Stack : <strong>Claude Code</strong> (orchestrateur) + <strong>validation humaine</strong></span>
-        </div>
-        <div class="tool-choice-body">
-          <ul>
-            <li><strong>G&eacute;n&eacute;ration IA</strong> &mdash; recherche, brouillons, optimisation SEO, schema markup, m&eacute;ta-donn&eacute;es</li>
-            <li><strong>Checklist E-E-A-T</strong> &mdash; bio auteur m&eacute;dical, badge &laquo; v&eacute;rifi&eacute; par &raquo;, donn&eacute;es originales clinique</li>
-            <li><strong>Rythme s&ucirc;r</strong> &mdash; 3 articles/semaine, sous le seuil de d&eacute;tection spam (5-7/semaine max)</li>
-            <li><strong>Tracking positions</strong> &mdash; suivi des classements par mot-cl&eacute;, ajustement mensuel</li>
-            <li><strong>0h de ton temps</strong> &mdash; tu valides, on produit. Tout est automatis&eacute;.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Sources -->
-      <div class="roi-disclaimer reveal" style="margin-top: 20px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="16" x2="12" y2="12"/>
-          <line x1="12" y1="8" x2="12.01" y2="8"/>
-        </svg>
-        <p><strong>Sources :</strong> Ahrefs (600 000 pages, 2025), Semrush (20 000 articles, 2025), HubSpot State of Blogging 2025, SeoProfy ROI Statistics 2025, iDigit Group Aesthetic Clinic SEO, WordStream Google Ads Benchmarks 2025, D&eacute;cret n&deg;2024-470 du 24 mai 2024, Mordor Intelligence Aesthetic Lasers Market, BrightLocal Local SEO 2026. Toutes les estimations de trafic sont conservatrices.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ====== 05 - STRATÉGIE FRANCHISE ====== -->
-  <section class="section section-franchise" id="franchise">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-number">05</span>
-        <h2 class="section-title">Le march&eacute; explose &mdash; tes prochains franchis&eacute;s sont d&eacute;j&agrave; en recherche</h2>
-        <p class="section-subtitle">Analyse de march&eacute;, positionnement concurrentiel, plan d'acquisition &mdash; 100% bas&eacute; sur les donn&eacute;es</p>
-      </div>
-
-      <!-- ===== BLOC 1 : Le marché explose ===== -->
-      <div class="franchise-block reveal">
-        <h3 class="franchise-block-title">
-          <span class="franchise-block-num">1</span>
-          Ton march&eacute; explose &mdash; et c'est prouv&eacute;
-        </h3>
-
-        <div class="franchise-market-grid">
-          <div class="market-stat-card">
-            <div class="market-stat-number">3 Md&euro;</div>
-            <div class="market-stat-label">March&eacute; m&eacute;decine esth&eacute;tique France</div>
-            <div class="market-stat-source">Xerfi Percepta 2023</div>
-          </div>
-          <div class="market-stat-card market-stat-highlight">
-            <div class="market-stat-number">+7%/an</div>
-            <div class="market-stat-label">Croissance jusqu'en 2028</div>
-            <div class="market-stat-source">Le JDD / BCG / IMCAS</div>
-          </div>
-          <div class="market-stat-card">
-            <div class="market-stat-number">+12.9%</div>
-            <div class="market-stat-label">CAGR laser esth&eacute;tique France 2025-2030</div>
-            <div class="market-stat-source">Mordor Intelligence</div>
-          </div>
-          <div class="market-stat-card">
-            <div class="market-stat-number">2M</div>
-            <div class="market-stat-label">Patients m&eacute;decine esth&eacute;tique en France</div>
-            <div class="market-stat-source">IMCAS / BCG</div>
-          </div>
-        </div>
-
-        <div class="highlight-box reveal" style="margin-top: 20px;">
-          <div class="highlight-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-            </svg>
-          </div>
-          <p><strong>Game changer : d&eacute;cret du 24 mai 2024</strong><br>
-          L'&eacute;pilation laser n'est plus r&eacute;serv&eacute;e aux m&eacute;decins. Les <strong>infirmiers et esth&eacute;ticiennes</strong> peuvent d&eacute;sormais pratiquer (apr&egrave;s 4 jours de formation). &Ccedil;a ouvre massivement le march&eacute; pour les franchises.<br>
-          <em>Source : L&eacute;gifrance, D&eacute;cret n&deg;2024-470 + Arr&ecirc;t&eacute; du 19 f&eacute;vrier 2025</em></p>
-        </div>
-
-        <div class="franchise-insight reveal">
-          <strong>Ce que &ccedil;a veut dire pour toi :</strong> le march&eacute; grossit de 7% par an, la r&eacute;glementation s'assouplit, et 70% des clients laser ont moins de 35 ans &mdash; ta client&egrave;le rajeunit et se d&eacute;mocratise. C'est le moment d'acc&eacute;l&eacute;rer.
-        </div>
-      </div>
-
-      <!-- ===== BLOC 2 : Positionnement vs concurrents ===== -->
-      <div class="franchise-block reveal">
-        <h3 class="franchise-block-title">
-          <span class="franchise-block-num">2</span>
-          O&ugrave; tu te situes vs. la concurrence
-        </h3>
-
-        <p class="franchise-block-intro">Tu es encore petit (5 centres). Mais ton mod&egrave;le est diff&eacute;renciant. Voici comment tu te positionnes face aux autres r&eacute;seaux :</p>
-
-        <div class="franchise-table-wrapper">
-          <table class="franchise-compare-table">
-            <thead>
-              <tr>
-                <th>Enseigne</th>
-                <th>Centres</th>
-                <th>Invest. total</th>
-                <th>Droit d'entr&eacute;e</th>
-                <th>CA moyen Y2</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="franchise-table-highlight">
-                <td><strong>Laserel</strong></td>
-                <td>5</td>
-                <td>150k&euro;</td>
-                <td>25-35k&euro;</td>
-                <td><strong>300-400k&euro;</strong></td>
-              </tr>
-              <tr>
-                <td>Lazeo</td>
-                <td>170+</td>
-                <td colspan="2"><em>Pas de franchise (propri&eacute;taire)</em></td>
-                <td>N/A</td>
-              </tr>
-              <tr>
-                <td>D&eacute;pil Tech</td>
-                <td>130</td>
-                <td>120-240k&euro;</td>
-                <td>22k&euro;</td>
-                <td>300-360k&euro;</td>
-              </tr>
-              <tr>
-                <td>Body Minute</td>
-                <td>500</td>
-                <td>150k&euro;</td>
-                <td>20k&euro;</td>
-                <td>250k&euro;</td>
-              </tr>
-              <tr>
-                <td>Laser 26</td>
-                <td>20</td>
-                <td>90k&euro;</td>
-                <td>N/C</td>
-                <td>320k&euro;</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="franchise-table-source">Sources : Observatoire de la Franchise, Toute la Franchise, AC Franchise, Franchise Magazine &mdash; donn&eacute;es 2024-2025</p>
-
-        <div class="franchise-advantages reveal">
-          <div class="franchise-advantage">
-            <div class="franchise-advantage-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            </div>
-            <div>
-              <strong>Mod&egrave;le coworking unique</strong>
-              <p>Surfaces partag&eacute;es entre praticiens = revenu optimis&eacute; par m&sup2;. Aucun concurrent ne fait &ccedil;a.</p>
-            </div>
-          </div>
-          <div class="franchise-advantage">
-            <div class="franchise-advantage-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-            </div>
-            <div>
-              <strong>Ouvert aux non-m&eacute;decins</strong>
-              <p>Investisseurs, managers, reconvertis : ta cible est plus large que les r&eacute;seaux 100% m&eacute;dicaux.</p>
-            </div>
-          </div>
-          <div class="franchise-advantage">
-            <div class="franchise-advantage-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            </div>
-            <div>
-              <strong>CA comp&eacute;titif : 300-400k&euro; d&egrave;s Y2</strong>
-              <p>Au-dessus de Body Minute (250k) et au niveau de D&eacute;pil Tech, pour un mod&egrave;le plus premium.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== BLOC 3 : Ta cible franchisé ===== -->
-      <div class="franchise-block reveal">
-        <h3 class="franchise-block-title">
-          <span class="franchise-block-num">3</span>
-          Qui sont tes futurs franchis&eacute;s ?
-        </h3>
-
-        <p class="franchise-block-intro">On a analys&eacute; le profil type des candidats &agrave; la franchise en France (donn&eacute;es FFF 2024, Franchise Expo Paris, 1 200+ candidats sond&eacute;s).</p>
-
-        <div class="franchise-persona">
-          <div class="persona-header">
-            <div class="persona-avatar">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <div>
-              <strong>Le candidat type Laserel</strong>
-              <span>Cadre 35-50 ans en reconversion, 50k&euro;+ d'&eacute;pargne</span>
-            </div>
-          </div>
-          <div class="persona-stats">
-            <div class="persona-stat">
-              <div class="persona-stat-num">76%</div>
-              <div class="persona-stat-text">viennent du salariat</div>
-              <div class="persona-stat-source">FFF 2024</div>
-            </div>
-            <div class="persona-stat">
-              <div class="persona-stat-num">48%</div>
-              <div class="persona-stat-text">changent de secteur</div>
-              <div class="persona-stat-source">FFF 2024</div>
-            </div>
-            <div class="persona-stat">
-              <div class="persona-stat-num">65%</div>
-              <div class="persona-stat-text">ont 50k&euro;+ d'apport</div>
-              <div class="persona-stat-source">Franchise Expo</div>
-            </div>
-            <div class="persona-stat">
-              <div class="persona-stat-num">39%</div>
-              <div class="persona-stat-text">sont des femmes</div>
-              <div class="persona-stat-source">FFF 2024 (+8pts en 3 ans)</div>
-            </div>
-          </div>
-          <div class="persona-motivations">
-            <strong>Ce qu'ils cherchent :</strong>
-            <ul>
-              <li><strong>55%</strong> veulent l'ind&eacute;pendance + la s&eacute;curit&eacute; d'un r&eacute;seau</li>
-              <li><strong>70%</strong> consid&egrave;rent la formation continue indispensable</li>
-              <li><strong>60%</strong> veulent participer &agrave; l'&eacute;volution du r&eacute;seau</li>
-              <li>Secteur en croissance, mod&egrave;le structur&eacute;, support du franchiseur</li>
-            </ul>
-          </div>
-          <div class="persona-painpoints">
-            <strong>Leurs freins (qu'on doit lever dans notre communication) :</strong>
-            <ul>
-              <li>Peur du risque financier &rarr; <em>on montre le ROI et les t&eacute;moignages</em></li>
-              <li>Trouver le bon emplacement &rarr; <em>accompagnement recherche local</em></li>
-              <li>Complexit&eacute; r&eacute;glementaire &rarr; <em>tout est inclus dans la formation Laserel</em></li>
-              <li>Perte d'autonomie &rarr; <em>mod&egrave;le coworking = plus de libert&eacute;</em></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== BLOC 4 : Le coût actuel vs notre approche ===== -->
-      <div class="franchise-block reveal">
-        <h3 class="franchise-block-title">
-          <span class="franchise-block-num">4</span>
-          Recruter un franchis&eacute; : combien &ccedil;a co&ucirc;te vraiment ?
-        </h3>
-
-        <p class="franchise-block-intro">Aujourd'hui, recruter un franchis&eacute; en France co&ucirc;te cher. Les donn&eacute;es :</p>
-
-        <div class="before-after-compare">
-          <div class="before-after-card before-card">
-            <div class="before-after-label">Approche classique (agence / salons)</div>
-            <ul>
-              <li><strong>20 &agrave; 30k&euro;</strong> par franchis&eacute; sign&eacute;</li>
-              <li>120-300&euro; par lead (Google/LinkedIn Ads)</li>
-              <li>5-15k&euro; par salon (stand + d&eacute;placements)</li>
-              <li>Taux conversion leads &rarr; signature : <strong>1.44%</strong></li>
-              <li>~50 leads n&eacute;cessaires pour 1 signature</li>
-              <li>D&eacute;lai moyen : <strong>6 mois</strong> du 1er contact &agrave; la signature</li>
-              <li>Budget annuel recrutement : 70-150k&euro;/an</li>
-            </ul>
-          </div>
-          <div class="before-after-card after-card">
-            <div class="before-after-label">Notre approche IA + automatisation</div>
-            <ul>
-              <li><strong>8 &agrave; 12k&euro;</strong> par franchis&eacute; sign&eacute; (estimation)</li>
-              <li>Chatbot IA qualifie 24/7 (<strong>+87%</strong> d'opportunit&eacute;s)</li>
-              <li>R&eacute;ponse en <strong>5 min</strong> vs 2 jours (10&times; plus de conversions)</li>
-              <li>Nurturing automatis&eacute; : emails + SMS personnalis&eacute;s</li>
-              <li>Landing page optimis&eacute;e : 3-4 champs, pas de friction</li>
-              <li>CRM complet : scoring, pipeline, relances auto</li>
-              <li>Tout mesurable en temps r&eacute;el dans un dashboard</li>
-            </ul>
-          </div>
-        </div>
-
-        <p class="franchise-table-source">Sources : Axe R&eacute;seaux, Observatoire de la Franchise, EverFruit Digital FDR 2024, Chatbots Life, InsideSales.com</p>
-
-        <div class="metric-highlight reveal" style="margin-top: 18px;">
-          <div class="metric-number">14.1%</div>
-          <div class="metric-text">
-            <strong>Le parrainage est le canal #1 en conversion franchise</strong><br>
-            <span class="metric-source">vs. 1.44% en acquisition classique. Notre strat&eacute;gie int&egrave;gre un programme de parrainage automatis&eacute; pour tes franchis&eacute;s actuels. Source : AFDR 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== BLOC 5 : Ce qu'on construit ensemble ===== -->
-      <div class="franchise-block reveal">
-        <h3 class="franchise-block-title">
-          <span class="franchise-block-num">5</span>
-          Ce qu'on construit pour d&eacute;velopper ta franchise
-        </h3>
-
-        <div class="franchise-strategy-grid">
-          <div class="strategy-card">
-            <div class="strategy-card-header">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <strong>Landing page franchise d&eacute;di&eacute;e</strong>
-            </div>
-            <ul>
-              <li>Design conversion-first (benchmark : 6-10% de conversion)</li>
-              <li>Formulaire 3-4 champs max (+120% vs 11 champs)</li>
-              <li>T&eacute;moignages vid&eacute;o franchis&eacute;s (Johanna/Auxerre)</li>
-              <li>Chiffres cl&eacute;s transparents : 300-400k&euro; CA, 50k&euro; apport, 6 mois d'ouverture</li>
-              <li>Chatbot IA qui r&eacute;pond 24/7 aux questions franchise</li>
-            </ul>
-          </div>
-
-          <div class="strategy-card">
-            <div class="strategy-card-header">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              <strong>Speed-to-lead automatique</strong>
-            </div>
-            <ul>
-              <li>Alerte SMS + email d&egrave;s qu'un candidat remplit le formulaire</li>
-              <li>R&eacute;ponse en &lt;5 min : <strong>10&times; plus de conversions</strong></li>
-              <li>85% des signatures franchise se font quand le 1er contact est en &lt;4h</li>
-              <li>Scoring automatique : chaud / ti&egrave;de / froid</li>
-            </ul>
-          </div>
-
-          <div class="strategy-card">
-            <div class="strategy-card-header">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <strong>S&eacute;quence nurturing franchis&eacute;</strong>
-            </div>
-            <ul>
-              <li><strong>J+0 :</strong> Email de bienvenue + brochure digitale Laserel</li>
-              <li><strong>J+3 :</strong> T&eacute;moignage vid&eacute;o d'un franchis&eacute; + chiffres cl&eacute;s</li>
-              <li><strong>J+7 :</strong> FAQ + r&eacute;ponse aux objections principales</li>
-              <li><strong>J+14 :</strong> Invitation Discovery Day + proposition d'appel</li>
-              <li><strong>J+30 :</strong> Relance personnalis&eacute;e si pas de r&eacute;ponse</li>
-            </ul>
-          </div>
-
-          <div class="strategy-card">
-            <div class="strategy-card-header">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              <strong>Acquisition multicanale</strong>
-            </div>
-            <ul>
-              <li><strong>SEO :</strong> "franchise &eacute;pilation laser" + pages localis&eacute;es</li>
-              <li><strong>Google Ads :</strong> ciblage "ouvrir centre laser" (CPL ~146&euro;)</li>
-              <li><strong>LinkedIn :</strong> cadres en reconversion 35-50 ans (CPL ~150&euro;)</li>
-              <li><strong>Portails :</strong> Observatoire, Toute la Franchise (d&eacute;j&agrave; pr&eacute;sent)</li>
-              <li><strong>Parrainage :</strong> programme automatis&eacute; pour franchis&eacute;s actuels (14.1% de conversion)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== BLOC 6 : Projections ===== -->
-      <div class="franchise-block reveal">
-        <h3 class="franchise-block-title">
-          <span class="franchise-block-num">6</span>
-          Projection : combien de franchis&eacute;s en 12 mois ?
-        </h3>
-
-        <div class="franchise-projection">
-          <div class="projection-scenario">
-            <div class="projection-header projection-conservative">Sc&eacute;nario conservateur</div>
-            <div class="projection-body">
-              <div class="projection-row">
-                <span>Budget acquisition annuel</span>
-                <strong>15 000&euro;</strong>
-              </div>
-              <div class="projection-row">
-                <span>CPL moyen (mix canaux)</span>
-                <strong>~120&euro;</strong>
-              </div>
-              <div class="projection-row">
-                <span>Leads g&eacute;n&eacute;r&eacute;s (12 mois)</span>
-                <strong>~125 leads</strong>
-              </div>
-              <div class="projection-row">
-                <span>Taux conversion (avec IA + nurturing)</span>
-                <strong>~3% (vs 1.44% march&eacute;)</strong>
-              </div>
-              <div class="projection-row projection-total">
-                <span>Franchis&eacute;s sign&eacute;s</span>
-                <strong>2 &agrave; 4</strong>
-              </div>
-              <div class="projection-row projection-total">
-                <span>Valeur pour Laserel (LTV 12 ans)</span>
-                <strong>2 &agrave; 12M&euro;</strong>
-              </div>
-            </div>
-          </div>
-          <div class="projection-scenario">
-            <div class="projection-header projection-optimistic">Sc&eacute;nario optimiste</div>
-            <div class="projection-body">
-              <div class="projection-row">
-                <span>Budget acquisition annuel</span>
-                <strong>30 000&euro;</strong>
-              </div>
-              <div class="projection-row">
-                <span>CPL moyen (mix canaux + parrainage)</span>
-                <strong>~100&euro;</strong>
-              </div>
-              <div class="projection-row">
-                <span>Leads g&eacute;n&eacute;r&eacute;s (12 mois)</span>
-                <strong>~300 leads</strong>
-              </div>
-              <div class="projection-row">
-                <span>Taux conversion (parrainage boost&eacute;)</span>
-                <strong>~5%</strong>
-              </div>
-              <div class="projection-row projection-total">
-                <span>Franchis&eacute;s sign&eacute;s</span>
-                <strong>5 &agrave; 8</strong>
-              </div>
-              <div class="projection-row projection-total">
-                <span>Valeur pour Laserel (LTV 12 ans)</span>
-                <strong>5 &agrave; 24M&euro;</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="roi-breakeven reveal" style="margin-top: 20px;">
-          <div class="roi-breakeven-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-              <polyline points="17 6 23 6 23 12"/>
-            </svg>
-          </div>
-          <div class="roi-breakeven-content">
-            <strong>1 seul franchis&eacute; rembourse l'int&eacute;gralit&eacute; de notre accompagnement annuel</strong>
-            <p>Droit d'entr&eacute;e (25-35k&euro;) + redevances r&eacute;currentes. Le reste est du profit net pour le r&eacute;seau.</p>
-          </div>
-        </div>
-
-        <!-- Funnel visuel -->
-        <div class="franchise-funnel reveal">
-          <div class="funnel-title">Le tunnel complet : de la pub au contrat sign&eacute;</div>
-          <div class="funnel-steps">
-            <div class="funnel-step funnel-step-1">
-              <div class="funnel-step-label">Impressions</div>
-              <div class="funnel-step-detail">Google / LinkedIn / Portails</div>
-            </div>
-            <div class="funnel-step funnel-step-2">
-              <div class="funnel-step-label">Leads</div>
-              <div class="funnel-step-detail">125-300 formulaires remplis</div>
-            </div>
-            <div class="funnel-step funnel-step-3">
-              <div class="funnel-step-label">Qualifi&eacute;s</div>
-              <div class="funnel-step-detail">Chatbot IA + scoring auto</div>
-            </div>
-            <div class="funnel-step funnel-step-4">
-              <div class="funnel-step-label">Discovery Day</div>
-              <div class="funnel-step-detail">Rencontre + visite centre</div>
-            </div>
-            <div class="funnel-step funnel-step-5">
-              <div class="funnel-step-label">Sign&eacute;s</div>
-              <div class="funnel-step-detail"><strong>2 &agrave; 8 franchis&eacute;s/an</strong></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sources -->
-      <div class="roi-disclaimer reveal" style="margin-top: 2rem;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="16" x2="12" y2="12"/>
-          <line x1="12" y1="8" x2="12.01" y2="8"/>
-        </svg>
-        <p><strong>Sources section franchise :</strong> Xerfi Percepta 2023, Mordor Intelligence 2025, FFF Indicateurs cl&eacute;s 2024, Le JDD/BCG/IMCAS, L&eacute;gifrance (D&eacute;cret 2024-470), Observatoire de la Franchise, Toute la Franchise, AC Franchise, Franchise Magazine, EverFruit Digital FDR 2024, Axe R&eacute;seaux, AFDR 2026, InsideSales.com, Chatbots Life. Toutes les estimations utilisent les fourchettes basses (conservatrices).</p>
+      <div class="offre-card reveal">
+        <div class="offre-price">1 000&euro;<span>/mois</span></div>
+        <div class="offre-engagement">Sans engagement &mdash; tu arr&ecirc;tes quand tu veux</div>
+        <ul class="offre-includes">
+          <li>Audit initial complet de ton &eacute;cosyst&egrave;me digital</li>
+          <li>Mise en place des leviers prioritaires</li>
+          <li>Suivi mensuel + rapports de performance</li>
+          <li>Tout le code et les donn&eacute;es t'appartiennent</li>
+        </ul>
+        <div class="offre-note">Audit offert le premier mois</div>
       </div>
     </div>
   </section>
 
-  <!-- ====== 06 - MA MÉTHODE HUMAN + IA ====== -->
-  <section class="section" id="methode">
+  <!-- ====== 04 - CRÉDIBILITÉ ====== -->
+  <section class="section" id="credibilite">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-number">06</span>
-        <h2 class="section-title">Ma m&eacute;thode : <span class="gradient-text">Human + IA</span></h2>
-        <p class="section-subtitle">Pourquoi tu obtiens la puissance d'une agence 5 personnes pour le prix d'un freelance</p>
-      </div>
-
-      <!-- Bloc 1 : Le concept -->
-      <div class="highlight-box reveal" style="border-left-color: var(--cohorte-teal); background: var(--cohorte-teal-light);">
-        <div class="highlight-icon" style="color: var(--cohorte-teal);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <div class="credibility-card reveal">
+        <div class="credibility-photo">
+          <img src="../antoine.png" alt="Antoine Thomas" />
         </div>
-        <p><strong>Le concept Human-in-the-Loop :</strong> je ne code pas ligne par ligne. Je dirige des agents IA. Mon r&ocirc;le = strat&eacute;gie, contr&ocirc;le qualit&eacute;, communication avec toi. L'IA fait le travail technique &mdash; <strong>5 &agrave; 10&times; plus vite qu'un humain</strong>.</p>
-      </div>
-
-      <!-- Bloc 2 : Mes outils IA -->
-      <div class="ai-agents-grid reveal">
-        <div class="ai-agent-card">
-          <div class="ai-agent-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
-          </div>
-          <strong>Claude Code</strong>
-          <p>Assistant dev IA. Code 10&times; plus vite. <em>Ce site a &eacute;t&eacute; construit avec.</em></p>
-        </div>
-        <div class="ai-agent-card">
-          <div class="ai-agent-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-          <strong>Deep Research</strong>
-          <p>Toutes les stats de ce document viennent de sessions de recherche IA v&eacute;rifi&eacute;es manuellement.</p>
-        </div>
-        <div class="ai-agent-card">
-          <div class="ai-agent-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-          </div>
-          <strong>Multi-agent</strong>
-          <p>Plusieurs agents en parall&egrave;le. Un code, un pr&eacute;pare les emails, un analyse le SEO. <strong>1 humain = la puissance de 5 sp&eacute;cialistes.</strong></p>
+        <div class="credibility-info">
+          <strong>Antoine Thomas</strong>
+          <span>Fondateur, Cohorte</span>
+          <p>J'accompagne les entreprises &agrave; automatiser leur croissance avec des outils modernes. 1 interlocuteur, la puissance de workflows automatis&eacute;s &mdash; les r&eacute;sultats d'une agence 5 personnes &agrave; une fraction du co&ucirc;t.</p>
         </div>
       </div>
-
-      <!-- Bloc 3 : Le processus d'itération -->
-      <div class="process-flow reveal">
-        <div class="process-flow-title">Le processus d'it&eacute;ration continue</div>
-        <div class="process-flow-steps">
-          <div class="process-flow-step">
-            <div class="process-flow-num">1</div>
-            <span>Recherche</span>
-          </div>
-          <div class="process-flow-arrow">&rarr;</div>
-          <div class="process-flow-step">
-            <div class="process-flow-num">2</div>
-            <span>Prototypage</span>
-          </div>
-          <div class="process-flow-arrow">&rarr;</div>
-          <div class="process-flow-step">
-            <div class="process-flow-num">3</div>
-            <span>Test</span>
-          </div>
-          <div class="process-flow-arrow">&rarr;</div>
-          <div class="process-flow-step">
-            <div class="process-flow-num">4</div>
-            <span>Mesure</span>
-          </div>
-          <div class="process-flow-arrow">&rarr;</div>
-          <div class="process-flow-step process-flow-step-success">
-            <div class="process-flow-num">5</div>
-            <span>Affinage</span>
-          </div>
-          <div class="process-flow-arrow">&rarr;</div>
-          <div class="process-flow-step" style="background: var(--cohorte-teal-light); border-color: var(--cohorte-teal);">
-            <div class="process-flow-num" style="background: var(--cohorte-teal); color: white;">&#8634;</div>
-            <span>Repeat</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bloc 4 : Pourquoi 7× moins cher -->
-      <div class="before-after-compare reveal" style="margin-top: 24px;">
-        <div class="before-after-card before-card">
-          <div class="before-after-label">Agence traditionnelle</div>
-          <ul>
-            <li>D&eacute;veloppeur web : 2 000&euro;/mois</li>
-            <li>CRM / automation : 1 000&euro;/mois</li>
-            <li>Email marketing : 1 000&euro;/mois</li>
-            <li>R&eacute;f&eacute;rencement SEO : 1 500&euro;/mois</li>
-            <li>Franchise / acquisition : 2 000&euro;/mois</li>
-            <li>Coordination entre prestataires</li>
-            <li><strong>Total : 5 600 &agrave; 10 200&euro;/mois</strong></li>
-          </ul>
-        </div>
-        <div class="before-after-card after-card">
-          <div class="before-after-label">Antoine + IA (Cohorte)</div>
-          <ul>
-            <li>1 seul interlocuteur</li>
-            <li>Toutes comp&eacute;tences via agents IA</li>
-            <li>Z&eacute;ro coordination entre prestataires</li>
-            <li>Ex&eacute;cution 5-10&times; plus rapide</li>
-            <li>It&eacute;rations illimit&eacute;es</li>
-            <li>Tout le code t'appartient</li>
-            <li><strong>Total : 1 000 &agrave; 1 500&euro;/mois</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Bloc 5 : Pourquoi un abonnement -->
-      <div class="highlight-box reveal" style="border-left-color: var(--cohorte-teal); background: var(--cohorte-teal-light); margin-top: 24px;">
-        <div class="highlight-icon" style="color: var(--cohorte-teal);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        </div>
-        <p><strong>Pourquoi un abonnement mensuel ?</strong> L'am&eacute;lioration est continue. Chaque mois je d&eacute;ploie des optimisations bas&eacute;es sur les donn&eacute;es du mois pr&eacute;c&eacute;dent. Le SEO grandit, les emails s'affinent, le chatbot s'am&eacute;liore. C'est un investissement qui compose.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== 07 - ROADMAP 12 MOIS ====== -->
-  <section class="section" id="roadmap">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-number">07</span>
-        <h2 class="section-title">12 mois, 2 rythmes &mdash; choisis ta vitesse</h2>
-        <p class="section-subtitle">Deux rythmes possibles &mdash; choisis la formule qui te convient</p>
-      </div>
-
-      <!-- Toggle -->
-      <div class="tier-selector reveal">
-        <button class="tier-btn tier-btn-active" onclick="switchRoadmap('accelere')" id="btn-accelere">Acc&eacute;l&eacute;r&eacute; &mdash; 1 500&euro;/mois</button>
-        <button class="tier-btn" onclick="switchRoadmap('essentiel')" id="btn-essentiel">Essentiel &mdash; 1 000&euro;/mois</button>
-      </div>
-
-      <!-- Roadmap Accéléré -->
-      <div class="roadmap-timeline reveal" id="roadmap-accelere">
-        <div class="roadmap-months">
-          <span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span><span>M6</span><span>M7</span><span>M8</span><span>M9</span><span>M10</span><span>M11</span><span>M12</span>
-        </div>
-        <div class="roadmap-streams">
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Audit + architecture</div>
-            <div class="roadmap-bar roadmap-bar-gray" style="grid-column: 1 / 3;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Refonte site + CRO + chatbot</div>
-            <div class="roadmap-bar roadmap-bar-gold" style="grid-column: 2 / 4;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">CRM + automations</div>
-            <div class="roadmap-bar roadmap-bar-teal" style="grid-column: 3 / 5;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Anti no-shows</div>
-            <div class="roadmap-bar roadmap-bar-green" style="grid-column: 3 / 5;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Email marketing</div>
-            <div class="roadmap-bar roadmap-bar-orange" style="grid-column: 4 / 6;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">SEO contenu</div>
-            <div class="roadmap-bar roadmap-bar-golddark" style="grid-column: 5 / 13;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Franchise LP</div>
-            <div class="roadmap-bar roadmap-bar-teal" style="grid-column: 4 / 6;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Optimisation continue</div>
-            <div class="roadmap-bar roadmap-bar-lightgray" style="grid-column: 6 / 13;"></div>
-          </div>
-        </div>
-        <div class="roadmap-milestone reveal">
-          <span>&#9733; &Eacute;cosyst&egrave;me complet d&eacute;ploy&eacute; en ~6 mois &mdash; 15-20h/mois + agents IA</span>
-        </div>
-      </div>
-
-      <!-- Roadmap Essentiel -->
-      <div class="roadmap-timeline reveal" id="roadmap-essentiel" style="display: none;">
-        <div class="roadmap-months">
-          <span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span><span>M6</span><span>M7</span><span>M8</span><span>M9</span><span>M10</span><span>M11</span><span>M12</span>
-        </div>
-        <div class="roadmap-streams">
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Audit + architecture</div>
-            <div class="roadmap-bar roadmap-bar-gray" style="grid-column: 1 / 4;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Refonte site + CRO + chatbot</div>
-            <div class="roadmap-bar roadmap-bar-gold" style="grid-column: 3 / 6;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">CRM + automations</div>
-            <div class="roadmap-bar roadmap-bar-teal" style="grid-column: 5 / 8;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Anti no-shows</div>
-            <div class="roadmap-bar roadmap-bar-green" style="grid-column: 5 / 8;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Email marketing</div>
-            <div class="roadmap-bar roadmap-bar-orange" style="grid-column: 7 / 10;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">SEO contenu</div>
-            <div class="roadmap-bar roadmap-bar-golddark" style="grid-column: 9 / 13;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Franchise LP</div>
-            <div class="roadmap-bar roadmap-bar-teal" style="grid-column: 9 / 11;"></div>
-          </div>
-          <div class="roadmap-stream">
-            <div class="roadmap-label">Optimisation continue</div>
-            <div class="roadmap-bar roadmap-bar-lightgray" style="grid-column: 10 / 13;"></div>
-          </div>
-        </div>
-        <div class="roadmap-milestone reveal">
-          <span>&#9733; &Eacute;cosyst&egrave;me complet d&eacute;ploy&eacute; en ~12 mois &mdash; 8-12h/mois + agents IA</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== 08 - INVESTISSEMENT ====== -->
-  <section class="section" id="investissement">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-number">08</span>
-        <h2 class="section-title">L'investissement</h2>
-        <p class="section-subtitle">Chaque euro investi est tra&ccedil;able dans ton dashboard</p>
-      </div>
-
-      <!-- Étape 1 : Audit -->
-      <div class="process-timeline reveal">
-        <div class="process-step">
-          <div class="process-step-marker">
-            <span class="process-step-number">1</span>
-          </div>
-          <div class="process-step-content">
-            <div class="process-step-header">
-              <h4>Audit business complet</h4>
-              <span class="process-badge process-badge-purple">500&euro;</span>
-            </div>
-            <p>2-3h ensemble pour cartographier tout : ton site, tes process, tes outils, tes co&ucirc;ts. Tu repars avec le document de cadrage complet <strong>m&ecirc;me si tu arr&ecirc;tes l&agrave;</strong>.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Deux formules côte à côte -->
-      <div class="pricing-tiers reveal">
-        <div class="pricing-tier">
-          <div class="pricing-tier-header">Essentiel</div>
-          <div class="pricing-tier-price">1 000&euro;<span>/mois</span></div>
-          <div class="pricing-tier-body">
-            <div class="pricing-tier-row">
-              <span>Heures</span>
-              <strong>8-12h/mois + agents IA</strong>
-            </div>
-            <div class="pricing-tier-row">
-              <span>Calls</span>
-              <strong>1/mois</strong>
-            </div>
-            <div class="pricing-tier-row">
-              <span>SEO</span>
-              <strong>2 articles/sem</strong>
-            </div>
-            <div class="pricing-tier-row">
-              <span>Franchise LP</span>
-              <strong>Incluse (M9-10)</strong>
-            </div>
-            <div class="pricing-tier-row">
-              <span>D&eacute;ploiement</span>
-              <strong>S&eacute;quentiel</strong>
-            </div>
-            <div class="pricing-tier-row pricing-tier-row-total">
-              <span>Tout d&eacute;ploy&eacute; en</span>
-              <strong>~12 mois</strong>
-            </div>
-          </div>
-        </div>
-        <div class="pricing-tier pricing-tier-premium">
-          <div class="pricing-tier-badge">&#9733; Recommand&eacute;</div>
-          <div class="pricing-tier-header">Acc&eacute;l&eacute;r&eacute;</div>
-          <div class="pricing-tier-price">1 500&euro;<span>/mois</span></div>
-          <div class="pricing-tier-body">
-            <div class="pricing-tier-row">
-              <span>Heures</span>
-              <strong>15-20h/mois + agents IA</strong>
-            </div>
-            <div class="pricing-tier-row">
-              <span>Calls</span>
-              <strong>1/semaine</strong>
-            </div>
-            <div class="pricing-tier-row">
-              <span>SEO</span>
-              <strong>3 articles/sem</strong>
-            </div>
-            <div class="pricing-tier-row">
-              <span>Franchise LP</span>
-              <strong>Incluse (M4-5)</strong>
-            </div>
-            <div class="pricing-tier-row">
-              <span>D&eacute;ploiement</span>
-              <strong>Parall&egrave;le</strong>
-            </div>
-            <div class="pricing-tier-row pricing-tier-row-total">
-              <span>Tout d&eacute;ploy&eacute; en</span>
-              <strong>~6 mois</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Inclus dans les deux -->
-      <div class="guarantees reveal">
-        <div class="guarantee">
-          <div class="guarantee-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-          </div>
-          <h4>Sans engagement</h4>
-          <p>Tu arr&ecirc;tes quand tu veux. Tu repars avec tout le code et les donn&eacute;es.</p>
-        </div>
-        <div class="guarantee">
-          <div class="guarantee-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          </div>
-          <h4>Transparence totale</h4>
-          <p>Dashboard, m&eacute;triques, co&ucirc;ts &mdash; tout est visible en temps r&eacute;el.</p>
-        </div>
-        <div class="guarantee">
-          <div class="guarantee-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
-          <h4>ROI mesurable</h4>
-          <p>On mesure tout. Si un levier ne produit pas de r&eacute;sultats, on ajuste.</p>
-        </div>
-      </div>
-
-      <!-- ROI résumé -->
-      <div class="roi-simulation reveal">
-        <div class="roi-sim-card roi-sim-before">
-          <div class="roi-sim-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            <span>Retour estim&eacute; (conservateur)</span>
-          </div>
-          <ul class="roi-sim-list">
-            <li>Conversion site : <strong>&times;2 &agrave; &times;3</strong> <span class="source-tag">First Page Sage</span></li>
-            <li>No-shows : <strong>&divide;2</strong> <span class="source-tag">PubMed</span></li>
-            <li>Fid&eacute;lisation email : <strong>+43%</strong> <span class="source-tag">Omnisend</span></li>
-            <li>R&eacute;activation dormants : <strong>ROI 7:1</strong> <span class="source-tag">Porch Group</span></li>
-          </ul>
-        </div>
-        <div class="roi-sim-card roi-sim-after">
-          <div class="roi-sim-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            <span>Comparaison co&ucirc;t</span>
-          </div>
-          <ul class="roi-sim-list">
-            <li>&Eacute;quivalent agence : <strong>5 600-10 200&euro;/mois</strong></li>
-            <li>Antoine + IA : <strong>1 000-1 500&euro;/mois</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="roi-breakeven reveal">
-        <div class="roi-breakeven-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        </div>
-        <div class="roi-breakeven-content">
-          <strong>Le seuil de rentabilit&eacute; est tr&egrave;s bas</strong>
-          <p>Il suffit de <strong>1-2 patients suppl&eacute;mentaires par mois par centre</strong> pour rentabiliser l'int&eacute;gralit&eacute; de la prestation.</p>
-        </div>
+      <div class="credibility-tools reveal">
+        <span class="credibility-tool">Brevo</span>
+        <span class="credibility-tool">Make</span>
+        <span class="credibility-tool">n8n</span>
+        <span class="credibility-tool">Doctolib</span>
+        <span class="credibility-tool">Vercel</span>
+        <span class="credibility-tool">Node.js</span>
       </div>
     </div>
   </section>
 
   <!-- ====== CTA ====== -->
-  <section class="section section-cta" id="next">
+  <section class="section section-cta" id="cta">
     <div class="container">
-      <div class="cta-card reveal">
-        <div class="cta-header">
-          <div class="cta-brands">
-            <span class="cta-brand-l">Laserel</span>
-            <span class="cta-x">&times;</span>
-            <span class="cta-brand-c">Cohorte</span>
-          </div>
-          <span class="cta-badge">Prochaine &eacute;tape</span>
-        </div>
-
-        <div class="cta-body">
-          <h2 class="cta-title"><span class="gradient-text">On en reparle ?</span></h2>
-          <p class="cta-text">30 min pour r&eacute;pondre &agrave; tes questions et d&eacute;cider quels leviers activer en premier</p>
-
-          <div class="cta-actions">
-            <div class="cta-action">
-              <div class="cta-action-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                  <line x1="16" y1="2" x2="16" y2="6"/>
-                  <line x1="8" y1="2" x2="8" y2="6"/>
-                  <line x1="3" y1="10" x2="21" y2="10"/>
-                </svg>
-              </div>
-              <div class="cta-action-content">
-                <strong>Planifier un call</strong>
-                <span>30 min pour valider les priorit&eacute;s</span>
-              </div>
-            </div>
-            <div class="cta-action">
-              <div class="cta-action-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-              </div>
-              <div class="cta-action-content">
-                <strong>Me poser tes questions</strong>
-                <span>Par WhatsApp ou via le chat</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cta-footer">
-          <p>On commence par l'audit (500&euro;) &mdash; puis Essentiel (1 000&euro;/mois) ou Acc&eacute;l&eacute;r&eacute; (1 500&euro;/mois). Tu gardes tout m&ecirc;me si tu arr&ecirc;tes. <strong>Z&eacute;ro risque.</strong></p>
+      <div class="cta-simple reveal">
+        <h2 class="cta-simple-title">On en parle ?</h2>
+        <p class="cta-simple-text">30 minutes pour voir si &ccedil;a matche.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/33612345678" target="_blank" class="cta-btn cta-btn-whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="https://calendly.com/antoine-cohorte/30min" target="_blank" class="cta-btn cta-btn-calendly">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Calendly
+          </a>
         </div>
       </div>
 
@@ -2000,42 +381,687 @@
         <div class="author-info">
           <span class="author-name">Antoine Thomas</span>
           <span class="author-role">Cohorte Agency</span>
-          <span class="author-tagline">Automatisation & IA pour PME</span>
+          <span class="author-tagline">Automatisation &amp; workflows avanc&eacute;s pour PME</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ANNEXES ====== -->
+  <section class="section annexes-section" id="annexes">
+    <div class="container">
+      <h2 class="annexes-title reveal">Pour aller plus loin</h2>
+
+      <!-- ANNEXE A — No-shows -->
+      <div class="annexe-item" id="annexe-noshow">
+        <div class="annexe-header" onclick="toggleAnnexe(this)">
+          <span class="annexe-label">Annexe A</span>
+          <span class="annexe-title-text">Strat&eacute;gie anti no-shows</span>
+          <svg class="annexe-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="annexe-body">
+
+          <div class="noshow-block">
+            <h3 class="noshow-block-title">
+              <span class="noshow-block-num">1</span>
+              Le diagnostic : les no-shows dans ton secteur
+            </h3>
+
+            <div class="noshow-data-table">
+              <div class="noshow-data-title">Taux de no-show par source &mdash; France</div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Source</th>
+                    <th>Cat&eacute;gorie</th>
+                    <th>Taux</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Doctolib</strong> (juillet 2024)</td>
+                    <td>Sp&eacute;cialistes m&eacute;dicaux</td>
+                    <td class="noshow-rate">3,1%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Doctolib</strong> (juillet 2024)</td>
+                    <td>Nouveaux patients</td>
+                    <td class="noshow-rate noshow-rate-warn">5,4%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Nosho.ai</strong> (Assurance Maladie / CNOM)</td>
+                    <td>Dermatologie / esth&eacute;tique</td>
+                    <td class="noshow-rate noshow-rate-danger">6 &agrave; 9%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Treatwell</strong> France</td>
+                    <td>Salons beaut&eacute; / instituts</td>
+                    <td class="noshow-rate noshow-rate-warn">~5%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="noshow-data-note">Doctolib mesure uniquement les RDV pris via sa plateforme (avec rappels automatiques d&eacute;j&agrave; actifs). Le taux r&eacute;el sans syst&egrave;me de rappel avanc&eacute; est plus &eacute;lev&eacute;.</p>
+            </div>
+          </div>
+
+          <div class="noshow-block">
+            <h3 class="noshow-block-title">
+              <span class="noshow-block-num">2</span>
+              La strat&eacute;gie : 4 couches de protection
+            </h3>
+
+            <p class="solution-explainer">Chaque couche r&eacute;duit le no-show. Cumul&eacute;es, elles sont exponentiellement efficaces.</p>
+
+            <div class="noshow-layer">
+              <div class="noshow-layer-header">
+                <div class="noshow-layer-badge">Couche 1</div>
+                <h4>S&eacute;quence SMS multi-touch</h4>
+                <div class="noshow-layer-impact">-30 &agrave; 50% de no-shows</div>
+              </div>
+              <div class="noshow-layer-body">
+                <div class="metric-highlight">
+                  <div class="metric-number">98%</div>
+                  <div class="metric-text">
+                    <strong>Taux d'ouverture des SMS</strong> (vs. ~20% pour les emails)<br>
+                    <span class="metric-source">Source : Gartner / ProspyrMed</span>
+                  </div>
+                </div>
+                <p>La recherche est claire : <strong>envoyer 2+ rappels est significativement plus efficace</strong> qu'un seul rappel.</p>
+                <div class="noshow-evidence">
+                  <div class="noshow-evidence-title">Ce que dit la science</div>
+                  <ul>
+                    <li><strong>M&eacute;ta-analyse de 8 essais cliniques randomis&eacute;s</strong> : les rappels SMS augmentent la probabilit&eacute; de pr&eacute;sence de <strong>50%</strong>. <em>Source : PubMed Central, PMC3419880</em></li>
+                    <li><strong>&Eacute;tude PLOS ONE</strong> (N = 19 959 patients) : mentionner le <strong>co&ucirc;t exact de la s&eacute;ance</strong> dans le SMS r&eacute;duit les no-shows de <strong>-25% suppl&eacute;mentaire</strong>. <em>Source : PLOS ONE</em></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="noshow-layer">
+              <div class="noshow-layer-header">
+                <div class="noshow-layer-badge">Couche 2</div>
+                <h4>Confirmation active + alerte centre</h4>
+                <div class="noshow-layer-impact">+51% de confirmations</div>
+              </div>
+              <div class="noshow-layer-body">
+                <p>Le SMS demande une <strong>r&eacute;ponse OUI/NON</strong>. Si pas de r&eacute;ponse, alerte automatique au centre qui appelle le patient. <em>Source : ProspyrMed</em></p>
+              </div>
+            </div>
+
+            <div class="noshow-layer">
+              <div class="noshow-layer-header">
+                <div class="noshow-layer-badge">Couche 3</div>
+                <h4>Remplissage automatique des cr&eacute;neaux lib&eacute;r&eacute;s</h4>
+                <div class="noshow-layer-impact">52 &agrave; 72% de cr&eacute;neaux remplis</div>
+              </div>
+              <div class="noshow-layer-body">
+                <p>Quand un patient annule, le syst&egrave;me alerte automatiquement les patients en liste d'attente. <em>Source : Doctolib, rapport juillet 2024</em></p>
+              </div>
+            </div>
+
+            <div class="noshow-layer">
+              <div class="noshow-layer-header">
+                <div class="noshow-layer-badge">Couche 4</div>
+                <h4>Syst&egrave;me d'acompte en ligne</h4>
+                <div class="noshow-layer-impact">-34 &agrave; 65% de no-shows</div>
+              </div>
+              <div class="noshow-layer-body">
+                <p>Acompte de 20-30% &agrave; la r&eacute;servation. Remboursable si annulation 24h avant. Optionnel au d&eacute;marrage. <em>Sources : Curogram, Vagaro, Planity</em></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="noshow-block">
+            <h3 class="noshow-block-title">
+              <span class="noshow-block-num">3</span>
+              R&eacute;capitulatif : l'impact cumul&eacute;
+            </h3>
+
+            <div class="noshow-data-table">
+              <div class="noshow-data-title">Impact par couche &mdash; effet cumul&eacute;</div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Couche</th>
+                    <th>Action</th>
+                    <th>R&eacute;duction</th>
+                    <th>Source</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1</strong></td>
+                    <td>SMS multi-touch (J-2 + J-1)</td>
+                    <td class="noshow-rate">-30 &agrave; 50%</td>
+                    <td>PubMed PMC3419880</td>
+                  </tr>
+                  <tr>
+                    <td><strong>1+</strong></td>
+                    <td>Mention du co&ucirc;t dans le SMS</td>
+                    <td class="noshow-rate">-25% suppl.</td>
+                    <td>PLOS ONE (N=19 959)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2</strong></td>
+                    <td>Confirmation active + alerte</td>
+                    <td class="noshow-rate">+51% confirm.</td>
+                    <td>ProspyrMed</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3</strong></td>
+                    <td>Remplissage auto des cr&eacute;neaux</td>
+                    <td class="noshow-rate">52-72% remplis</td>
+                    <td>Doctolib 2024</td>
+                  </tr>
+                  <tr>
+                    <td><strong>4</strong></td>
+                    <td>Acompte (optionnel, phase 2)</td>
+                    <td class="noshow-rate noshow-rate-danger">-34 &agrave; 65%</td>
+                    <td>Curogram / Vagaro</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="roi-breakeven">
+              <div class="roi-breakeven-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <div class="roi-breakeven-content">
+                <strong>Le syst&egrave;me se rentabilise d&egrave;s le 1er mois</strong>
+                <p>Co&ucirc;t SMS : 0,045&euro;/envoi (Brevo). Il suffit de <strong>2 cr&eacute;neaux sauv&eacute;s par mois</strong> pour couvrir le co&ucirc;t total.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="roi-disclaimer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <p><strong>Sources :</strong> Doctolib France (juillet 2024), Nosho.ai / Assurance Maladie, PubMed Central PMC3419880, PLOS ONE, ProspyrMed, Treatwell France, Curogram, Vagaro, Planity.</p>
+          </div>
+
         </div>
       </div>
 
-      <div class="roi-disclaimer reveal" style="margin-top: 2rem;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="16" x2="12" y2="12"/>
-          <line x1="12" y1="8" x2="12.01" y2="8"/>
-        </svg>
-        <p><strong>Sources des donn&eacute;es :</strong> First Page Sage 2025, Unbounce Benchmark Report 2024, Klaviyo Health &amp; Beauty Benchmarks, Zenoti Benchmark 2025, ProspyrMed/Cochrane Review, BrightLocal Consumer Review Survey 2025, IFA Franchise Association. Toutes les estimations sont conservatrices (fourchettes basses).</p>
+      <!-- ANNEXE B — SEO -->
+      <div class="annexe-item" id="annexe-seo">
+        <div class="annexe-header" onclick="toggleAnnexe(this)">
+          <span class="annexe-label">Annexe B</span>
+          <span class="annexe-title-text">Strat&eacute;gie SEO &amp; contenu</span>
+          <svg class="annexe-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="annexe-body">
+
+          <p class="solution-explainer"><strong>Le probl&egrave;me :</strong> laserel.fr a environ 15-20 pages index&eacute;es sur Google. Lazeo en a 300+. La Clinique des Champs-&Eacute;lys&eacute;es fait 200 000 visites/mois. Tu n'as aucun blog, aucun article, aucune strat&eacute;gie de contenu.</p>
+
+          <div class="noshow-data-table">
+            <div class="noshow-data-title">Laserel vs. concurrents &mdash; pr&eacute;sence SEO</div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Concurrent</th>
+                  <th>Articles blog</th>
+                  <th>Pages villes</th>
+                  <th>Trafic estim&eacute;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Lazeo</strong></td><td>~300-380</td><td>Oui (multi-villes)</td><td>Tr&egrave;s &eacute;lev&eacute;</td></tr>
+                <tr><td><strong>Clinique des Champs-&Eacute;lys&eacute;es</strong></td><td>50-100+</td><td>21 villes</td><td>200k/mois</td></tr>
+                <tr><td><strong>Skin Marceau</strong></td><td>20-30+</td><td>Non</td><td>Moyen-haut</td></tr>
+                <tr><td style="color: var(--error); font-weight: 700;">Laserel</td><td style="color: var(--error); font-weight: 700;">0</td><td>4-5 (incoh&eacute;rent)</td><td style="color: var(--error);">Faible</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="metric-highlight">
+            <div class="metric-number">748%</div>
+            <div class="metric-text">
+              <strong>ROI moyen du SEO en 2025</strong><br>
+              <span class="metric-source">Les leads organiques convertissent &agrave; 14,6% (vs 1,7% pour l'outbound). Source : SeoProfy 2025</span>
+            </div>
+          </div>
+
+          <h4 class="solution-section-title">La strat&eacute;gie : contenu automatis&eacute; + expertise m&eacute;dicale</h4>
+
+          <p class="solution-explainer"><strong>Ce qu'on propose :</strong> une machine &agrave; contenu pilot&eacute;e par des outils d'automatisation avanc&eacute;s et supervis&eacute;e par un humain. L'automatisation g&eacute;n&egrave;re 80% du travail (recherche, brouillon, SEO), un expert valide les 20% restants (v&eacute;racit&eacute; m&eacute;dicale, voix de marque). R&eacute;sultat : un article de 2 000 mots en 2h au lieu de 8h.</p>
+
+          <div class="goldmine-box">
+            <div class="goldmine-header">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <strong>Plan de contenu : 3 piliers + clusters</strong>
+            </div>
+            <div class="goldmine-body">
+              <div class="goldmine-calc">
+                <div class="goldmine-calc-row">
+                  <span><strong>Pilier 1 : &Eacute;pilation laser</strong> &mdash; guide + 20 articles</span>
+                  <strong>~40-60k recherches/mois</strong>
+                </div>
+                <div class="goldmine-calc-row">
+                  <span><strong>Pilier 2 : Soins visage / anti-&acirc;ge</strong> &mdash; guide + 15 articles</span>
+                  <strong>~15-25k recherches/mois</strong>
+                </div>
+                <div class="goldmine-calc-row">
+                  <span><strong>Pilier 3 : D&eacute;tatouage + corps</strong> &mdash; guide + 10 articles</span>
+                  <strong>~5-10k recherches/mois</strong>
+                </div>
+                <div class="goldmine-calc-row goldmine-calc-total">
+                  <span>Total pages index&eacute;es (12 mois)</span>
+                  <strong>150 &agrave; 225 pages</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="solution-section-title">Projections r&eacute;alistes</h4>
+
+          <div class="noshow-data-table">
+            <div class="noshow-data-title">Croissance trafic organique estim&eacute;e (3 articles/semaine)</div>
+            <table>
+              <thead>
+                <tr>
+                  <th>P&eacute;riode</th>
+                  <th>Sessions/mois</th>
+                  <th>Ce qui se passe</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Mois 1-3</td><td>100 &rarr; 800</td><td>Indexation, premiers mots-cl&eacute;s longue tra&icirc;ne</td></tr>
+                <tr><td>Mois 4-6</td><td>800 &rarr; 4 000</td><td>Mots-cl&eacute;s en top 20, premiers leads organiques</td></tr>
+                <tr><td>Mois 7-9</td><td>4 000 &rarr; 8 000</td><td>Autorit&eacute; th&eacute;matique, top 10 sur mots-cl&eacute;s locaux</td></tr>
+                <tr><td>Mois 10-12</td><td>8 000 &rarr; 15 000</td><td>Effet compos&eacute;, positions stables, leads r&eacute;guliers</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="roi-disclaimer" style="margin-top: 20px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <p><strong>Sources :</strong> Ahrefs 2025, Semrush 2025, HubSpot, SeoProfy, WordStream, BrightLocal 2026. Estimations conservatrices.</p>
+          </div>
+
+        </div>
       </div>
+
+      <!-- ANNEXE C — Franchise -->
+      <div class="annexe-item" id="annexe-franchise">
+        <div class="annexe-header" onclick="toggleAnnexe(this)">
+          <span class="annexe-label">Annexe C</span>
+          <span class="annexe-title-text">Strat&eacute;gie franchise</span>
+          <svg class="annexe-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="annexe-body">
+
+          <div class="franchise-market-grid">
+            <div class="market-stat-card">
+              <div class="market-stat-number">3 Md&euro;</div>
+              <div class="market-stat-label">March&eacute; m&eacute;decine esth&eacute;tique France</div>
+              <div class="market-stat-source">Xerfi Percepta 2023</div>
+            </div>
+            <div class="market-stat-card market-stat-highlight">
+              <div class="market-stat-number">+7%/an</div>
+              <div class="market-stat-label">Croissance jusqu'en 2028</div>
+              <div class="market-stat-source">Le JDD / BCG / IMCAS</div>
+            </div>
+            <div class="market-stat-card">
+              <div class="market-stat-number">+12.9%</div>
+              <div class="market-stat-label">CAGR laser esth&eacute;tique 2025-2030</div>
+              <div class="market-stat-source">Mordor Intelligence</div>
+            </div>
+            <div class="market-stat-card">
+              <div class="market-stat-number">2M</div>
+              <div class="market-stat-label">Patients esth&eacute;tique en France</div>
+              <div class="market-stat-source">IMCAS / BCG</div>
+            </div>
+          </div>
+
+          <div class="highlight-box" style="margin-top: 20px; border-left-color: var(--laserel-gold); background: var(--laserel-gold-light);">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <p><strong>Game changer : d&eacute;cret du 24 mai 2024</strong><br>
+            L'&eacute;pilation laser n'est plus r&eacute;serv&eacute;e aux m&eacute;decins. Les infirmiers et esth&eacute;ticiennes peuvent d&eacute;sormais pratiquer. &Ccedil;a ouvre massivement le march&eacute; pour les franchises.</p>
+          </div>
+
+          <div class="franchise-table-wrapper" style="margin-top: 20px;">
+            <table class="franchise-compare-table">
+              <thead>
+                <tr>
+                  <th>Enseigne</th>
+                  <th>Centres</th>
+                  <th>Invest. total</th>
+                  <th>Droit d'entr&eacute;e</th>
+                  <th>CA moyen Y2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="franchise-table-highlight">
+                  <td><strong>Laserel</strong></td>
+                  <td>5</td>
+                  <td>150k&euro;</td>
+                  <td>25-35k&euro;</td>
+                  <td><strong>300-400k&euro;</strong></td>
+                </tr>
+                <tr>
+                  <td>D&eacute;pil Tech</td>
+                  <td>130</td>
+                  <td>120-240k&euro;</td>
+                  <td>22k&euro;</td>
+                  <td>300-360k&euro;</td>
+                </tr>
+                <tr>
+                  <td>Body Minute</td>
+                  <td>500</td>
+                  <td>150k&euro;</td>
+                  <td>20k&euro;</td>
+                  <td>250k&euro;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="franchise-table-source">Sources : Observatoire de la Franchise, Toute la Franchise, AC Franchise &mdash; donn&eacute;es 2024-2025</p>
+
+          <div class="franchise-projection" style="margin-top: 20px;">
+            <div class="projection-scenario">
+              <div class="projection-header projection-conservative">Sc&eacute;nario conservateur</div>
+              <div class="projection-body">
+                <div class="projection-row">
+                  <span>Budget acquisition annuel</span>
+                  <strong>15 000&euro;</strong>
+                </div>
+                <div class="projection-row">
+                  <span>Leads g&eacute;n&eacute;r&eacute;s</span>
+                  <strong>~125</strong>
+                </div>
+                <div class="projection-row projection-total">
+                  <span>Franchis&eacute;s sign&eacute;s</span>
+                  <strong>2 &agrave; 4</strong>
+                </div>
+              </div>
+            </div>
+            <div class="projection-scenario">
+              <div class="projection-header projection-optimistic">Sc&eacute;nario optimiste</div>
+              <div class="projection-body">
+                <div class="projection-row">
+                  <span>Budget acquisition annuel</span>
+                  <strong>30 000&euro;</strong>
+                </div>
+                <div class="projection-row">
+                  <span>Leads g&eacute;n&eacute;r&eacute;s</span>
+                  <strong>~300</strong>
+                </div>
+                <div class="projection-row projection-total">
+                  <span>Franchis&eacute;s sign&eacute;s</span>
+                  <strong>5 &agrave; 8</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="franchise-pdf-cta" style="margin-top: 20px;">
+            <a href="#" class="franchise-pdf-btn" id="franchise-pdf-btn" onclick="trackFranchisePDF(event)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              T&eacute;l&eacute;charger la strat&eacute;gie franchise (PDF)
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ANNEXE D — Méthodologie -->
+      <div class="annexe-item" id="annexe-methode">
+        <div class="annexe-header" onclick="toggleAnnexe(this)">
+          <span class="annexe-label">Annexe D</span>
+          <span class="annexe-title-text">M&eacute;thodologie</span>
+          <svg class="annexe-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="annexe-body">
+
+          <div class="highlight-box" style="border-left-color: var(--cohorte-teal); background: var(--cohorte-teal-light);">
+            <div class="highlight-icon" style="color: var(--cohorte-teal);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <p><strong>Le concept :</strong> je ne travaille pas comme un freelance classique. Je pilote des workflows automatis&eacute;s avanc&eacute;s. Mon r&ocirc;le = strat&eacute;gie, contr&ocirc;le qualit&eacute;, communication avec toi. L'automatisation fait le travail technique &mdash; <strong>5 &agrave; 10&times; plus vite qu'un humain</strong>.</p>
+          </div>
+
+          <div class="before-after-compare" style="margin-top: 24px;">
+            <div class="before-after-card before-card">
+              <div class="before-after-label">Agence traditionnelle</div>
+              <ul>
+                <li>D&eacute;veloppeur web : 2 000&euro;/mois</li>
+                <li>CRM / automation : 1 000&euro;/mois</li>
+                <li>Email marketing : 1 000&euro;/mois</li>
+                <li>R&eacute;f&eacute;rencement SEO : 1 500&euro;/mois</li>
+                <li>Franchise / acquisition : 2 000&euro;/mois</li>
+                <li>Coordination entre prestataires</li>
+                <li><strong>Total : 5 600 &agrave; 10 200&euro;/mois</strong></li>
+              </ul>
+            </div>
+            <div class="before-after-card after-card">
+              <div class="before-after-label">Antoine + automatisation (Cohorte)</div>
+              <ul>
+                <li>1 seul interlocuteur</li>
+                <li>Toutes comp&eacute;tences via workflows automatis&eacute;s</li>
+                <li>Z&eacute;ro coordination entre prestataires</li>
+                <li>Ex&eacute;cution 5-10&times; plus rapide</li>
+                <li>It&eacute;rations illimit&eacute;es</li>
+                <li>Tout le code t'appartient</li>
+                <li><strong>Total : 1 000&euro;/mois</strong></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="highlight-box" style="border-left-color: var(--cohorte-teal); background: var(--cohorte-teal-light); margin-top: 24px;">
+            <div class="highlight-icon" style="color: var(--cohorte-teal);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <p><strong>Pourquoi un abonnement mensuel ?</strong> L'am&eacute;lioration est continue. Chaque mois je d&eacute;ploie des optimisations bas&eacute;es sur les donn&eacute;es du mois pr&eacute;c&eacute;dent. Le SEO grandit, les emails s'affinent. C'est un investissement qui compose.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ANNEXE E — Roadmap -->
+      <div class="annexe-item" id="annexe-roadmap">
+        <div class="annexe-header" onclick="toggleAnnexe(this)">
+          <span class="annexe-label">Annexe E</span>
+          <span class="annexe-title-text">Roadmap 12 mois</span>
+          <svg class="annexe-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="annexe-body">
+
+          <div class="roadmap-timeline">
+            <div class="roadmap-months">
+              <span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span><span>M6</span><span>M7</span><span>M8</span><span>M9</span><span>M10</span><span>M11</span><span>M12</span>
+            </div>
+            <div class="roadmap-streams">
+              <div class="roadmap-stream">
+                <div class="roadmap-label">Audit + architecture</div>
+                <div class="roadmap-bar roadmap-bar-gray" style="grid-column: 1 / 3;"></div>
+              </div>
+              <div class="roadmap-stream">
+                <div class="roadmap-label">Refonte site + CRO</div>
+                <div class="roadmap-bar roadmap-bar-gold" style="grid-column: 2 / 4;"></div>
+              </div>
+              <div class="roadmap-stream">
+                <div class="roadmap-label">CRM + automations</div>
+                <div class="roadmap-bar roadmap-bar-teal" style="grid-column: 3 / 5;"></div>
+              </div>
+              <div class="roadmap-stream">
+                <div class="roadmap-label">Anti no-shows</div>
+                <div class="roadmap-bar roadmap-bar-green" style="grid-column: 3 / 5;"></div>
+              </div>
+              <div class="roadmap-stream">
+                <div class="roadmap-label">Email marketing</div>
+                <div class="roadmap-bar roadmap-bar-orange" style="grid-column: 4 / 6;"></div>
+              </div>
+              <div class="roadmap-stream">
+                <div class="roadmap-label">SEO contenu</div>
+                <div class="roadmap-bar roadmap-bar-golddark" style="grid-column: 5 / 13;"></div>
+              </div>
+              <div class="roadmap-stream">
+                <div class="roadmap-label">Franchise LP</div>
+                <div class="roadmap-bar roadmap-bar-teal" style="grid-column: 4 / 6;"></div>
+              </div>
+              <div class="roadmap-stream">
+                <div class="roadmap-label">Optimisation continue</div>
+                <div class="roadmap-bar roadmap-bar-lightgray" style="grid-column: 6 / 13;"></div>
+              </div>
+            </div>
+            <div class="roadmap-milestone">
+              <span>&#9733; &Eacute;cosyst&egrave;me complet d&eacute;ploy&eacute; en ~6 mois</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ANNEXE F — Tarifs détaillés -->
+      <div class="annexe-item" id="annexe-tarifs">
+        <div class="annexe-header" onclick="toggleAnnexe(this)">
+          <span class="annexe-label">Annexe F</span>
+          <span class="annexe-title-text">Tarifs d&eacute;taill&eacute;s</span>
+          <svg class="annexe-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="annexe-body">
+
+          <div class="offre-card" style="margin-bottom: 24px;">
+            <div class="offre-price">1 000&euro;<span>/mois</span></div>
+            <div class="offre-engagement">Sans engagement &mdash; tu arr&ecirc;tes quand tu veux</div>
+            <ul class="offre-includes">
+              <li>Audit initial complet</li>
+              <li>15-20h/mois + workflows automatis&eacute;s</li>
+              <li>1 call/semaine</li>
+              <li>3 articles SEO/semaine</li>
+              <li>Mise en place de tous les leviers</li>
+              <li>Dashboard + rapports mensuels</li>
+              <li>Tout le code et les donn&eacute;es t'appartiennent</li>
+            </ul>
+            <div class="offre-note">Audit offert le premier mois</div>
+          </div>
+
+          <div class="guarantees">
+            <div class="guarantee">
+              <div class="guarantee-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+              </div>
+              <h4>Sans engagement</h4>
+              <p>Tu arr&ecirc;tes quand tu veux. Tu repars avec tout.</p>
+            </div>
+            <div class="guarantee">
+              <div class="guarantee-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              </div>
+              <h4>Transparence totale</h4>
+              <p>Dashboard, m&eacute;triques, co&ucirc;ts &mdash; tout est visible.</p>
+            </div>
+            <div class="guarantee">
+              <div class="guarantee-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <h4>ROI mesurable</h4>
+              <p>On mesure tout. Si un levier ne produit pas, on ajuste.</p>
+            </div>
+          </div>
+
+          <div class="roi-breakeven" style="margin-top: 20px;">
+            <div class="roi-breakeven-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div class="roi-breakeven-content">
+              <strong>Le seuil de rentabilit&eacute; est tr&egrave;s bas</strong>
+              <p>Il suffit de <strong>1-2 patients suppl&eacute;mentaires par mois par centre</strong> pour rentabiliser l'int&eacute;gralit&eacute; de la prestation.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
 </main>
 
 <script>
-// Roadmap tier toggle
-function switchRoadmap(tier) {
-  var acc = document.getElementById('roadmap-accelere');
-  var ess = document.getElementById('roadmap-essentiel');
-  var btnAcc = document.getElementById('btn-accelere');
-  var btnEss = document.getElementById('btn-essentiel');
-  if (tier === 'accelere') {
-    acc.style.display = '';
-    ess.style.display = 'none';
-    btnAcc.classList.add('tier-btn-active');
-    btnEss.classList.remove('tier-btn-active');
-  } else {
-    acc.style.display = 'none';
-    ess.style.display = '';
-    btnEss.classList.add('tier-btn-active');
-    btnAcc.classList.remove('tier-btn-active');
-  }
+// Annexe accordion toggle
+function toggleAnnexe(headerEl) {
+  var item = headerEl.parentElement;
+  item.classList.toggle('open');
 }
+
+// Auto-open annexe from levier links
+document.querySelectorAll('.levier-compact-link').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var annexeId = this.getAttribute('data-annexe');
+    var annexeEl = document.getElementById(annexeId);
+    if (annexeEl) {
+      if (!annexeEl.classList.contains('open')) {
+        annexeEl.classList.add('open');
+      }
+      annexeEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Track franchise PDF click
+function trackFranchisePDF(e) {
+  e.preventDefault();
+  fetch('/api/track/activity', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type: 'franchise_pdf_click', timestamp: new Date().toISOString() })
+  }).catch(function() {});
+  // TODO: replace with actual PDF URL when available
+  alert('Le PDF sera disponible prochainement. Votre int\u00e9r\u00eat a \u00e9t\u00e9 not\u00e9 !');
+}
+
+// ROI Simulator
+(function() {
+  var panierInput = document.getElementById('roi-panier');
+  var patientsInput = document.getElementById('roi-patients');
+  var noshowInput = document.getElementById('roi-noshow');
+
+  function formatNum(n) {
+    return Math.round(n).toLocaleString('fr-FR') + '\u20ac';
+  }
+
+  function updateROI() {
+    var panier = parseInt(panierInput.value);
+    var patients = parseInt(patientsInput.value);
+    var noshow = parseInt(noshowInput.value) / 100;
+
+    // Display values
+    document.getElementById('roi-panier-val').textContent = panier + '\u20ac';
+    document.getElementById('roi-patients-val').textContent = patients;
+    document.getElementById('roi-noshow-val').textContent = noshowInput.value + '%';
+
+    // Calculations
+    var centres = 5;
+    var caActuel = panier * patients * centres;
+    var pertesNoshow = caActuel * noshow;
+    var netActuel = caActuel - pertesNoshow;
+
+    // Optimized: +25% conversion boost, noshow halved
+    var caOpti = caActuel * 1.25;
+    var pertesOpti = caOpti * (noshow * 0.5);
+    var netOpti = caOpti - pertesOpti;
+
+    var gain = netOpti - netActuel;
+
+    document.getElementById('roi-ca-actuel').textContent = formatNum(caActuel);
+    document.getElementById('roi-pertes').textContent = '-' + formatNum(pertesNoshow);
+    document.getElementById('roi-net-actuel').textContent = formatNum(netActuel);
+    document.getElementById('roi-ca-opti').textContent = formatNum(caOpti);
+    document.getElementById('roi-pertes-opti').textContent = '-' + formatNum(pertesOpti);
+    document.getElementById('roi-net-opti').textContent = formatNum(netOpti);
+    document.getElementById('roi-gain').textContent = '+' + formatNum(gain) + '/mois';
+  }
+
+  panierInput.addEventListener('input', updateROI);
+  patientsInput.addEventListener('input', updateROI);
+  noshowInput.addEventListener('input', updateROI);
+
+  updateROI();
+})();
 
 // Scroll reveal
 (function() {
