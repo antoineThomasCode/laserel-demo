@@ -59,24 +59,24 @@
   <!-- ====== HERO ====== -->
   <section class="section section-hero" id="hero">
     <div class="container">
-      <div class="hero-badge reveal">
+      <div class="hero-badge hero-entrance" style="--hero-delay: 0s">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
         Plan strat&eacute;gique &mdash; F&eacute;vrier 2026
       </div>
 
-      <h1 class="hero-title reveal">
+      <h1 class="hero-title hero-entrance" style="--hero-delay: 0.1s">
         Micka&euml;l,<br>
         <span class="gradient-text">voici ce que Laserel peut gagner.</span>
       </h1>
 
-      <p class="hero-subtitle reveal">
+      <p class="hero-subtitle hero-entrance" style="--hero-delay: 0.2s">
         5 leviers concrets pour doubler tes conversions, diviser tes no-shows par 2 et g&eacute;n&eacute;rer 15 000 visites organiques par mois. Sans engagement.
       </p>
 
       <!-- Metrics grid — 3 max -->
-      <div class="hero-metrics reveal">
+      <div class="hero-metrics hero-entrance" style="--hero-delay: 0.35s">
         <div class="hero-metric">
           <span class="hero-metric-value">&times;2-3</span>
           <span class="hero-metric-label">Conversion site</span>
@@ -91,7 +91,7 @@
         </div>
       </div>
 
-      <div class="scroll-indicator reveal">
+      <div class="scroll-indicator hero-entrance" style="--hero-delay: 0.5s">
         <span>Scroll pour d&eacute;couvrir le plan</span>
         <div class="scroll-arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -185,28 +185,28 @@
         <p class="section-subtitle">Audit bas&eacute; sur les donn&eacute;es publiques de ton site, tes avis et tes concurrents</p>
       </div>
 
-      <div class="audit-checklist reveal">
-        <div class="audit-item fail">
+      <div class="audit-checklist">
+        <div class="audit-item fail reveal">
           <span class="audit-icon">&times;</span>
           <span>Aucun article SEO (vs Lazeo 300+, CRPCE 200+)</span>
         </div>
-        <div class="audit-item fail">
+        <div class="audit-item fail reveal">
           <span class="audit-icon">&times;</span>
           <span>Pas de CRM / suivi des leads</span>
         </div>
-        <div class="audit-item fail">
+        <div class="audit-item fail reveal">
           <span class="audit-icon">&times;</span>
           <span>Pas de rappels automatiques (no-shows ~15% en esth&eacute;tique)</span>
         </div>
-        <div class="audit-item fail">
+        <div class="audit-item fail reveal">
           <span class="audit-icon">&times;</span>
           <span>Site non optimis&eacute; mobile (68% du trafic)</span>
         </div>
-        <div class="audit-item pass">
+        <div class="audit-item pass reveal">
           <span class="audit-icon">&checkmark;</span>
           <span>Forte notoriété locale &mdash; 4.91/5 sur 1 848 avis Meditrust</span>
         </div>
-        <div class="audit-item pass">
+        <div class="audit-item pass reveal">
           <span class="audit-icon">&checkmark;</span>
           <span>5 centres = levier d'&eacute;chelle</span>
         </div>
@@ -319,7 +319,7 @@
       </div>
 
       <div class="offre-card reveal">
-        <div class="offre-price">1 000&euro;<span>/mois</span></div>
+        <div class="offre-price">1 500&euro;<span>/mois</span></div>
         <div class="offre-engagement">Sans engagement &mdash; tu arr&ecirc;tes quand tu veux</div>
         <ul class="offre-includes">
           <li>Audit initial complet de ton &eacute;cosyst&egrave;me digital</li>
@@ -327,7 +327,7 @@
           <li>Suivi mensuel + rapports de performance</li>
           <li>Tout le code et les donn&eacute;es t'appartiennent</li>
         </ul>
-        <div class="offre-note">Audit offert le premier mois</div>
+        <div class="offre-note offre-note-green">Audit offert le premier mois</div>
       </div>
     </div>
   </section>
@@ -844,7 +844,7 @@
                 <li>Ex&eacute;cution 5-10&times; plus rapide</li>
                 <li>It&eacute;rations illimit&eacute;es</li>
                 <li>Tout le code t'appartient</li>
-                <li><strong>Total : 1 000&euro;/mois</strong></li>
+                <li><strong>Total : 1 500&euro;/mois</strong></li>
               </ul>
             </div>
           </div>
@@ -924,7 +924,7 @@
         <div class="annexe-body">
 
           <div class="offre-card" style="margin-bottom: 24px;">
-            <div class="offre-price">1 000&euro;<span>/mois</span></div>
+            <div class="offre-price">1 500&euro;<span>/mois</span></div>
             <div class="offre-engagement">Sans engagement &mdash; tu arr&ecirc;tes quand tu veux</div>
             <ul class="offre-includes">
               <li>Audit initial complet</li>
@@ -981,10 +981,23 @@
 </main>
 
 <script>
+// === TRACKING HELPER ===
+function trackEvent(type, data) {
+  fetch('/api/track/activity', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(Object.assign({ type: type, timestamp: new Date().toISOString(), page: 'proposal' }, data || {}))
+  }).catch(function() {});
+}
+
 // Annexe accordion toggle
 function toggleAnnexe(headerEl) {
   var item = headerEl.parentElement;
+  var wasOpen = item.classList.contains('open');
   item.classList.toggle('open');
+  if (!wasOpen) {
+    trackEvent('annexe_open', { annexe_id: item.id });
+  }
 }
 
 // Auto-open annexe from levier links
@@ -996,6 +1009,7 @@ document.querySelectorAll('.levier-compact-link').forEach(function(link) {
     if (annexeEl) {
       if (!annexeEl.classList.contains('open')) {
         annexeEl.classList.add('open');
+        trackEvent('annexe_open', { annexe_id: annexeId, source: 'levier_link' });
       }
       annexeEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -1005,24 +1019,84 @@ document.querySelectorAll('.levier-compact-link').forEach(function(link) {
 // Track franchise PDF click
 function trackFranchisePDF(e) {
   e.preventDefault();
-  fetch('/api/track/activity', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ type: 'franchise_pdf_click', timestamp: new Date().toISOString() })
-  }).catch(function() {});
-  // TODO: replace with actual PDF URL when available
+  trackEvent('franchise_pdf_click');
   alert('Le PDF sera disponible prochainement. Votre int\u00e9r\u00eat a \u00e9t\u00e9 not\u00e9 !');
 }
 
-// ROI Simulator
+// Track CTA clicks
+document.querySelectorAll('.cta-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var type = this.classList.contains('cta-btn-whatsapp') ? 'cta_whatsapp' : 'cta_calendly';
+    trackEvent(type);
+  });
+});
+
+// === SCROLL DEPTH TRACKING ===
+(function() {
+  var thresholds = [25, 50, 75, 100];
+  var fired = {};
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    var pct = Math.round((scrollTop / docHeight) * 100);
+    thresholds.forEach(function(t) {
+      if (pct >= t && !fired[t]) {
+        fired[t] = true;
+        trackEvent('scroll_depth', { depth: t });
+      }
+    });
+  }, { passive: true });
+})();
+
+// === TIME ON PAGE TRACKING ===
+(function() {
+  var elapsed = 0;
+  setInterval(function() {
+    elapsed += 30;
+    trackEvent('time_on_page', { seconds: elapsed });
+  }, 30000);
+})();
+
+// === ANIMATED NUMBER COUNTER ===
+function animateNumber(el, targetValue, prefix, suffix) {
+  var current = parseFloat(el.dataset.currentValue || '0');
+  if (current === targetValue) return;
+  el.dataset.currentValue = targetValue;
+  var start = current;
+  var diff = targetValue - start;
+  var duration = 400;
+  var startTime = null;
+  function step(ts) {
+    if (!startTime) startTime = ts;
+    var progress = Math.min((ts - startTime) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    var val = Math.round(start + diff * eased);
+    el.textContent = (prefix || '') + val.toLocaleString('fr-FR') + '\u20ac' + (suffix || '');
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// === ROI SIMULATOR ===
 (function() {
   var panierInput = document.getElementById('roi-panier');
   var patientsInput = document.getElementById('roi-patients');
   var noshowInput = document.getElementById('roi-noshow');
 
-  function formatNum(n) {
-    return Math.round(n).toLocaleString('fr-FR') + '\u20ac';
+  // Slider fill (filled left side)
+  function updateSliderFill(input) {
+    var min = parseFloat(input.min);
+    var max = parseFloat(input.max);
+    var val = parseFloat(input.value);
+    var pct = ((val - min) / (max - min)) * 100;
+    input.style.setProperty('--fill-pct', pct + '%');
   }
+
+  [panierInput, patientsInput, noshowInput].forEach(function(input) {
+    input.addEventListener('input', function() { updateSliderFill(this); });
+    updateSliderFill(input);
+  });
 
   function updateROI() {
     var panier = parseInt(panierInput.value);
@@ -1040,30 +1114,43 @@ function trackFranchisePDF(e) {
     var pertesNoshow = caActuel * noshow;
     var netActuel = caActuel - pertesNoshow;
 
-    // Optimized: +25% conversion boost, noshow halved
     var caOpti = caActuel * 1.25;
     var pertesOpti = caOpti * (noshow * 0.5);
     var netOpti = caOpti - pertesOpti;
 
     var gain = netOpti - netActuel;
 
-    document.getElementById('roi-ca-actuel').textContent = formatNum(caActuel);
-    document.getElementById('roi-pertes').textContent = '-' + formatNum(pertesNoshow);
-    document.getElementById('roi-net-actuel').textContent = formatNum(netActuel);
-    document.getElementById('roi-ca-opti').textContent = formatNum(caOpti);
-    document.getElementById('roi-pertes-opti').textContent = '-' + formatNum(pertesOpti);
-    document.getElementById('roi-net-opti').textContent = formatNum(netOpti);
-    document.getElementById('roi-gain').textContent = '+' + formatNum(gain) + '/mois';
+    // Animated number updates
+    animateNumber(document.getElementById('roi-ca-actuel'), caActuel, '', '');
+    animateNumber(document.getElementById('roi-pertes'), pertesNoshow, '-', '');
+    animateNumber(document.getElementById('roi-net-actuel'), netActuel, '', '');
+    animateNumber(document.getElementById('roi-ca-opti'), caOpti, '', '');
+    animateNumber(document.getElementById('roi-pertes-opti'), pertesOpti, '-', '');
+    animateNumber(document.getElementById('roi-net-opti'), netOpti, '', '');
+    animateNumber(document.getElementById('roi-gain'), gain, '+', '/mois');
   }
 
-  panierInput.addEventListener('input', updateROI);
-  patientsInput.addEventListener('input', updateROI);
-  noshowInput.addEventListener('input', updateROI);
+  // Throttled tracking for simulator
+  var roiTrackTimer = null;
+  function trackROI() {
+    clearTimeout(roiTrackTimer);
+    roiTrackTimer = setTimeout(function() {
+      trackEvent('roi_simulator', {
+        panier: panierInput.value,
+        patients: patientsInput.value,
+        noshow: noshowInput.value
+      });
+    }, 5000);
+  }
+
+  panierInput.addEventListener('input', function() { updateROI(); trackROI(); });
+  patientsInput.addEventListener('input', function() { updateROI(); trackROI(); });
+  noshowInput.addEventListener('input', function() { updateROI(); trackROI(); });
 
   updateROI();
 })();
 
-// Scroll reveal
+// === SCROLL REVEAL (faster trigger) ===
 (function() {
   var reveals = document.querySelectorAll('.reveal');
   if (!reveals.length) return;
@@ -1075,7 +1162,7 @@ function trackFranchisePDF(e) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px 40px 0px' });
 
   reveals.forEach(function(el) { observer.observe(el); });
 })();
